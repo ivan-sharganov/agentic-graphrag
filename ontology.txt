@@ -1,0 +1,313 @@
+@prefix pcfr: <https://example.org/pcfr#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+###############
+# Core classes
+###############
+
+pcfr:Encounter        a rdfs:Class ; rdfs:label "Passport control encounter"@en .
+pcfr:Traveller        a rdfs:Class ; rdfs:label "Traveller"@en .
+pcfr:BorderOfficer    a rdfs:Class ; rdfs:label "Border officer"@en .
+pcfr:DocumentCheck    a rdfs:Class ; rdfs:label "Document check"@en .
+pcfr:Questioning      a rdfs:Class ; rdfs:label "Questioning at the desk"@en .
+pcfr:Stamping         a rdfs:Class ; rdfs:label "Passport stamping event"@en .
+pcfr:Outcome          a rdfs:Class ; rdfs:label "Encounter outcome"@en .
+pcfr:Airport          a rdfs:Class ; rdfs:label "Airport"@en .
+
+#########################
+# Document / vocabularies
+#########################
+
+pcfr:DocumentType     a rdfs:Class ; rdfs:label "Document type (controlled)"@en .
+
+pcfr:PassportDoc      a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Passport (generic document type)"@en .
+
+pcfr:InternalPassportRF a rdfs:Class ;
+  rdfs:subClassOf pcfr:PassportDoc ;
+  rdfs:label "Russian internal passport"@en .
+
+pcfr:ForeignPassport a rdfs:Class ;
+  rdfs:subClassOf pcfr:PassportDoc ;
+  rdfs:label "Foreign travel passport"@en .
+
+pcfr:VisaDoc          a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Visa"@en .
+
+pcfr:ReturnTicket     a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Return ticket"@en .
+
+pcfr:TransitTicket    a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Transit ticket"@en .
+
+pcfr:TravelInsurance  a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Travel insurance"@en .
+
+pcfr:HotelBookingDoc  a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Hotel booking"@en .
+
+pcfr:PaymentCard      a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Payment card"@en .
+
+pcfr:Cash             a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Cash"@en .
+
+pcfr:ProofOfFunds     a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ;
+  rdfs:label "Proof of funds (any form)"@en .
+
+pcfr:PassportWithVisa a rdfs:Class ;
+  rdfs:subClassOf pcfr:ForeignPassport ;
+  rdfs:label "Passport with visa"@en .
+
+pcfr:EvidenceFormat   a rdfs:Class ; rdfs:label "Evidence format"@en .
+pcfr:Printout         a rdfs:Class ;
+  rdfs:subClassOf pcfr:EvidenceFormat ;
+  rdfs:label "Printed paper"@en .
+pcfr:Digital          a rdfs:Class ;
+  rdfs:subClassOf pcfr:EvidenceFormat ;
+  rdfs:label "Digital on device"@en .
+pcfr:Screenshot       a rdfs:Class ;
+  rdfs:subClassOf pcfr:EvidenceFormat ;
+  rdfs:label "Screenshot image"@en .
+
+pcfr:CheckMode        a rdfs:Class ; rdfs:label "Document check mode"@en .
+pcfr:VerbalInquiryOnly a rdfs:Class ;
+  rdfs:subClassOf pcfr:CheckMode ;
+  rdfs:label "Verbal inquiry only"@en .
+pcfr:PhysicalDocumentRequested a rdfs:Class ;
+  rdfs:subClassOf pcfr:CheckMode ;
+  rdfs:label "Explicit physical document request"@en .
+
+pcfr:RequirementLevel a rdfs:Class ; rdfs:label "Requirement level"@en .
+pcfr:Required         a rdfs:Class ; rdfs:subClassOf pcfr:RequirementLevel ; rdfs:label "Required"@en .
+pcfr:Optional         a rdfs:Class ; rdfs:subClassOf pcfr:RequirementLevel ; rdfs:label "Optional"@en .
+pcfr:NotRequired      a rdfs:Class ; rdfs:subClassOf pcfr:RequirementLevel ; rdfs:label "Not required"@en .
+
+##########################
+# Behaviour
+##########################
+
+pcfr:Behavior         a rdfs:Class ; rdfs:label "Observed traveller behavior"@en .
+pcfr:CalmBehavior     a rdfs:Class ;
+  rdfs:subClassOf pcfr:Behavior ;
+  rdfs:label "Calm behavior"@en .
+
+pcfr:BehaviorGuideline a rdfs:Class ; rdfs:label "Behavior guideline"@en .
+pcfr:AvoidJokes        a rdfs:Class ;
+  rdfs:subClassOf pcfr:BehaviorGuideline ;
+  rdfs:label "Avoid jokes"@en .
+pcfr:AvoidStrangeBehavior a rdfs:Class ;
+  rdfs:subClassOf pcfr:BehaviorGuideline ;
+  rdfs:label "Avoid strange behavior"@en .
+pcfr:KeepConversationMinimal a rdfs:Class ;
+  rdfs:subClassOf pcfr:BehaviorGuideline ;
+  rdfs:label "Keep conversation minimal"@en .
+
+###################
+# Screening status
+###################
+
+pcfr:ScreeningStatus a rdfs:Class ; rdfs:label "Screening status"@en .
+pcfr:AdditionalChecks a rdfs:Class ;
+  rdfs:subClassOf pcfr:ScreeningStatus ;
+  rdfs:label "Additional checks"@en .
+pcfr:NoExtraProcedures a rdfs:Class ;
+  rdfs:subClassOf pcfr:ScreeningStatus ;
+  rdfs:label "No additional procedures"@en .
+pcfr:SecondaryInterrogation a rdfs:Class ;
+  rdfs:subClassOf pcfr:ScreeningStatus ;
+  rdfs:label "Short interrogation"@en .
+
+##########################
+# Question topics
+##########################
+
+pcfr:QuestionTopic        a rdfs:Class ; rdfs:label "Controlled question topic"@en .
+pcfr:Employment           a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Employment"@en .
+pcfr:Income               a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Income"@en .
+pcfr:VisitPurpose         a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Visit purpose"@en .
+pcfr:VisitDuration        a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Visit duration"@en .
+pcfr:HotelPaymentStatus   a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Hotel payment status"@en .
+pcfr:CashAmount           a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Cash amount"@en .
+pcfr:HotelPaymentCard     a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Hotel payment card"@en .
+
+#############
+# Properties
+#############
+
+pcfr:hasTraveler      a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Traveller .
+
+pcfr:hasOfficer       a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:BorderOfficer .
+
+pcfr:hasDocumentCheck a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:DocumentCheck .
+
+pcfr:hasQuestioning   a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Questioning .
+
+pcfr:hasStamping      a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Stamping .
+
+pcfr:hasOutcome       a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Outcome .
+
+pcfr:atAirport        a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Airport .
+
+pcfr:encounterDateTime a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range xsd:dateTime .
+
+pcfr:queueDurationMin  a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range xsd:integer .
+
+pcfr:secondaryScreeningDurationMin a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range xsd:integer .
+
+pcfr:resultCode        a rdf:Property ;
+  rdfs:domain pcfr:Outcome ;
+  rdfs:range xsd:string .
+
+pcfr:presented         a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range xsd:boolean .
+
+pcfr:requestedDocType  a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range pcfr:DocumentType .
+
+pcfr:checkedBy         a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range pcfr:BorderOfficer .
+
+pcfr:presentedFormat   a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range pcfr:EvidenceFormat .
+
+pcfr:acceptedFormat    a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range pcfr:EvidenceFormat .
+
+pcfr:checkMode         a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range pcfr:CheckMode .
+
+pcfr:stampsDocument    a rdf:Property ;
+  rdfs:domain pcfr:Stamping ;
+  rdfs:range pcfr:PassportDoc .
+
+pcfr:issuedBy          a rdf:Property ;
+  rdfs:domain pcfr:Stamping ;
+  rdfs:range pcfr:BorderOfficer .
+
+pcfr:behaviorDuringEncounter a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Behavior .
+
+pcfr:followsGuideline a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:BehaviorGuideline .
+
+pcfr:violatesGuideline a rdf:Property ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:BehaviorGuideline .
+
+pcfr:hasScreeningStatus a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:ScreeningStatus .
+
+pcfr:questionTopic     a rdf:Property ;
+  rdfs:domain pcfr:Questioning ;
+  rdfs:range pcfr:QuestionTopic .
+
+pcfr:wasAsked          a rdf:Property ;
+  rdfs:domain pcfr:Questioning ;
+  rdfs:range xsd:boolean .
+
+pcfr:documentRequirement a rdf:Property ;
+  rdfs:domain pcfr:DocumentType ;
+  rdfs:range pcfr:RequirementLevel .
+
+pcfr:treatedAsRequirementLevel a rdf:Property ;
+  rdfs:domain pcfr:DocumentCheck ;
+  rdfs:range pcfr:RequirementLevel .
+
+pcfr:topic             a rdf:Property ;
+  rdfs:domain pcfr:Questioning ;
+  rdfs:range xsd:string .
+
+#####################################
+# ADDED: LINK Encounter → Post ID
+#####################################
+
+pcfr:sourcePostID a rdf:Property ;
+  rdfs:label "Source forum post ID"@en ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range xsd:integer .
+
+##################################
+# Location (added)
+##################################
+
+pcfr:City    a rdfs:Class ; rdfs:label "City"@en .
+pcfr:Country a rdfs:Class ; rdfs:label "Country"@en .
+
+pcfr:atCity a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Encounter city"@en ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:City .
+
+pcfr:atCountry a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Encounter country"@en ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range pcfr:Country .
+
+pcfr:locatedInCity a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Airport located in city"@en ;
+  rdfs:domain pcfr:Airport ;
+  rdfs:range pcfr:City .
+
+pcfr:locatedInCountry a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "City located in country"@en ;
+  rdfs:domain pcfr:City ;
+  rdfs:range pcfr:Country .
+
+##################################
+# Duration (added)
+##################################
+
+pcfr:encounterDurationMin a rdf:Property ;
+  rdfs:label "Total encounter duration (minutes)"@en ;
+  rdfs:comment "Store duration only in minutes. If source text uses seconds/hours, convert to minutes before storing."@en ;
+  rdfs:domain pcfr:Encounter ;
+  rdfs:range xsd:integer .
+
+##################################
+# Default policy-level facts
+##################################
+
+pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
+pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
