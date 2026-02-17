@@ -56,16 +56,19 @@ ENTITY CREATION RULES (STRICT)
 2) entityName usage (VERY IMPORTANT):
    - Set pcfr:entityName ONLY for these real-world entity labels:
      Traveller, BorderOfficer, Airport, City, Country.
-   - Do NOT set entityName for event nodes:
-     Encounter, DocumentCheck, Questioning, Stamping, Outcome.
+   - Do NOT set entityName for event/claim nodes:
+     KnowledgeItem, Encounter, Claim, DocumentCheck, Questioning, Stamping, Outcome.
    - Do NOT set entityName for controlled-vocabulary nodes:
-     DocumentType subclasses (ReturnTicket, TravelInsurance, ...),
-     EvidenceFormat subclasses (Printout, Digital, Screenshot),
-     CheckMode subclasses, ScreeningStatus subclasses, QuestionTopic subclasses, RequirementLevel subclasses, Behavior/Guideline subclasses.
-   Rationale: vocabulary meaning is already encoded by the node label; event node “names” are UI-derivable.
+     DocumentType subclasses, EvidenceFormat subclasses, CheckMode subclasses, ScreeningStatus subclasses,
+     QuestionTopic subclasses, RequirementLevel subclasses, Behavior/Guideline subclasses,
+     AssertionKind subclasses, Evidentiality subclasses, ClaimScope subclasses, ClaimTopic subclasses.
+   Rationale: vocabulary meaning is already encoded by the node label; event/claim node “names” are UI-derivable.
 
-3) If TEXT mentions multiple travellers and gives separate outcomes/timings, create ONE Encounter PER Traveller.
-   Do NOT attach two travellers to the same Encounter unless TEXT explicitly states it was a single shared encounter.
+3) MULTIPLE TRAVELLERS:
+   - If two or more different people are mentioned in the text (e.g., "я и друг"),
+     create exactly ONE separate Encounter per Traveller if timings/outcomes differ or are described separately.
+   - Do NOT attach multiple Traveller nodes to the same Encounter unless the text explicitly states it was a single shared interaction handled together.
+   - Each Encounter must be linked to exactly one Traveller.
 
 ==============================
 TIME NORMALIZATION (STRICT)
@@ -75,6 +78,49 @@ TIME NORMALIZATION (STRICT)
 - If TEXT gives minutes: seconds = minutes * 60.
 - If TEXT gives hours: seconds = hours * 3600.
 - If TEXT gives seconds: store as integer seconds.
+
+==============================
+DOCUMENTCHECK GRANULARITY (STRICT)
+==============================
+
+- Create exactly ONE DocumentCheck per ONE requested document type.
+- Each DocumentCheck must have exactly one requestedDocType edge.
+- Do NOT attach multiple requestedDocType edges to the same DocumentCheck.
+
+==============================
+BORDER OFFICER (STRICT)
+==============================
+
+- Create BorderOfficer node ONLY if the text explicitly mentions an officer/guard
+  (e.g., "офицер", "пограничник", "сотрудник").
+- Do NOT assume the same officer for two travellers unless explicitly stated.
+- If no officer is mentioned in a specific encounter, do NOT create one and do NOT create hasOfficer/checkedBy/issuedBy relations.
+
+==============================
+NEW: CLAIMS vs EXPERIENCES (STRICT)
+==============================
+
+A) Create pcfr:Encounter ONLY when TEXT describes a concrete episode:
+   - first-person or clearly a single trip ("прилетел", "прошел контроль", "меня спросили", etc.)
+   - may include durations, requested documents, questions, outcomes.
+
+B) Create pcfr:Claim when TEXT contains generalized statements OR advice:
+   - generalized present tense ("обычно", "иногда", "в Европе", "самый легкий", etc.)
+   - recommendations ("совет", "вывод", "держите", "берите с собой", etc.)
+
+C) Each Claim MUST have:
+   - pcfr:claimText (short surface text capturing the claim/advice)
+   - pcfr:assertionKind (one of: FirstPersonExperience, GeneralKnowledge, Advice)
+   - pcfr:evidentiality (one of: Experienced, Heard, Inferred, Generic)
+   - optional: pcfr:claimScope (HabitualScope/UniversalScope/SingleEventScope)
+   - optional: pcfr:claimTopic (ProcessingSpeed/DocumentScrutiny/StampingPractice)
+   - optional: location bindings: aboutAirport/aboutCity/aboutCountry when mentioned.
+
+D) Evidence linking (only when justified by same TEXT):
+   - If a post contains an Encounter and then an advice/summary derived from it ("вывод", "поэтому", "так что"),
+     create a Claim with assertionKind=Advice, evidentiality=Inferred or Experienced,
+     and link pcfr:supportedBy from Claim to that Encounter.
+   - Do NOT invent support/contradiction links across posts.
 
 ==============================
 ALLOWED ENRICHMENTS (ONLY THESE)
@@ -87,32 +133,6 @@ ALLOWED ENRICHMENTS (ONLY THESE)
 (B) Case advice → evidence format:
 - If the author describes their own encounter and strongly implies they used printouts in that encounter (not a generic unrelated tip),
   you may set presentedFormat/acceptedFormat to Printout where applicable.
-
-
-==============================
-BORDER OFFICER (STRICT)
-==============================
-- Create BorderOfficer node ONLY if the text explicitly mentions an officer/guard 
-  (e.g., "офицер", "пограничник", "сотрудник").
-- Do NOT assume the same officer for two travellers unless explicitly stated.
-- If no officer is mentioned in a specific encounter, do NOT create one and do NOT create hasOfficer/checkedBy/issuedBy relations.
-
-==============================
-DOCUMENTCHECK GRANULARITY (STRICT)
-==============================
-- Create exactly ONE DocumentCheck per ONE requested document type.
-- Each DocumentCheck must have exactly one requestedDocType edge.
-- Do NOT attach multiple requestedDocType edges to the same DocumentCheck.
-
-
-==============================
-MULTIPLE TRAVELLERS (STRICT)
-==============================
-- If two or more different people are mentioned in the text (e.g., "я и друг"),
-  create exactly ONE separate Encounter per Traveller.
-- Do NOT attach multiple Traveller nodes to the same Encounter unless the text
-  explicitly states it was a single shared interaction handled together.
-- Each Encounter must be linked to exactly one Traveller.
 
 ==============================
 RDF_ONTOLOGY

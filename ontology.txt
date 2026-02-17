@@ -4,11 +4,18 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 
+########################################
+# pcfr v2: Experience vs Generalized Claims
+########################################
+
 ###############
 # Core classes
 ###############
 
-pcfr:Encounter        a rdfs:Class ; rdfs:label "Passport control encounter"@en .
+pcfr:KnowledgeItem    a rdfs:Class ; rdfs:label "Knowledge item (root)"@en .
+pcfr:Encounter        a rdfs:Class ; rdfs:subClassOf pcfr:KnowledgeItem ; rdfs:label "Passport control encounter"@en .
+pcfr:Claim            a rdfs:Class ; rdfs:subClassOf pcfr:KnowledgeItem ; rdfs:label "Generalized claim / statement"@en .
+
 pcfr:Traveller        a rdfs:Class ; rdfs:label "Traveller"@en .
 pcfr:BorderOfficer    a rdfs:Class ; rdfs:label "Border officer"@en .
 pcfr:DocumentCheck    a rdfs:Class ; rdfs:label "Document check"@en .
@@ -16,6 +23,8 @@ pcfr:Questioning      a rdfs:Class ; rdfs:label "Questioning at the desk"@en .
 pcfr:Stamping         a rdfs:Class ; rdfs:label "Passport stamping event"@en .
 pcfr:Outcome          a rdfs:Class ; rdfs:label "Encounter outcome"@en .
 pcfr:Airport          a rdfs:Class ; rdfs:label "Airport"@en .
+pcfr:City             a rdfs:Class ; rdfs:label "City"@en .
+pcfr:Country          a rdfs:Class ; rdfs:label "Country"@en .
 
 #########################
 # Document / vocabularies
@@ -72,23 +81,13 @@ pcfr:PassportWithVisa a rdfs:Class ;
   rdfs:label "Passport with visa"@en .
 
 pcfr:EvidenceFormat   a rdfs:Class ; rdfs:label "Evidence format"@en .
-pcfr:Printout         a rdfs:Class ;
-  rdfs:subClassOf pcfr:EvidenceFormat ;
-  rdfs:label "Printed paper"@en .
-pcfr:Digital          a rdfs:Class ;
-  rdfs:subClassOf pcfr:EvidenceFormat ;
-  rdfs:label "Digital on device"@en .
-pcfr:Screenshot       a rdfs:Class ;
-  rdfs:subClassOf pcfr:EvidenceFormat ;
-  rdfs:label "Screenshot image"@en .
+pcfr:Printout         a rdfs:Class ; rdfs:subClassOf pcfr:EvidenceFormat ; rdfs:label "Printed paper"@en .
+pcfr:Digital          a rdfs:Class ; rdfs:subClassOf pcfr:EvidenceFormat ; rdfs:label "Digital on device"@en .
+pcfr:Screenshot       a rdfs:Class ; rdfs:subClassOf pcfr:EvidenceFormat ; rdfs:label "Screenshot image"@en .
 
 pcfr:CheckMode        a rdfs:Class ; rdfs:label "Document check mode"@en .
-pcfr:VerbalInquiryOnly a rdfs:Class ;
-  rdfs:subClassOf pcfr:CheckMode ;
-  rdfs:label "Verbal inquiry only"@en .
-pcfr:PhysicalDocumentRequested a rdfs:Class ;
-  rdfs:subClassOf pcfr:CheckMode ;
-  rdfs:label "Explicit physical document request"@en .
+pcfr:VerbalInquiryOnly a rdfs:Class ; rdfs:subClassOf pcfr:CheckMode ; rdfs:label "Verbal inquiry only"@en .
+pcfr:PhysicalDocumentRequested a rdfs:Class ; rdfs:subClassOf pcfr:CheckMode ; rdfs:label "Explicit physical document request"@en .
 
 pcfr:RequirementLevel a rdfs:Class ; rdfs:label "Requirement level"@en .
 pcfr:Required         a rdfs:Class ; rdfs:subClassOf pcfr:RequirementLevel ; rdfs:label "Required"@en .
@@ -100,35 +99,21 @@ pcfr:NotRequired      a rdfs:Class ; rdfs:subClassOf pcfr:RequirementLevel ; rdf
 ##########################
 
 pcfr:Behavior         a rdfs:Class ; rdfs:label "Observed traveller behavior"@en .
-pcfr:CalmBehavior     a rdfs:Class ;
-  rdfs:subClassOf pcfr:Behavior ;
-  rdfs:label "Calm behavior"@en .
+pcfr:CalmBehavior     a rdfs:Class ; rdfs:subClassOf pcfr:Behavior ; rdfs:label "Calm behavior"@en .
 
 pcfr:BehaviorGuideline a rdfs:Class ; rdfs:label "Behavior guideline"@en .
-pcfr:AvoidJokes        a rdfs:Class ;
-  rdfs:subClassOf pcfr:BehaviorGuideline ;
-  rdfs:label "Avoid jokes"@en .
-pcfr:AvoidStrangeBehavior a rdfs:Class ;
-  rdfs:subClassOf pcfr:BehaviorGuideline ;
-  rdfs:label "Avoid strange behavior"@en .
-pcfr:KeepConversationMinimal a rdfs:Class ;
-  rdfs:subClassOf pcfr:BehaviorGuideline ;
-  rdfs:label "Keep conversation minimal"@en .
+pcfr:AvoidJokes        a rdfs:Class ; rdfs:subClassOf pcfr:BehaviorGuideline ; rdfs:label "Avoid jokes"@en .
+pcfr:AvoidStrangeBehavior a rdfs:Class ; rdfs:subClassOf pcfr:BehaviorGuideline ; rdfs:label "Avoid strange behavior"@en .
+pcfr:KeepConversationMinimal a rdfs:Class ; rdfs:subClassOf pcfr:BehaviorGuideline ; rdfs:label "Keep conversation minimal"@en .
 
 ###################
 # Screening status
 ###################
 
 pcfr:ScreeningStatus a rdfs:Class ; rdfs:label "Screening status"@en .
-pcfr:AdditionalChecks a rdfs:Class ;
-  rdfs:subClassOf pcfr:ScreeningStatus ;
-  rdfs:label "Additional checks"@en .
-pcfr:NoExtraProcedures a rdfs:Class ;
-  rdfs:subClassOf pcfr:ScreeningStatus ;
-  rdfs:label "No additional procedures"@en .
-pcfr:SecondaryInterrogation a rdfs:Class ;
-  rdfs:subClassOf pcfr:ScreeningStatus ;
-  rdfs:label "Short interrogation"@en .
+pcfr:AdditionalChecks a rdfs:Class ; rdfs:subClassOf pcfr:ScreeningStatus ; rdfs:label "Additional checks"@en .
+pcfr:NoExtraProcedures a rdfs:Class ; rdfs:subClassOf pcfr:ScreeningStatus ; rdfs:label "No additional procedures"@en .
+pcfr:SecondaryInterrogation a rdfs:Class ; rdfs:subClassOf pcfr:ScreeningStatus ; rdfs:label "Short interrogation"@en .
 
 ##########################
 # Question topics
@@ -143,180 +128,152 @@ pcfr:HotelPaymentStatus   a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rd
 pcfr:CashAmount           a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Cash amount"@en .
 pcfr:HotelPaymentCard     a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Hotel payment card"@en .
 
+##################################
+# NEW: Claim / Evidence vocabularies
+##################################
+
+pcfr:AssertionKind     a rdfs:Class ; rdfs:label "Assertion kind (controlled)"@en .
+pcfr:FirstPersonExperience a rdfs:Class ; rdfs:subClassOf pcfr:AssertionKind ; rdfs:label "First-person experience"@en .
+pcfr:GeneralKnowledge  a rdfs:Class ; rdfs:subClassOf pcfr:AssertionKind ; rdfs:label "General knowledge / community lore"@en .
+pcfr:Advice            a rdfs:Class ; rdfs:subClassOf pcfr:AssertionKind ; rdfs:label "Advice / recommendation"@en .
+
+pcfr:Evidentiality     a rdfs:Class ; rdfs:label "Evidentiality (controlled)"@en .
+pcfr:Experienced       a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Experienced directly"@en .
+pcfr:Heard             a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Heard from others"@en .
+pcfr:Inferred          a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Inferred / concluded"@en .
+pcfr:Generic           a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Generic statement (no evidence stated)"@en .
+
+pcfr:ClaimScope        a rdfs:Class ; rdfs:label "Claim scope (controlled)"@en .
+pcfr:SingleEventScope  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimScope ; rdfs:label "Single event"@en .
+pcfr:HabitualScope     a rdfs:Class ; rdfs:subClassOf pcfr:ClaimScope ; rdfs:label "Habitual / sometimes-usually"@en .
+pcfr:UniversalScope    a rdfs:Class ; rdfs:subClassOf pcfr:ClaimScope ; rdfs:label "Universal / always-never"@en .
+
+pcfr:ClaimTopic        a rdfs:Class ; rdfs:label "Claim topic (controlled)"@en .
+pcfr:ProcessingSpeed   a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:label "Processing speed / duration"@en .
+pcfr:DocumentScrutiny  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:label "Document scrutiny / strictness"@en .
+pcfr:StampingPractice  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:label "Stamping practice"@en .
+
 #############
 # Properties
 #############
 
-# A human-readable name for instances (added)
 pcfr:entityName a rdf:Property ;
   rdfs:label "Human-readable name"@en ;
-  rdfs:comment "Use ONLY for real-world entities explicitly mentioned (or unambiguously inferred): Airport, City, Country, Traveller, BorderOfficer. Do NOT use for event nodes like Encounter/DocumentCheck/Questioning/Stamping/Outcome; those can be labeled in UI from relations."@en ;
+  rdfs:comment "Use ONLY for real-world entities: Airport, City, Country, Traveller, BorderOfficer."@en ;
   rdfs:domain pcfr:Traveller, pcfr:BorderOfficer, pcfr:Airport, pcfr:City, pcfr:Country ;
   rdfs:range xsd:string .
 
+# Encounter core links
+pcfr:hasTraveler      a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Traveller .
+pcfr:hasOfficer       a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:BorderOfficer .
+pcfr:hasDocumentCheck a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:DocumentCheck .
+pcfr:hasQuestioning   a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Questioning .
+pcfr:hasStamping      a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Stamping .
+pcfr:hasOutcome       a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Outcome .
 
+# Location for Encounter
+pcfr:atAirport        a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Airport .
+pcfr:atCity           a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:City .
+pcfr:atCountry        a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Country .
+pcfr:locatedInCity    a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Airport ; rdfs:range pcfr:City .
+pcfr:locatedInCountry a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:City ; rdfs:range pcfr:Country .
 
-pcfr:hasTraveler      a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:Traveller .
+# Date/time and durations
+pcfr:encounterDateTime a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:dateTime .
+pcfr:queueDurationMin  a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:integer .
+pcfr:secondaryScreeningDurationMin a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:integer .
+pcfr:encounterDurationSec a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:integer .
 
-pcfr:hasOfficer       a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:BorderOfficer .
+# Outcome / subevents
+pcfr:resultCode        a rdf:Property ; rdfs:domain pcfr:Outcome ; rdfs:range xsd:string .
+pcfr:stampsDocument    a rdf:Property ; rdfs:domain pcfr:Stamping ; rdfs:range pcfr:PassportDoc .
+pcfr:issuedBy          a rdf:Property ; rdfs:domain pcfr:Stamping ; rdfs:range pcfr:BorderOfficer .
 
-pcfr:hasDocumentCheck a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:DocumentCheck .
+# DocumentCheck
+pcfr:presented         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range xsd:boolean .
+pcfr:requestedDocType  a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:DocumentType .
+pcfr:checkedBy         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:BorderOfficer .
+pcfr:presentedFormat   a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:EvidenceFormat .
+pcfr:acceptedFormat    a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:EvidenceFormat .
+pcfr:checkMode         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:CheckMode .
+pcfr:treatedAsRequirementLevel a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:RequirementLevel .
 
-pcfr:hasQuestioning   a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:Questioning .
+# Behavior
+pcfr:behaviorDuringEncounter a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Behavior .
+pcfr:followsGuideline a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:BehaviorGuideline .
+pcfr:violatesGuideline a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:BehaviorGuideline .
 
-pcfr:hasStamping      a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:Stamping .
+# Screening status
+pcfr:hasScreeningStatus a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:ScreeningStatus .
 
-pcfr:hasOutcome       a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:Outcome .
+# Questioning
+pcfr:questionTopic     a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range pcfr:QuestionTopic .
+pcfr:wasAsked          a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:boolean .
+pcfr:topic             a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:string .
 
-pcfr:atAirport        a rdf:Property , owl:FunctionalProperty ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:Airport .
-
-pcfr:encounterDateTime a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range xsd:dateTime .
-
-pcfr:queueDurationMin  a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range xsd:integer .
-
-pcfr:secondaryScreeningDurationMin a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range xsd:integer .
-
-pcfr:resultCode        a rdf:Property ;
-  rdfs:domain pcfr:Outcome ;
-  rdfs:range xsd:string .
-
-pcfr:presented         a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range xsd:boolean .
-
-pcfr:requestedDocType  a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range pcfr:DocumentType .
-
-pcfr:checkedBy         a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range pcfr:BorderOfficer .
-
-pcfr:presentedFormat   a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range pcfr:EvidenceFormat .
-
-pcfr:acceptedFormat    a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range pcfr:EvidenceFormat .
-
-pcfr:checkMode         a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range pcfr:CheckMode .
-
-pcfr:stampsDocument    a rdf:Property ;
-  rdfs:domain pcfr:Stamping ;
-  rdfs:range pcfr:PassportDoc .
-
-pcfr:issuedBy          a rdf:Property ;
-  rdfs:domain pcfr:Stamping ;
-  rdfs:range pcfr:BorderOfficer .
-
-pcfr:behaviorDuringEncounter a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:Behavior .
-
-pcfr:followsGuideline a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:BehaviorGuideline .
-
-pcfr:violatesGuideline a rdf:Property ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:BehaviorGuideline .
-
-pcfr:hasScreeningStatus a rdf:Property , owl:FunctionalProperty ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range pcfr:ScreeningStatus .
-
-pcfr:questionTopic     a rdf:Property ;
-  rdfs:domain pcfr:Questioning ;
-  rdfs:range pcfr:QuestionTopic .
-
-pcfr:wasAsked          a rdf:Property ;
-  rdfs:domain pcfr:Questioning ;
-  rdfs:range xsd:boolean .
-
-pcfr:documentRequirement a rdf:Property ;
-  rdfs:domain pcfr:DocumentType ;
-  rdfs:range pcfr:RequirementLevel .
-
-pcfr:treatedAsRequirementLevel a rdf:Property ;
-  rdfs:domain pcfr:DocumentCheck ;
-  rdfs:range pcfr:RequirementLevel .
-
-pcfr:topic             a rdf:Property ;
-  rdfs:domain pcfr:Questioning ;
-  rdfs:range xsd:string .
+# Policy-level facts
+pcfr:documentRequirement a rdf:Property ; rdfs:domain pcfr:DocumentType ; rdfs:range pcfr:RequirementLevel .
+pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
+pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
 
 #####################################
-# ADDED: LINK Encounter → Post ID
+# v2: Provenance & claim semantics
 #####################################
 
 pcfr:sourcePostID a rdf:Property ;
   rdfs:label "Source forum post ID"@en ;
-  rdfs:domain pcfr:Encounter ;
+  rdfs:domain pcfr:KnowledgeItem ;
   rdfs:range xsd:integer .
 
-##################################
-# Location (added)
-##################################
+pcfr:claimText a rdf:Property ;
+  rdfs:label "Claim surface text"@en ;
+  rdfs:comment "Short verbatim (or near-verbatim) text of the generalized statement/advice."@en ;
+  rdfs:domain pcfr:Claim ;
+  rdfs:range xsd:string .
 
-pcfr:City    a rdfs:Class ; rdfs:label "City"@en .
-pcfr:Country a rdfs:Class ; rdfs:label "Country"@en .
+pcfr:assertionKind a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Assertion kind"@en ;
+  rdfs:domain pcfr:KnowledgeItem ;
+  rdfs:range pcfr:AssertionKind .
 
-pcfr:atCity a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Encounter city"@en ;
-  rdfs:domain pcfr:Encounter ;
+pcfr:evidentiality a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Evidentiality"@en ;
+  rdfs:domain pcfr:KnowledgeItem ;
+  rdfs:range pcfr:Evidentiality .
+
+pcfr:claimScope a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Claim scope"@en ;
+  rdfs:domain pcfr:Claim ;
+  rdfs:range pcfr:ClaimScope .
+
+pcfr:claimTopic a rdf:Property ;
+  rdfs:label "Claim topic"@en ;
+  rdfs:domain pcfr:Claim ;
+  rdfs:range pcfr:ClaimTopic .
+
+# Location bindings for Claim (separate from Encounter)
+pcfr:aboutAirport a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Claim about airport"@en ;
+  rdfs:domain pcfr:Claim ;
+  rdfs:range pcfr:Airport .
+
+pcfr:aboutCity a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Claim about city"@en ;
+  rdfs:domain pcfr:Claim ;
   rdfs:range pcfr:City .
 
-pcfr:atCountry a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Encounter country"@en ;
-  rdfs:domain pcfr:Encounter ;
+pcfr:aboutCountry a rdf:Property , owl:FunctionalProperty ;
+  rdfs:label "Claim about country"@en ;
+  rdfs:domain pcfr:Claim ;
   rdfs:range pcfr:Country .
 
-pcfr:locatedInCity a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Airport located in city"@en ;
-  rdfs:domain pcfr:Airport ;
-  rdfs:range pcfr:City .
+# Evidence links: Claim ↔ Encounter
+pcfr:supportedBy a rdf:Property ;
+  rdfs:label "Claim supported by encounter"@en ;
+  rdfs:domain pcfr:Claim ;
+  rdfs:range pcfr:Encounter .
 
-pcfr:locatedInCountry a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "City located in country"@en ;
-  rdfs:domain pcfr:City ;
-  rdfs:range pcfr:Country .
-
-##################################
-# Duration (added)
-##################################
-
-pcfr:encounterDurationSec a rdf:Property ;
-  rdfs:label "Total encounter duration (seconds)"@en ;
-  rdfs:comment "Store duration only in seconds. If source text uses minutes/hours, convert to seconds before storing."@en ;
-  rdfs:domain pcfr:Encounter ;
-  rdfs:range xsd:integer .
-
-##################################
-# Default policy-level facts
-##################################
-
-pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
-pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
+pcfr:contradictedBy a rdf:Property ;
+  rdfs:label "Claim contradicted by encounter"@en ;
+  rdfs:domain pcfr:Claim ;
+  rdfs:range pcfr:Encounter .
