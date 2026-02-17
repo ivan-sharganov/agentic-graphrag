@@ -147,6 +147,14 @@ pcfr:HotelPaymentCard     a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rd
 # Properties
 #############
 
+# A human-readable name for instances (added)
+pcfr:entityName a rdf:Property ;
+  rdfs:label "Human-readable name"@en ;
+  rdfs:comment "Use for naming instances such as airports, cities, countries, travellers, etc."@en ;
+  rdfs:domain pcfr:Traveller, pcfr:BorderOfficer, pcfr:Encounter, pcfr:Airport, pcfr:City, pcfr:Country, pcfr:DocumentCheck, pcfr:Questioning, pcfr:Stamping, pcfr:Outcome ;
+  rdfs:range xsd:string .
+
+
 pcfr:hasTraveler      a rdf:Property ;
   rdfs:domain pcfr:Encounter ;
   rdfs:range pcfr:Traveller .
@@ -299,9 +307,9 @@ pcfr:locatedInCountry a rdf:Property , owl:FunctionalProperty ;
 # Duration (added)
 ##################################
 
-pcfr:encounterDurationMin a rdf:Property ;
-  rdfs:label "Total encounter duration (minutes)"@en ;
-  rdfs:comment "Store duration only in minutes. If source text uses seconds/hours, convert to minutes before storing."@en ;
+pcfr:encounterDurationSec a rdf:Property ;
+  rdfs:label "Total encounter duration (seconds)"@en ;
+  rdfs:comment "Store duration only in seconds. If source text uses minutes/hours, convert to seconds before storing."@en ;
   rdfs:domain pcfr:Encounter ;
   rdfs:range xsd:integer .
 

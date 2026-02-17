@@ -34,25 +34,64 @@ Return ONLY valid JSON with this structure:
   "warnings": ["<optional short warnings>"]
 }
 
-Rules:
+==============================
+GLOBAL RULES
+==============================
+
 - JSON only. No markdown. No code fences. No extra text.
 - Use ONLY class names and property names from the ontology (case-sensitive).
 - Object properties MUST be in payload.relationships (never as string properties).
 - Datatype properties MUST be in payload.nodes[].properties.
-- Every node MUST have label and key.
-- Duration normalization: store total encounter duration ONLY in seconds using pcfr:encounterDurationSec.
-  If text uses minutes/hours, convert to seconds.
-- Allowed enrichment:
-  (A) Geo: infer country from city/airport if unambiguous.
-  (B) Case advice: if author strongly implies they used printouts in their described encounter, you may set presentedFormat to Printout.
-- Do NOT invent unrelated facts.
+- Every node MUST have: label, key.
 
+==============================
+ENTITY CREATION RULES (STRICT)
+==============================
+
+1) Create nodes ONLY if:
+   (a) the entity is explicitly mentioned in TEXT, OR
+   (b) it is produced by an allowed enrichment rule below.
+   Do NOT create extra “vocabulary” nodes unless they are referenced by an extracted fact.
+
+2) For every real-world entity node you create (Airport/City/Country/Traveller/BorderOfficer/etc.),
+   you MUST set pcfr:entityName to the exact surface form used in the text (or the canonical inferred name in enrichment A).
+
+3) If TEXT mentions multiple travellers and gives separate outcomes/timings, create ONE Encounter PER Traveller.
+   Do NOT attach two travellers to the same Encounter unless TEXT explicitly states it was a single shared encounter.
+
+==============================
+TIME NORMALIZATION (STRICT)
+==============================
+
+- Store total encounter duration ONLY in seconds using pcfr:encounterDurationSec.
+- If TEXT gives minutes: seconds = minutes * 60.
+- If TEXT gives hours: seconds = hours * 3600.
+- If TEXT gives seconds: store as integer seconds.
+
+==============================
+ALLOWED ENRICHMENTS (ONLY THESE)
+==============================
+
+(A) Geo:
+- You may infer Country from a mentioned City or Airport if the mapping is unambiguous and widely known.
+- If you infer Country, you may also create City→Country and/or Airport→City links using ontology relations, but only for entities already created by (a) or inferred by (A).
+
+(B) Case advice → evidence format:
+- If the author describes their own encounter and strongly implies they used printouts in that encounter (not a generic unrelated tip),
+  you may set presentedFormat/acceptedFormat to Printout where applicable.
+
+==============================
 RDF_ONTOLOGY
+==============================
+
 <<<RDF
 {RDF_ONTOLOGY_HERE}
 RDF>>>
 
+==============================
 TEXT
+==============================
+
 <<<TEXT
 {TEXT_HERE}
 TEXT>>>
