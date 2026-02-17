@@ -45,6 +45,43 @@ GLOBAL RULES
 - Every node MUST have: label, key.
 
 ==============================
+ENGLISH-ONLY STRING VALUES (STRICT)
+==============================
+
+- ALL string values (including pcfr:entityName, pcfr:claimText, pcfr:topic, pcfr:resultCode) MUST be English/Latin only.
+- NEVER output Cyrillic characters anywhere in JSON.
+- If the source text contains non-English names, translate/transliterate to standard English forms:
+  - "Париж" -> "Paris"
+  - "ШДГ" -> "CDG" (Charles de Gaulle)
+  - Country names: "Франция" -> "France"
+- If you are unsure of an English form, output a concise ASCII approximation (no Cyrillic) and add a warning.
+
+==============================
+KEY GENERATION RULES (STRICT)
+==============================
+
+Goal: avoid duplicates like key:"paris" vs key:"city_paris". Use ONE canonical style.
+
+1) Canonical key format for real-world entities (preferred):
+   - City:    key = "city_<slug>"         e.g., "city_paris"
+   - Airport: key = "airport_<iata>"      e.g., "airport_cdg"
+   - Country: key = "country_<slug>"      e.g., "country_france"
+   - Traveller: key = "traveller_<slug>"  e.g., "traveller_author", "traveller_friend"
+   - BorderOfficer: key = "officer_<slug>" e.g., "officer_1" (only if explicitly mentioned)
+
+2) Canonical key format for event nodes:
+   - Encounter: key = "encounter_<postid>_<travellerSlug>"
+   - DocumentCheck: key = "doccheck_<encounterKey>_<docTypeSlug>" (ONE per requested document type)
+   - Questioning/Stamping/Outcome: key = "<labelLower>_<encounterKey>" (or add a short suffix if multiple)
+
+3) Slug rules:
+   - lower-case ASCII only; letters/digits/underscore.
+   - no spaces, no hyphens.
+   - do not include the label twice (avoid "city_city_paris").
+
+4) The key MUST be stable within the post; do not generate random UUIDs unless absolutely necessary.
+
+==============================
 ENTITY CREATION RULES (STRICT)
 ==============================
 
@@ -116,11 +153,8 @@ C) Each Claim MUST have:
    - optional: pcfr:claimTopic (ProcessingSpeed/DocumentScrutiny/StampingPractice)
    - optional: location bindings: aboutAirport/aboutCity/aboutCountry when mentioned.
 
-D) Evidence linking (only when justified by same TEXT):
-   - If a post contains an Encounter and then an advice/summary derived from it ("вывод", "поэтому", "так что"),
-     create a Claim with assertionKind=Advice, evidentiality=Inferred or Experienced,
-     and link pcfr:supportedBy from Claim to that Encounter.
-   - Do NOT invent support/contradiction links across posts.
+D) Evidence linking (REMOVED)
+- Do NOT create any Claim↔Encounter evidence links in this project.
 
 ==============================
 ALLOWED ENRICHMENTS (ONLY THESE)

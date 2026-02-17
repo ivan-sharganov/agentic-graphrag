@@ -159,7 +159,7 @@ pcfr:StampingPractice  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:lab
 
 pcfr:entityName a rdf:Property ;
   rdfs:label "Human-readable name"@en ;
-  rdfs:comment "Use ONLY for real-world entities: Airport, City, Country, Traveller, BorderOfficer."@en ;
+  rdfs:comment "Use ONLY for real-world entities: Airport, City, Country, Traveller, BorderOfficer. Value MUST be English/Latin only (no Cyrillic)."@en ;
   rdfs:domain pcfr:Traveller, pcfr:BorderOfficer, pcfr:Airport, pcfr:City, pcfr:Country ;
   rdfs:range xsd:string .
 
@@ -268,12 +268,4 @@ pcfr:aboutCountry a rdf:Property , owl:FunctionalProperty ;
   rdfs:range pcfr:Country .
 
 # Evidence links: Claim ↔ Encounter
-pcfr:supportedBy a rdf:Property ;
-  rdfs:label "Claim supported by encounter"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:Encounter .
-
-pcfr:contradictedBy a rdf:Property ;
-  rdfs:label "Claim contradicted by encounter"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:Encounter .
+# (Removed in v7: no Claim↔Encounter evidence edges in this project)
