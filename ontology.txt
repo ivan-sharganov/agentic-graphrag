@@ -5,7 +5,7 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 
 ########################################
-# pcfr v2: Experience vs Generalized Claims
+# pcfr v3: KnowledgeItem + Provenance from JSON posts
 ########################################
 
 ###############
@@ -129,7 +129,7 @@ pcfr:CashAmount           a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rd
 pcfr:HotelPaymentCard     a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Hotel payment card"@en .
 
 ##################################
-# NEW: Claim / Evidence vocabularies
+# Claim / Evidence vocabularies
 ##################################
 
 pcfr:AssertionKind     a rdfs:Class ; rdfs:label "Assertion kind (controlled)"@en .
@@ -162,6 +162,34 @@ pcfr:entityName a rdf:Property ;
   rdfs:comment "Use ONLY for real-world entities: Airport, City, Country, Traveller, BorderOfficer. Value MUST be English/Latin only (no Cyrillic)."@en ;
   rdfs:domain pcfr:Traveller, pcfr:BorderOfficer, pcfr:Airport, pcfr:City, pcfr:Country ;
   rdfs:range xsd:string .
+
+#####################################
+# NEW: Provenance from JSON posts (domain KnowledgeItem)
+#####################################
+
+pcfr:sourcePostID a rdf:Property ;
+  rdfs:label "Source forum post ID"@en ;
+  rdfs:comment "From input JSON: post_id. MUST be an integer."@en ;
+  rdfs:domain pcfr:KnowledgeItem ;
+  rdfs:range xsd:integer .
+
+pcfr:sourcePostURL a rdf:Property ;
+  rdfs:label "Source forum post URL"@en ;
+  rdfs:comment "From input JSON: post_url. English/ASCII only."@en ;
+  rdfs:domain pcfr:KnowledgeItem ;
+  rdfs:range xsd:string .
+
+pcfr:sourcePostAuthor a rdf:Property ;
+  rdfs:label "Source forum post author"@en ;
+  rdfs:comment "From input JSON: author. English/ASCII only."@en ;
+  rdfs:domain pcfr:KnowledgeItem ;
+  rdfs:range xsd:string .
+
+pcfr:sourcePostDateTime a rdf:Property ;
+  rdfs:label "Source forum post datetime (ISO 8601)"@en ;
+  rdfs:comment "From input JSON: date (localized). MUST be converted to ISO 8601 local datetime string like 2013-02-06T06:19:00 (no timezone)."@en ;
+  rdfs:domain pcfr:KnowledgeItem ;
+  rdfs:range xsd:dateTime .
 
 # Encounter core links
 pcfr:hasTraveler      a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Traveller .
@@ -211,23 +239,10 @@ pcfr:questionTopic     a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:rang
 pcfr:wasAsked          a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:boolean .
 pcfr:topic             a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:string .
 
-# Policy-level facts
-pcfr:documentRequirement a rdf:Property ; rdfs:domain pcfr:DocumentType ; rdfs:range pcfr:RequirementLevel .
-pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
-pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
-
-#####################################
-# v2: Provenance & claim semantics
-#####################################
-
-pcfr:sourcePostID a rdf:Property ;
-  rdfs:label "Source forum post ID"@en ;
-  rdfs:domain pcfr:KnowledgeItem ;
-  rdfs:range xsd:integer .
-
+# Claim text & semantics
 pcfr:claimText a rdf:Property ;
   rdfs:label "Claim surface text"@en ;
-  rdfs:comment "Short verbatim (or near-verbatim) text of the generalized statement/advice."@en ;
+  rdfs:comment "Short generalized statement/advice. MUST be English/Latin only (no Cyrillic)."@en ;
   rdfs:domain pcfr:Claim ;
   rdfs:range xsd:string .
 
@@ -251,21 +266,14 @@ pcfr:claimTopic a rdf:Property ;
   rdfs:domain pcfr:Claim ;
   rdfs:range pcfr:ClaimTopic .
 
-# Location bindings for Claim (separate from Encounter)
-pcfr:aboutAirport a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Claim about airport"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:Airport .
+# Location bindings for Claim
+pcfr:aboutAirport a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Claim ; rdfs:range pcfr:Airport .
+pcfr:aboutCity    a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Claim ; rdfs:range pcfr:City .
+pcfr:aboutCountry a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Claim ; rdfs:range pcfr:Country .
 
-pcfr:aboutCity a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Claim about city"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:City .
+# Policy-level facts
+pcfr:documentRequirement a rdf:Property ; rdfs:domain pcfr:DocumentType ; rdfs:range pcfr:RequirementLevel .
+pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
+pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
 
-pcfr:aboutCountry a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Claim about country"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:Country .
-
-# Evidence links: Claim ↔ Encounter
-# (Removed in v7: no Claim↔Encounter evidence edges in this project)
+# NOTE: No Claim↔Encounter evidence links in this project.

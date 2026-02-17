@@ -4,6 +4,19 @@ You DO NOT generate Cypher.
 You output ONLY JSON.
 
 ==============================
+INPUT: MESSAGE IS A JSON STRING
+==============================
+
+The input message is a JSON OBJECT serialized as a string with these keys:
+- post_id (integer)
+- post_url (string)
+- author (string)
+- date (string in Russian locale, e.g. "06 фев 2013, 06:19")
+- text (string, the actual post body; may contain Cyrillic)
+
+You MUST parse this JSON and extract facts ONLY from the "text" field, while also copying metadata.
+
+==============================
 OUTPUT JSON (STRICT)
 ==============================
 
@@ -45,128 +58,94 @@ GLOBAL RULES
 - Every node MUST have: label, key.
 
 ==============================
+POST METADATA (MUST COPY, STRICT)
+==============================
+
+For EVERY KnowledgeItem you create (Encounter and Claim), you MUST set:
+- pcfr:sourcePostID          (integer)  = post_id
+- pcfr:sourcePostURL         (string)   = post_url  (English/ASCII only)
+- pcfr:sourcePostAuthor      (string)   = author    (English/ASCII only)
+- pcfr:sourcePostDateTime    (string)   = ISO 8601 local datetime like "2013-02-06T06:19:00"
+
+You MUST convert the input date string to ISO 8601.
+Month mapping:
+янв=01 фев=02 мар=03 апр=04 май=05 июн=06 июл=07 авг=08 сен=09 окт=10 ноя=11 дек=12
+
+If conversion fails, output best-effort ISO (ASCII only) and add a warning.
+
+==============================
 ENGLISH-ONLY STRING VALUES (STRICT)
 ==============================
 
-- ALL string values (including pcfr:entityName, pcfr:claimText, pcfr:topic, pcfr:resultCode) MUST be English/Latin only.
+- ALL string values MUST be English/Latin only.
 - NEVER output Cyrillic characters anywhere in JSON.
-- If the source text contains non-English names, translate/transliterate to standard English forms:
-  - "Париж" -> "Paris"
-  - "ШДГ" -> "CDG" (Charles de Gaulle)
-  - Country names: "Франция" -> "France"
-- If you are unsure of an English form, output a concise ASCII approximation (no Cyrillic) and add a warning.
+- Translate/transliterate:
+  "Париж" -> "Paris"
+  "ШДГ" -> "CDG"
+  "Россия" -> "Russia"
 
 ==============================
 KEY GENERATION RULES (STRICT)
 ==============================
 
-Goal: avoid duplicates like key:"paris" vs key:"city_paris". Use ONE canonical style.
+Use ONE canonical style to avoid duplicates.
 
-1) Canonical key format for real-world entities (preferred):
-   - City:    key = "city_<slug>"         e.g., "city_paris"
-   - Airport: key = "airport_<iata>"      e.g., "airport_cdg"
-   - Country: key = "country_<slug>"      e.g., "country_france"
-   - Traveller: key = "traveller_<slug>"  e.g., "traveller_author", "traveller_friend"
-   - BorderOfficer: key = "officer_<slug>" e.g., "officer_1" (only if explicitly mentioned)
+Real-world entities:
+- City:    "city_<slug>"        e.g., "city_paris"
+- Airport: "airport_<iata>"     e.g., "airport_cdg"
+- Country: "country_<slug>"     e.g., "country_france", "country_russia"
+- Traveller: "traveller_<slug>" e.g., "traveller_author", "traveller_friend"
+- BorderOfficer: "officer_<slug>" (ONLY if explicitly mentioned)
 
-2) Canonical key format for event nodes:
-   - Encounter: key = "encounter_<postid>_<travellerSlug>"
-   - DocumentCheck: key = "doccheck_<encounterKey>_<docTypeSlug>" (ONE per requested document type)
-   - Questioning/Stamping/Outcome: key = "<labelLower>_<encounterKey>" (or add a short suffix if multiple)
+Event nodes:
+- Encounter:     "encounter_<postid>_<travellerSlug>"
+- Claim:         "claim_<postid>_<slug>"
+- DocumentCheck: "doccheck_<encounterKey>_<docTypeSlug>" (ONE per document type)
+- Questioning/Stamping/Outcome: "<labelLower>_<encounterKey>"
 
-3) Slug rules:
-   - lower-case ASCII only; letters/digits/underscore.
-   - no spaces, no hyphens.
-   - do not include the label twice (avoid "city_city_paris").
-
-4) The key MUST be stable within the post; do not generate random UUIDs unless absolutely necessary.
+Slug rules: lower-case ASCII only; letters/digits/underscore.
 
 ==============================
-ENTITY CREATION RULES (STRICT)
+MULTIPLE TRAVELLERS
 ==============================
 
-1) Create nodes ONLY if:
-   (a) the entity is explicitly mentioned in TEXT, OR
-   (b) it is produced by an allowed enrichment rule below.
-   Do NOT create extra “vocabulary” nodes unless they are referenced by an extracted fact.
-
-2) entityName usage (VERY IMPORTANT):
-   - Set pcfr:entityName ONLY for these real-world entity labels:
-     Traveller, BorderOfficer, Airport, City, Country.
-   - Do NOT set entityName for event/claim nodes:
-     KnowledgeItem, Encounter, Claim, DocumentCheck, Questioning, Stamping, Outcome.
-   - Do NOT set entityName for controlled-vocabulary nodes:
-     DocumentType subclasses, EvidenceFormat subclasses, CheckMode subclasses, ScreeningStatus subclasses,
-     QuestionTopic subclasses, RequirementLevel subclasses, Behavior/Guideline subclasses,
-     AssertionKind subclasses, Evidentiality subclasses, ClaimScope subclasses, ClaimTopic subclasses.
-   Rationale: vocabulary meaning is already encoded by the node label; event/claim node “names” are UI-derivable.
-
-3) MULTIPLE TRAVELLERS:
-   - If two or more different people are mentioned in the text (e.g., "я и друг"),
-     create exactly ONE separate Encounter per Traveller if timings/outcomes differ or are described separately.
-   - Do NOT attach multiple Traveller nodes to the same Encounter unless the text explicitly states it was a single shared interaction handled together.
-   - Each Encounter must be linked to exactly one Traveller.
+If two different people are mentioned (e.g., "I and my friend"), create one Encounter per person when described separately.
+Each Encounter must link to exactly one Traveller.
 
 ==============================
-TIME NORMALIZATION (STRICT)
+TIME NORMALIZATION
 ==============================
 
-- Store total encounter duration ONLY in seconds using pcfr:encounterDurationSec.
-- If TEXT gives minutes: seconds = minutes * 60.
-- If TEXT gives hours: seconds = hours * 3600.
-- If TEXT gives seconds: store as integer seconds.
+Store encounter duration ONLY in seconds using pcfr:encounterDurationSec.
+If minutes: seconds = minutes * 60. If hours: seconds = hours * 3600.
 
 ==============================
-DOCUMENTCHECK GRANULARITY (STRICT)
+DOCUMENTCHECK GRANULARITY
 ==============================
 
-- Create exactly ONE DocumentCheck per ONE requested document type.
-- Each DocumentCheck must have exactly one requestedDocType edge.
-- Do NOT attach multiple requestedDocType edges to the same DocumentCheck.
+Create ONE DocumentCheck per ONE requested document type.
+Each DocumentCheck must have exactly one requestedDocType edge.
 
 ==============================
-BORDER OFFICER (STRICT)
+BORDER OFFICER
 ==============================
 
-- Create BorderOfficer node ONLY if the text explicitly mentions an officer/guard
-  (e.g., "офицер", "пограничник", "сотрудник").
-- Do NOT assume the same officer for two travellers unless explicitly stated.
-- If no officer is mentioned in a specific encounter, do NOT create one and do NOT create hasOfficer/checkedBy/issuedBy relations.
+Create BorderOfficer ONLY if explicitly mentioned in text (officer/guard/staff).
+Do not assume same officer across encounters unless explicitly stated.
 
 ==============================
-NEW: CLAIMS vs EXPERIENCES (STRICT)
+CLAIMS vs EXPERIENCES
 ==============================
 
-A) Create pcfr:Encounter ONLY when TEXT describes a concrete episode:
-   - first-person or clearly a single trip ("прилетел", "прошел контроль", "меня спросили", etc.)
-   - may include durations, requested documents, questions, outcomes.
+- Encounter: concrete episode ("I arrived", "they asked me", durations, checks).
+- Claim: generalized statements or advice ("sometimes", "in Europe", "keep printouts").
 
-B) Create pcfr:Claim when TEXT contains generalized statements OR advice:
-   - generalized present tense ("обычно", "иногда", "в Европе", "самый легкий", etc.)
-   - recommendations ("совет", "вывод", "держите", "берите с собой", etc.)
+Claim MUST have:
+- pcfr:claimText
+- pcfr:assertionKind (FirstPersonExperience | GeneralKnowledge | Advice)
+- pcfr:evidentiality (Experienced | Heard | Inferred | Generic)
 
-C) Each Claim MUST have:
-   - pcfr:claimText (short surface text capturing the claim/advice)
-   - pcfr:assertionKind (one of: FirstPersonExperience, GeneralKnowledge, Advice)
-   - pcfr:evidentiality (one of: Experienced, Heard, Inferred, Generic)
-   - optional: pcfr:claimScope (HabitualScope/UniversalScope/SingleEventScope)
-   - optional: pcfr:claimTopic (ProcessingSpeed/DocumentScrutiny/StampingPractice)
-   - optional: location bindings: aboutAirport/aboutCity/aboutCountry when mentioned.
-
-D) Evidence linking (REMOVED)
-- Do NOT create any Claim↔Encounter evidence links in this project.
-
-==============================
-ALLOWED ENRICHMENTS (ONLY THESE)
-==============================
-
-(A) Geo:
-- You may infer Country from a mentioned City or Airport if the mapping is unambiguous and widely known.
-- If you infer Country, you may also create City→Country and/or Airport→City links using ontology relations, but only for entities already created by (a) or inferred by (A).
-
-(B) Case advice → evidence format:
-- If the author describes their own encounter and strongly implies they used printouts in that encounter (not a generic unrelated tip),
-  you may set presentedFormat/acceptedFormat to Printout where applicable.
+No Claim↔Encounter evidence links in this project.
 
 ==============================
 RDF_ONTOLOGY
@@ -177,9 +156,9 @@ RDF_ONTOLOGY
 RDF>>>
 
 ==============================
-TEXT
+MESSAGE_JSON_STRING
 ==============================
 
-<<<TEXT
-{TEXT_HERE}
-TEXT>>>
+<<<MSG
+{MESSAGE_JSON_STRING_HERE}
+MSG>>>
