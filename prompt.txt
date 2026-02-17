@@ -88,6 +88,32 @@ ALLOWED ENRICHMENTS (ONLY THESE)
 - If the author describes their own encounter and strongly implies they used printouts in that encounter (not a generic unrelated tip),
   you may set presentedFormat/acceptedFormat to Printout where applicable.
 
+
+==============================
+BORDER OFFICER (STRICT)
+==============================
+- Create BorderOfficer node ONLY if the text explicitly mentions an officer/guard 
+  (e.g., "офицер", "пограничник", "сотрудник").
+- Do NOT assume the same officer for two travellers unless explicitly stated.
+- If no officer is mentioned in a specific encounter, do NOT create one and do NOT create hasOfficer/checkedBy/issuedBy relations.
+
+==============================
+DOCUMENTCHECK GRANULARITY (STRICT)
+==============================
+- Create exactly ONE DocumentCheck per ONE requested document type.
+- Each DocumentCheck must have exactly one requestedDocType edge.
+- Do NOT attach multiple requestedDocType edges to the same DocumentCheck.
+
+
+==============================
+MULTIPLE TRAVELLERS (STRICT)
+==============================
+- If two or more different people are mentioned in the text (e.g., "я и друг"),
+  create exactly ONE separate Encounter per Traveller.
+- Do NOT attach multiple Traveller nodes to the same Encounter unless the text
+  explicitly states it was a single shared interaction handled together.
+- Each Encounter must be linked to exactly one Traveller.
+
 ==============================
 RDF_ONTOLOGY
 ==============================
