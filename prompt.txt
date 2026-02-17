@@ -53,8 +53,16 @@ ENTITY CREATION RULES (STRICT)
    (b) it is produced by an allowed enrichment rule below.
    Do NOT create extra “vocabulary” nodes unless they are referenced by an extracted fact.
 
-2) For every real-world entity node you create (Airport/City/Country/Traveller/BorderOfficer/etc.),
-   you MUST set pcfr:entityName to the exact surface form used in the text (or the canonical inferred name in enrichment A).
+2) entityName usage (VERY IMPORTANT):
+   - Set pcfr:entityName ONLY for these real-world entity labels:
+     Traveller, BorderOfficer, Airport, City, Country.
+   - Do NOT set entityName for event nodes:
+     Encounter, DocumentCheck, Questioning, Stamping, Outcome.
+   - Do NOT set entityName for controlled-vocabulary nodes:
+     DocumentType subclasses (ReturnTicket, TravelInsurance, ...),
+     EvidenceFormat subclasses (Printout, Digital, Screenshot),
+     CheckMode subclasses, ScreeningStatus subclasses, QuestionTopic subclasses, RequirementLevel subclasses, Behavior/Guideline subclasses.
+   Rationale: vocabulary meaning is already encoded by the node label; event node “names” are UI-derivable.
 
 3) If TEXT mentions multiple travellers and gives separate outcomes/timings, create ONE Encounter PER Traveller.
    Do NOT attach two travellers to the same Encounter unless TEXT explicitly states it was a single shared encounter.

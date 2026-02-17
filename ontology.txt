@@ -150,9 +150,10 @@ pcfr:HotelPaymentCard     a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rd
 # A human-readable name for instances (added)
 pcfr:entityName a rdf:Property ;
   rdfs:label "Human-readable name"@en ;
-  rdfs:comment "Use for naming instances such as airports, cities, countries, travellers, etc."@en ;
-  rdfs:domain pcfr:Traveller, pcfr:BorderOfficer, pcfr:Encounter, pcfr:Airport, pcfr:City, pcfr:Country, pcfr:DocumentCheck, pcfr:Questioning, pcfr:Stamping, pcfr:Outcome ;
+  rdfs:comment "Use ONLY for real-world entities explicitly mentioned (or unambiguously inferred): Airport, City, Country, Traveller, BorderOfficer. Do NOT use for event nodes like Encounter/DocumentCheck/Questioning/Stamping/Outcome; those can be labeled in UI from relations."@en ;
+  rdfs:domain pcfr:Traveller, pcfr:BorderOfficer, pcfr:Airport, pcfr:City, pcfr:Country ;
   rdfs:range xsd:string .
+
 
 
 pcfr:hasTraveler      a rdf:Property ;
