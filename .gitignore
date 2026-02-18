@@ -1,0 +1,46 @@
+# --- macOS ---
+.DS_Store
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# --- VS Code / IDE ---
+.vscode/
+.idea/
+
+# --- Logs / temp ---
+*.log
+*.tmp
+*.swp
+
+# --- Secrets ---
+.env
+*.key
+*secret*
+credentials*.json
+
+# --- Data / artifacts (adjust to your project) ---
+data/
+datasets/
+artifacts/
+outputs/
+models/
+checkpoints/
+
+# --- Neo4j local stuff (if you keep it in repo folder) ---
+neo4j_data/
