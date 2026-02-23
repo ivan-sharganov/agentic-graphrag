@@ -77,75 +77,110 @@ If conversion fails, output best-effort ISO (ASCII only) and add a warning.
 ENGLISH-ONLY STRING VALUES (STRICT)
 ==============================
 
-- ALL string values MUST be English/Latin only.
+- ALL string values in properties MUST be English/Latin only (ASCII characters).
 - NEVER output Cyrillic characters anywhere in JSON.
-- Translate/transliterate:
+- Translate or transliterate Cyrillic text to English:
   "Париж" -> "Paris"
   "ШДГ" -> "CDG"
   "Россия" -> "Russia"
+  For other terms, use common English equivalents or transliterate using standard rules.
 
 ==============================
 KEY GENERATION RULES (STRICT)
 ==============================
 
-Use ONE canonical style to avoid duplicates.
+Use ONE canonical style to avoid duplicates. All keys must be lower-case ASCII only, with letters, digits, and underscores.
 
 Real-world entities:
-- City:    "city_<slug>"        e.g., "city_paris"
-- Airport: "airport_<iata>"     e.g., "airport_cdg"
+- City:    "city_<slug>"        e.g., "city_paris"  (slug from English name)
+- Airport: "airport_<iata>"     e.g., "airport_cdg"  (use IATA code if known, else slug)
 - Country: "country_<slug>"     e.g., "country_france", "country_russia"
-- Traveller: "traveller_<slug>" e.g., "traveller_author", "traveller_friend"
-- BorderOfficer: "officer_<slug>" (ONLY if explicitly mentioned)
+- Traveller: "traveller_<slug>" e.g., "traveller_author" for the post author, "traveller_friend" for mentioned friends
+- BorderOfficer: "officer_<slug>" ONLY if explicitly mentioned (e.g., "officer_guard1")
 
-Event nodes:
-- Encounter:     "encounter_<postid>_<travellerSlug>"
-- Claim:         "claim_<postid>_<slug>"
-- DocumentCheck: "doccheck_<encounterKey>_<docTypeSlug>" (ONE per document type)
-- Questioning/Stamping/Outcome: "<labelLower>_<encounterKey>"
+Event nodes (linked to specific encounters):
+- Encounter:     "encounter_<postid>_<travellerSlug>"  e.g., "encounter_3902451_author"
+- DocumentCheck: "doccheck_<encounterKey>_<docTypeSlug>"  e.g., "doccheck_encounter_3902451_author_returnticket"
+- Questioning:   "questioning_<encounterKey>"  e.g., "questioning_encounter_3902451_author"
+- Stamping:      "stamping_<encounterKey>"     e.g., "stamping_encounter_3902451_author"
+- Outcome:       "outcome_<encounterKey>"      e.g., "outcome_encounter_3902451_author"
 
-Slug rules: lower-case ASCII only; letters/digits/underscore.
+Controlled vocabulary nodes (singleton instances for each type):
+- DocumentType: "documenttype_<slug>"  e.g., "documenttype_returnticket" for ReturnTicket
+- EvidenceFormat: "evidenceformat_<slug>" e.g., "evidenceformat_printout" for Printout
+- CheckMode: "checkmode_<slug>" e.g., "checkmode_physicaldocumentrequested" for PhysicalDocumentRequested
+- RequirementLevel: "requirementlevel_<slug>" e.g., "requirementlevel_required" for Required
+- Behavior: "behavior_<slug>" e.g., "behavior_calm" for CalmBehavior
+- BehaviorGuideline: "guideline_<slug>" e.g., "guideline_avoidjokes" for AvoidJokes
+- ScreeningStatus: "screeningstatus_<slug>" e.g., "screeningstatus_additionalchecks" for AdditionalChecks
+- QuestionTopic: "questiontopic_<slug>" e.g., "questiontopic_employment" for Employment
+- AssertionKind: "assertionkind_<slug>" e.g., "assertionkind_advice" for Advice
+- Evidentiality: "evidentiality_<slug>" e.g., "evidentiality_experienced" for Experienced
+- ClaimScope: "claimscope_<slug>" e.g., "claimscope_universal" for UniversalScope
+- ClaimTopic: "claimtopic_<slug>" e.g., "claimtopic_documentscrutiny" for DocumentScrutiny
+
+Claim nodes:
+- Claim: "claim_<postid>_<slug>"  e.g., "claim_3902451_advice_printouts"
+
+Slug rules: Convert to lower-case, replace spaces with underscores, use only English words. For controlled vocab, use the class name without prefix if clear.
 
 ==============================
 MULTIPLE TRAVELLERS
 ==============================
 
-If two different people are mentioned (e.g., "I and my friend"), create one Encounter per person when described separately.
-Each Encounter must link to exactly one Traveller.
+If multiple travellers are mentioned (e.g., "I and my friend"), create one Encounter per traveller when described separately. Each Encounter must link to exactly one Traveller via hasTraveler.
 
 ==============================
 TIME NORMALIZATION
 ==============================
 
 Store encounter duration ONLY in seconds using pcfr:encounterDurationSec.
-If minutes: seconds = minutes * 60. If hours: seconds = hours * 3600.
+If duration is given in minutes: seconds = minutes * 60. If in hours: seconds = hours * 3600.
+If no duration specified, do not set pcfr:encounterDurationSec.
 
 ==============================
 DOCUMENTCHECK GRANULARITY
 ==============================
 
-Create ONE DocumentCheck per ONE requested document type.
-Each DocumentCheck must have exactly one requestedDocType edge.
+Create ONE DocumentCheck node per requested document type in the encounter.
+Each DocumentCheck must have exactly one requestedDocType edge to the corresponding DocumentType.
+Set pcfr:presented to true if the document was shown, false if not or unknown. If mentioned as requested, assume presented if text implies it was shown.
+Set pcfr:checkMode to appropriate CheckMode (e.g., PhysicalDocumentRequested if asked to show physically).
+Set pcfr:presentedFormat and pcfr:acceptedFormat if specified in text.
 
 ==============================
 BORDER OFFICER
 ==============================
 
-Create BorderOfficer ONLY if explicitly mentioned in text (officer/guard/staff).
-Do not assume same officer across encounters unless explicitly stated.
+Create BorderOfficer node ONLY if explicitly mentioned in text (e.g., "officer", "guard", "staff"). Do not assume same officer across encounters unless explicitly stated. If no officer mentioned, do not create BorderOfficer nodes or set issuedBy properties.
 
 ==============================
 CLAIMS vs EXPERIENCES
 ==============================
 
-- Encounter: concrete episode ("I arrived", "they asked me", durations, checks).
-- Claim: generalized statements or advice ("sometimes", "in Europe", "keep printouts").
+- Encounter: concrete episode with specific details like durations, checks, questioning.
+- Claim: generalized statements or advice extracted from the text, often indicated by words like "sometimes", "always", "keep", "should".
 
-Claim MUST have:
-- pcfr:claimText
-- pcfr:assertionKind (FirstPersonExperience | GeneralKnowledge | Advice)
-- pcfr:evidentiality (Experienced | Heard | Inferred | Generic)
+For every Claim node, you MUST set:
+- pcfr:claimText (string, English only)
+- pcfr:assertionKind (FirstPersonExperience | GeneralKnowledge | Advice) based on context: use Advice for recommendations, FirstPersonExperience for statements based on personal experience, GeneralKnowledge for common knowledge.
+- pcfr:evidentiality (Experienced | Heard | Inferred | Generic): use Experienced if based on narrator's direct experience, Heard if from others, Inferred if concluded, Generic if no evidence stated.
+- pcfr:claimScope and pcfr:claimTopic if applicable.
 
 No Claim↔Encounter evidence links in this project.
+
+==============================
+NODE PROPERTIES (STRICT)
+==============================
+
+For each node, set all applicable datatype properties from the ontology:
+- For Questioning: if questions were asked, set pcfr:wasAsked to true. Optionally set pcfr:topic for free-text description.
+- For Stamping: set pcfr:stampsDocument to the PassportDoc, and pcfr:issuedBy only if officer mentioned.
+- For Outcome: set pcfr:resultCode as a descriptive string, e.g., "Stamped", "Passed", "Denied".
+- For DocumentCheck: set pcfr:presented, pcfr:checkMode, etc., as per text.
+- For Traveller, BorderOfficer, Airport, City, Country: set pcfr:entityName (English only).
+
+Do not set properties that are not mentioned or implied by the text.
 
 ==============================
 RDF_ONTOLOGY
