@@ -1,0 +1,43 @@
+@prefix ex:  <https://example.org/elon#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+###############
+# Classes
+###############
+ex:Person  a rdfs:Class ; rdfs:label "Person"@en .
+ex:Company a rdfs:Class ; rdfs:label "Company"@en .
+ex:Country a rdfs:Class ; rdfs:label "Country"@en .
+
+###############
+# Properties
+###############
+ex:entityName a rdf:Property ;
+  rdfs:label "Human-readable name"@en ;
+  rdfs:domain ex:Person, ex:Company, ex:Country ;
+  rdfs:range xsd:string .
+
+ex:email a rdf:Property ;
+  rdfs:label "Email"@en ;
+  rdfs:domain ex:Person ;
+  rdfs:range xsd:string .
+
+ex:foundedInYear a rdf:Property ;
+  rdfs:label "Founded in year"@en ;
+  rdfs:domain ex:Company ;
+  rdfs:range xsd:integer .
+
+###############
+# Relations
+###############
+ex:CEO_OF a rdf:Property ;
+  rdfs:label "CEO of"@en ;
+  rdfs:domain ex:Person ;
+  rdfs:range ex:Company .
+
+ex:BORN_IN a rdf:Property ;
+  rdfs:label "Born in"@en ;
+  rdfs:domain ex:Person ;
+  rdfs:range ex:Country .
