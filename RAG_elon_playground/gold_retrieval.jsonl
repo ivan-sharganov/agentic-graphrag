@@ -1,0 +1,6 @@
+{"id":"ex_holdout_ceo","question":"Who is the CEO of SpaceX?","gold_cypher":"MATCH (p:Person)-[:CEO_OF]->(c:Company {entityName:'SpaceX'}) RETURN p.entityName AS person_name LIMIT 50","notes":"Holdout example. Simple relation lookup."}
+{"id":"ex_company_founded","question":"When was SpaceX founded?","gold_cypher":"MATCH (c:Company {entityName:'SpaceX'}) RETURN c.foundedInYear AS foundedInYear LIMIT 1","notes":"Property retrieval."}
+{"id":"ex_birth_country","question":"Where was Elon Musk born?","gold_cypher":"MATCH (p:Person {entityName:'Elon Musk'})-[:BORN_IN]->(c:Country) RETURN c.entityName AS country LIMIT 50","notes":"Relation traversal Person -> Country."}
+{"id":"ex_person_email","question":"What is Elon Musk's email?","gold_cypher":"MATCH (p:Person {entityName:'Elon Musk'}) RETURN p.email AS email LIMIT 1","notes":"Direct property lookup."}
+{"id":"ex_all_people","question":"List all people mentioned in the graph.","gold_cypher":"MATCH (p:Person) RETURN p.entityName AS person_name LIMIT 50","notes":"List query."}
+{"id":"ex_all_relations","question":"List all relationships between people and companies.","gold_cypher":"MATCH (p:Person)-[r]->(c:Company) RETURN p.entityName AS person, type(r) AS relation, c.entityName AS company LIMIT 50","notes":"Generic relation listing."}
