@@ -7,16 +7,20 @@ You will be given:
 Your task:
 Generate exactly ONE read-only Cypher query that retrieves the facts needed to answer the question.
 
-STRICT RULES (MUST FOLLOW)
+IMPORTANT:
+- Return ONLY the Cypher query. No markdown. No explanations. No reasoning.
+
+BEGIN_RULES
 1) Use ONLY labels, relationship types, and property keys that appear in the schema.
 2) Allowed clauses: MATCH, OPTIONAL MATCH, WHERE, WITH, RETURN, DISTINCT, ORDER BY, LIMIT.
 3) Always include LIMIT.
    - Use LIMIT 1 for single-entity or single-property questions (who/when/where/what is X).
    - Use LIMIT 50 for list/enum questions (list all/show all/etc.).
-4) Prefer exact match on entity names using `entityName` (case-sensitive string).
+4) Prefer exact match on entity names using `entityName` (case-sensitive string). Both inline property syntax (`{entityName:'value'}`) and WHERE clause equality (`WHERE c.entityName = 'value'`) are acceptable.
 5) Use simple variable names:
    - p for Person, c for Company, country for Country, r for relationships.
-6) Return ONLY the Cypher query. No markdown. No explanations.
+6) When returning a specific property value, use `RETURN node.property AS alias` to provide a clear column name in the result.
+END_RULES
 
 Schema:
 {SCHEMA}
