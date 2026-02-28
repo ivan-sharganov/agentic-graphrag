@@ -245,3 +245,100 @@ pcfr:topic             a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:rang
 pcfr:documentRequirement a rdf:Property ; rdfs:domain pcfr:DocumentType ; rdfs:range pcfr:RequirementLevel .
 pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
 pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
+
+########################################
+# pcfr v4 additions (Encounter-only)
+########################################
+
+###############
+# Control stage / context
+###############
+
+pcfr:ControlStage a rdfs:Class ;
+  rdfs:label "Where/when the control happened (controlled)"@en .
+
+pcfr:AtDesk a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "At border desk / booth"@en .
+pcfr:AtGate a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "At boarding gate"@en .
+pcfr:InCorridor a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "In corridor before control"@en .
+pcfr:OnTrain a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "On train / onboard check"@en .
+
+pcfr:controlStage a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Encounter ; rdfs:range pcfr:ControlStage .
+
+###############
+# Stations (for TER / border stations)
+###############
+
+pcfr:Station a rdfs:Class ; rdfs:label "Station"@en .
+
+pcfr:atStation a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Station .
+
+pcfr:locatedInCityStation a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Station ; rdfs:range pcfr:City .
+
+###############
+# Biometric checks
+###############
+
+pcfr:BiometricCheck a rdfs:Class ; rdfs:label "Biometric check"@en .
+pcfr:BiometricModality a rdfs:Class ; rdfs:label "Biometric modality (controlled)"@en .
+pcfr:Fingerprint a rdfs:Class ; rdfs:subClassOf pcfr:BiometricModality ; rdfs:label "Fingerprint"@en .
+pcfr:FacePhoto a rdfs:Class ; rdfs:subClassOf pcfr:BiometricModality ; rdfs:label "Face photo"@en .
+
+pcfr:hasBiometricCheck a rdf:Property ;
+  rdfs:domain pcfr:Encounter ; rdfs:range pcfr:BiometricCheck .
+
+pcfr:biometricModality a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:BiometricCheck ; rdfs:range pcfr:BiometricModality .
+
+pcfr:biometricWasTaken a rdf:Property ;
+  rdfs:domain pcfr:BiometricCheck ; rdfs:range xsd:boolean .
+
+###############
+# Document types seen in posts
+###############
+
+pcfr:InvitationLetter a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Invitation letter"@en .
+
+pcfr:OldPassport a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Old passport"@en .
+
+pcfr:BankStatement a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Bank statement"@en .
+
+pcfr:IDCard a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "ID card"@en .
+
+pcfr:BoardingPass a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Boarding pass"@en .
+
+pcfr:AccommodationProof a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Proof of accommodation (any)"@en .
+
+###############
+# Question topics (coverage)
+###############
+
+pcfr:AccommodationDetails a rdfs:Class ;
+  rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Accommodation details"@en .
+
+pcfr:ExitDateFromSchengen a rdfs:Class ;
+  rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Exit date from Schengen"@en .
+
+pcfr:PreviousVisits a rdfs:Class ;
+  rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Previous visits"@en .
+
+pcfr:TravelCompanions a rdfs:Class ;
+  rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Travel companions / alone"@en .
+
+pcfr:ItineraryTransport a rdfs:Class ;
+  rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Itinerary / transport plan"@en .
+
+###############
+# Screening status
+###############
+
+pcfr:DeniedEntry a rdfs:Class ;
+  rdfs:subClassOf pcfr:ScreeningStatus ; rdfs:label "Denied entry / return required"@en .

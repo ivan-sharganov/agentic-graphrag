@@ -61,10 +61,10 @@ GLOBAL RULES
 POST METADATA (MUST COPY, STRICT)
 ==============================
 
-For EVERY KnowledgeItem you create (Encounter and Claim), you MUST set:
+For EVERY Encounter you create, you MUST set:
 - pcfr:sourcePostID          (integer)  = post_id
-- pcfr:sourcePostURL         (string)   = post_url  (English/ASCII only)
-- pcfr:sourcePostAuthor      (string)   = author    (English/ASCII only)
+- pcfr:sourcePostURL         (string)   = post_url
+- pcfr:sourcePostAuthor      (string)   = transliterated(author)  (Latin only; no Cyrillic)
 - pcfr:sourcePostDateTime    (string)   = ISO 8601 local datetime like "2013-02-06T06:19:00"
 
 You MUST convert the input date string to ISO 8601.
@@ -74,11 +74,14 @@ Month mapping:
 If conversion fails, output best-effort ISO (ASCII only) and add a warning.
 
 ==============================
-ENGLISH-ONLY STRING VALUES (STRICT)
+STRING NORMALIZATION (STRICT)
 ==============================
 
-- ALL string values MUST be English/Latin only.
-- NEVER output Cyrillic characters anywhere in JSON.
+- NEVER output Cyrillic characters in OUTPUT JSON.
+- Keys MUST be lowercase ASCII only.
+- For free-text properties (e.g., pcfr:topic), output a short English translation.
+- For pcfr:sourcePostAuthor, output a best-effort Latin transliteration of the input author.
+  If transliteration fails, use "unknown". in JSON.
 - Translate/transliterate:
   "Париж" -> "Paris"
   "ШДГ" -> "CDG"
@@ -116,6 +119,51 @@ Subevents (scoped to an Encounter):
 - Outcome:      "outcome_<encounterKey>"
 
 Slug rules: lower-case ASCII only; letters/digits/underscore.
+
+
+==============================
+PCFR-v4 COVERAGE RULES
+==============================
+
+A) Control stage (pcfr:controlStage on Encounter)
+- If text indicates control at a desk/booth ("паспортный контроль", "пограничник", "кабинка"): pcfr:AtDesk
+- If at boarding gate / boarding check ("гейт", "посадка", "boarding gate"): pcfr:AtGate
+- If in corridor before control ("коридор до контроля", "кордон до паспортного"): pcfr:InCorridor
+- If on a train / TER / onboard check ("в поезде", "в вагоне", "TER"): pcfr:OnTrain
+If unclear, omit pcfr:controlStage.
+
+B) Station (pcfr:Station)
+If a specific station name is mentioned in a train-control context, create pcfr:Station and link:
+Encounter --pcfr:atStation--> Station.
+If the city of the station is known, link Station --pcfr:locatedInCityStation--> City.
+
+C) Biometric checks (pcfr:BiometricCheck)
+If fingerprints/biometrics are mentioned:
+- Create pcfr:BiometricCheck and link Encounter --pcfr:hasBiometricCheck--> BiometricCheck.
+- Set pcfr:biometricModality to pcfr:Fingerprint if fingerprints are referenced.
+- Set pcfr:biometricWasTaken = true if taken/asked/verified.
+- Set pcfr:biometricWasTaken = false if explicitly NOT taken/NOT asked.
+
+D) Extra DocumentType mapping (for pcfr:hasDocumentCheck)
+Map mentions to these pcfr:DocumentType classes:
+- Invitation letter ("приглашение") -> pcfr:InvitationLetter
+- Old passport ("старый паспорт") -> pcfr:OldPassport
+- Bank statement ("выписка из банка") -> pcfr:BankStatement
+- ID card ("ID", "айди") -> pcfr:IDCard
+- Boarding pass ("посадочный", "boarding pass") -> pcfr:BoardingPass
+- Proof of accommodation ("подтверждение проживания", "airbnb", "живу у ...") -> pcfr:AccommodationProof
+If a document is mentioned but no matching type exists, do NOT invent new types.
+
+E) Extra QuestionTopic mapping (for pcfr:hasQuestioning)
+Map questions/topics to these pcfr:QuestionTopic classes:
+- Accommodation details ("где будете жить", "у кого живёте") -> pcfr:AccommodationDetails
+- Exit date from Schengen ("когда обратно", "когда выезд из шенгена") -> pcfr:ExitDateFromSchengen
+- Previous visits ("первый раз", "были ли раньше") -> pcfr:PreviousVisits
+- Travel companions ("одна?", "с кем летите") -> pcfr:TravelCompanions
+- Itinerary/transport ("маршрут", "как будете перемещаться") -> pcfr:ItineraryTransport
+
+F) Denied entry
+If explicitly stated that entry was denied / sent back / required to return: set Encounter --pcfr:hasScreeningStatus--> pcfr:DeniedEntry.
 
 ==============================
 MULTIPLE TRAVELLERS
@@ -170,3 +218,22 @@ MESSAGE_JSON_STRING
 <<<MSG
 {MESSAGE_JSON_STRING_HERE}
 MSG>>>
+
+
+==============================
+ENCOUNTER-ONLY EXTRACTION RULE
+==============================
+
+You must extract ONLY real passport-control experiences as pcfr:Encounter.
+
+Create an Encounter ONLY if the post describes an actual, concrete border/passport control episode
+experienced by the author or someone specific (e.g., "I", "we", "my husband", "my friend") with event-like details.
+If the post is ONLY advice, general statements, hypotheticals, memories without a concrete episode,
+or policy discussion without an actual crossing, then output an empty payload:
+{
+  "payload": {"ontology_version": "pcfr-v4", "nodes": [], "relationships": []},
+  "finish_reason": "🟢 complete",
+  "reason": "no real encounter described"
+}
+
+When uncertain, prefer NOT creating an Encounter.
