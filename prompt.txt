@@ -88,20 +88,32 @@ ENGLISH-ONLY STRING VALUES (STRICT)
 KEY GENERATION RULES (STRICT)
 ==============================
 
-Use ONE canonical style to avoid duplicates.
+Use ONE canonical style to avoid duplicates AND to prevent cross-post linking.
 
-Real-world entities:
+All keys MUST be lowercase ASCII only; letters/digits/underscore.
+
+Real-world entities (may be shared across posts):
 - City:    "city_<slug>"        e.g., "city_paris"
 - Airport: "airport_<iata>"     e.g., "airport_cdg"
 - Country: "country_<slug>"     e.g., "country_france", "country_russia"
-- Traveller: "traveller_<slug>" e.g., "traveller_author", "traveller_friend"
-- BorderOfficer: "officer_<slug>" (ONLY if explicitly mentioned)
 
-Event nodes:
-- Encounter:     "encounter_<postid>_<travellerSlug>"
-- Claim:         "claim_<postid>_<slug>"
-- DocumentCheck: "doccheck_<encounterKey>_<docTypeSlug>" (ONE per document type)
-- Questioning/Stamping/Outcome: "<labelLower>_<encounterKey>"
+Per-post, per-person entities (MUST NOT link across different posts by default):
+- Traveller: "traveller_<postid>_<personSlug>"
+    Examples: "traveller_3453830_author", "traveller_3453830_friend1"
+    - The same person appearing in multiple encounters WITHIN THE SAME post MUST reuse the same Traveller key.
+    - Do NOT reuse Traveller keys across different post_id unless the message explicitly states it is the same identified person across posts (rare).
+
+Event nodes (MUST be post-scoped):
+- Encounter: "encounter_<postid>_<personSlug>_<encounterIndex>"
+    Example: "encounter_3453830_author_1"
+    - One Encounter per person per described episode. If multiple separate events for the same person are described, increment encounterIndex.
+    - Each Encounter MUST link to exactly one Traveller.
+
+Subevents (scoped to an Encounter):
+- DocumentCheck: "doccheck_<encounterKey>_<docTypeSlug>" (ONE per document type; MUST have requestedDocType)
+- Questioning:  "questioning_<encounterKey>_<topicSlug>"  (ONE per topic; MUST have questionTopic)
+- Stamping:     "stamping_<encounterKey>"
+- Outcome:      "outcome_<encounterKey>"
 
 Slug rules: lower-case ASCII only; letters/digits/underscore.
 
@@ -120,32 +132,28 @@ Store encounter duration ONLY in seconds using pcfr:encounterDurationSec.
 If minutes: seconds = minutes * 60. If hours: seconds = hours * 3600.
 
 ==============================
-DOCUMENTCHECK GRANULARITY
+DOCUMENTCHECK GRANULARITY (STRICT)
 ==============================
 
 Create ONE DocumentCheck per ONE requested document type.
-Each DocumentCheck must have exactly one requestedDocType edge.
+Each DocumentCheck MUST have exactly one requestedDocType edge to a pcfr:DocumentType.
+If you cannot determine which document type was requested, DO NOT create a DocumentCheck.
+
+==============================
+QUESTIONING (STRICT)
+==============================
+
+Create ONE Questioning per ONE question topic.
+Each Questioning MUST have exactly one questionTopic edge to a pcfr:QuestionTopic.
+If you cannot map a question to a known QuestionTopic from the ontology, DO NOT create a Questioning node.
 
 ==============================
 BORDER OFFICER
 ==============================
+==============================
 
 Create BorderOfficer ONLY if explicitly mentioned in text (officer/guard/staff).
 Do not assume same officer across encounters unless explicitly stated.
-
-==============================
-CLAIMS vs EXPERIENCES
-==============================
-
-- Encounter: concrete episode ("I arrived", "they asked me", durations, checks).
-- Claim: generalized statements or advice ("sometimes", "in Europe", "keep printouts").
-
-Claim MUST have:
-- pcfr:claimText
-- pcfr:assertionKind (FirstPersonExperience | GeneralKnowledge | Advice)
-- pcfr:evidentiality (Experienced | Heard | Inferred | Generic)
-
-No Claim↔Encounter evidence links in this project.
 
 ==============================
 RDF_ONTOLOGY

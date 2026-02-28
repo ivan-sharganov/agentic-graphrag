@@ -14,7 +14,6 @@
 
 pcfr:KnowledgeItem    a rdfs:Class ; rdfs:label "Knowledge item (root)"@en .
 pcfr:Encounter        a rdfs:Class ; rdfs:subClassOf pcfr:KnowledgeItem ; rdfs:label "Passport control encounter"@en .
-pcfr:Claim            a rdfs:Class ; rdfs:subClassOf pcfr:KnowledgeItem ; rdfs:label "Generalized claim / statement"@en .
 
 pcfr:Traveller        a rdfs:Class ; rdfs:label "Traveller"@en .
 pcfr:BorderOfficer    a rdfs:Class ; rdfs:label "Border officer"@en .
@@ -25,6 +24,34 @@ pcfr:Outcome          a rdfs:Class ; rdfs:label "Encounter outcome"@en .
 pcfr:Airport          a rdfs:Class ; rdfs:label "Airport"@en .
 pcfr:City             a rdfs:Class ; rdfs:label "City"@en .
 pcfr:Country          a rdfs:Class ; rdfs:label "Country"@en .
+
+###############
+# OWL Restrictions (requirements)
+###############
+
+# Each Encounter must be linked to exactly one Traveller
+pcfr:Encounter rdfs:subClassOf [
+  a owl:Restriction ;
+  owl:onProperty pcfr:hasTraveler ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass pcfr:Traveller
+] .
+
+# Each DocumentCheck must have exactly one requestedDocType
+pcfr:DocumentCheck rdfs:subClassOf [
+  a owl:Restriction ;
+  owl:onProperty pcfr:requestedDocType ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass pcfr:DocumentType
+] .
+
+# Each Questioning must have exactly one questionTopic
+pcfr:Questioning rdfs:subClassOf [
+  a owl:Restriction ;
+  owl:onProperty pcfr:questionTopic ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass pcfr:QuestionTopic
+] .
 
 #########################
 # Document / vocabularies
@@ -128,31 +155,6 @@ pcfr:HotelPaymentStatus   a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rd
 pcfr:CashAmount           a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Cash amount"@en .
 pcfr:HotelPaymentCard     a rdfs:Class ; rdfs:subClassOf pcfr:QuestionTopic ; rdfs:label "Hotel payment card"@en .
 
-##################################
-# Claim / Evidence vocabularies
-##################################
-
-pcfr:AssertionKind     a rdfs:Class ; rdfs:label "Assertion kind (controlled)"@en .
-pcfr:FirstPersonExperience a rdfs:Class ; rdfs:subClassOf pcfr:AssertionKind ; rdfs:label "First-person experience"@en .
-pcfr:GeneralKnowledge  a rdfs:Class ; rdfs:subClassOf pcfr:AssertionKind ; rdfs:label "General knowledge / community lore"@en .
-pcfr:Advice            a rdfs:Class ; rdfs:subClassOf pcfr:AssertionKind ; rdfs:label "Advice / recommendation"@en .
-
-pcfr:Evidentiality     a rdfs:Class ; rdfs:label "Evidentiality (controlled)"@en .
-pcfr:Experienced       a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Experienced directly"@en .
-pcfr:Heard             a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Heard from others"@en .
-pcfr:Inferred          a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Inferred / concluded"@en .
-pcfr:Generic           a rdfs:Class ; rdfs:subClassOf pcfr:Evidentiality ; rdfs:label "Generic statement (no evidence stated)"@en .
-
-pcfr:ClaimScope        a rdfs:Class ; rdfs:label "Claim scope (controlled)"@en .
-pcfr:SingleEventScope  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimScope ; rdfs:label "Single event"@en .
-pcfr:HabitualScope     a rdfs:Class ; rdfs:subClassOf pcfr:ClaimScope ; rdfs:label "Habitual / sometimes-usually"@en .
-pcfr:UniversalScope    a rdfs:Class ; rdfs:subClassOf pcfr:ClaimScope ; rdfs:label "Universal / always-never"@en .
-
-pcfr:ClaimTopic        a rdfs:Class ; rdfs:label "Claim topic (controlled)"@en .
-pcfr:ProcessingSpeed   a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:label "Processing speed / duration"@en .
-pcfr:DocumentScrutiny  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:label "Document scrutiny / strictness"@en .
-pcfr:StampingPractice  a rdfs:Class ; rdfs:subClassOf pcfr:ClaimTopic ; rdfs:label "Stamping practice"@en .
-
 #############
 # Properties
 #############
@@ -219,7 +221,7 @@ pcfr:issuedBy          a rdf:Property ; rdfs:domain pcfr:Stamping ; rdfs:range p
 
 # DocumentCheck
 pcfr:presented         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range xsd:boolean .
-pcfr:requestedDocType  a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:DocumentType .
+pcfr:requestedDocType  a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:DocumentType .
 pcfr:checkedBy         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:BorderOfficer .
 pcfr:presentedFormat   a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:EvidenceFormat .
 pcfr:acceptedFormat    a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:EvidenceFormat .
@@ -235,45 +237,11 @@ pcfr:violatesGuideline a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range 
 pcfr:hasScreeningStatus a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:ScreeningStatus .
 
 # Questioning
-pcfr:questionTopic     a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range pcfr:QuestionTopic .
+pcfr:questionTopic     a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Questioning ; rdfs:range pcfr:QuestionTopic .
 pcfr:wasAsked          a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:boolean .
 pcfr:topic             a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:string .
-
-# Claim text & semantics
-pcfr:claimText a rdf:Property ;
-  rdfs:label "Claim surface text"@en ;
-  rdfs:comment "Short generalized statement/advice. MUST be English/Latin only (no Cyrillic)."@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range xsd:string .
-
-pcfr:assertionKind a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Assertion kind"@en ;
-  rdfs:domain pcfr:KnowledgeItem ;
-  rdfs:range pcfr:AssertionKind .
-
-pcfr:evidentiality a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Evidentiality"@en ;
-  rdfs:domain pcfr:KnowledgeItem ;
-  rdfs:range pcfr:Evidentiality .
-
-pcfr:claimScope a rdf:Property , owl:FunctionalProperty ;
-  rdfs:label "Claim scope"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:ClaimScope .
-
-pcfr:claimTopic a rdf:Property ;
-  rdfs:label "Claim topic"@en ;
-  rdfs:domain pcfr:Claim ;
-  rdfs:range pcfr:ClaimTopic .
-
-# Location bindings for Claim
-pcfr:aboutAirport a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Claim ; rdfs:range pcfr:Airport .
-pcfr:aboutCity    a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Claim ; rdfs:range pcfr:City .
-pcfr:aboutCountry a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Claim ; rdfs:range pcfr:Country .
 
 # Policy-level facts
 pcfr:documentRequirement a rdf:Property ; rdfs:domain pcfr:DocumentType ; rdfs:range pcfr:RequirementLevel .
 pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
 pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
-
-# NOTE: No Claim↔Encounter evidence links in this project.
