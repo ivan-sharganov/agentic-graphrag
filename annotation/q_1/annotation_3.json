@@ -1,0 +1,80 @@
+{
+  "question": "Which documents do I need to bring to passport control in Paris?",
+  "triples": [
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "hasTraveler",
+      "o": { "label": "Traveller", "key": "traveller_12265196_author" }
+    },
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "atAirport",
+      "o": { "label": "Airport", "key": "airport_cdg" }
+    },
+    {
+      "s": { "label": "Airport", "key": "airport_cdg" },
+      "p": "locatedInCity",
+      "o": { "label": "City", "key": "city_paris" }
+    },
+    {
+      "s": { "label": "City", "key": "city_paris" },
+      "p": "locatedInCountry",
+      "o": { "label": "Country", "key": "country_france" }
+    },
+
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "hasDocumentCheck",
+      "o": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_cash" }
+    },
+    {
+      "s": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_cash" },
+      "p": "requestedDocType",
+      "o": { "label": "Cash", "key": "cash" }
+    },
+
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "hasDocumentCheck",
+      "o": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_paymentcard" }
+    },
+    {
+      "s": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_paymentcard" },
+      "p": "requestedDocType",
+      "o": { "label": "PaymentCard", "key": "paymentcard" }
+    },
+
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "hasDocumentCheck",
+      "o": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_returnticket" }
+    },
+    {
+      "s": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_returnticket" },
+      "p": "requestedDocType",
+      "o": { "label": "ReturnTicket", "key": "returnticket" }
+    },
+
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "hasDocumentCheck",
+      "o": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_hotelbooking" }
+    },
+    {
+      "s": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_hotelbooking" },
+      "p": "requestedDocType",
+      "o": { "label": "HotelBookingDoc", "key": "hotelbookingdoc" }
+    },
+
+    {
+      "s": { "label": "Encounter", "key": "encounter_12265196_author_1" },
+      "p": "hasDocumentCheck",
+      "o": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_travelinsurance" }
+    },
+    {
+      "s": { "label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_travelinsurance" },
+      "p": "requestedDocType",
+      "o": { "label": "TravelInsurance", "key": "travelinsurance" }
+    }
+  ]
+}
