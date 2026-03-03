@@ -1,0 +1,20 @@
+{
+  "question": "Which documents do I need to bring to passport control in Paris?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_3812199_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3812199_author_1"},
+      "p": "hasStamping",
+      "o": {"label": "Stamping", "key": "stamping_encounter_3812199_author_1"}
+    },
+    {
+      "s": {"label": "Stamping", "key": "stamping_encounter_3812199_author_1"},
+      "p": "stampsDocument",
+      "o": {"label": "ForeignPassport", "key": "foreignpassport"}
+    }
+  ]
+}
