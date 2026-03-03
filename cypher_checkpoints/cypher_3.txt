@@ -7,6 +7,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:ForeignPassport) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:PaymentCard) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:ReturnTicket) REQUIRE n.key IS UNIQUE;
@@ -21,6 +22,7 @@ MERGE (n:Country {key:'country_france'}) SET n.entityName='France';
 MERGE (n:BorderOfficer {key:'borderofficer_12265196_1'});
 MERGE (n:Cash {key:'cash'}) SET n.entityName='Cash';
 MERGE (n:PaymentCard {key:'paymentcard'}) SET n.entityName='Payment Card';
+MERGE (n:ForeignPassport {key:'foreignpassport'}) SET n.entityName='Foreign Passport';
 MERGE (n:DocumentCheck {key:'doccheck_encounter_12265196_author_1_cash'}) SET n.presented=true;
 MERGE (n:DocumentCheck {key:'doccheck_encounter_12265196_author_1_paymentcard'}) SET n.presented=true;
 MERGE (n:AdditionalChecks {key:'additionalchecks'});
@@ -31,6 +33,7 @@ MERGE (n:TravelInsurance {key:'travelinsurance'}) SET n.entityName='Travel Insur
 MERGE (n:DocumentCheck {key:'doccheck_encounter_12265196_author_1_returnticket'}) SET n.presented=true;
 MERGE (n:DocumentCheck {key:'doccheck_encounter_12265196_author_1_hotelbooking'}) SET n.presented=true;
 MERGE (n:DocumentCheck {key:'doccheck_encounter_12265196_author_1_travelinsurance'}) SET n.presented=true;
+MERGE (n:DocumentCheck {key:'doccheck_encounter_12265196_author_1_foreignpassport'}) SET n.presented=true;
 
 MATCH (a:Encounter {key:'encounter_12265196_author_1'}), (b:Traveller {key:'traveller_12265196_author'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_12265196_author_1'}), (b:BorderOfficer {key:'borderofficer_12265196_1'}) MERGE (a)-[:hasOfficer]->(b);
@@ -44,8 +47,10 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_12265196_author_1_paymentcard'})
 MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_returnticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_hotelbooking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_travelinsurance'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_returnticket'}), (dt:ReturnTicket {key:'returnticket'}) MERGE (dc)-[:requestedDocType]->(dt);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_hotelbooking'}), (dt:HotelBookingDoc {key:'hotelbookingdoc'}) MERGE (dc)-[:requestedDocType]->(dt);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_travelinsurance'}), (dt:TravelInsurance {key:'travelinsurance'}) MERGE (dc)-[:requestedDocType]->(dt);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_foreignpassport'}), (dt:ForeignPassport {key:'foreignpassport'}) MERGE (dc)-[:requestedDocType]->(dt);
 MATCH (a:Airport {key:'airport_cdg'}), (b:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);

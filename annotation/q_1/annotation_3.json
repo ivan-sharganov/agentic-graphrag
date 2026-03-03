@@ -70,6 +70,17 @@
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_travelinsurance"},
       "p": "requestedDocType",
       "o": {"label": "TravelInsurance", "key": "travelinsurance"}
+    },
+
+    {
+      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_foreignpassport"},
+      "p": "requestedDocType",
+      "o": {"label": "ForeignPassport", "key": "foreignpassport"}
     }
   ]
 }
