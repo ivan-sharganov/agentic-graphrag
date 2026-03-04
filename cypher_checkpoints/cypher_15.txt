@@ -1,1 +1,33 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:BiometricCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Fingerprint) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ForeignPassport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_9778361_author'}) SET n.entityName='Emilio270696';MERGE (n:Encounter {key:'encounter_9778361_author_1'}) SET n.sourcePostID=9778361, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9778361#p9778361', n.sourcePostAuthor='Emilio270696', n.sourcePostDateTime=localdatetime('2019-12-26T13:50:00');MERGE (n:BiometricCheck {key:'biometriccheck_encounter_9778361_author_1'}) SET n.biometricWasTaken=true;MERGE (n:Stamping {key:'stamping_encounter_9778361_author_1'});MERGE (n:Fingerprint {key:'fingerprint'});MERGE (n:ForeignPassport {key:'foreignpassport'});MATCH (a:Encounter {key:'encounter_9778361_author_1'}), (b:Traveller {key:'traveller_9778361_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_9778361_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_9778361_author_1'}) MERGE (a)-[:hasBiometricCheck]->(b);MATCH (a:Encounter {key:'encounter_9778361_author_1'}), (b:Stamping {key:'stamping_encounter_9778361_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:BiometricCheck {key:'biometriccheck_encounter_9778361_author_1'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);MATCH (a:Stamping {key:'stamping_encounter_9778361_author_1'}), (b:ForeignPassport {key:'foreignpassport'}) MERGE (a)-[:stampsDocument]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:BiometricCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+MERGE (t:Traveller {key:'traveller_9778361_author'}) SET t.entityName='Emilio270696';
+MERGE (e:Encounter {key:'encounter_9778361_author_1'})
+  SET e.sourcePostID=9778361,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9778361#p9778361',
+      e.sourcePostAuthor='Emilio270696',
+      e.sourcePostDateTime=localdatetime('2019-12-26T13:50:00');
+
+MERGE (bc:BiometricCheck {key:'biometriccheck_encounter_9778361_author_1'})
+  SET bc.biometricWasTaken=true, bc.biometricModality='fingerprint';
+
+MERGE (st:Stamping {key:'stamping_encounter_9778361_author_1'});
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_9778361_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_9778361_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MATCH (e:Encounter {key:'encounter_9778361_author_1'}), (t:Traveller {key:'traveller_9778361_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9778361_author_1'}), (bc:BiometricCheck {key:'biometriccheck_encounter_9778361_author_1'}) MERGE (e)-[:hasBiometricCheck]->(bc);
+MATCH (e:Encounter {key:'encounter_9778361_author_1'}), (st:Stamping {key:'stamping_encounter_9778361_author_1'}) MERGE (e)-[:hasStamping]->(st);
+
+MATCH (e:Encounter {key:'encounter_9778361_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9778361_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9778361_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_9778361_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (st:Stamping {key:'stamping_encounter_9778361_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_9778361_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (e:Encounter {key:'encounter_9778361_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);

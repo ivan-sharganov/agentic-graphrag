@@ -1,1 +1,61 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AccommodationDetails) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:AccommodationProof) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:City {key:'city_lyon'}) SET n.entityName='Lyon';MERGE (n:City {key:'city_nice'}) SET n.entityName='Nice';MERGE (n:Traveller {key:'traveller_9752768_husband'}) SET n.entityName='husband';MERGE (n:Traveller {key:'traveller_9752768_author'}) SET n.entityName='Twiggi';MERGE (n:Encounter {key:'encounter_9752768_husband_1'}) SET n.sourcePostID=9752768, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9752768#p9752768', n.sourcePostAuthor='Twiggi', n.sourcePostDateTime=localdatetime('2019-12-10T06:40:00');MERGE (n:Encounter {key:'encounter_9752768_author_1'}) SET n.sourcePostID=9752768, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9752768#p9752768', n.sourcePostAuthor='Twiggi', n.sourcePostDateTime=localdatetime('2019-12-10T06:40:00');MERGE (n:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'}) SET n.wasAsked=true;MERGE (n:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodationproof'}) SET n.presented=true;MERGE (n:AccommodationDetails {key:'questiontopic_accommodationdetails'});MERGE (n:AccommodationProof {key:'documenttype_accommodationproof'});MATCH (a:Encounter {key:'encounter_9752768_husband_1'}), (b:Traveller {key:'traveller_9752768_husband'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_9752768_author_1'}), (b:Traveller {key:'traveller_9752768_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_9752768_husband_1'}), (b:City {key:'city_lyon'}) MERGE (a)-[:atCity]->(b);MATCH (a:Encounter {key:'encounter_9752768_author_1'}), (b:City {key:'city_nice'}) MERGE (a)-[:atCity]->(b);MATCH (a:Encounter {key:'encounter_9752768_husband_1'}), (b:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_9752768_husband_1'}), (b:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodationproof'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'}), (b:AccommodationDetails {key:'questiontopic_accommodationdetails'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodationproof'}), (b:AccommodationProof {key:'documenttype_accommodationproof'}) MERGE (a)-[:requestedDocType]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+
+MERGE (c_lyon:City {key:'city_lyon'}) SET c_lyon.entityName='Lyon';
+MERGE (c_nice:City {key:'city_nice'}) SET c_nice.entityName='Nice';
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+MERGE (t_husband:Traveller {key:'traveller_9752768_husband'}) SET t_husband.entityName='husband';
+MERGE (t_author:Traveller {key:'traveller_9752768_author'}) SET t_author.entityName='Twiggi';
+
+MERGE (e_husband:Encounter {key:'encounter_9752768_husband_1'})
+  SET e_husband.sourcePostID=9752768,
+      e_husband.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9752768#p9752768',
+      e_husband.sourcePostAuthor='Twiggi',
+      e_husband.sourcePostDateTime=localdatetime('2019-12-10T06:40:00');
+
+MERGE (e_author:Encounter {key:'encounter_9752768_author_1'})
+  SET e_author.sourcePostID=9752768,
+      e_author.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9752768#p9752768',
+      e_author.sourcePostAuthor='Twiggi',
+      e_author.sourcePostDateTime=localdatetime('2019-12-10T06:40:00');
+
+// Questioning
+MERGE (q_acc:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'})
+  SET q_acc.wasAsked=true, q_acc.topicKey='accommodation_details';
+
+// Document checks
+MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodationproof'}) SET dc_acc.presented=true;
+MERGE (dc_fp_h:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_foreignpassport'}) SET dc_fp_h.presented=true;
+MERGE (dc_fp_a:DocumentCheck {key:'doccheck_encounter_9752768_author_1_foreignpassport'}) SET dc_fp_a.presented=true;
+
+// Document instances
+MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_9752768_husband_1_accommodationproof'}) SET di_acc.documentType='accommodation_proof';
+MERGE (di_fp_h:DocumentInstance {key:'documentinstance_encounter_9752768_husband_1_foreignpassport'}) SET di_fp_h.documentType='foreign_passport';
+MERGE (di_fp_a:DocumentInstance {key:'documentinstance_encounter_9752768_author_1_foreignpassport'}) SET di_fp_a.documentType='foreign_passport';
+
+// Location links
+MATCH (c:City {key:'city_lyon'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+
+// Encounter core links
+MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (t:Traveller {key:'traveller_9752768_husband'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (t:Traveller {key:'traveller_9752768_author'}) MERGE (e)-[:hasTraveler]->(t);
+
+MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
+
+MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (q:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'}) MERGE (e)-[:hasQuestioning]->(q);
+
+MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodationproof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9752768_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodationproof'}), (di:DocumentInstance {key:'documentinstance_encounter_9752768_husband_1_accommodationproof'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_9752768_husband_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9752768_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_9752768_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);

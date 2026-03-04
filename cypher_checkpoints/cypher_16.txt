@@ -1,1 +1,42 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AccommodationDetails) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:InvitationLetter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:VisitPurpose) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11159089_author'}) SET n.entityName='Sayyora';MERGE (n:Encounter {key:'encounter_11159089_author_1'}) SET n.sourcePostID=11159089, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11159089#p11159089', n.sourcePostAuthor='Sayyora', n.sourcePostDateTime=localdatetime('2022-09-17T11:41:00');MERGE (n:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}) SET n.presented=false;MERGE (n:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'}) SET n.wasAsked=true;MERGE (n:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'}) SET n.wasAsked=true;MERGE (n:Stamping {key:'stamping_encounter_11159089_author_1'});MERGE (n:InvitationLetter {key:'documenttype_invitationletter'});MERGE (n:VisitPurpose {key:'questiontopic_visitpurpose'});MERGE (n:AccommodationDetails {key:'questiontopic_accommodationdetails'});MATCH (a:Encounter {key:'encounter_11159089_author_1'}), (b:Traveller {key:'traveller_11159089_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11159089_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}), (b:InvitationLetter {key:'documenttype_invitationletter'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Encounter {key:'encounter_11159089_author_1'}), (b:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'}), (b:VisitPurpose {key:'questiontopic_visitpurpose'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Encounter {key:'encounter_11159089_author_1'}), (b:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'}), (b:AccommodationDetails {key:'questiontopic_accommodationdetails'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Encounter {key:'encounter_11159089_author_1'}), (b:Stamping {key:'stamping_encounter_11159089_author_1'}) MERGE (a)-[:hasStamping]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+MERGE (t:Traveller {key:'traveller_11159089_author'}) SET t.entityName='Sayyora';
+MERGE (e:Encounter {key:'encounter_11159089_author_1'})
+  SET e.sourcePostID=11159089,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11159089#p11159089',
+      e.sourcePostAuthor='Sayyora',
+      e.sourcePostDateTime=localdatetime('2022-09-17T11:41:00');
+
+MERGE (dc_inv:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}) SET dc_inv.presented=false;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11159089_author_1_foreignpassport'}) SET dc_fp.presented=true;
+
+MERGE (di_inv:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_invitation'}) SET di_inv.documentType='invitation_letter';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MERGE (q_purpose:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'})
+  SET q_purpose.wasAsked=true, q_purpose.topicKey='visitpurpose';
+MERGE (q_acc:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'})
+  SET q_acc.wasAsked=true, q_acc.topicKey='accommodation_details';
+
+MERGE (st:Stamping {key:'stamping_encounter_11159089_author_1'});
+
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (t:Traveller {key:'traveller_11159089_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11159089_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}), (di:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_invitation'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11159089_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (q:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (q:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'}) MERGE (e)-[:hasQuestioning]->(q);
+
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (st:Stamping {key:'stamping_encounter_11159089_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_11159089_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);

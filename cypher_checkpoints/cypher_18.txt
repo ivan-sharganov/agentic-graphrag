@@ -1,1 +1,54 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Digital) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ForeignPassport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ItineraryTransport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:OldPassport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:PreviousVisits) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ReturnTicket) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:VisitDuration) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11217576_author'}) SET n.entityName='anna897';MERGE (n:Encounter {key:'encounter_11217576_author_1'}) SET n.sourcePostID=11217576, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11217576#p11217576', n.sourcePostAuthor='anna897', n.sourcePostDateTime=localdatetime('2022-10-20T21:32:00'), n.encounterDateTime='2022-10-17T00:00:00';MERGE (n:AtDesk {key:'controlstage_atdesk'});MERGE (n:Country {key:'country_france'}) SET n.entityName='France';MERGE (n:Country {key:'country_albania'}) SET n.entityName='Albania';MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';MERGE (n:ForeignPassport {key:'documenttype_foreignpassport'});MERGE (n:OldPassport {key:'documenttype_oldpassport'});MERGE (n:ReturnTicket {key:'documenttype_returnticket'});MERGE (n:PreviousVisits {key:'questiontopic_previousvisits'});MERGE (n:VisitDuration {key:'questiontopic_visitduration'});MERGE (n:ItineraryTransport {key:'questiontopic_itinerarytransport'});MERGE (n:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}) SET n.presented=false;MERGE (n:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}) SET n.presented=true;MERGE (n:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreignpassport'}) SET n.presented=true;MERGE (n:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}) SET n.wasAsked=true;MERGE (n:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}) SET n.wasAsked=true;MERGE (n:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}) SET n.wasAsked=true;MERGE (n:Stamping {key:'stamping_encounter_11217576_author_1'});MERGE (n:Digital {key:'evidenceformat_digital'});MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:Traveller {key:'traveller_11217576_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:AtDesk {key:'controlstage_atdesk'}) MERGE (a)-[:controlStage]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreignpassport'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_11217576_author_1'}), (b:Stamping {key:'stamping_encounter_11217576_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}), (b:OldPassport {key:'documenttype_oldpassport'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}), (b:ReturnTicket {key:'documenttype_returnticket'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}), (b:Digital {key:'evidenceformat_digital'}) MERGE (a)-[:presentedFormat]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreignpassport'}), (b:ForeignPassport {key:'documenttype_foreignpassport'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}), (b:PreviousVisits {key:'questiontopic_previousvisits'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}), (b:VisitDuration {key:'questiontopic_visitduration'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}), (b:ItineraryTransport {key:'questiontopic_itinerarytransport'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Stamping {key:'stamping_encounter_11217576_author_1'}), (b:ForeignPassport {key:'documenttype_foreignpassport'}) MERGE (a)-[:stampsDocument]->(b);MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11217576_author'}) SET t.entityName='anna897';
+MERGE (e:Encounter {key:'encounter_11217576_author_1'})
+  SET e.sourcePostID=11217576,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11217576#p11217576',
+      e.sourcePostAuthor='anna897',
+      e.sourcePostDateTime=localdatetime('2022-10-20T21:32:00'),
+      e.encounterDateTime='2022-10-17T00:00:00',
+      e.controlStage='at_desk';
+
+MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
+MERGE (c_paris:City {key:'city_paris'}) SET c_paris.entityName='Paris';
+
+MERGE (dc_old:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}) SET dc_old.presented=false;
+MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}) SET dc_rt.presented=true, dc_rt.presentedFormat='digital';
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreignpassport'}) SET dc_fp.presented=true;
+
+MERGE (di_old:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_oldpassport'}) SET di_old.documentType='old_passport';
+MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_returnticket'}) SET di_rt.documentType='return_ticket';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MERGE (q_prev:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}) SET q_prev.wasAsked=true, q_prev.topicKey='previousvisits';
+MERGE (q_dur:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}) SET q_dur.wasAsked=true, q_dur.topicKey='visitduration';
+MERGE (q_it:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}) SET q_it.wasAsked=true, q_it.topicKey='itinerarytransport';
+
+MERGE (st:Stamping {key:'stamping_encounter_11217576_author_1'});
+
+MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (t:Traveller {key:'traveller_11217576_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_oldpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_returnticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_returnticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}) MERGE (e)-[:hasQuestioning]->(q);
+
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (st:Stamping {key:'stamping_encounter_11217576_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_11217576_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
