@@ -1,1 +1,31 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ForeignPassport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_12091821_author'}) SET n.entityName='BearDen';MERGE (n:Encounter {key:'encounter_12091821_author_1'}) SET n.sourcePostID=12091821, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12091821#p12091821', n.sourcePostAuthor='BearDen', n.sourcePostDateTime=localdatetime('2025-04-22T12:14:00');MERGE (n:Country {key:'country_france'}) SET n.entityName='France';MERGE (n:ForeignPassport {key:'documenttype_foreignpassport'});MERGE (n:DocumentCheck {key:'doccheck_encounter_12091821_author_1_foreignpassport'}) SET n.presented=true;MERGE (n:Stamping {key:'stamping_encounter_12091821_author_1'});MATCH (a:Encounter {key:'encounter_12091821_author_1'}), (b:Traveller {key:'traveller_12091821_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_12091821_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);MATCH (a:Encounter {key:'encounter_12091821_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_12091821_author_1_foreignpassport'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_12091821_author_1'}), (b:Stamping {key:'stamping_encounter_12091821_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_12091821_author_1_foreignpassport'}), (b:ForeignPassport {key:'documenttype_foreignpassport'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Stamping {key:'stamping_encounter_12091821_author_1'}), (b:ForeignPassport {key:'documenttype_foreignpassport'}) MERGE (a)-[:stampsDocument]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
+
+MERGE (t:Traveller {key:'traveller_12091821_author'}) SET t.entityName='BearDen';
+MERGE (e:Encounter {key:'encounter_12091821_author_1'})
+  SET e.sourcePostID=12091821,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12091821#p12091821',
+      e.sourcePostAuthor='BearDen',
+      e.sourcePostDateTime=localdatetime('2025-04-22T12:14:00'),
+      e.controlStage='at_desk',
+      e.screeningStatus='no_extra_procedures';
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_12091821_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_12091821_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MERGE (st:Stamping {key:'stamping_encounter_12091821_author_1'});
+
+MATCH (e:Encounter {key:'encounter_12091821_author_1'}), (t:Traveller {key:'traveller_12091821_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_12091821_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_12091821_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12091821_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12091821_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_12091821_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_12091821_author_1'}), (st:Stamping {key:'stamping_encounter_12091821_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_12091821_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_12091821_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);

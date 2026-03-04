@@ -1,1 +1,30 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtGate) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:BoardingPass) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11718461_author'}) SET n.entityName='Sasha';MERGE (n:Encounter {key:'encounter_11718461_author_1'}) SET n.sourcePostID=11718461, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11718461#p11718461', n.sourcePostAuthor='Sasha', n.sourcePostDateTime=localdatetime('2024-02-04T11:24:00');MERGE (n:AtGate {key:'controlstage_atgate'});MERGE (n:BoardingPass {key:'documenttype_boardingpass'});MERGE (n:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}) SET n.presented=true;MERGE (n:Stamping {key:'stamping_encounter_11718461_author_1'});MATCH (a:Encounter {key:'encounter_11718461_author_1'}), (b:Traveller {key:'traveller_11718461_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11718461_author_1'}), (b:AtGate {key:'controlstage_atgate'}) MERGE (a)-[:controlStage]->(b);MATCH (a:Encounter {key:'encounter_11718461_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11718461_author_1'}), (b:Stamping {key:'stamping_encounter_11718461_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}), (b:BoardingPass {key:'documenttype_boardingpass'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Stamping {key:'stamping_encounter_11718461_author_1'}), (b:BoardingPass {key:'documenttype_boardingpass'}) MERGE (a)-[:stampsDocument]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11718461_author'}) SET t.entityName='Sasha';
+MERGE (e:Encounter {key:'encounter_11718461_author_1'})
+  SET e.sourcePostID=11718461,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11718461#p11718461',
+      e.sourcePostAuthor='Sasha',
+      e.sourcePostDateTime=localdatetime('2024-02-04T11:24:00'),
+      e.controlStage='at_gate';
+
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+MERGE (dc_bp:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}) SET dc_bp.presented=true;
+MERGE (di_bp:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boardingpass'}) SET di_bp.documentType='boarding_pass';
+
+MERGE (st:Stamping {key:'stamping_encounter_11718461_author_1'});
+
+MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (t:Traveller {key:'traveller_11718461_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}), (di:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boardingpass'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (st:Stamping {key:'stamping_encounter_11718461_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_11718461_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boardingpass'}) MERGE (st)-[:stampsDocument]->(di);

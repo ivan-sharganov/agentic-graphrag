@@ -1,1 +1,34 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11927366_author'}) SET n.entityName='Karl500';MERGE (n:Encounter {key:'encounter_11927366_author_1'}) SET n.sourcePostID=11927366, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11927366#p11927366', n.sourcePostAuthor='Karl500', n.sourcePostDateTime=localdatetime('2024-09-25T12:46:00'), n.encounterDateTime='2024-09-24T09:25:00', n.encounterDurationSec=600;MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='Charles de Gaulle Airport';MERGE (n:AtDesk {key:'atdesk'});MATCH (a:Encounter {key:'encounter_11927366_author_1'}), (b:Traveller {key:'traveller_11927366_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11927366_author_1'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);MATCH (a:Encounter {key:'encounter_11927366_author_1'}), (b:AtDesk {key:'atdesk'}) MERGE (a)-[:controlStage]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (a_cdg:Airport {key:'airport_cdg'}) SET a_cdg.entityName='CDG';
+MERGE (c_paris:City {key:'city_paris'}) SET c_paris.entityName='Paris';
+MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
+
+MERGE (t:Traveller {key:'traveller_11927366_author'}) SET t.entityName='Karl500';
+MERGE (e:Encounter {key:'encounter_11927366_author_1'})
+  SET e.sourcePostID=11927366,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11927366#p11927366',
+      e.sourcePostAuthor='Karl500',
+      e.sourcePostDateTime=localdatetime('2024-09-25T12:46:00'),
+      e.controlStage='at_desk',
+      e.screeningStatus='no_extra_procedures';
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11927366_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11927366_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
+MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11927366_author_1'}), (t:Traveller {key:'traveller_11927366_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11927366_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
+MATCH (e:Encounter {key:'encounter_11927366_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11927366_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11927366_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11927366_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11927366_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11927366_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);

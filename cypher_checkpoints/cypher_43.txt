@@ -1,1 +1,36 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:PassportDoc) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:VisaDoc) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11885903_author'}) SET n.entityName='KateSam';MERGE (n:Encounter {key:'encounter_11885903_author_1'}) SET n.sourcePostID=11885903, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11885903#p11885903', n.sourcePostAuthor='KateSam', n.sourcePostDateTime=localdatetime('2024-08-04T20:48:00'), n.encounterDurationSec=15, n.controlStage='AtDesk';MERGE (n:City {key:'city_nice'}) SET n.entityName='Nice';MERGE (n:Country {key:'country_france'}) SET n.entityName='France';MERGE (n:PassportDoc {key:'passportdoc'});MERGE (n:VisaDoc {key:'visadoc'});MERGE (n:DocumentCheck {key:'doccheck_encounter_11885903_author_1_passport'}) SET n.presented=true;MERGE (n:DocumentCheck {key:'doccheck_encounter_11885903_author_1_visa'}) SET n.presented=true;MATCH (a:Encounter {key:'encounter_11885903_author_1'}), (b:Traveller {key:'traveller_11885903_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11885903_author_1'}), (b:City {key:'city_nice'}) MERGE (a)-[:atCity]->(b);MATCH (a:City {key:'city_nice'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);MATCH (a:Encounter {key:'encounter_11885903_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11885903_author_1_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11885903_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11885903_author_1_visa'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11885903_author_1_passport'}), (b:PassportDoc {key:'passportdoc'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11885903_author_1_visa'}), (b:VisaDoc {key:'visadoc'}) MERGE (a)-[:requestedDocType]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (c_nice:City {key:'city_nice'}) SET c_nice.entityName='Nice';
+MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
+
+MERGE (t:Traveller {key:'traveller_11885903_author'}) SET t.entityName='KateSam';
+MERGE (e:Encounter {key:'encounter_11885903_author_1'})
+  SET e.sourcePostID=11885903,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11885903#p11885903',
+      e.sourcePostAuthor='KateSam',
+      e.sourcePostDateTime=localdatetime('2024-08-04T20:48:00'),
+      e.controlStage='at_desk',
+      e.screeningStatus='no_extra_procedures';
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11885903_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (dc_visa:DocumentCheck {key:'doccheck_encounter_11885903_author_1_visa'}) SET dc_visa.presented=true;
+
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11885903_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_visa:DocumentInstance {key:'documentinstance_encounter_11885903_author_1_visa'}) SET di_visa.documentType='visa';
+
+MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11885903_author_1'}), (t:Traveller {key:'traveller_11885903_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11885903_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11885903_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11885903_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11885903_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11885903_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11885903_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11885903_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11885903_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11885903_author_1_visa'}), (di:DocumentInstance {key:'documentinstance_encounter_11885903_author_1_visa'}) MERGE (dc)-[:requestedDocument]->(di);

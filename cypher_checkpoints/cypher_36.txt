@@ -1,1 +1,80 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AccommodationDetails) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:AccommodationProof) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ExitDateFromSchengen) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:VerbalInquiryOnly) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11719467_author'}) SET n.entityName='Ninio';MERGE (n:City {key:'city_istanbul'}) SET n.entityName='Istanbul';MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='CDG';MERGE (n:Encounter {key:'encounter_11719467_author_1'}) SET n.sourcePostID=11719467, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11719467#p11719467', n.sourcePostAuthor='Ninio', n.sourcePostDateTime=localdatetime('2024-02-05T11:26:00'), n.encounterDateTime='2024-01-11T00:00:00';MERGE (n:Encounter {key:'encounter_11719467_author_2'}) SET n.sourcePostID=11719467, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11719467#p11719467', n.sourcePostAuthor='Ninio', n.sourcePostDateTime=localdatetime('2024-02-05T11:26:00'), n.encounterDateTime='2024-01-11T00:00:00';MERGE (n:ExitDateFromSchengen {key:'questiontopic_exit_date_schengen'});MERGE (n:AccommodationDetails {key:'questiontopic_accommodation_details'});MERGE (n:AccommodationProof {key:'documenttype_accommodation_proof'});MERGE (n:VerbalInquiryOnly {key:'checkmode_verbal_inquiry_only'});MERGE (n:AtDesk {key:'controlstage_at_desk'});MERGE (n:Questioning {key:'questioning_encounter_11719467_author_2_exit_date_schengen'}) SET n.wasAsked=true, n.topic='Exit date from Schengen';MERGE (n:Questioning {key:'questioning_encounter_11719467_author_2_accommodation_details'}) SET n.wasAsked=true, n.topic='Accommodation details';MERGE (n:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}) SET n.presented=false;MERGE (n:Stamping {key:'stamping_encounter_11719467_author_2'});MATCH (a:Encounter {key:'encounter_11719467_author_1'}), (b:Traveller {key:'traveller_11719467_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_1'}), (b:City {key:'city_istanbul'}) MERGE (a)-[:atCity]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:Traveller {key:'traveller_11719467_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:AtDesk {key:'controlstage_at_desk'}) MERGE (a)-[:controlStage]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:Questioning {key:'questioning_encounter_11719467_author_2_exit_date_schengen'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:Questioning {key:'questioning_encounter_11719467_author_2_accommodation_details'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11719467_author_2'}), (b:Stamping {key:'stamping_encounter_11719467_author_2'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:Questioning {key:'questioning_encounter_11719467_author_2_exit_date_schengen'}), (b:ExitDateFromSchengen {key:'questiontopic_exit_date_schengen'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Questioning {key:'questioning_encounter_11719467_author_2_accommodation_details'}), (b:AccommodationDetails {key:'questiontopic_accommodation_details'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}), (b:AccommodationProof {key:'documenttype_accommodation_proof'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}), (b:VerbalInquiryOnly {key:'checkmode_verbal_inquiry_only'}) MERGE (a)-[:checkMode]->(b);MATCH (a:Airport {key:'airport_cdg'}), (b:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11719467_author'}) SET t.entityName='Ninio';
+MERGE (c_ist:City {key:'city_istanbul'}) SET c_ist.entityName='Istanbul';
+MERGE (c_paris:City {key:'city_paris'}) SET c_paris.entityName='Paris';
+MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='CDG';
+MERGE (co_tr:Country {key:'country_turkey'}) SET co_tr.entityName='Turkey';
+MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
+
+MERGE (e1:Encounter {key:'encounter_11719467_author_1'})
+  SET e1.sourcePostID=11719467,
+      e1.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11719467#p11719467',
+      e1.sourcePostAuthor='Ninio',
+      e1.sourcePostDateTime=localdatetime('2024-02-05T11:26:00'),
+      e1.encounterDateTime='2024-01-11T00:00:00',
+      e1.controlStage='at_desk',
+      e1.screeningStatus='no_extra_procedures';
+
+MERGE (e2:Encounter {key:'encounter_11719467_author_2'})
+  SET e2.sourcePostID=11719467,
+      e2.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11719467#p11719467',
+      e2.sourcePostAuthor='Ninio',
+      e2.sourcePostDateTime=localdatetime('2024-02-05T11:26:00'),
+      e2.encounterDateTime='2024-01-11T00:00:00',
+      e2.controlStage='at_desk';
+
+// Questioning (Paris)
+MERGE (q_exit:Questioning {key:'questioning_encounter_11719467_author_2_exit_date_schengen'})
+  SET q_exit.wasAsked=true, q_exit.topicKey='exit_date_schengen';
+MERGE (q_acc:Questioning {key:'questioning_encounter_11719467_author_2_accommodation_details'})
+  SET q_acc.wasAsked=true, q_acc.topicKey='accommodation_details';
+
+// Document checks
+MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'})
+  SET dc_acc.presented=false, dc_acc.checkMode='verbal_inquiry_only';
+MERGE (dc_fp_1:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreignpassport'}) SET dc_fp_1.presented=true;
+MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreignpassport'}) SET dc_fp_2.presented=true;
+
+// Document instances
+MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_accommodation_proof'}) SET di_acc.documentType='accommodation_proof';
+MERGE (di_fp_1:DocumentInstance {key:'documentinstance_encounter_11719467_author_1_foreignpassport'}) SET di_fp_1.documentType='foreign_passport';
+MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreignpassport'}) SET di_fp_2.documentType='foreign_passport';
+
+MERGE (st2:Stamping {key:'stamping_encounter_11719467_author_2'});
+
+MATCH (c:City {key:'city_istanbul'}), (co:Country {key:'country_turkey'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
+
+MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (t:Traveller {key:'traveller_11719467_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (t:Traveller {key:'traveller_11719467_author'}) MERGE (e)-[:hasTraveler]->(t);
+
+MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (c:City {key:'city_istanbul'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (co:Country {key:'country_turkey'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
+
+MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_accommodation_proof'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (q:Questioning {key:'questioning_encounter_11719467_author_2_exit_date_schengen'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (q:Questioning {key:'questioning_encounter_11719467_author_2_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);
+
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (st:Stamping {key:'stamping_encounter_11719467_author_2'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_11719467_author_2'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
