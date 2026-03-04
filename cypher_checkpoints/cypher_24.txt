@@ -1,1 +1,40 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ForeignPassport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11383255_author'}) SET n.entityName='Poseidon';MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='CDG';MERGE (n:Encounter {key:'encounter_11383255_author_1'}) SET n.sourcePostID=11383255, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11383255#p11383255', n.sourcePostAuthor='Poseidon', n.sourcePostDateTime=localdatetime('2023-03-02T17:43:00'), n.encounterDurationSec=1;MERGE (n:AtDesk {key:'atdesk'});MERGE (n:Stamping {key:'stamping_encounter_11383255_author_1'});MERGE (n:ForeignPassport {key:'foreignpassport'});MATCH (a:Encounter {key:'encounter_11383255_author_1'}), (b:Traveller {key:'traveller_11383255_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11383255_author_1'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);MATCH (a:Encounter {key:'encounter_11383255_author_1'}), (b:AtDesk {key:'atdesk'}) MERGE (a)-[:controlStage]->(b);MATCH (a:Encounter {key:'encounter_11383255_author_1'}), (b:Stamping {key:'stamping_encounter_11383255_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:Stamping {key:'stamping_encounter_11383255_author_1'}), (b:ForeignPassport {key:'foreignpassport'}) MERGE (a)-[:stampsDocument]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11383255_author'}) SET t.entityName='Poseidon';
+MERGE (e:Encounter {key:'encounter_11383255_author_1'})
+  SET e.sourcePostID=11383255,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11383255#p11383255',
+      e.sourcePostAuthor='Poseidon',
+      e.sourcePostDateTime=localdatetime('2023-03-02T17:43:00'),
+      e.encounterDurationSec=1,
+      e.controlStage='at_desk';
+
+MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='CDG';
+MERGE (c:City {key:'city_paris'}) SET c.entityName='Paris';
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11383255_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11383255_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MERGE (st:Stamping {key:'stamping_encounter_11383255_author_1'});
+
+MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
+MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11383255_author_1'}), (t:Traveller {key:'traveller_11383255_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11383255_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
+MATCH (e:Encounter {key:'encounter_11383255_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11383255_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11383255_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11383255_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11383255_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11383255_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_11383255_author_1'}), (st:Stamping {key:'stamping_encounter_11383255_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_11383255_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11383255_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);

@@ -1,1 +1,35 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:BorderOfficer) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:NoExtraProcedures) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:PassportDoc) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11463290_author'}) SET n.entityName='ipetrova_n';MERGE (n:BorderOfficer {key:'officer_11463290_1'}) SET n.entityName='kind woman';MERGE (n:Country {key:'country_france'}) SET n.entityName='France';MERGE (n:Encounter {key:'encounter_11463290_author_1'}) SET n.sourcePostID=11463290, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11463290#p11463290', n.sourcePostAuthor='ipetrova_n', n.sourcePostDateTime=localdatetime('2023-05-09T06:05:00');MERGE (n:AtDesk {key:'controlstage_atdesk'});MERGE (n:PassportDoc {key:'documenttype_passportdoc'});MERGE (n:DocumentCheck {key:'doccheck_encounter_11463290_author_1_passport'}) SET n.presented=true;MERGE (n:Stamping {key:'stamping_encounter_11463290_author_1'});MERGE (n:NoExtraProcedures {key:'screeningstatus_noextraprocedures'});MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:Traveller {key:'traveller_11463290_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:BorderOfficer {key:'officer_11463290_1'}) MERGE (a)-[:hasOfficer]->(b);MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:AtDesk {key:'controlstage_atdesk'}) MERGE (a)-[:controlStage]->(b);MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11463290_author_1_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:Stamping {key:'stamping_encounter_11463290_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:Encounter {key:'encounter_11463290_author_1'}), (b:NoExtraProcedures {key:'screeningstatus_noextraprocedures'}) MERGE (a)-[:hasScreeningStatus]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11463290_author_1_passport'}), (b:PassportDoc {key:'documenttype_passportdoc'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Stamping {key:'stamping_encounter_11463290_author_1'}), (b:PassportDoc {key:'documenttype_passportdoc'}) MERGE (a)-[:stampsDocument]->(b);MATCH (a:Stamping {key:'stamping_encounter_11463290_author_1'}), (b:BorderOfficer {key:'officer_11463290_1'}) MERGE (a)-[:issuedBy]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:BorderOfficer) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11463290_author'}) SET t.entityName='ipetrova_n';
+MERGE (bo:BorderOfficer {key:'officer_11463290_1'}) SET bo.entityName='kind woman';
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+MERGE (e:Encounter {key:'encounter_11463290_author_1'})
+  SET e.sourcePostID=11463290,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11463290#p11463290',
+      e.sourcePostAuthor='ipetrova_n',
+      e.sourcePostDateTime=localdatetime('2023-05-09T06:05:00'),
+      e.controlStage='at_desk',
+      e.screeningStatus='no_extra_procedures';
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11463290_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11463290_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MERGE (st:Stamping {key:'stamping_encounter_11463290_author_1'});
+
+MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (t:Traveller {key:'traveller_11463290_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (bo:BorderOfficer {key:'officer_11463290_1'}) MERGE (e)-[:hasOfficer]->(bo);
+MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11463290_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11463290_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11463290_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (st:Stamping {key:'stamping_encounter_11463290_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_11463290_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11463290_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_11463290_author_1'}), (bo:BorderOfficer {key:'officer_11463290_1'}) MERGE (st)-[:issuedBy]->(bo);
