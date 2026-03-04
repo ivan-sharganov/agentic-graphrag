@@ -7,7 +7,6 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:Outcome) REQUIRE n.key IS UNIQUE;
 
 MERGE (c:City {key:'city_paris'}) SET c.entityName='Paris';
 MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='Charles de Gaulle Airport';
@@ -23,7 +22,8 @@ MERGE (e_author:Encounter {key:'encounter_3902451_author_1'})
       e_author.sourcePostDateTime=localdatetime('2013-06-11T09:05:00'),
       e_author.encounterDurationSec=300,
       e_author.controlStage='at_desk',
-      e_author.screeningStatus='secondary_interrogation';
+      e_author.screeningStatus='secondary_interrogation',
+      e_author.outcome='entry permitted';
 
 MERGE (e_friend:Encounter {key:'encounter_3902451_friend1_1'})
   SET e_friend.sourcePostID=3902451,
@@ -32,7 +32,8 @@ MERGE (e_friend:Encounter {key:'encounter_3902451_friend1_1'})
       e_friend.sourcePostDateTime=localdatetime('2013-06-11T09:05:00'),
       e_friend.encounterDurationSec=10,
       e_friend.controlStage='at_desk',
-      e_friend.screeningStatus='no_extra_procedures';
+      e_friend.screeningStatus='no_extra_procedures',
+      e_friend.outcome='entry permitted';
 
 // Document checks for author
 MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_3902451_author_1_returnticket'}) SET dc_rt.presented=true;
@@ -63,8 +64,6 @@ MERGE (q_duration:Questioning {key:'questioning_encounter_3902451_author_1_visit
 MERGE (q_employment:Questioning {key:'questioning_encounter_3902451_author_1_employment'}) SET q_employment.wasAsked=true, q_employment.topicKey='employment';
 
 MERGE (st_author:Stamping {key:'stamping_encounter_3902451_author_1'});
-MERGE (out_author:Outcome {key:'outcome_encounter_3902451_author_1'}) SET out_author.resultCode='entry permitted';
-MERGE (out_friend:Outcome {key:'outcome_encounter_3902451_friend1_1'}) SET out_friend.resultCode='entry permitted';
 
 // Location links (real-world hubs)
 MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
@@ -109,5 +108,3 @@ MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'que
 // Stamping and outcomes
 MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (s:Stamping {key:'stamping_encounter_3902451_author_1'}) MERGE (e)-[:hasStamping]->(s);
 MATCH (s:Stamping {key:'stamping_encounter_3902451_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreignpassport'}) MERGE (s)-[:stampsDocument]->(di);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (o:Outcome {key:'outcome_encounter_3902451_author_1'}) MERGE (e)-[:hasOutcome]->(o);
-MATCH (e:Encounter {key:'encounter_3902451_friend1_1'}), (o:Outcome {key:'outcome_encounter_3902451_friend1_1'}) MERGE (e)-[:hasOutcome]->(o);
