@@ -1,1 +1,71 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AccommodationProof) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:BorderOfficer) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ForeignPassport) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ReturnTicket) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:VisitDuration) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:VisitPurpose) REQUIRE n.key IS UNIQUE;MERGE (n:Encounter {key:'encounter_7997540_author_1'}) SET n.sourcePostID=7997540, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=7997540#p7997540', n.sourcePostAuthor='chados', n.sourcePostDateTime=localdatetime('2017-06-29T21:11:00'), n.encounterDurationSec=1500;MERGE (n:Traveller {key:'traveller_7997540_author'}) SET n.entityName='chados';MERGE (n:Traveller {key:'traveller_7997540_companion1'}) SET n.entityName='companion1';MERGE (n:Traveller {key:'traveller_7997540_companion2'}) SET n.entityName='companion2';MERGE (n:BorderOfficer {key:'officer_7997540_1'}) SET n.entityName='inspector';MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='Charles de Gaulle Airport';MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';MERGE (n:Country {key:'country_france'}) SET n.entityName='France';MERGE (n:AtDesk {key:'controlstage_atdesk'});MERGE (n:AccommodationProof {key:'documenttype_accommodationproof'});MERGE (n:ReturnTicket {key:'documenttype_returnticket'});MERGE (n:ForeignPassport {key:'passport_traveller_7997540_author'});MERGE (n:VisitPurpose {key:'questiontopic_visitpurpose'});MERGE (n:VisitDuration {key:'questiontopic_visitduration'});MERGE (n:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodationproof'}) SET n.presented=true;MERGE (n:DocumentCheck {key:'doccheck_encounter_7997540_author_1_returnticket'}) SET n.presented=true;MERGE (n:Questioning {key:'questioning_encounter_7997540_author_1_visitpurpose'}) SET n.wasAsked=true;MERGE (n:Questioning {key:'questioning_encounter_7997540_author_1_visitduration'}) SET n.wasAsked=true;MERGE (n:Stamping {key:'stamping_encounter_7997540_author_1'});MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:Traveller {key:'traveller_7997540_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:BorderOfficer {key:'officer_7997540_1'}) MERGE (a)-[:hasOfficer]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:AtDesk {key:'controlstage_atdesk'}) MERGE (a)-[:controlStage]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodationproof'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_7997540_author_1_returnticket'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:Questioning {key:'questioning_encounter_7997540_author_1_visitpurpose'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:Questioning {key:'questioning_encounter_7997540_author_1_visitduration'}) MERGE (a)-[:hasQuestioning]->(b);MATCH (a:Encounter {key:'encounter_7997540_author_1'}), (b:Stamping {key:'stamping_encounter_7997540_author_1'}) MERGE (a)-[:hasStamping]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodationproof'}), (b:AccommodationProof {key:'documenttype_accommodationproof'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_7997540_author_1_returnticket'}), (b:ReturnTicket {key:'documenttype_returnticket'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Questioning {key:'questioning_encounter_7997540_author_1_visitpurpose'}), (b:VisitPurpose {key:'questiontopic_visitpurpose'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Questioning {key:'questioning_encounter_7997540_author_1_visitduration'}), (b:VisitDuration {key:'questiontopic_visitduration'}) MERGE (a)-[:questionTopic]->(b);MATCH (a:Stamping {key:'stamping_encounter_7997540_author_1'}), (b:ForeignPassport {key:'passport_traveller_7997540_author'}) MERGE (a)-[:stampsDocument]->(b);MATCH (a:Stamping {key:'stamping_encounter_7997540_author_1'}), (b:BorderOfficer {key:'officer_7997540_1'}) MERGE (a)-[:issuedBy]->(b);MATCH (a:Airport {key:'airport_cdg'}), (b:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(b);MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:BorderOfficer) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+
+MERGE (e:Encounter {key:'encounter_7997540_author_1'})
+  SET e.sourcePostID=7997540,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=7997540#p7997540',
+      e.sourcePostAuthor='chados',
+      e.sourcePostDateTime=localdatetime('2017-06-29T21:11:00'),
+      e.encounterDurationSec=1500,
+      e.controlStage='at_desk';
+
+MERGE (t_author:Traveller {key:'traveller_7997540_author'}) SET t_author.entityName='chados';
+MERGE (t_comp1:Traveller {key:'traveller_7997540_companion1'}) SET t_comp1.entityName='companion1';
+MERGE (t_comp2:Traveller {key:'traveller_7997540_companion2'}) SET t_comp2.entityName='companion2';
+
+MERGE (bo:BorderOfficer {key:'officer_7997540_1'}) SET bo.entityName='inspector';
+MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='Charles de Gaulle Airport';
+MERGE (c:City {key:'city_paris'}) SET c.entityName='Paris';
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
+
+// Document checks
+MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodationproof'}) SET dc_acc.presented=true;
+MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_7997540_author_1_returnticket'}) SET dc_rt.presented=true;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_7997540_author_1_foreignpassport'}) SET dc_fp.presented=true;
+
+// Document instances
+MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_accommodationproof'}) SET di_acc.documentType='accommodation_proof';
+MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_returnticket'}) SET di_rt.documentType='return_ticket';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+// Questioning
+MERGE (q_purpose:Questioning {key:'questioning_encounter_7997540_author_1_visitpurpose'}) SET q_purpose.wasAsked=true, q_purpose.topicKey='visitpurpose';
+MERGE (q_duration:Questioning {key:'questioning_encounter_7997540_author_1_visitduration'}) SET q_duration.wasAsked=true, q_duration.topicKey='visitduration';
+
+MERGE (st:Stamping {key:'stamping_encounter_7997540_author_1'});
+
+// Location links (real-world hubs)
+MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
+MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+
+// Encounter core links
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (t:Traveller {key:'traveller_7997540_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (bo:BorderOfficer {key:'officer_7997540_1'}) MERGE (e)-[:hasOfficer]->(bo);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+
+// Document check links
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodationproof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_returnticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodationproof'}), (di:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_accommodationproof'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_returnticket'}), (di:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_returnticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+// Questioning links
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (q:Questioning {key:'questioning_encounter_7997540_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (q:Questioning {key:'questioning_encounter_7997540_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);
+
+// Stamping links
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (st:Stamping {key:'stamping_encounter_7997540_author_1'}) MERGE (e)-[:hasStamping]->(st);
+MATCH (st:Stamping {key:'stamping_encounter_7997540_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_7997540_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_7997540_author_1'}), (bo:BorderOfficer {key:'officer_7997540_1'}) MERGE (st)-[:issuedBy]->(bo);

@@ -1,1 +1,31 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:BankStatement) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:PaymentCard) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_8549857_author'}) SET n.entityName='Tinka1956';MERGE (n:Encounter {key:'encounter_8549857_author_1'}) SET n.sourcePostID=8549857, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8549857#p8549857', n.sourcePostAuthor='Tinka1956', n.sourcePostDateTime=localdatetime('2018-03-21T18:29:00');MERGE (n:Country {key:'country_kazakhstan'}) SET n.entityName='Kazakhstan';MERGE (n:BankStatement {key:'documenttype_bankstatement'});MERGE (n:PaymentCard {key:'documenttype_paymentcard'});MERGE (n:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}) SET n.presented=true;MERGE (n:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}) SET n.presented=true;MATCH (a:Encounter {key:'encounter_8549857_author_1'}), (b:Traveller {key:'traveller_8549857_author'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_8549857_author_1'}), (b:Country {key:'country_kazakhstan'}) MERGE (a)-[:atCountry]->(b);MATCH (a:Encounter {key:'encounter_8549857_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_8549857_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}), (b:BankStatement {key:'documenttype_bankstatement'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}), (b:PaymentCard {key:'documenttype_paymentcard'}) MERGE (a)-[:requestedDocType]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_8549857_author'}) SET t.entityName='Tinka1956';
+MERGE (e:Encounter {key:'encounter_8549857_author_1'})
+  SET e.sourcePostID=8549857,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8549857#p8549857',
+      e.sourcePostAuthor='Tinka1956',
+      e.sourcePostDateTime=localdatetime('2018-03-21T18:29:00');
+
+MERGE (co:Country {key:'country_kazakhstan'}) SET co.entityName='Kazakhstan';
+
+MERGE (dc_bank:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}) SET dc_bank.presented=true;
+MERGE (dc_card:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}) SET dc_card.presented=true;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_8549857_author_1_foreignpassport'}) SET dc_fp.presented=true;
+
+MERGE (di_bank:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_bankstatement'}) SET di_bank.documentType='bank_statement';
+MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_paymentcard'}) SET di_card.documentType='payment_card';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+
+MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (t:Traveller {key:'traveller_8549857_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (co:Country {key:'country_kazakhstan'}) MERGE (e)-[:atCountry]->(co);
+MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}), (di:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_bankstatement'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}), (di:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_paymentcard'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
