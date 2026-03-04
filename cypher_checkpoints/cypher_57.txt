@@ -1,1 +1,34 @@
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:AtDesk) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:HotelBookingDoc) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:ReturnTicket) REQUIRE n.key IS UNIQUE;CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;MERGE (n:Traveller {key:'traveller_11328576_acquaintance1'}) SET n.entityName='acquaintance';MERGE (n:Encounter {key:'encounter_11328576_acquaintance1_1'}) SET n.sourcePostID=11328576, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11328576#p11328576', n.sourcePostAuthor='OksanaK_', n.sourcePostDateTime=localdatetime('2023-01-19T01:39:00');MERGE (n:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}) SET n.presented=true;MERGE (n:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}) SET n.presented=true;MERGE (n:HotelBookingDoc {key:'doctype_hotel_booking'});MERGE (n:ReturnTicket {key:'doctype_return_ticket'});MERGE (n:AtDesk {key:'controlstage_atdesk'});MATCH (a:Encounter {key:'encounter_11328576_acquaintance1_1'}), (b:Traveller {key:'traveller_11328576_acquaintance1'}) MERGE (a)-[:hasTraveler]->(b);MATCH (a:Encounter {key:'encounter_11328576_acquaintance1_1'}), (b:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:Encounter {key:'encounter_11328576_acquaintance1_1'}), (b:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}), (b:HotelBookingDoc {key:'doctype_hotel_booking'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}), (b:ReturnTicket {key:'doctype_return_ticket'}) MERGE (a)-[:requestedDocType]->(b);MATCH (a:Encounter {key:'encounter_11328576_acquaintance1_1'}), (b:AtDesk {key:'controlstage_atdesk'}) MERGE (a)-[:controlStage]->(b);
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
+
+MERGE (t:Traveller {key:'traveller_11328576_acquaintance1'}) SET t.entityName='acquaintance';
+MERGE (e:Encounter {key:'encounter_11328576_acquaintance1_1'})
+  SET e.sourcePostID=11328576,
+      e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11328576#p11328576',
+      e.sourcePostAuthor='OksanaK_',
+      e.sourcePostDateTime=localdatetime('2023-01-19T01:39:00'),
+      e.controlStage='at_desk';
+
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (dc_hotel:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}) SET dc_hotel.presented=true;
+MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}) SET dc_rt.presented=true;
+
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_hotel:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_hotel_booking'}) SET di_hotel.documentType='hotel_booking';
+MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_return_ticket'}) SET di_rt.documentType='return_ticket';
+
+MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (t:Traveller {key:'traveller_11328576_acquaintance1'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+
+MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
