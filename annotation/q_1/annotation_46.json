@@ -4,7 +4,7 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_author_1"
       },
       "p": "atAirport",
       "o": {
@@ -37,133 +37,122 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_author_1"
       },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_cash"
+        "key": "doccheck_encounter_12083906_author_1_foreignpassport"
       }
     },
     {
       "s": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_cash"
+        "key": "doccheck_encounter_12083906_author_1_foreignpassport"
       },
       "p": "requestedDocument",
       "o": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12265196_author_1_cash"
+        "key": "documentinstance_encounter_12083906_author_1_foreignpassport"
       }
     },
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_friend1_1"
       },
-      "p": "hasDocumentCheck",
+      "p": "atAirport",
       "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_paymentcard"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_paymentcard"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12265196_author_1_paymentcard"
+        "label": "Airport",
+        "key": "airport_cdg"
       }
     },
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_friend1_1"
       },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_returnticket"
+        "key": "doccheck_encounter_12083906_friend1_1_foreignpassport"
       }
     },
     {
       "s": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_returnticket"
+        "key": "doccheck_encounter_12083906_friend1_1_foreignpassport"
       },
       "p": "requestedDocument",
       "o": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12265196_author_1_returnticket"
+        "key": "documentinstance_encounter_12083906_friend1_1_foreignpassport"
       }
     },
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_friend1_1"
       },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_hotelbooking"
+        "key": "doccheck_encounter_12083906_friend1_1_returnticket"
       }
     },
     {
       "s": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_hotelbooking"
+        "key": "doccheck_encounter_12083906_friend1_1_returnticket"
       },
       "p": "requestedDocument",
       "o": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12265196_author_1_hotelbooking"
+        "key": "documentinstance_encounter_12083906_friend1_1_returnticket"
       }
     },
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_friend1_1"
       },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_travelinsurance"
+        "key": "doccheck_encounter_12083906_friend1_1_paymentcard"
       }
     },
     {
       "s": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_travelinsurance"
+        "key": "doccheck_encounter_12083906_friend1_1_paymentcard"
       },
       "p": "requestedDocument",
       "o": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12265196_author_1_travelinsurance"
+        "key": "documentinstance_encounter_12083906_friend1_1_paymentcard"
       }
     },
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_12265196_author_1"
+        "key": "encounter_12083906_friend1_1"
       },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_foreignpassport"
+        "key": "doccheck_encounter_12083906_friend1_1_cash"
       }
     },
     {
       "s": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_foreignpassport"
+        "key": "doccheck_encounter_12083906_friend1_1_cash"
       },
       "p": "requestedDocument",
       "o": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12265196_author_1_foreignpassport"
+        "key": "documentinstance_encounter_12083906_friend1_1_cash"
       }
     }
   ]

@@ -4,7 +4,7 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_9343311_author_1"
+        "key": "encounter_11719467_author_2"
       },
       "p": "atAirport",
       "o": {
@@ -37,23 +37,45 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_9343311_author_1"
+        "key": "encounter_11719467_author_2"
       },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_9343311_author_1_foreignpassport"
+        "key": "doccheck_encounter_11719467_author_2_foreignpassport"
       }
     },
     {
       "s": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_9343311_author_1_foreignpassport"
+        "key": "doccheck_encounter_11719467_author_2_foreignpassport"
       },
       "p": "requestedDocument",
       "o": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_9343311_author_1_foreignpassport"
+        "key": "documentinstance_encounter_11719467_author_2_foreignpassport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_2"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11719467_author_2_accommodation_proof"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11719467_author_2_accommodation_proof"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11719467_author_2_accommodation_proof"
       }
     }
   ]
