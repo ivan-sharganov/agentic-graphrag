@@ -20,12 +20,23 @@
     {
       "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
       "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_foreignpassport"}
+    },
+
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
       "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_returnticket"}
     },
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_returnticket"},
-      "p": "requestedDocType",
-      "o": {"label": "ReturnTicket", "key": "returnticket"}
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_returnticket"}
     },
 
     {
@@ -35,8 +46,8 @@
     },
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_travelinsurance"},
-      "p": "requestedDocType",
-      "o": {"label": "TravelInsurance", "key": "travelinsurance"}
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_travelinsurance"}
     },
 
     {
@@ -46,8 +57,8 @@
     },
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_hotelbookingdoc"},
-      "p": "requestedDocType",
-      "o": {"label": "HotelBookingDoc", "key": "hotelbookingdoc"}
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_hotelbookingdoc"}
     },
 
     {
@@ -57,8 +68,8 @@
     },
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_paymentcard"},
-      "p": "requestedDocType",
-      "o": {"label": "PaymentCard", "key": "paymentcard"}
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_paymentcard"}
     },
 
     {
@@ -68,8 +79,8 @@
     },
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_cash"},
-      "p": "requestedDocType",
-      "o": {"label": "Cash", "key": "cash"}
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_cash"}
     }
   ]
 }
