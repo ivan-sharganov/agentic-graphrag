@@ -1,0 +1,27 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_9462760_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_9462760_author_1'}) SET e.sourcePostID=9462760, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9462760#p9462760', e.sourcePostAuthor='Crossfit_Moscow', e.sourcePostDateTime=localdatetime('2019-06-26T20:13:00'), e.transportMode='air';
+MERGE (c_city_stuttgart:City {key:'city_stuttgart'}) SET c_city_stuttgart.entityName='Stuttgart';
+MERGE (co_country_germany:Country {key:'country_germany'}) SET co_country_germany.entityName='Germany';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_9462760_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_9462760_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (q_visit_duration:Questioning {key:'questioning_encounter_9462760_author_1_visit_duration'}) SET q_visit_duration.wasAsked=true, q_visit_duration.topicKey='visit_duration';
+MERGE (st:Stamping {key:'stamping_encounter_9462760_author_1'});
+
+MATCH (e:Encounter {key:'encounter_9462760_author_1'}), (t:Traveller {key:'traveller_9462760_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9462760_author_1'}), (c:City {key:'city_stuttgart'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_9462760_author_1'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);
+MATCH (c:City {key:'city_stuttgart'}), (co:Country {key:'country_germany'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (e:Encounter {key:'encounter_9462760_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9462760_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9462760_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_9462760_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_9462760_author_1'}), (q:Questioning {key:'questioning_encounter_9462760_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_9462760_author_1'}), (s:Stamping {key:'stamping_encounter_9462760_author_1'}) MERGE (e)-[:hasStamping]->(s);
+MATCH (s:Stamping {key:'stamping_encounter_9462760_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_9462760_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);

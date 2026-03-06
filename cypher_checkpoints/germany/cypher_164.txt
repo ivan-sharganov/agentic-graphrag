@@ -1,0 +1,36 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11615606_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_11615606_author_1'}) SET e.sourcePostID=11615606, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11615606#p11615606', e.sourcePostAuthor='Кирилл Сафроненко', e.sourcePostDateTime=localdatetime('2023-10-07T23:36:00'), e.controlStage='at_port';
+MERGE (c_city_frankfurt:City {key:'city_frankfurt'}) SET c_city_frankfurt.entityName='Frankfurt';
+MERGE (co_country_germany:Country {key:'country_germany'}) SET co_country_germany.entityName='Germany';
+MERGE (dc_cash:DocumentCheck {key:'doccheck_encounter_11615606_author_1_cash'}) SET dc_cash.presented=true;
+MERGE (di_cash:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_cash'}) SET di_cash.documentType='cash';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11615606_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_11615606_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
+MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
+MERGE (dc_travel_insurance:DocumentCheck {key:'doccheck_encounter_11615606_author_1_travel_insurance'}) SET dc_travel_insurance.presented=true;
+MERGE (di_travel_insurance:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_travel_insurance'}) SET di_travel_insurance.documentType='travel_insurance';
+MERGE (st:Stamping {key:'stamping_encounter_11615606_author_1'});
+
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (t:Traveller {key:'traveller_11615606_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (c:City {key:'city_frankfurt'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);
+MATCH (c:City {key:'city_frankfurt'}), (co:Country {key:'country_germany'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_cash'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_cash'}), (di:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_cash'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_travel_insurance'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11615606_author_1_travel_insurance'}), (di:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_travel_insurance'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11615606_author_1'}), (s:Stamping {key:'stamping_encounter_11615606_author_1'}) MERGE (e)-[:hasStamping]->(s);
+MATCH (s:Stamping {key:'stamping_encounter_11615606_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11615606_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);

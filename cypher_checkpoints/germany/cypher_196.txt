@@ -1,0 +1,31 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_12002755_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_12002755_author_1'}) SET e.sourcePostID=12002755, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12002755#p12002755', e.sourcePostAuthor='babuleha', e.sourcePostDateTime=localdatetime('2025-01-11T23:01:00'), e.controlStage='at_port';
+MERGE (c_city_frankfurt:City {key:'city_frankfurt'}) SET c_city_frankfurt.entityName='Frankfurt';
+MERGE (co_country_germany:Country {key:'country_germany'}) SET co_country_germany.entityName='Germany';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_12002755_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_12002755_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_12002755_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
+MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_12002755_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
+MERGE (dc_visa:DocumentCheck {key:'doccheck_encounter_12002755_author_1_visa'}) SET dc_visa.presented=true;
+MERGE (di_visa:DocumentInstance {key:'documentinstance_encounter_12002755_author_1_visa'}) SET di_visa.documentType='visa';
+MERGE (q_visit_purpose:Questioning {key:'questioning_encounter_12002755_author_1_visit_purpose'}) SET q_visit_purpose.wasAsked=true, q_visit_purpose.topicKey='visit_purpose';
+
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (t:Traveller {key:'traveller_12002755_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (c:City {key:'city_frankfurt'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);
+MATCH (c:City {key:'city_frankfurt'}), (co:Country {key:'country_germany'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12002755_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12002755_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12002755_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12002755_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12002755_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_12002755_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12002755_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12002755_author_1_visa'}), (di:DocumentInstance {key:'documentinstance_encounter_12002755_author_1_visa'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12002755_author_1'}), (q:Questioning {key:'questioning_encounter_12002755_author_1_visit_purpose'}) MERGE (e)-[:hasQuestioning]->(q);

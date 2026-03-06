@@ -1,0 +1,20 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_9379697_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_9379697_author_1'}) SET e.sourcePostID=9379697, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9379697#p9379697', e.sourcePostAuthor='Samovarchik', e.sourcePostDateTime=localdatetime('2019-05-12T21:31:00'), e.outcome='entry permitted';
+MERGE (c_city_munich:City {key:'city_munich'}) SET c_city_munich.entityName='Munich';
+MERGE (co_country_germany:Country {key:'country_germany'}) SET co_country_germany.entityName='Germany';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_9379697_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_9379697_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+
+MATCH (e:Encounter {key:'encounter_9379697_author_1'}), (t:Traveller {key:'traveller_9379697_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9379697_author_1'}), (c:City {key:'city_munich'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_9379697_author_1'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);
+MATCH (c:City {key:'city_munich'}), (co:Country {key:'country_germany'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (e:Encounter {key:'encounter_9379697_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9379697_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9379697_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_9379697_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);

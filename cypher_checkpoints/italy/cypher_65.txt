@@ -1,0 +1,28 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11826594_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_11826594_author_1'}) SET e.sourcePostID=11826594, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11826594#p11826594', e.sourcePostAuthor='Dana-Lana', e.sourcePostDateTime=localdatetime('2024-05-25T11:36:00'), e.controlStage='on_train', e.transportMode='air';
+MERGE (c_city_rome:City {key:'city_rome'}) SET c_city_rome.entityName='Rome';
+MERGE (co_country_italy:Country {key:'country_italy'}) SET co_country_italy.entityName='Italy';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11826594_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11826594_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_hotel_booking:DocumentCheck {key:'doccheck_encounter_11826594_author_1_hotel_booking'}) SET dc_hotel_booking.presented=true;
+MERGE (di_hotel_booking:DocumentInstance {key:'documentinstance_encounter_11826594_author_1_hotel_booking'}) SET di_hotel_booking.documentType='hotel_booking';
+MERGE (st:Stamping {key:'stamping_encounter_11826594_author_1'});
+
+MATCH (e:Encounter {key:'encounter_11826594_author_1'}), (t:Traveller {key:'traveller_11826594_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11826594_author_1'}), (c:City {key:'city_rome'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11826594_author_1'}), (co:Country {key:'country_italy'}) MERGE (e)-[:atCountry]->(co);
+MATCH (c:City {key:'city_rome'}), (co:Country {key:'country_italy'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (e:Encounter {key:'encounter_11826594_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11826594_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11826594_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11826594_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11826594_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11826594_author_1_hotel_booking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11826594_author_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_11826594_author_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11826594_author_1'}), (s:Stamping {key:'stamping_encounter_11826594_author_1'}) MERGE (e)-[:hasStamping]->(s);
+MATCH (s:Stamping {key:'stamping_encounter_11826594_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11826594_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);

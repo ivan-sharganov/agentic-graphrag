@@ -1,0 +1,21 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11927193_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_11927193_author_1'}) SET e.sourcePostID=11927193, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11927193#p11927193', e.sourcePostAuthor='Bef_Stroganov', e.sourcePostDateTime=localdatetime('2024-09-25T09:32:00'), e.controlStage='at_port';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11927193_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11927193_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_hotel_booking:DocumentCheck {key:'doccheck_encounter_11927193_author_1_hotel_booking'}) SET dc_hotel_booking.presented=true;
+MERGE (di_hotel_booking:DocumentInstance {key:'documentinstance_encounter_11927193_author_1_hotel_booking'}) SET di_hotel_booking.documentType='hotel_booking';
+MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_11927193_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
+MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_11927193_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
+
+MATCH (e:Encounter {key:'encounter_11927193_author_1'}), (t:Traveller {key:'traveller_11927193_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11927193_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11927193_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11927193_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11927193_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11927193_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11927193_author_1_hotel_booking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11927193_author_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_11927193_author_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11927193_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11927193_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11927193_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11927193_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);

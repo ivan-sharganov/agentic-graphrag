@@ -1,0 +1,30 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_12105832_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_12105832_author_1'}) SET e.sourcePostID=12105832, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12105832#p12105832', e.sourcePostAuthor='tramp_chiara', e.sourcePostDateTime=localdatetime('2025-05-12T17:14:00'), e.controlStage='at_port';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_12105832_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_hotel_booking:DocumentCheck {key:'doccheck_encounter_12105832_author_1_hotel_booking'}) SET dc_hotel_booking.presented=true;
+MERGE (di_hotel_booking:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_hotel_booking'}) SET di_hotel_booking.documentType='hotel_booking';
+MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_12105832_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
+MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
+MERGE (dc_travel_itinerary:DocumentCheck {key:'doccheck_encounter_12105832_author_1_travel_itinerary'}) SET dc_travel_itinerary.presented=true;
+MERGE (di_travel_itinerary:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_travel_itinerary'}) SET di_travel_itinerary.documentType='travel_itinerary';
+MERGE (q_itinerary_transport:Questioning {key:'questioning_encounter_12105832_author_1_itinerary_transport'}) SET q_itinerary_transport.wasAsked=true, q_itinerary_transport.topicKey='itinerary_transport';
+MERGE (q_visit_duration:Questioning {key:'questioning_encounter_12105832_author_1_visit_duration'}) SET q_visit_duration.wasAsked=true, q_visit_duration.topicKey='visit_duration';
+
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (t:Traveller {key:'traveller_12105832_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_hotel_booking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_travel_itinerary'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12105832_author_1_travel_itinerary'}), (di:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_travel_itinerary'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (q:Questioning {key:'questioning_encounter_12105832_author_1_itinerary_transport'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_12105832_author_1'}), (q:Questioning {key:'questioning_encounter_12105832_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);

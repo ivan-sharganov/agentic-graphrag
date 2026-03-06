@@ -1,0 +1,32 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_12147700_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_12147700_author_1'}) SET e.sourcePostID=12147700, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12147700#p12147700', e.sourcePostAuthor='belka-1y', e.sourcePostDateTime=localdatetime('2025-07-12T13:44:00'), e.controlStage='at_gate';
+MERGE (a_airport_cdg:Airport {key:'airport_cdg'}) SET a_airport_cdg.entityName='CDG';
+MERGE (c_city_paris:City {key:'city_paris'}) SET c_city_paris.entityName='Paris';
+MERGE (co_country_france:Country {key:'country_france'}) SET co_country_france.entityName='France';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_12147700_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_12147700_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_visa:DocumentCheck {key:'doccheck_encounter_12147700_author_1_visa'}) SET dc_visa.presented=true;
+MERGE (di_visa:DocumentInstance {key:'documentinstance_encounter_12147700_author_1_visa'}) SET di_visa.documentType='visa';
+MERGE (st:Stamping {key:'stamping_encounter_12147700_author_1'});
+
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (t:Traveller {key:'traveller_12147700_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
+MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12147700_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12147700_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12147700_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12147700_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_12147700_author_1_visa'}), (di:DocumentInstance {key:'documentinstance_encounter_12147700_author_1_visa'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_12147700_author_1'}), (s:Stamping {key:'stamping_encounter_12147700_author_1'}) MERGE (e)-[:hasStamping]->(s);
+MATCH (s:Stamping {key:'stamping_encounter_12147700_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_12147700_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);

@@ -1,0 +1,20 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_11915555_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_11915555_author_1'}) SET e.sourcePostID=11915555, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11915555#p11915555', e.sourcePostAuthor='nlev2005', e.sourcePostDateTime=localdatetime('2024-09-09T19:31:00'), e.controlStage='at_port', e.transportMode='air';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11915555_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11915555_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (q_employment:Questioning {key:'questioning_encounter_11915555_author_1_employment'}) SET q_employment.wasAsked=true, q_employment.topicKey='employment';
+MERGE (st:Stamping {key:'stamping_encounter_11915555_author_1'});
+
+MATCH (e:Encounter {key:'encounter_11915555_author_1'}), (t:Traveller {key:'traveller_11915555_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11915555_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11915555_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11915555_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11915555_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11915555_author_1'}), (q:Questioning {key:'questioning_encounter_11915555_author_1_employment'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11915555_author_1'}), (s:Stamping {key:'stamping_encounter_11915555_author_1'}) MERGE (e)-[:hasStamping]->(s);
+MATCH (s:Stamping {key:'stamping_encounter_11915555_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11915555_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);

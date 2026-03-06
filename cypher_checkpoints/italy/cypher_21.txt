@@ -1,0 +1,24 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+
+MERGE (t:Traveller {key:'traveller_9086235_author'}) SET t.entityName='author';
+MERGE (e:Encounter {key:'encounter_9086235_author_1'}) SET e.sourcePostID=9086235, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9086235#p9086235', e.sourcePostAuthor='alonzo', e.sourcePostDateTime=localdatetime('2018-12-13T10:47:00'), e.controlStage='on_train', e.transportMode='train';
+MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_9086235_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
+MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_9086235_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
+MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_9086235_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
+MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_9086235_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
+MERGE (q_previous_visits:Questioning {key:'questioning_encounter_9086235_author_1_previous_visits'}) SET q_previous_visits.wasAsked=true, q_previous_visits.topicKey='previous_visits';
+MERGE (st:Stamping {key:'stamping_encounter_9086235_author_1'});
+
+MATCH (e:Encounter {key:'encounter_9086235_author_1'}), (t:Traveller {key:'traveller_9086235_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9086235_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9086235_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9086235_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_9086235_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_9086235_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9086235_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_9086235_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_9086235_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_9086235_author_1'}), (q:Questioning {key:'questioning_encounter_9086235_author_1_previous_visits'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_9086235_author_1'}), (s:Stamping {key:'stamping_encounter_9086235_author_1'}) MERGE (e)-[:hasStamping]->(s);
+MATCH (s:Stamping {key:'stamping_encounter_9086235_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_9086235_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);
