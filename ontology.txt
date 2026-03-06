@@ -18,9 +18,9 @@ pcfr:Encounter        a rdfs:Class ; rdfs:subClassOf pcfr:KnowledgeItem ; rdfs:l
 pcfr:Traveller        a rdfs:Class ; rdfs:label "Traveller"@en .
 pcfr:BorderOfficer    a rdfs:Class ; rdfs:label "Border officer"@en .
 pcfr:DocumentCheck    a rdfs:Class ; rdfs:label "Document check"@en .
+pcfr:DocumentInstance a rdfs:Class ; rdfs:label "Document instance"@en .
 pcfr:Questioning      a rdfs:Class ; rdfs:label "Questioning at the desk"@en .
 pcfr:Stamping         a rdfs:Class ; rdfs:label "Passport stamping event"@en .
-pcfr:Outcome          a rdfs:Class ; rdfs:label "Encounter outcome"@en .
 pcfr:Airport          a rdfs:Class ; rdfs:label "Airport"@en .
 pcfr:City             a rdfs:Class ; rdfs:label "City"@en .
 pcfr:Country          a rdfs:Class ; rdfs:label "Country"@en .
@@ -37,38 +37,30 @@ pcfr:Encounter rdfs:subClassOf [
   owl:onClass pcfr:Traveller
 ] .
 
-# Each DocumentCheck must have exactly one requestedDocType
+# Each DocumentCheck must have exactly one requestedDocument (DocumentInstance)
 pcfr:DocumentCheck rdfs:subClassOf [
   a owl:Restriction ;
-  owl:onProperty pcfr:requestedDocType ;
+  owl:onProperty pcfr:requestedDocument ;
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass pcfr:DocumentType
+  owl:onClass pcfr:DocumentInstance
 ] .
 
-# Each Questioning must have exactly one questionTopic
+# Each Questioning must have exactly one topicKey (string)
 pcfr:Questioning rdfs:subClassOf [
   a owl:Restriction ;
-  owl:onProperty pcfr:questionTopic ;
+  owl:onProperty pcfr:topicKey ;
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  owl:onClass pcfr:QuestionTopic
+  owl:onDataRange xsd:string
 ] .
 
 #########################
 # Document / vocabularies
 #########################
 
-pcfr:DocumentType     a rdfs:Class ; rdfs:label "Document type (controlled)"@en .
-
-pcfr:PassportDoc      a rdfs:Class ;
-  rdfs:subClassOf pcfr:DocumentType ;
-  rdfs:label "Passport (generic document type)"@en .
-
-pcfr:InternalPassportRF a rdfs:Class ;
-  rdfs:subClassOf pcfr:PassportDoc ;
-  rdfs:label "Russian internal passport"@en .
+pcfr:DocumentType     a rdfs:Class ; rdfs:label "Document type (controlled values for documentType)"@en .
 
 pcfr:ForeignPassport a rdfs:Class ;
-  rdfs:subClassOf pcfr:PassportDoc ;
+  rdfs:subClassOf pcfr:DocumentType ;
   rdfs:label "Foreign travel passport"@en .
 
 pcfr:VisaDoc          a rdfs:Class ;
@@ -102,10 +94,6 @@ pcfr:Cash             a rdfs:Class ;
 pcfr:ProofOfFunds     a rdfs:Class ;
   rdfs:subClassOf pcfr:DocumentType ;
   rdfs:label "Proof of funds (any form)"@en .
-
-pcfr:PassportWithVisa a rdfs:Class ;
-  rdfs:subClassOf pcfr:ForeignPassport ;
-  rdfs:label "Passport with visa"@en .
 
 pcfr:EvidenceFormat   a rdfs:Class ; rdfs:label "Evidence format"@en .
 pcfr:Printout         a rdfs:Class ; rdfs:subClassOf pcfr:EvidenceFormat ; rdfs:label "Printed paper"@en .
@@ -199,7 +187,6 @@ pcfr:hasOfficer       a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range p
 pcfr:hasDocumentCheck a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:DocumentCheck .
 pcfr:hasQuestioning   a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Questioning .
 pcfr:hasStamping      a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Stamping .
-pcfr:hasOutcome       a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Outcome .
 
 # Location for Encounter
 pcfr:atAirport        a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:Airport .
@@ -215,17 +202,16 @@ pcfr:secondaryScreeningDurationMin a rdf:Property ; rdfs:domain pcfr:Encounter ;
 pcfr:encounterDurationSec a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:integer .
 
 # Outcome / subevents
-pcfr:resultCode        a rdf:Property ; rdfs:domain pcfr:Outcome ; rdfs:range xsd:string .
-pcfr:stampsDocument    a rdf:Property ; rdfs:domain pcfr:Stamping ; rdfs:range pcfr:PassportDoc .
+pcfr:stampsDocument    a rdf:Property ; rdfs:domain pcfr:Stamping ; rdfs:range pcfr:DocumentInstance .
 pcfr:issuedBy          a rdf:Property ; rdfs:domain pcfr:Stamping ; rdfs:range pcfr:BorderOfficer .
 
 # DocumentCheck
 pcfr:presented         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range xsd:boolean .
-pcfr:requestedDocType  a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:DocumentType .
+pcfr:requestedDocument a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:DocumentInstance .
 pcfr:checkedBy         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:BorderOfficer .
-pcfr:presentedFormat   a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:EvidenceFormat .
-pcfr:acceptedFormat    a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:EvidenceFormat .
-pcfr:checkMode         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:CheckMode .
+pcfr:presentedFormat   a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range xsd:string .
+pcfr:acceptedFormat    a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range xsd:string .
+pcfr:checkMode         a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range xsd:string .
 pcfr:treatedAsRequirementLevel a rdf:Property ; rdfs:domain pcfr:DocumentCheck ; rdfs:range pcfr:RequirementLevel .
 
 # Behavior
@@ -233,18 +219,20 @@ pcfr:behaviorDuringEncounter a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:
 pcfr:followsGuideline a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:BehaviorGuideline .
 pcfr:violatesGuideline a rdf:Property ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:BehaviorGuideline .
 
-# Screening status
-pcfr:hasScreeningStatus a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range pcfr:ScreeningStatus .
+# Screening status (stored as Encounter string property)
+pcfr:screeningStatus a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:string .
+pcfr:outcome         a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Encounter ; rdfs:range xsd:string .
 
 # Questioning
-pcfr:questionTopic     a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Questioning ; rdfs:range pcfr:QuestionTopic .
+pcfr:topicKey         a rdf:Property , owl:FunctionalProperty ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:string .
 pcfr:wasAsked          a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:boolean .
 pcfr:topic             a rdf:Property ; rdfs:domain pcfr:Questioning ; rdfs:range xsd:string .
 
-# Policy-level facts
+# Document instance
+pcfr:documentType      a rdf:Property ; rdfs:domain pcfr:DocumentInstance ; rdfs:range xsd:string .
+
+# Policy-level facts (deprecated in projection; kept for reference)
 pcfr:documentRequirement a rdf:Property ; rdfs:domain pcfr:DocumentType ; rdfs:range pcfr:RequirementLevel .
-pcfr:InternalPassportRF pcfr:documentRequirement pcfr:NotRequired .
-pcfr:PassportWithVisa  pcfr:documentRequirement pcfr:Required .
 
 ########################################
 # pcfr v4 additions (Encounter-only)
@@ -263,7 +251,7 @@ pcfr:InCorridor a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "I
 pcfr:OnTrain a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "On train / onboard check"@en .
 
 pcfr:controlStage a rdf:Property , owl:FunctionalProperty ;
-  rdfs:domain pcfr:Encounter ; rdfs:range pcfr:ControlStage .
+  rdfs:domain pcfr:Encounter ; rdfs:range xsd:string .
 
 ###############
 # Stations (for TER / border stations)
