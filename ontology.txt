@@ -249,8 +249,21 @@ pcfr:AtDesk a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "At bo
 pcfr:AtGate a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "At boarding gate"@en .
 pcfr:InCorridor a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "In corridor before control"@en .
 pcfr:OnTrain a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "On train / onboard check"@en .
+pcfr:AtCheckIn a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "At airline check-in / registration"@en .
+pcfr:AtCustoms a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "Customs check area"@en .
+pcfr:AtEgate a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "Automated e-gate"@en .
+pcfr:OnBus a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "On bus / onboard check"@en .
+pcfr:OnFerry a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "On ferry / onboard check"@en .
+pcfr:AtRoadBorder a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "Road border crossing / by car"@en .
+pcfr:AtPort a rdfs:Class ; rdfs:subClassOf pcfr:ControlStage ; rdfs:label "Seaport / ferry terminal"@en .
 
 pcfr:controlStage a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Encounter ; rdfs:range xsd:string .
+
+pcfr:controlChannel a rdf:Property , owl:FunctionalProperty ;
+  rdfs:domain pcfr:Encounter ; rdfs:range xsd:string .
+
+pcfr:transportMode a rdf:Property ;
   rdfs:domain pcfr:Encounter ; rdfs:range xsd:string .
 
 ###############
@@ -304,6 +317,24 @@ pcfr:BoardingPass a rdfs:Class ;
 
 pcfr:AccommodationProof a rdfs:Class ;
   rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Proof of accommodation (any)"@en .
+
+pcfr:ResidencePermit a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Residence permit / residence card"@en .
+
+pcfr:CovidTest a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "COVID-19 test result"@en .
+
+pcfr:VaccinationCertificate a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Vaccination certificate / QR pass"@en .
+
+pcfr:PassengerLocatorForm a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Passenger locator form (PLF/dPLF)"@en .
+
+pcfr:TravelItinerary a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Travel itinerary / route plan"@en .
+
+pcfr:TransportTicket a rdfs:Class ;
+  rdfs:subClassOf pcfr:DocumentType ; rdfs:label "Transport ticket (bus/train/ferry)"@en .
 
 ###############
 # Question topics (coverage)
