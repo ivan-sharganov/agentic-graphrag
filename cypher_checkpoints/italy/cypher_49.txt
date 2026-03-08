@@ -1,17 +1,14 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
-
-MERGE (t:Traveller {key:'traveller_11601219_author'}) SET t.entityName='author';
-MERGE (e:Encounter {key:'encounter_11601219_author_1'}) SET e.sourcePostID=11601219, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11601219#p11601219', e.sourcePostAuthor='Аня Р.', e.sourcePostDateTime=localdatetime('2023-09-21T13:47:00'), e.controlStage='on_bus', e.transportMode='bus';
-MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11601219_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
-MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11601219_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
-MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_11601219_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
-MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_11601219_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
-
-MATCH (e:Encounter {key:'encounter_11601219_author_1'}), (t:Traveller {key:'traveller_11601219_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_11601219_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11601219_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11601219_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11601219_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (e:Encounter {key:'encounter_11601219_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11601219_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11601219_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11601219_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MERGE (n:Country {key:'country_italy'}) SET n.entityName='Italy';
+MERGE (n:DocumentCheck {key:'doccheck_encounter_11601219_author_1_foreign_passport'});
+MERGE (n:DocumentInstance {key:'documentinstance_encounter_11601219_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
+MERGE (n:Encounter {key:'encounter_11601219_author_1'}) SET n.sourcePostID=11601219, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11601219#p11601219', n.sourcePostAuthor='Аня Р.', n.sourcePostDateTime=localdatetime('2023-09-21T13:47:00'), n.controlStage='on_bus', n.transportMode='bus';
+MERGE (n:Traveller {key:'traveller_11601219_author'});
+MATCH (a:DocumentCheck {key:'doccheck_encounter_11601219_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11601219_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
+MATCH (a:Encounter {key:'encounter_11601219_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
+MATCH (a:Encounter {key:'encounter_11601219_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11601219_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
+MATCH (a:Encounter {key:'encounter_11601219_author_1'}), (b:Traveller {key:'traveller_11601219_author'}) MERGE (a)-[:hasTraveler]->(b);
