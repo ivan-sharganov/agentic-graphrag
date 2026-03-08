@@ -1,16 +1,18 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:City) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
-
-MERGE (t:Traveller {key:'traveller_11708628_author'}) SET t.entityName='author';
-MERGE (e:Encounter {key:'encounter_11708628_author_1'}) SET e.sourcePostID=11708628, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11708628#p11708628', e.sourcePostAuthor='Ollala79', e.sourcePostDateTime=localdatetime('2024-01-25T17:26:00'), e.controlStage='on_train', e.outcome='entry permitted', e.transportMode='air';
-MERGE (co_country_spain:Country {key:'country_spain'}) SET co_country_spain.entityName='Spain';
-MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11708628_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
-MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11708628_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
-
-MATCH (e:Encounter {key:'encounter_11708628_author_1'}), (t:Traveller {key:'traveller_11708628_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_11708628_author_1'}), (co:Country {key:'country_spain'}) MERGE (e)-[:atCountry]->(co);
-MATCH (e:Encounter {key:'encounter_11708628_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11708628_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11708628_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11708628_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MERGE (n:City {key:'city_vienna'}) SET n.entityName='Vienna';
+MERGE (n:Country {key:'country_austria'}) SET n.entityName='Austria';
+MERGE (n:DocumentCheck {key:'doccheck_encounter_11708628_author_1_foreign_passport'});
+MERGE (n:DocumentInstance {key:'documentinstance_encounter_11708628_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
+MERGE (n:Encounter {key:'encounter_11708628_author_1'}) SET n.sourcePostID=11708628, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11708628#p11708628', n.sourcePostAuthor='Ollala79', n.sourcePostDateTime=localdatetime('2024-01-25T17:26:00');
+MERGE (n:Traveller {key:'traveller_11708628_author'});
+MATCH (a:City {key:'city_vienna'}), (b:Country {key:'country_austria'}) MERGE (a)-[:locatedInCountry]->(b);
+MATCH (a:DocumentCheck {key:'doccheck_encounter_11708628_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11708628_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
+MATCH (a:Encounter {key:'encounter_11708628_author_1'}), (b:City {key:'city_vienna'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:Encounter {key:'encounter_11708628_author_1'}), (b:Country {key:'country_austria'}) MERGE (a)-[:atCountry]->(b);
+MATCH (a:Encounter {key:'encounter_11708628_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11708628_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
+MATCH (a:Encounter {key:'encounter_11708628_author_1'}), (b:Traveller {key:'traveller_11708628_author'}) MERGE (a)-[:hasTraveler]->(b);
