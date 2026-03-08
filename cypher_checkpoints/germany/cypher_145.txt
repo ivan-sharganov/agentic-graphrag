@@ -5,23 +5,17 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
-
-MERGE (t:Traveller {key:'traveller_11492436_author'}) SET t.entityName='author';
-MERGE (e:Encounter {key:'encounter_11492436_author_1'}) SET e.sourcePostID=11492436, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11492436#p11492436', e.sourcePostAuthor='lenukass', e.sourcePostDateTime=localdatetime('2023-06-04T21:20:00'), e.controlStage='at_gate', e.outcome='entry permitted';
-MERGE (c_city_frankfurt:City {key:'city_frankfurt'}) SET c_city_frankfurt.entityName='Frankfurt';
-MERGE (co_country_germany:Country {key:'country_germany'}) SET co_country_germany.entityName='Germany';
-MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_11492436_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
-MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_11492436_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
-MERGE (dc_visa:DocumentCheck {key:'doccheck_encounter_11492436_author_1_visa'}) SET dc_visa.presented=true;
-MERGE (di_visa:DocumentInstance {key:'documentinstance_encounter_11492436_author_1_visa'}) SET di_visa.documentType='visa';
-MERGE (q_visit_duration:Questioning {key:'questioning_encounter_11492436_author_1_visit_duration'}) SET q_visit_duration.wasAsked=true, q_visit_duration.topicKey='visit_duration';
-
-MATCH (e:Encounter {key:'encounter_11492436_author_1'}), (t:Traveller {key:'traveller_11492436_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_11492436_author_1'}), (c:City {key:'city_frankfurt'}) MERGE (e)-[:atCity]->(c);
-MATCH (e:Encounter {key:'encounter_11492436_author_1'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);
-MATCH (c:City {key:'city_frankfurt'}), (co:Country {key:'country_germany'}) MERGE (c)-[:locatedInCountry]->(co);
-MATCH (e:Encounter {key:'encounter_11492436_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11492436_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11492436_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11492436_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (e:Encounter {key:'encounter_11492436_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11492436_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11492436_author_1_visa'}), (di:DocumentInstance {key:'documentinstance_encounter_11492436_author_1_visa'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (e:Encounter {key:'encounter_11492436_author_1'}), (q:Questioning {key:'questioning_encounter_11492436_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);
+MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
+MERGE (n:City {key:'city_frankfurt'}) SET n.entityName='Frankfurt';
+MERGE (n:Encounter {key:'encounter_11492436_author_1'}) SET n.sourcePostID=11492436, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11492436#p11492436', n.sourcePostAuthor='lenukass', n.sourcePostDateTime=localdatetime('2023-06-04T21:20:00');
+MERGE (n:Traveller {key:'traveller_11492436_author'});
+MERGE (n:DocumentCheck {key:'doccheck_encounter_11492436_author_1_foreign_passport'});
+MERGE (n:DocumentInstance {key:'documentinstance_encounter_11492436_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
+MERGE (n:Questioning {key:'questioning_encounter_11492436_author_1_visit_duration'}) SET n.topicKey='visit_duration', n.wasAsked=true;
+MATCH (a:Encounter {key:'encounter_11492436_author_1'}), (b:Traveller {key:'traveller_11492436_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11492436_author_1'}), (b:City {key:'city_frankfurt'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:Encounter {key:'encounter_11492436_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
+MATCH (a:Encounter {key:'encounter_11492436_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11492436_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
+MATCH (a:DocumentCheck {key:'doccheck_encounter_11492436_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11492436_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
+MATCH (a:Encounter {key:'encounter_11492436_author_1'}), (b:Questioning {key:'questioning_encounter_11492436_author_1_visit_duration'}) MERGE (a)-[:hasQuestioning]->(b);
+MATCH (a:City {key:'city_frankfurt'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

@@ -1,21 +1,18 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
-
-MERGE (t:Traveller {key:'traveller_8665101_author'}) SET t.entityName='author';
-MERGE (e:Encounter {key:'encounter_8665101_author_1'}) SET e.sourcePostID=8665101, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8665101#p8665101', e.sourcePostAuthor='Serpent849', e.sourcePostDateTime=localdatetime('2018-05-11T16:01:00'), e.controlStage='on_train', e.transportMode='train';
-MERGE (dc_cash:DocumentCheck {key:'doccheck_encounter_8665101_author_1_cash'}) SET dc_cash.presented=true;
-MERGE (di_cash:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_cash'}) SET di_cash.documentType='cash';
-MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_8665101_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
-MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
-MERGE (dc_return_ticket:DocumentCheck {key:'doccheck_encounter_8665101_author_1_return_ticket'}) SET dc_return_ticket.presented=true;
-MERGE (di_return_ticket:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_return_ticket'}) SET di_return_ticket.documentType='return_ticket';
-
-MATCH (e:Encounter {key:'encounter_8665101_author_1'}), (t:Traveller {key:'traveller_8665101_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_8665101_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8665101_author_1_cash'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_8665101_author_1_cash'}), (di:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_cash'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (e:Encounter {key:'encounter_8665101_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8665101_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_8665101_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (e:Encounter {key:'encounter_8665101_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8665101_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_8665101_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
+MERGE (n:Encounter {key:'encounter_8665101_author_1'}) SET n.sourcePostID=8665101, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8665101#p8665101', n.sourcePostAuthor='Serpent849', n.sourcePostDateTime=localdatetime('2018-05-11T16:01:00');
+MERGE (n:Traveller {key:'traveller_8665101_author'});
+MERGE (n:DocumentCheck {key:'doccheck_encounter_8665101_author_1_cash'});
+MERGE (n:DocumentCheck {key:'doccheck_encounter_8665101_author_1_foreign_passport'});
+MERGE (n:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_cash'}) SET n.documentType='cash';
+MERGE (n:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
+MATCH (a:Encounter {key:'encounter_8665101_author_1'}), (b:Traveller {key:'traveller_8665101_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_8665101_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
+MATCH (a:Encounter {key:'encounter_8665101_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_8665101_author_1_cash'}) MERGE (a)-[:hasDocumentCheck]->(b);
+MATCH (a:DocumentCheck {key:'doccheck_encounter_8665101_author_1_cash'}), (b:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_cash'}) MERGE (a)-[:requestedDocument]->(b);
+MATCH (a:Encounter {key:'encounter_8665101_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_8665101_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
+MATCH (a:DocumentCheck {key:'doccheck_encounter_8665101_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_8665101_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
