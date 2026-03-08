@@ -24,7 +24,8 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11738414_author_1_for
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11738414_husband_1_return_ticket'}) SET n.documentType='return_ticket';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11738414_husband_1_hotel_booking'}) SET n.documentType='hotel_booking';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11738414_husband_1_foreign_passport'}) SET n.documentType='foreign_passport';
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_11738414_author_1'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_11738414_husband_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11738414_author_1_fingerprint'}) SET n.biometricWasTaken=true;
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11738414_husband_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_11738414_author_1'}), (b:Traveller {key:'traveller_11738414_author'}) MERGE (a)-[:hasTraveler]->(b);
@@ -37,7 +38,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11738414_author_1_hotel_booking'
 MATCH (a:Encounter {key:'encounter_11738414_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11738414_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11738414_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11738414_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11738414_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11738414_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11738414_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11738414_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11738414_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:Encounter {key:'encounter_11738414_husband_1'}), (b:Traveller {key:'traveller_11738414_husband'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11738414_husband_1'}), (b:City {key:'city_munich'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11738414_husband_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
@@ -48,5 +49,5 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11738414_husband_1_hotel_booking
 MATCH (a:Encounter {key:'encounter_11738414_husband_1'}), (b:DocumentCheck {key:'doccheck_encounter_11738414_husband_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11738414_husband_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11738414_husband_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11738414_husband_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11738414_husband_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11738414_husband_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11738414_husband_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11738414_husband_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_munich'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

@@ -14,7 +14,7 @@ MERGE (n:Traveller {key:'traveller_11322466_author'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11322466_author_1_foreign_passport'});
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11322466_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_11322466_author_1'});
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_11322466_author_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11322466_author_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_11322466_author_1'}), (b:Traveller {key:'traveller_11322466_author'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11322466_author_1'}), (b:City {key:'city_berlin'}) MERGE (a)-[:atCity]->(b);
@@ -24,5 +24,5 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11322466_author_1_foreign_passpo
 MATCH (a:Encounter {key:'encounter_11322466_author_1'}), (b:Stamping {key:'stamping_encounter_11322466_author_1'}) MERGE (a)-[:hasStamping]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_11322466_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_11322466_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11322466_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11322466_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11322466_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11322466_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11322466_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_berlin'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

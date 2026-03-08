@@ -18,7 +18,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520965_mother_1_ret
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520965_mother_1_invitation_letter'}) SET n.documentType='invitation_letter';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520965_mother_1_id_card'}) SET n.documentType='id_card';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520965_mother_1_foreign_passport'}) SET n.documentType='foreign_passport';
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_11520965_mother_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11520965_mother_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_11520965_mother_1'}), (b:Traveller {key:'traveller_11520965_mother'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11520965_mother_1'}), (b:City {key:'city_frankfurt'}) MERGE (a)-[:atCity]->(b);
@@ -32,5 +32,5 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11520965_mother_1_id_card'}), (b
 MATCH (a:Encounter {key:'encounter_11520965_mother_1'}), (b:DocumentCheck {key:'doccheck_encounter_11520965_mother_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11520965_mother_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11520965_mother_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11520965_mother_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11520965_mother_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11520965_mother_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11520965_mother_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11520965_mother_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_frankfurt'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

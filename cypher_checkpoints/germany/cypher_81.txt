@@ -12,7 +12,7 @@ MERGE (n:Encounter {key:'encounter_11243489_relatives_1'}) SET n.sourcePostID=11
 MERGE (n:Traveller {key:'traveller_11243489_relatives'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11243489_relatives_1_foreign_passport'});
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11243489_relatives_1_foreign_passport'}) SET n.documentType='foreign_passport';
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_11243489_relatives_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11243489_relatives_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_11243489_relatives_1'}), (b:Traveller {key:'traveller_11243489_relatives'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11243489_relatives_1'}), (b:City {key:'city_frankfurt'}) MERGE (a)-[:atCity]->(b);
@@ -20,5 +20,5 @@ MATCH (a:Encounter {key:'encounter_11243489_relatives_1'}), (b:Country {key:'cou
 MATCH (a:Encounter {key:'encounter_11243489_relatives_1'}), (b:DocumentCheck {key:'doccheck_encounter_11243489_relatives_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11243489_relatives_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11243489_relatives_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11243489_relatives_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11243489_relatives_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11243489_relatives_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11243489_relatives_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11243489_relatives_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_frankfurt'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

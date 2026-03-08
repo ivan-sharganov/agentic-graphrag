@@ -25,7 +25,7 @@ MERGE (n:Questioning {key:'questioning_encounter_12059589_author_1_visit_duratio
 MERGE (n:Questioning {key:'questioning_encounter_12059589_author_1_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_12059589_author_1_accommodation_details'}) SET n.topicKey='accommodation_details', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_12059589_author_1_cash_amount'}) SET n.topicKey='cash_amount', n.wasAsked=true;
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_12059589_author_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_12059589_author_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_12059589_author_1'}), (b:Traveller {key:'traveller_12059589_author'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_12059589_author_1'}), (b:City {key:'city_berlin'}) MERGE (a)-[:atCity]->(b);
@@ -45,5 +45,5 @@ MATCH (a:Encounter {key:'encounter_12059589_author_1'}), (b:Questioning {key:'qu
 MATCH (a:Encounter {key:'encounter_12059589_author_1'}), (b:Questioning {key:'questioning_encounter_12059589_author_1_accommodation_details'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_12059589_author_1'}), (b:Questioning {key:'questioning_encounter_12059589_author_1_cash_amount'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_12059589_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_12059589_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_12059589_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_12059589_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_12059589_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_berlin'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

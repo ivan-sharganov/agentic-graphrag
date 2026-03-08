@@ -15,7 +15,7 @@ MERGE (n:DocumentCheck {key:'doccheck_encounter_8538890_author_1_foreign_passpor
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_8538890_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Questioning {key:'questioning_encounter_8538890_author_1_visit_duration'}) SET n.topicKey='visit_duration', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_8538890_author_1_cash_amount'}) SET n.topicKey='cash_amount', n.wasAsked=true;
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_8538890_author_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_8538890_author_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_8538890_author_1'}), (b:Traveller {key:'traveller_8538890_author'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_8538890_author_1'}), (b:City {key:'city_memmingen'}) MERGE (a)-[:atCity]->(b);
@@ -25,5 +25,5 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_8538890_author_1_foreign_passpor
 MATCH (a:Encounter {key:'encounter_8538890_author_1'}), (b:Questioning {key:'questioning_encounter_8538890_author_1_visit_duration'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_8538890_author_1'}), (b:Questioning {key:'questioning_encounter_8538890_author_1_cash_amount'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_8538890_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_8538890_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_8538890_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_8538890_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_8538890_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_memmingen'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);

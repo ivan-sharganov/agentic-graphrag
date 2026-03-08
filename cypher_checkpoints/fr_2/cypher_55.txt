@@ -40,7 +40,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_12233555_friend_1_tra
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_12233555_friend_1_payment_card'}) SET n.documentType='payment_card';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_12233555_friend_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_12233555_author_2'});
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_12233555_friend_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_12233555_friend_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_12233555_author_1'}), (b:Traveller {key:'traveller_12233555_author'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_12233555_author_1'}), (b:City {key:'city_yerevan'}) MERGE (a)-[:atCity]->(b);
@@ -75,7 +75,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_12233555_friend_1_payment_card'}
 MATCH (a:Encounter {key:'encounter_12233555_friend_1'}), (b:DocumentCheck {key:'doccheck_encounter_12233555_friend_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_12233555_friend_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_12233555_friend_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_12233555_friend_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_12233555_friend_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_12233555_friend_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_12233555_friend_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_12233555_friend_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:Airport {key:'airport_bva'}), (b:City {key:'city_beauvais'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_yerevan'}), (b:Country {key:'country_armenia'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:City {key:'city_beauvais'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);

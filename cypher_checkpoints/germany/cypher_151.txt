@@ -25,7 +25,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11510419_author_1_for
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11510419_child_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Questioning {key:'questioning_encounter_11510419_author_1_accommodation_details'}) SET n.topicKey='accommodation_details', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_11510419_author_1_cash_amount'}) SET n.topicKey='cash_amount', n.wasAsked=true;
-MERGE (n:Fingerprint {key:'fingerprint'});
+MERGE (n:Fingerprint {key:'fingerprint_encounter_11510419_author_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11510419_author_1_fingerprint'}) SET n.biometricWasTaken=true;
 MATCH (a:Encounter {key:'encounter_11510419_author_1'}), (b:Traveller {key:'traveller_11510419_author'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11510419_author_1'}), (b:City {key:'city_munich'}) MERGE (a)-[:atCity]->(b);
@@ -41,7 +41,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11510419_author_1_foreign_passpo
 MATCH (a:Encounter {key:'encounter_11510419_author_1'}), (b:Questioning {key:'questioning_encounter_11510419_author_1_accommodation_details'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_11510419_author_1'}), (b:Questioning {key:'questioning_encounter_11510419_author_1_cash_amount'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_11510419_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11510419_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11510419_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint'}) MERGE (a)-[:biometricModality]->(b);
+MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11510419_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11510419_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:Encounter {key:'encounter_11510419_child_1'}), (b:Traveller {key:'traveller_11510419_child'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11510419_child_1'}), (b:City {key:'city_munich'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11510419_child_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
