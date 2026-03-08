@@ -1,13 +1,14 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
-
-MERGE (t:Traveller {key:'traveller_12108064_author'}) SET t.entityName='author';
-MERGE (e:Encounter {key:'encounter_12108064_author_1'}) SET e.sourcePostID=12108064, e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12108064#p12108064', e.sourcePostAuthor='111энни', e.sourcePostDateTime=localdatetime('2025-05-15T07:24:00'), e.controlStage='at_port', e.screeningStatus='no_extra_procedures';
-MERGE (dc_foreign_passport:DocumentCheck {key:'doccheck_encounter_12108064_author_1_foreign_passport'}) SET dc_foreign_passport.presented=true;
-MERGE (di_foreign_passport:DocumentInstance {key:'documentinstance_encounter_12108064_author_1_foreign_passport'}) SET di_foreign_passport.documentType='foreign_passport';
-
-MATCH (e:Encounter {key:'encounter_12108064_author_1'}), (t:Traveller {key:'traveller_12108064_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_12108064_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_12108064_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_12108064_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12108064_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MERGE (n:Country {key:'country_france'}) SET n.entityName='France';
+MERGE (n:Encounter {key:'encounter_12108064_author_1'}) SET n.sourcePostID=12108064, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12108064#p12108064', n.sourcePostAuthor='111энни', n.sourcePostDateTime=localdatetime('2025-05-15T07:24:00');
+MERGE (n:Traveller {key:'traveller_12108064_author'});
+MERGE (n:DocumentCheck {key:'doccheck_encounter_12108064_author_1_foreign_passport'});
+MERGE (n:DocumentInstance {key:'documentinstance_encounter_12108064_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
+MATCH (a:Encounter {key:'encounter_12108064_author_1'}), (b:Traveller {key:'traveller_12108064_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_12108064_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);
+MATCH (a:Encounter {key:'encounter_12108064_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_12108064_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
+MATCH (a:DocumentCheck {key:'doccheck_encounter_12108064_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_12108064_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
