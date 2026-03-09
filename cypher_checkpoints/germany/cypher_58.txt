@@ -12,7 +12,7 @@ MERGE (n:City {key:'city_dusseldorf'}) SET n.entityName='Dusseldorf';
 MERGE (n:City {key:'city_frankfurt'}) SET n.entityName='Frankfurt';
 MERGE (n:Encounter {key:'encounter_9760965_author_1'}) SET n.sourcePostID=9760965, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9760965#p9760965', n.sourcePostAuthor='adamsss', n.sourcePostDateTime=localdatetime('2019-12-15T10:12:00');
 MERGE (n:Encounter {key:'encounter_9760965_author_2'}) SET n.sourcePostID=9760965, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9760965#p9760965', n.sourcePostAuthor='adamsss', n.sourcePostDateTime=localdatetime('2019-12-15T10:12:00');
-MERGE (n:Traveller {key:'traveller_9760965_author'});
+MERGE (n:Traveller {key:'adamsss'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9760965_author_1_return_ticket'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9760965_author_1_hotel_booking'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9760965_author_1_cash'});
@@ -27,7 +27,7 @@ MERGE (n:Questioning {key:'questioning_encounter_9760965_author_1_visit_purpose'
 MERGE (n:Questioning {key:'questioning_encounter_9760965_author_2_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
 MERGE (n:Fingerprint {key:'fingerprint_encounter_9760965_author_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_9760965_author_1_fingerprint'}) SET n.biometricWasTaken=true;
-MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:Traveller {key:'traveller_9760965_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:Traveller {key:'adamsss'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:City {key:'city_dusseldorf'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_9760965_author_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
@@ -41,7 +41,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_9760965_author_1_foreign_passpor
 MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:Questioning {key:'questioning_encounter_9760965_author_1_visit_purpose'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_9760965_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
 MATCH (a:BiometricCheck {key:'biometriccheck_encounter_9760965_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_9760965_author_1'}) MERGE (a)-[:biometricModality]->(b);
-MATCH (a:Encounter {key:'encounter_9760965_author_2'}), (b:Traveller {key:'traveller_9760965_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9760965_author_2'}), (b:Traveller {key:'adamsss'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_2'}), (b:City {key:'city_frankfurt'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_2'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_9760965_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_9760965_author_2_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);

@@ -7,7 +7,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
 MERGE (n:City {key:'city_munich'}) SET n.entityName='Munich';
 MERGE (n:Encounter {key:'encounter_11285849_author_1'}) SET n.sourcePostID=11285849, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11285849#p11285849', n.sourcePostAuthor='Proser', n.sourcePostDateTime=localdatetime('2022-12-10T22:09:00');
-MERGE (n:Traveller {key:'traveller_11285849_author'});
+MERGE (n:Traveller {key:'Proser'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11285849_author_1_travel_insurance'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11285849_author_1_cash'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11285849_author_1_hotel_booking'});
@@ -18,7 +18,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11285849_author_1_cas
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11285849_author_1_hotel_booking'}) SET n.documentType='hotel_booking';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11285849_author_1_return_ticket'}) SET n.documentType='return_ticket';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11285849_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
-MATCH (a:Encounter {key:'encounter_11285849_author_1'}), (b:Traveller {key:'traveller_11285849_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11285849_author_1'}), (b:Traveller {key:'Proser'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11285849_author_1'}), (b:City {key:'city_munich'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11285849_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11285849_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11285849_author_1_travel_insurance'}) MERGE (a)-[:hasDocumentCheck]->(b);

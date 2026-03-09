@@ -15,7 +15,7 @@ MERGE (n:Encounter {key:'encounter_12134610_husband_1'}) SET n.sourcePostID=1213
 MERGE (n:Encounter {key:'encounter_12134610_author_2'}) SET n.sourcePostID=12134610, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12134610#p12134610', n.sourcePostAuthor='olya_levaya', n.sourcePostDateTime=localdatetime('2025-06-23T08:28:00');
 MERGE (n:Encounter {key:'encounter_12134610_husband_2'}) SET n.sourcePostID=12134610, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12134610#p12134610', n.sourcePostAuthor='olya_levaya', n.sourcePostDateTime=localdatetime('2025-06-23T08:28:00');
 MERGE (n:Encounter {key:'encounter_12134610_couple_1'}) SET n.sourcePostID=12134610, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12134610#p12134610', n.sourcePostAuthor='olya_levaya', n.sourcePostDateTime=localdatetime('2025-06-23T08:28:00');
-MERGE (n:Traveller {key:'traveller_12134610_author'});
+MERGE (n:Traveller {key:'olya_levaya'});
 MERGE (n:Traveller {key:'traveller_12134610_husband'});
 MERGE (n:Traveller {key:'traveller_12134610_couple'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_12134610_author_1_visa'});
@@ -38,7 +38,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_12134610_couple_1_ret
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_12134610_couple_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_12134610_author_2'});
 MERGE (n:Stamping {key:'stamping_encounter_12134610_husband_2'});
-MATCH (a:Encounter {key:'encounter_12134610_author_1'}), (b:Traveller {key:'traveller_12134610_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_12134610_author_1'}), (b:Traveller {key:'olya_levaya'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_author_1'}), (b:City {key:'city_istanbul'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_author_1'}), (b:Country {key:'country_turkey'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_12134610_author_1_visa'}) MERGE (a)-[:hasDocumentCheck]->(b);
@@ -54,7 +54,7 @@ MATCH (a:Encounter {key:'encounter_12134610_husband_1'}), (b:DocumentCheck {key:
 MATCH (a:DocumentCheck {key:'doccheck_encounter_12134610_husband_1_return_ticket'}), (b:DocumentInstance {key:'documentinstance_encounter_12134610_husband_1_return_ticket'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_husband_1'}), (b:DocumentCheck {key:'doccheck_encounter_12134610_husband_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_12134610_husband_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_12134610_husband_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
-MATCH (a:Encounter {key:'encounter_12134610_author_2'}), (b:Traveller {key:'traveller_12134610_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_12134610_author_2'}), (b:Traveller {key:'olya_levaya'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_author_2'}), (b:Airport {key:'airport_ory'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_author_2'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_12134610_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_12134610_author_2_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);

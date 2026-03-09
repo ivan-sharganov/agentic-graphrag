@@ -9,7 +9,7 @@ MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
 MERGE (n:City {key:'city_dortmund'}) SET n.entityName='Dortmund';
 MERGE (n:Encounter {key:'encounter_11685343_author_1'}) SET n.sourcePostID=11685343, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11685343#p11685343', n.sourcePostAuthor='Bandit', n.sourcePostDateTime=localdatetime('2023-12-30T12:27:00');
 MERGE (n:Encounter {key:'encounter_11685343_friend_1'}) SET n.sourcePostID=11685343, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11685343#p11685343', n.sourcePostAuthor='Bandit', n.sourcePostDateTime=localdatetime('2023-12-30T12:27:00');
-MERGE (n:Traveller {key:'traveller_11685343_author'});
+MERGE (n:Traveller {key:'Bandit'});
 MERGE (n:Traveller {key:'traveller_11685343_friend'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11685343_author_1_visa'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11685343_author_1_foreign_passport'});
@@ -21,7 +21,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11685343_friend_1_vis
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11685343_friend_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_11685343_author_1'});
 MERGE (n:Stamping {key:'stamping_encounter_11685343_friend_1'});
-MATCH (a:Encounter {key:'encounter_11685343_author_1'}), (b:Traveller {key:'traveller_11685343_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11685343_author_1'}), (b:Traveller {key:'Bandit'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11685343_author_1'}), (b:City {key:'city_dortmund'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11685343_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11685343_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11685343_author_1_visa'}) MERGE (a)-[:hasDocumentCheck]->(b);

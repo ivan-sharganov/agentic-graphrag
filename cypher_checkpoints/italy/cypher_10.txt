@@ -13,7 +13,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_6890389_author_1_hote
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_6890389_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_6890389_author_1'}) SET n.sourcePostID=6890389, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=6890389#p6890389', n.sourcePostAuthor='zalmen', n.sourcePostDateTime=localdatetime('2016-03-07T14:56:00');
 MERGE (n:Questioning {key:'questioning_encounter_6890389_author_1_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
-MERGE (n:Traveller {key:'traveller_6890389_author'});
+MERGE (n:Traveller {key:'zalmen'});
 MATCH (a:City {key:'city_bergamo'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_6890389_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_6890389_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_6890389_author_1_hotel_booking'}), (b:DocumentInstance {key:'documentinstance_encounter_6890389_author_1_hotel_booking'}) MERGE (a)-[:requestedDocument]->(b);
@@ -22,4 +22,4 @@ MATCH (a:Encounter {key:'encounter_6890389_author_1'}), (b:Country {key:'country
 MATCH (a:Encounter {key:'encounter_6890389_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_6890389_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_6890389_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_6890389_author_1_hotel_booking'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_6890389_author_1'}), (b:Questioning {key:'questioning_encounter_6890389_author_1_visit_purpose'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_6890389_author_1'}), (b:Traveller {key:'traveller_6890389_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_6890389_author_1'}), (b:Traveller {key:'zalmen'}) MERGE (a)-[:hasTraveler]->(b);

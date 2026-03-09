@@ -11,7 +11,7 @@ MERGE (c_nice:City {key:'city_nice'}) SET c_nice.entityName='Nice';
 MERGE (co_tr:Country {key:'country_turkey'}) SET co_tr.entityName='Turkey';
 MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
 
-MERGE (t:Traveller {key:'traveller_11553587_author'}) SET t.entityName='Sasha';
+MERGE (t:Traveller {key:'Sasha'}) SET t.entityName='Sasha';
 MERGE (e:Encounter {key:'encounter_11553587_author_1'})
   SET e.sourcePostID=11553587,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11553587#p11553587',
@@ -28,7 +28,7 @@ MERGE (st:Stamping {key:'stamping_encounter_11553587_author_1'});
 MATCH (c:City {key:'city_istanbul'}), (co:Country {key:'country_turkey'}) MERGE (c)-[:locatedInCountry]->(co);
 MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11553587_author_1'}), (t:Traveller {key:'traveller_11553587_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11553587_author_1'}), (t:Traveller {key:'Sasha'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11553587_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_11553587_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 

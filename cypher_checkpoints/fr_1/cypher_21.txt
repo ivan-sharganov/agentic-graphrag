@@ -6,7 +6,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 
-MERGE (t:Traveller {key:'traveller_11249940_author'}) SET t.entityName='acxol';
+MERGE (t:Traveller {key:'acxol'}) SET t.entityName='acxol';
 MERGE (e:Encounter {key:'encounter_11249940_author_1'})
   SET e.sourcePostID=11249940,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11249940#p11249940',
@@ -28,7 +28,7 @@ MERGE (st:Stamping {key:'stamping_encounter_11249940_author_1'});
 
 MATCH (c:City {key:'city_lyon'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (t:Traveller {key:'traveller_11249940_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (t:Traveller {key:'acxol'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
 
 MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11249940_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);

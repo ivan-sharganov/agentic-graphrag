@@ -12,7 +12,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11626500_author_1_for
 MERGE (n:Encounter {key:'encounter_11626500_author_1'}) SET n.sourcePostID=11626500, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11626500#p11626500', n.sourcePostAuthor='Alex@ndErSl', n.sourcePostDateTime=localdatetime('2023-10-20T15:12:00'), n.transportMode='train';
 MERGE (n:Questioning {key:'questioning_encounter_11626500_author_1_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_11626500_author_1_travel_itinerary'}) SET n.topicKey='travel_itinerary', n.wasAsked=true;
-MERGE (n:Traveller {key:'traveller_11626500_author'});
+MERGE (n:Traveller {key:'Alex@ndErSl'});
 MATCH (a:City {key:'city_domodossola'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11626500_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11626500_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:City {key:'city_domodossola'}) MERGE (a)-[:atCity]->(b);
@@ -20,4 +20,4 @@ MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:Country {key:'countr
 MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11626500_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:Questioning {key:'questioning_encounter_11626500_author_1_travel_itinerary'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:Questioning {key:'questioning_encounter_11626500_author_1_visit_purpose'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:Traveller {key:'traveller_11626500_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11626500_author_1'}), (b:Traveller {key:'Alex@ndErSl'}) MERGE (a)-[:hasTraveler]->(b);

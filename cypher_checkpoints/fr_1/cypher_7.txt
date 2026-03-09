@@ -17,7 +17,7 @@ MERGE (e:Encounter {key:'encounter_7997540_author_1'})
       e.encounterDurationSec=1500,
       e.controlStage='at_desk';
 
-MERGE (t_author:Traveller {key:'traveller_7997540_author'}) SET t_author.entityName='chados';
+MERGE (t_author:Traveller {key:'chados'}) SET t_author.entityName='chados';
 MERGE (t_comp1:Traveller {key:'traveller_7997540_companion1'}) SET t_comp1.entityName='companion1';
 MERGE (t_comp2:Traveller {key:'traveller_7997540_companion2'}) SET t_comp2.entityName='companion2';
 
@@ -47,7 +47,7 @@ MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:l
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
 // Encounter core links
-MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (t:Traveller {key:'traveller_7997540_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (t:Traveller {key:'chados'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (bo:BorderOfficer {key:'officer_7997540_1'}) MERGE (e)-[:hasOfficer]->(bo);
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);

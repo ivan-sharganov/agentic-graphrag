@@ -11,7 +11,7 @@ MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
 MERGE (c_menton:City {key:'city_menton'}) SET c_menton.entityName='Menton';
 MERGE (s_menton:Station {key:'station_menton_garavan'}) SET s_menton.entityName='Menton Garavan';
 
-MERGE (t:Traveller {key:'traveller_11814545_author'}) SET t.entityName='peterzh';
+MERGE (t:Traveller {key:'peterzh'}) SET t.entityName='peterzh';
 MERGE (e:Encounter {key:'encounter_11814545_author_1'})
   SET e.sourcePostID=11814545,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11814545#p11814545',
@@ -36,7 +36,7 @@ MERGE (di_visa:DocumentInstance {key:'documentinstance_encounter_11814545_author
 MATCH (s:Station {key:'station_menton_garavan'}), (c:City {key:'city_menton'}) MERGE (s)-[:locatedInCity]->(c);
 MATCH (c:City {key:'city_menton'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (t:Traveller {key:'traveller_11814545_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (t:Traveller {key:'peterzh'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (bo:BorderOfficer {key:'borderofficer_11814545_1'}) MERGE (e)-[:hasOfficer]->(bo);
 MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (bo:BorderOfficer {key:'borderofficer_11814545_2'}) MERGE (e)-[:hasOfficer]->(bo);
 MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (s:Station {key:'station_menton_garavan'}) MERGE (e)-[:atStation]->(s);

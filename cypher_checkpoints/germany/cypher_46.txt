@@ -12,7 +12,7 @@ MERGE (n:Airport {key:'airport_schonefeld'}) SET n.entityName='Schonefeld Airpor
 MERGE (n:Encounter {key:'encounter_9612012_author_1'}) SET n.sourcePostID=9612012, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9612012#p9612012', n.sourcePostAuthor='ZASranets', n.sourcePostDateTime=localdatetime('2019-09-17T16:40:00');
 MERGE (n:Encounter {key:'encounter_9612012_author_2'}) SET n.sourcePostID=9612012, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9612012#p9612012', n.sourcePostAuthor='ZASranets', n.sourcePostDateTime=localdatetime('2019-09-17T16:40:00');
 MERGE (n:Encounter {key:'encounter_9612012_author_3'}) SET n.sourcePostID=9612012, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9612012#p9612012', n.sourcePostAuthor='ZASranets', n.sourcePostDateTime=localdatetime('2019-09-17T16:40:00');
-MERGE (n:Traveller {key:'traveller_9612012_author'});
+MERGE (n:Traveller {key:'ZASranets'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9612012_author_1_foreign_passport'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9612012_author_2_invitation_letter'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9612012_author_2_foreign_passport'});
@@ -21,13 +21,13 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_9612012_author_1_fore
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_9612012_author_2_invitation_letter'}) SET n.documentType='invitation_letter';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_9612012_author_2_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_9612012_author_3_foreign_passport'}) SET n.documentType='foreign_passport';
-MATCH (a:Encounter {key:'encounter_9612012_author_1'}), (b:Traveller {key:'traveller_9612012_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9612012_author_1'}), (b:Traveller {key:'ZASranets'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_1'}), (b:Airport {key:'airport_tegel'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_1'}), (b:City {key:'city_berlin'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_9612012_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9612012_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_9612012_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
-MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:Traveller {key:'traveller_9612012_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:Traveller {key:'ZASranets'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:Airport {key:'airport_tegel'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:City {key:'city_berlin'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
@@ -35,7 +35,7 @@ MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:DocumentCheck {key:'d
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9612012_author_2_invitation_letter'}), (b:DocumentInstance {key:'documentinstance_encounter_9612012_author_2_invitation_letter'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_9612012_author_2_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9612012_author_2_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_9612012_author_2_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
-MATCH (a:Encounter {key:'encounter_9612012_author_3'}), (b:Traveller {key:'traveller_9612012_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9612012_author_3'}), (b:Traveller {key:'ZASranets'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_3'}), (b:Airport {key:'airport_schonefeld'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_3'}), (b:City {key:'city_berlin'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_9612012_author_3'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);

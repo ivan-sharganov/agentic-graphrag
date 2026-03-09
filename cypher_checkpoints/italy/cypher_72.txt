@@ -17,7 +17,7 @@ MERGE (n:Encounter {key:'encounter_11916662_wife_1'}) SET n.sourcePostID=1191666
 MERGE (n:Encounter {key:'encounter_11916662_author_1'}) SET n.sourcePostID=11916662, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11916662#p11916662', n.sourcePostAuthor='ZASranets', n.sourcePostDateTime=localdatetime('2024-09-10T23:49:00');
 MERGE (n:Fingerprint {key:'fingerprint_encounter_11916662_wife_1'});
 MERGE (n:Traveller {key:'traveller_11916662_wife'});
-MERGE (n:Traveller {key:'traveller_11916662_author'});
+MERGE (n:Traveller {key:'ZASranets'});
 MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11916662_wife_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11916662_wife_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_rome'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11916662_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11916662_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -25,7 +25,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11916662_wife_1_foreign_passport
 MATCH (a:Encounter {key:'encounter_11916662_author_1'}), (b:City {key:'city_rome'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11916662_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11916662_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11916662_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
-MATCH (a:Encounter {key:'encounter_11916662_author_1'}), (b:Traveller {key:'traveller_11916662_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11916662_author_1'}), (b:Traveller {key:'ZASranets'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11916662_wife_1'}), (b:City {key:'city_rome'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11916662_wife_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11916662_wife_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11916662_wife_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);

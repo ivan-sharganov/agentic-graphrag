@@ -13,7 +13,7 @@ MERGE (n:DocumentCheck {key:'doccheck_encounter_11530598_author_1_foreign_passpo
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11530598_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_11530598_author_1'}) SET n.sourcePostID=11530598, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11530598#p11530598', n.sourcePostAuthor='H22ra', n.sourcePostDateTime=localdatetime('2023-07-11T14:29:00'), n.controlStage='at_customs';
 MERGE (n:Fingerprint {key:'fingerprint_encounter_11530598_author_1'});
-MERGE (n:Traveller {key:'traveller_11530598_author'});
+MERGE (n:Traveller {key:'H22ra'});
 MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11530598_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11530598_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_bologna'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11530598_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11530598_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -21,4 +21,4 @@ MATCH (a:Encounter {key:'encounter_11530598_author_1'}), (b:City {key:'city_bolo
 MATCH (a:Encounter {key:'encounter_11530598_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11530598_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11530598_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11530598_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11530598_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
-MATCH (a:Encounter {key:'encounter_11530598_author_1'}), (b:Traveller {key:'traveller_11530598_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11530598_author_1'}), (b:Traveller {key:'H22ra'}) MERGE (a)-[:hasTraveler]->(b);

@@ -15,7 +15,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_9554519_author_1_cash
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_9554519_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_9554519_author_1'}) SET n.sourcePostID=9554519, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9554519#p9554519', n.sourcePostAuthor='Marfa_9416', n.sourcePostDateTime=localdatetime('2019-08-15T21:41:00'), n.screeningStatus='denied_entry', n.outcome='entry denied';
 MERGE (n:Questioning {key:'questioning_encounter_9554519_author_1_cash_amount'}) SET n.topicKey='cash_amount', n.wasAsked=true;
-MERGE (n:Traveller {key:'traveller_9554519_author'});
+MERGE (n:Traveller {key:'Marfa_9416'});
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9554519_author_1_cash'}), (b:DocumentInstance {key:'documentinstance_encounter_9554519_author_1_cash'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9554519_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_9554519_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9554519_author_1_hotel_booking'}), (b:DocumentInstance {key:'documentinstance_encounter_9554519_author_1_hotel_booking'}) MERGE (a)-[:requestedDocument]->(b);
@@ -26,4 +26,4 @@ MATCH (a:Encounter {key:'encounter_9554519_author_1'}), (b:DocumentCheck {key:'d
 MATCH (a:Encounter {key:'encounter_9554519_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_9554519_author_1_hotel_booking'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_9554519_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_9554519_author_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_9554519_author_1'}), (b:Questioning {key:'questioning_encounter_9554519_author_1_cash_amount'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_9554519_author_1'}), (b:Traveller {key:'traveller_9554519_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9554519_author_1'}), (b:Traveller {key:'Marfa_9416'}) MERGE (a)-[:hasTraveler]->(b);

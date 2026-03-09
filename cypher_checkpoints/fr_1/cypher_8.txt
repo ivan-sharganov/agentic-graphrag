@@ -8,7 +8,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 
 MERGE (c:City {key:'city_nice'}) SET c.entityName='Nice';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
-MERGE (t:Traveller {key:'traveller_8093025_author'}) SET t.entityName='cvettlana';
+MERGE (t:Traveller {key:'cvettlana'}) SET t.entityName='cvettlana';
 MERGE (e:Encounter {key:'encounter_8093025_author_1'})
   SET e.sourcePostID=8093025,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8093025#p8093025',
@@ -21,7 +21,7 @@ MERGE (st:Stamping {key:'stamping_encounter_8093025_author_1'});
 MERGE (di_passport:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreignpassport'}) SET di_passport.documentType='foreign_passport';
 MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreignpassport'}) SET dc_fp.presented=true;
 
-MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (t:Traveller {key:'traveller_8093025_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (t:Traveller {key:'cvettlana'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (st:Stamping {key:'stamping_encounter_8093025_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
 MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);

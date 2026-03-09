@@ -9,7 +9,7 @@ MERGE (n:City {key:'city_lyon'}) SET n.entityName='Lyon';
 MERGE (n:City {key:'city_marseille'}) SET n.entityName='Marseille';
 MERGE (n:Encounter {key:'encounter_11520663_author_1'}) SET n.sourcePostID=11520663, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11520663#p11520663', n.sourcePostAuthor='Red_Shuhard', n.sourcePostDateTime=localdatetime('2023-07-02T10:23:00');
 MERGE (n:Encounter {key:'encounter_11520663_author_2'}) SET n.sourcePostID=11520663, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11520663#p11520663', n.sourcePostAuthor='Red_Shuhard', n.sourcePostDateTime=localdatetime('2023-07-02T10:23:00');
-MERGE (n:Traveller {key:'traveller_11520663_author'});
+MERGE (n:Traveller {key:'Red_Shuhard'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11520663_author_1_hotel_booking'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11520663_author_1_return_ticket'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11520663_author_1_cash'});
@@ -20,7 +20,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520663_author_1_ret
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520663_author_1_cash'}) SET n.documentType='cash';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520663_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11520663_author_2_foreign_passport'}) SET n.documentType='foreign_passport';
-MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:Traveller {key:'traveller_11520663_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:Traveller {key:'Red_Shuhard'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:City {key:'city_lyon'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11520663_author_1_hotel_booking'}) MERGE (a)-[:hasDocumentCheck]->(b);
@@ -31,7 +31,7 @@ MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:DocumentCheck {key:'
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11520663_author_1_cash'}), (b:DocumentInstance {key:'documentinstance_encounter_11520663_author_1_cash'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11520663_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11520663_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11520663_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
-MATCH (a:Encounter {key:'encounter_11520663_author_2'}), (b:Traveller {key:'traveller_11520663_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11520663_author_2'}), (b:Traveller {key:'Red_Shuhard'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_2'}), (b:City {key:'city_marseille'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_2'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11520663_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_11520663_author_2_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);

@@ -16,7 +16,7 @@ MERGE (n:Encounter {key:'encounter_11803733_author_1'}) SET n.sourcePostID=11803
 MERGE (n:Questioning {key:'questioning_encounter_11803733_author_1_visit_duration'}) SET n.topicKey='visit_duration', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_11803733_author_1_itinerary_transport'}) SET n.topicKey='itinerary_transport', n.wasAsked=true;
 MERGE (n:Stamping {key:'stamping_encounter_11803733_author_1'});
-MERGE (n:Traveller {key:'traveller_11803733_author'});
+MERGE (n:Traveller {key:'dennymart1n'});
 MATCH (a:City {key:'city_las_palmas'}), (b:Country {key:'country_spain'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11803733_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11803733_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11803733_author_1_return_ticket'}), (b:DocumentInstance {key:'documentinstance_encounter_11803733_author_1_return_ticket'}) MERGE (a)-[:requestedDocument]->(b);
@@ -27,5 +27,5 @@ MATCH (a:Encounter {key:'encounter_11803733_author_1'}), (b:DocumentCheck {key:'
 MATCH (a:Encounter {key:'encounter_11803733_author_1'}), (b:Questioning {key:'questioning_encounter_11803733_author_1_itinerary_transport'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_11803733_author_1'}), (b:Questioning {key:'questioning_encounter_11803733_author_1_visit_duration'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_11803733_author_1'}), (b:Stamping {key:'stamping_encounter_11803733_author_1'}) MERGE (a)-[:hasStamping]->(b);
-MATCH (a:Encounter {key:'encounter_11803733_author_1'}), (b:Traveller {key:'traveller_11803733_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11803733_author_1'}), (b:Traveller {key:'dennymart1n'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_11803733_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_11803733_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);

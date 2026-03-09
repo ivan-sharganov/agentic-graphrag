@@ -23,7 +23,7 @@ MERGE (n:Encounter {key:'encounter_4871351_wife_2'}) SET n.sourcePostID=4871351,
 MERGE (n:Questioning {key:'questioning_encounter_4871351_wife_2_exit_date_from_schengen'}) SET n.topicKey='exit_date_from_schengen', n.wasAsked=true;
 MERGE (n:Stamping {key:'stamping_encounter_4871351_author_1'});
 MERGE (n:Stamping {key:'stamping_encounter_4871351_wife_1'});
-MERGE (n:Traveller {key:'traveller_4871351_author'});
+MERGE (n:Traveller {key:'Stemm'});
 MERGE (n:Traveller {key:'traveller_4871351_wife'});
 MATCH (a:City {key:'city_prague'}), (b:Country {key:'country_czech_republic'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_4871351_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_4871351_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -33,7 +33,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_4871351_wife_2_foreign_passport'
 MATCH (a:Encounter {key:'encounter_4871351_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_4871351_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_4871351_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_4871351_author_1'}), (b:Stamping {key:'stamping_encounter_4871351_author_1'}) MERGE (a)-[:hasStamping]->(b);
-MATCH (a:Encounter {key:'encounter_4871351_author_1'}), (b:Traveller {key:'traveller_4871351_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_4871351_author_1'}), (b:Traveller {key:'Stemm'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_4871351_wife_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_4871351_wife_1'}), (b:DocumentCheck {key:'doccheck_encounter_4871351_wife_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_4871351_wife_1'}), (b:Stamping {key:'stamping_encounter_4871351_wife_1'}) MERGE (a)-[:hasStamping]->(b);

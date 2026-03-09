@@ -6,7 +6,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 
-MERGE (t:Traveller {key:'traveller_11463290_author'}) SET t.entityName='ipetrova_n';
+MERGE (t:Traveller {key:'ipetrova_n'}) SET t.entityName='ipetrova_n';
 MERGE (bo:BorderOfficer {key:'officer_11463290_1'}) SET bo.entityName='kind woman';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
@@ -23,7 +23,7 @@ MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11463290_author_1
 
 MERGE (st:Stamping {key:'stamping_encounter_11463290_author_1'});
 
-MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (t:Traveller {key:'traveller_11463290_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (t:Traveller {key:'ipetrova_n'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (bo:BorderOfficer {key:'officer_11463290_1'}) MERGE (e)-[:hasOfficer]->(bo);
 MATCH (e:Encounter {key:'encounter_11463290_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 

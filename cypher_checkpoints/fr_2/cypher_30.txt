@@ -15,13 +15,13 @@ MERGE (n:Station {key:'station_st_pancras_international'}) SET n.entityName='St.
 MERGE (n:Airport {key:'airport_stuttgart'}) SET n.entityName='Stuttgart Airport';
 MERGE (n:Encounter {key:'encounter_11906008_author_1'}) SET n.sourcePostID=11906008, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11906008#p11906008', n.sourcePostAuthor='Гидролог', n.sourcePostDateTime=localdatetime('2024-08-28T16:54:00');
 MERGE (n:Encounter {key:'encounter_11906008_author_2'}) SET n.sourcePostID=11906008, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11906008#p11906008', n.sourcePostAuthor='Гидролог', n.sourcePostDateTime=localdatetime('2024-08-28T16:54:00');
-MERGE (n:Traveller {key:'traveller_11906008_author'});
+MERGE (n:Traveller {key:'Гидролог'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11906008_author_1_foreign_passport'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11906008_author_2_foreign_passport'});
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11906008_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11906008_author_2_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_11906008_author_1'});
-MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:Traveller {key:'traveller_11906008_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:Traveller {key:'Гидролог'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:City {key:'city_london'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:Country {key:'country_united_kingdom'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:Station {key:'station_st_pancras_international'}) MERGE (a)-[:atStation]->(b);
@@ -29,7 +29,7 @@ MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:DocumentCheck {key:'
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11906008_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11906008_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_1'}), (b:Stamping {key:'stamping_encounter_11906008_author_1'}) MERGE (a)-[:hasStamping]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_11906008_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_11906008_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
-MATCH (a:Encounter {key:'encounter_11906008_author_2'}), (b:Traveller {key:'traveller_11906008_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11906008_author_2'}), (b:Traveller {key:'Гидролог'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_2'}), (b:Airport {key:'airport_stuttgart'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_2'}), (b:City {key:'city_stuttgart'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11906008_author_2'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);

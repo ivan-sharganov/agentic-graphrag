@@ -6,7 +6,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 
-MERGE (t:Traveller {key:'traveller_9761709_author'}) SET t.entityName='Anyonka';
+MERGE (t:Traveller {key:'Anyonka'}) SET t.entityName='Anyonka';
 MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
 MERGE (co_de:Country {key:'country_germany'}) SET co_de.entityName='Germany';
 
@@ -33,8 +33,8 @@ MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_9761709_author_2_foreignpa
 MERGE (di_fp_1:DocumentInstance {key:'documentinstance_encounter_9761709_author_1_foreignpassport'}) SET di_fp_1.documentType='foreign_passport';
 MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_9761709_author_2_foreignpassport'}) SET di_fp_2.documentType='foreign_passport';
 
-MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (t:Traveller {key:'traveller_9761709_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_9761709_author_2'}), (t:Traveller {key:'traveller_9761709_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (t:Traveller {key:'Anyonka'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9761709_author_2'}), (t:Traveller {key:'Anyonka'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 MATCH (e:Encounter {key:'encounter_9761709_author_2'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);

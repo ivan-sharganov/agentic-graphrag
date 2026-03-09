@@ -9,7 +9,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
 
 MERGE (c:City {key:'city_toulouse'}) SET c.entityName='Toulouse';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
-MERGE (t_author:Traveller {key:'traveller_6281811_author'}) SET t_author.entityName='author';
+MERGE (t_author:Traveller {key:'_ton4ik_'}) SET t_author.entityName='author';
 MERGE (t_comp:Traveller {key:'traveller_6281811_companion1'}) SET t_comp.entityName='companion';
 MERGE (bo1:BorderOfficer {key:'borderofficer_6281811_officer1'}) SET bo1.entityName='officer1';
 MERGE (bo2:BorderOfficer {key:'borderofficer_6281811_officer2'}) SET bo2.entityName='officer2';
@@ -54,7 +54,7 @@ MERGE (q_comp_it:Questioning {key:'questioning_encounter_6281811_companion1_1_it
 MATCH (c:City {key:'city_toulouse'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
 // Encounter core links
-MATCH (e:Encounter {key:'encounter_6281811_author_1'}), (t:Traveller {key:'traveller_6281811_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_6281811_author_1'}), (t:Traveller {key:'_ton4ik_'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_6281811_companion1_1'}), (t:Traveller {key:'traveller_6281811_companion1'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_6281811_author_1'}), (bo:BorderOfficer {key:'borderofficer_6281811_officer1'}) MERGE (e)-[:hasOfficer]->(bo);

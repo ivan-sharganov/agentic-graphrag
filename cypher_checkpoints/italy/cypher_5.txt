@@ -19,7 +19,7 @@ MERGE (n:Encounter {key:'encounter_5434453_relative_1'}) SET n.sourcePostID=5434
 MERGE (n:Questioning {key:'questioning_encounter_5434453_author_1_cash_amount'}) SET n.topicKey='cash_amount', n.wasAsked=true;
 MERGE (n:Stamping {key:'stamping_encounter_5434453_author_1'});
 MERGE (n:Stamping {key:'stamping_encounter_5434453_relative_1'});
-MERGE (n:Traveller {key:'traveller_5434453_author'});
+MERGE (n:Traveller {key:'piccoloriccio'});
 MERGE (n:Traveller {key:'traveller_5434453_relative'});
 MATCH (a:City {key:'city_bari'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_5434453_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_5434453_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -31,7 +31,7 @@ MATCH (a:Encounter {key:'encounter_5434453_author_1'}), (b:DocumentCheck {key:'d
 MATCH (a:Encounter {key:'encounter_5434453_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_5434453_author_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_5434453_author_1'}), (b:Questioning {key:'questioning_encounter_5434453_author_1_cash_amount'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_5434453_author_1'}), (b:Stamping {key:'stamping_encounter_5434453_author_1'}) MERGE (a)-[:hasStamping]->(b);
-MATCH (a:Encounter {key:'encounter_5434453_author_1'}), (b:Traveller {key:'traveller_5434453_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_5434453_author_1'}), (b:Traveller {key:'piccoloriccio'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_5434453_relative_1'}), (b:City {key:'city_bari'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_5434453_relative_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_5434453_relative_1'}), (b:DocumentCheck {key:'doccheck_encounter_5434453_relative_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);

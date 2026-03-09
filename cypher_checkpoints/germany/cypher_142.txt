@@ -10,7 +10,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
 MERGE (n:City {key:'city_frankfurt'}) SET n.entityName='Frankfurt';
 MERGE (n:Encounter {key:'encounter_11483980_author_1'}) SET n.sourcePostID=11483980, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11483980#p11483980', n.sourcePostAuthor='xnikolayx', n.sourcePostDateTime=localdatetime('2023-05-27T11:18:00');
-MERGE (n:Traveller {key:'traveller_11483980_author'});
+MERGE (n:Traveller {key:'xnikolayx'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11483980_author_1_hotel_booking'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11483980_author_1_transport_ticket'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11483980_author_1_travel_insurance'});
@@ -23,7 +23,7 @@ MERGE (n:Questioning {key:'questioning_encounter_11483980_author_1_visit_purpose
 MERGE (n:Questioning {key:'questioning_encounter_11483980_author_1_cash_amount'}) SET n.topicKey='cash_amount', n.wasAsked=true;
 MERGE (n:Fingerprint {key:'fingerprint_encounter_11483980_author_1'});
 MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11483980_author_1_fingerprint'}) SET n.biometricWasTaken=true;
-MATCH (a:Encounter {key:'encounter_11483980_author_1'}), (b:Traveller {key:'traveller_11483980_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11483980_author_1'}), (b:Traveller {key:'xnikolayx'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11483980_author_1'}), (b:City {key:'city_frankfurt'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11483980_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11483980_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11483980_author_1_hotel_booking'}) MERGE (a)-[:hasDocumentCheck]->(b);

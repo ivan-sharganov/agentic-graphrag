@@ -11,12 +11,12 @@ MERGE (n:DocumentCheck {key:'doccheck_encounter_8328780_author_1_foreign_passpor
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_8328780_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_8328780_author_1'}) SET n.sourcePostID=8328780, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8328780#p8328780', n.sourcePostAuthor='daria_mw', n.sourcePostDateTime=localdatetime('2017-12-11T07:55:00');
 MERGE (n:Stamping {key:'stamping_encounter_8328780_author_1'});
-MERGE (n:Traveller {key:'traveller_8328780_author'});
+MERGE (n:Traveller {key:'daria_mw'});
 MATCH (a:City {key:'city_milan'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_8328780_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_8328780_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_8328780_author_1'}), (b:City {key:'city_milan'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_8328780_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_8328780_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_8328780_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_8328780_author_1'}), (b:Stamping {key:'stamping_encounter_8328780_author_1'}) MERGE (a)-[:hasStamping]->(b);
-MATCH (a:Encounter {key:'encounter_8328780_author_1'}), (b:Traveller {key:'traveller_8328780_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_8328780_author_1'}), (b:Traveller {key:'daria_mw'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_8328780_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_8328780_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);

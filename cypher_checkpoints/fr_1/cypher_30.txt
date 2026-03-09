@@ -9,7 +9,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 MERGE (c:City {key:'city_marseille'}) SET c.entityName='Marseille';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
-MERGE (t:Traveller {key:'traveller_11550543_author'}) SET t.entityName='Un_reve';
+MERGE (t:Traveller {key:'Un_reve'}) SET t.entityName='Un_reve';
 MERGE (e:Encounter {key:'encounter_11550543_author_1'})
   SET e.sourcePostID=11550543,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11550543#p11550543',
@@ -24,7 +24,7 @@ MERGE (st:Stamping {key:'stamping_encounter_11550543_author_1'});
 
 MATCH (c:City {key:'city_marseille'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11550543_author_1'}), (t:Traveller {key:'traveller_11550543_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11550543_author_1'}), (t:Traveller {key:'Un_reve'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11550543_author_1'}), (c:City {key:'city_marseille'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_11550543_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 

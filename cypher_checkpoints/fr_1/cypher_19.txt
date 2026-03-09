@@ -8,7 +8,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
-MERGE (t:Traveller {key:'traveller_11217763_author'})
+MERGE (t:Traveller {key:'zolotinka'})
   SET t.entityName='zolotinka',
       t.sourcePostID=11217763,
       t.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11217763#p11217763',
@@ -35,7 +35,7 @@ MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11217763_author_1
 
 MERGE (st:Stamping {key:'stamping_encounter_11217763_author_1'});
 
-MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (t:Traveller {key:'traveller_11217763_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (t:Traveller {key:'zolotinka'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (bc:BiometricCheck {key:'biometriccheck_encounter_11217763_author_1'}) MERGE (e)-[:hasBiometricCheck]->(bc);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (q:Questioning {key:'questioning_encounter_11217763_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (q:Questioning {key:'questioning_encounter_11217763_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);

@@ -11,7 +11,7 @@ MERGE (a_cdg:Airport {key:'airport_cdg'}) SET a_cdg.entityName='CDG';
 MERGE (c_paris:City {key:'city_paris'}) SET c_paris.entityName='Paris';
 MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
 
-MERGE (t:Traveller {key:'traveller_12100144_author'}) SET t.entityName='al_spb';
+MERGE (t:Traveller {key:'al_spb'}) SET t.entityName='al_spb';
 MERGE (e:Encounter {key:'encounter_12100144_author_1'})
   SET e.sourcePostID=12100144,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12100144#p12100144',
@@ -31,7 +31,7 @@ MERGE (st:Stamping {key:'stamping_encounter_12100144_author_1'});
 MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_12100144_author_1'}), (t:Traveller {key:'traveller_12100144_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_12100144_author_1'}), (t:Traveller {key:'al_spb'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_12100144_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
 MATCH (e:Encounter {key:'encounter_12100144_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_12100144_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);

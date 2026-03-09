@@ -14,7 +14,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11904332_author_1_for
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11904332_husband_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_11904332_author_1'}) SET n.sourcePostID=11904332, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11904332#p11904332', n.sourcePostAuthor='Kayl', n.sourcePostDateTime=localdatetime('2024-08-26T22:24:00');
 MERGE (n:Encounter {key:'encounter_11904332_husband_1'}) SET n.sourcePostID=11904332, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11904332#p11904332', n.sourcePostAuthor='Kayl', n.sourcePostDateTime=localdatetime('2024-08-26T22:24:00');
-MERGE (n:Traveller {key:'traveller_11904332_author'});
+MERGE (n:Traveller {key:'Kayl'});
 MERGE (n:Traveller {key:'traveller_11904332_husband'});
 MATCH (a:Airport {key:'airport_fiumicino'}), (b:City {key:'city_rome'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_rome'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
@@ -24,7 +24,7 @@ MATCH (a:Encounter {key:'encounter_11904332_author_1'}), (b:Airport {key:'airpor
 MATCH (a:Encounter {key:'encounter_11904332_author_1'}), (b:City {key:'city_rome'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11904332_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11904332_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11904332_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
-MATCH (a:Encounter {key:'encounter_11904332_author_1'}), (b:Traveller {key:'traveller_11904332_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11904332_author_1'}), (b:Traveller {key:'Kayl'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11904332_husband_1'}), (b:Airport {key:'airport_fiumicino'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_11904332_husband_1'}), (b:City {key:'city_rome'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11904332_husband_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);

@@ -19,7 +19,7 @@ MERGE (n:Encounter {key:'encounter_6890062_author_2'}) SET n.sourcePostID=689006
 MERGE (n:Questioning {key:'questioning_encounter_6890062_author_2_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_6890062_author_2_visit_duration'}) SET n.topicKey='visit_duration', n.wasAsked=true;
 MERGE (n:Stamping {key:'stamping_encounter_6890062_author_1'});
-MERGE (n:Traveller {key:'traveller_6890062_author'});
+MERGE (n:Traveller {key:'Jenni'});
 MATCH (a:City {key:'city_bergamo'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_6890062_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_6890062_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_6890062_author_2_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_6890062_author_2_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -28,12 +28,12 @@ MATCH (a:Encounter {key:'encounter_6890062_author_1'}), (b:City {key:'city_berga
 MATCH (a:Encounter {key:'encounter_6890062_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_6890062_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_1'}), (b:Stamping {key:'stamping_encounter_6890062_author_1'}) MERGE (a)-[:hasStamping]->(b);
-MATCH (a:Encounter {key:'encounter_6890062_author_1'}), (b:Traveller {key:'traveller_6890062_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_6890062_author_1'}), (b:Traveller {key:'Jenni'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:City {key:'city_bergamo'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_6890062_author_2_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_6890062_author_2_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:Questioning {key:'questioning_encounter_6890062_author_2_visit_duration'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:Questioning {key:'questioning_encounter_6890062_author_2_visit_purpose'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:Traveller {key:'traveller_6890062_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_6890062_author_2'}), (b:Traveller {key:'Jenni'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_6890062_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_6890062_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);

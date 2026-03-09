@@ -15,7 +15,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11664471_author_1_ret
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11664471_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_11664471_author_1'}) SET n.sourcePostID=11664471, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11664471#p11664471', n.sourcePostAuthor='Scendere_lato', n.sourcePostDateTime=localdatetime('2023-12-02T13:01:00');
 MERGE (n:Questioning {key:'questioning_encounter_11664471_author_1_accommodation_details'}) SET n.topicKey='accommodation_details', n.wasAsked=true;
-MERGE (n:Traveller {key:'traveller_11664471_author'});
+MERGE (n:Traveller {key:'Scendere_lato'});
 MATCH (a:Airport {key:'airport_marco_polo'}), (b:City {key:'city_venice'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_venice'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11664471_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11664471_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -26,4 +26,4 @@ MATCH (a:Encounter {key:'encounter_11664471_author_1'}), (b:Country {key:'countr
 MATCH (a:Encounter {key:'encounter_11664471_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11664471_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11664471_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11664471_author_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11664471_author_1'}), (b:Questioning {key:'questioning_encounter_11664471_author_1_accommodation_details'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_11664471_author_1'}), (b:Traveller {key:'traveller_11664471_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11664471_author_1'}), (b:Traveller {key:'Scendere_lato'}) MERGE (a)-[:hasTraveler]->(b);

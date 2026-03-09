@@ -9,7 +9,7 @@ MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
 MERGE (n:City {key:'city_berlin'}) SET n.entityName='Berlin';
 MERGE (n:Encounter {key:'encounter_11314996_author_1'}) SET n.sourcePostID=11314996, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11314996#p11314996', n.sourcePostAuthor='Shans014', n.sourcePostDateTime=localdatetime('2023-01-08T23:01:00');
 MERGE (n:Encounter {key:'encounter_11314996_wife_1'}) SET n.sourcePostID=11314996, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11314996#p11314996', n.sourcePostAuthor='Shans014', n.sourcePostDateTime=localdatetime('2023-01-08T23:01:00');
-MERGE (n:Traveller {key:'traveller_11314996_author'});
+MERGE (n:Traveller {key:'Shans014'});
 MERGE (n:Traveller {key:'traveller_11314996_wife'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11314996_author_1_foreign_passport'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11314996_wife_1_foreign_passport'});
@@ -17,7 +17,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11314996_author_1_for
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11314996_wife_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Questioning {key:'questioning_encounter_11314996_author_1_previous_visits'}) SET n.topicKey='previous_visits', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_11314996_wife_1_previous_visits'}) SET n.topicKey='previous_visits', n.wasAsked=true;
-MATCH (a:Encounter {key:'encounter_11314996_author_1'}), (b:Traveller {key:'traveller_11314996_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11314996_author_1'}), (b:Traveller {key:'Shans014'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11314996_author_1'}), (b:City {key:'city_berlin'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11314996_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11314996_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11314996_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);

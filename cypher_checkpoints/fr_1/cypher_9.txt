@@ -4,7 +4,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 
-MERGE (t:Traveller {key:'traveller_8549857_author'}) SET t.entityName='Tinka1956';
+MERGE (t:Traveller {key:'Tinka1956'}) SET t.entityName='Tinka1956';
 MERGE (e:Encounter {key:'encounter_8549857_author_1'})
   SET e.sourcePostID=8549857,
       e.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=8549857#p8549857',
@@ -21,7 +21,7 @@ MERGE (di_bank:DocumentInstance {key:'documentinstance_encounter_8549857_author_
 MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_paymentcard'}) SET di_card.documentType='payment_card';
 MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_8549857_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
 
-MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (t:Traveller {key:'traveller_8549857_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (t:Traveller {key:'Tinka1956'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (co:Country {key:'country_kazakhstan'}) MERGE (e)-[:atCountry]->(co);
 MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_bankstatement'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_8549857_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8549857_author_1_paymentcard'}) MERGE (e)-[:hasDocumentCheck]->(dc);

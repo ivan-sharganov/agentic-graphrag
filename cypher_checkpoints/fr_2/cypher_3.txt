@@ -11,7 +11,7 @@ MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
 MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='Charles de Gaulle Airport';
 MERGE (n:Encounter {key:'encounter_11644662_author_1'}) SET n.sourcePostID=11644662, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11644662#p11644662', n.sourcePostAuthor='Limo09', n.sourcePostDateTime=localdatetime('2023-11-10T13:22:00');
 MERGE (n:Encounter {key:'encounter_11644662_passenger_1'}) SET n.sourcePostID=11644662, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11644662#p11644662', n.sourcePostAuthor='Limo09', n.sourcePostDateTime=localdatetime('2023-11-10T13:22:00');
-MERGE (n:Traveller {key:'traveller_11644662_author'});
+MERGE (n:Traveller {key:'Limo09'});
 MERGE (n:Traveller {key:'traveller_11644662_passenger'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11644662_author_1_return_ticket'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11644662_author_1_foreign_passport'});
@@ -24,7 +24,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11644662_passenger_1_
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11644662_passenger_1_payment_card'}) SET n.documentType='payment_card';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11644662_passenger_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Questioning {key:'questioning_encounter_11644662_author_1_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
-MATCH (a:Encounter {key:'encounter_11644662_author_1'}), (b:Traveller {key:'traveller_11644662_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11644662_author_1'}), (b:Traveller {key:'Limo09'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11644662_author_1'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_11644662_author_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11644662_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);

@@ -10,7 +10,7 @@ MERGE (a_ory:Airport {key:'airport_ory'}) SET a_ory.entityName='Orly Airport';
 MERGE (c_paris:City {key:'city_paris'}) SET c_paris.entityName='Paris';
 MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
 
-MERGE (t_author:Traveller {key:'traveller_12270454_author'}) SET t_author.entityName='belka-1y';
+MERGE (t_author:Traveller {key:'belka-1y'}) SET t_author.entityName='belka-1y';
 MERGE (t_comp:Traveller {key:'traveller_12270454_companion1'}) SET t_comp.entityName='companion1';
 
 MERGE (e1:Encounter {key:'encounter_12270454_author_1'})
@@ -42,7 +42,7 @@ MERGE (di_visa_2:DocumentInstance {key:'documentinstance_encounter_12270454_comp
 MATCH (a:Airport {key:'airport_ory'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_12270454_author_1'}), (t:Traveller {key:'traveller_12270454_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_12270454_author_1'}), (t:Traveller {key:'belka-1y'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_12270454_companion1_1'}), (t:Traveller {key:'traveller_12270454_companion1'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_12270454_author_1'}), (a:Airport {key:'airport_ory'}) MERGE (e)-[:atAirport]->(a);

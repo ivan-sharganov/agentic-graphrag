@@ -12,7 +12,7 @@ MERGE (c:City {key:'city_paris'}) SET c.entityName='Paris';
 MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='Charles de Gaulle Airport';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
-MERGE (t_author:Traveller {key:'traveller_3902451_author'}) SET t_author.entityName='Casper';
+MERGE (t_author:Traveller {key:'!Casper!'}) SET t_author.entityName='Casper';
 MERGE (t_friend:Traveller {key:'traveller_3902451_friend1'}) SET t_friend.entityName='friend1';
 
 MERGE (e_author:Encounter {key:'encounter_3902451_author_1'})
@@ -70,7 +70,7 @@ MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:l
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
 // Encounter core links
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (t:Traveller {key:'traveller_3902451_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (t:Traveller {key:'!Casper!'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_3902451_friend1_1'}), (t:Traveller {key:'traveller_3902451_friend1'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);

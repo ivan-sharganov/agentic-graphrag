@@ -7,7 +7,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
 
-MERGE (t_author:Traveller {key:'traveller_10918979_author'}) SET t_author.entityName='Melkaya13';
+MERGE (t_author:Traveller {key:'Melkaya13'}) SET t_author.entityName='Melkaya13';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 MERGE (c:City {key:'city_paris'}) SET c.entityName='Paris';
 MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='Charles de Gaulle Airport';
@@ -45,8 +45,8 @@ MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:l
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
 // Encounter core links
-MATCH (e:Encounter {key:'encounter_10918979_author_1'}), (t:Traveller {key:'traveller_10918979_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (t:Traveller {key:'traveller_10918979_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_10918979_author_1'}), (t:Traveller {key:'Melkaya13'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (t:Traveller {key:'Melkaya13'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
 MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);

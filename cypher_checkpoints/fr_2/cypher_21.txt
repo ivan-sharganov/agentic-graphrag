@@ -14,7 +14,7 @@ MERGE (n:Airport {key:'airport_izmir'}) SET n.entityName='Izmir Airport';
 MERGE (n:City {key:'city_izmir'}) SET n.entityName='Izmir';
 MERGE (n:Encounter {key:'encounter_11816166_author_1'}) SET n.sourcePostID=11816166, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11816166#p11816166', n.sourcePostAuthor='tolla', n.sourcePostDateTime=localdatetime('2024-05-14T13:37:00');
 MERGE (n:Encounter {key:'encounter_11816166_author_2'}) SET n.sourcePostID=11816166, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11816166#p11816166', n.sourcePostAuthor='tolla', n.sourcePostDateTime=localdatetime('2024-05-14T13:37:00');
-MERGE (n:Traveller {key:'traveller_11816166_author'});
+MERGE (n:Traveller {key:'tolla'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11816166_author_1_return_ticket'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11816166_author_1_foreign_passport'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11816166_author_2_foreign_passport'});
@@ -23,7 +23,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11816166_author_1_for
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11816166_author_2_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Questioning {key:'questioning_encounter_11816166_author_1_exit_date_from_schengen'}) SET n.topicKey='exit_date_from_schengen', n.wasAsked=true;
 MERGE (n:Stamping {key:'stamping_encounter_11816166_author_1'});
-MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:Traveller {key:'traveller_11816166_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:Traveller {key:'tolla'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:Airport {key:'airport_ory'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11816166_author_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
@@ -33,7 +33,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_11816166_author_1_foreign_passpo
 MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:Questioning {key:'questioning_encounter_11816166_author_1_exit_date_from_schengen'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:Stamping {key:'stamping_encounter_11816166_author_1'}) MERGE (a)-[:hasStamping]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_11816166_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_11816166_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
-MATCH (a:Encounter {key:'encounter_11816166_author_2'}), (b:Traveller {key:'traveller_11816166_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11816166_author_2'}), (b:Traveller {key:'tolla'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_2'}), (b:Airport {key:'airport_izmir'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_2'}), (b:City {key:'city_izmir'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11816166_author_2'}), (b:Country {key:'country_turkey'}) MERGE (a)-[:atCountry]->(b);

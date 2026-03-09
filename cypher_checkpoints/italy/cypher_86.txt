@@ -18,7 +18,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_12268731_author_1_for
 MERGE (n:Encounter {key:'encounter_12268731_author_1'}) SET n.sourcePostID=12268731, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=12268731#p12268731', n.sourcePostAuthor='kimmv', n.sourcePostDateTime=localdatetime('2026-01-11T05:14:00');
 MERGE (n:FacePhoto {key:'face_photo_encounter_12268731_author_1'});
 MERGE (n:Fingerprint {key:'fingerprint_encounter_12268731_author_1'});
-MERGE (n:Traveller {key:'traveller_12268731_author'});
+MERGE (n:Traveller {key:'kimmv'});
 MATCH (a:Airport {key:'airport_marco_polo'}), (b:City {key:'city_venice'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:BiometricCheck {key:'biometriccheck_encounter_12268731_author_1_face_photo'}), (b:FacePhoto {key:'face_photo_encounter_12268731_author_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:BiometricCheck {key:'biometriccheck_encounter_12268731_author_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_12268731_author_1'}) MERGE (a)-[:biometricModality]->(b);
@@ -30,4 +30,4 @@ MATCH (a:Encounter {key:'encounter_12268731_author_1'}), (b:Country {key:'countr
 MATCH (a:Encounter {key:'encounter_12268731_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_12268731_author_1_face_photo'}) MERGE (a)-[:hasBiometricCheck]->(b);
 MATCH (a:Encounter {key:'encounter_12268731_author_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_12268731_author_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
 MATCH (a:Encounter {key:'encounter_12268731_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_12268731_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
-MATCH (a:Encounter {key:'encounter_12268731_author_1'}), (b:Traveller {key:'traveller_12268731_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_12268731_author_1'}), (b:Traveller {key:'kimmv'}) MERGE (a)-[:hasTraveler]->(b);

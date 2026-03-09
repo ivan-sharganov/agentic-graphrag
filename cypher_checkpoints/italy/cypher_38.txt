@@ -17,7 +17,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11425636_author_1_tra
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11425636_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_11425636_author_1'}) SET n.sourcePostID=11425636, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11425636#p11425636', n.sourcePostAuthor='Bleskn', n.sourcePostDateTime=localdatetime('2023-04-05T14:59:00');
 MERGE (n:Questioning {key:'questioning_encounter_11425636_author_1_itinerary_transport'}) SET n.topicKey='itinerary_transport', n.wasAsked=true;
-MERGE (n:Traveller {key:'traveller_11425636_author'});
+MERGE (n:Traveller {key:'Bleskn'});
 MATCH (a:City {key:'city_venice'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11425636_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11425636_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11425636_author_1_hotel_booking'}), (b:DocumentInstance {key:'documentinstance_encounter_11425636_author_1_hotel_booking'}) MERGE (a)-[:requestedDocument]->(b);
@@ -30,4 +30,4 @@ MATCH (a:Encounter {key:'encounter_11425636_author_1'}), (b:DocumentCheck {key:'
 MATCH (a:Encounter {key:'encounter_11425636_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11425636_author_1_return_ticket'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11425636_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11425636_author_1_travel_itinerary'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11425636_author_1'}), (b:Questioning {key:'questioning_encounter_11425636_author_1_itinerary_transport'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_11425636_author_1'}), (b:Traveller {key:'traveller_11425636_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11425636_author_1'}), (b:Traveller {key:'Bleskn'}) MERGE (a)-[:hasTraveler]->(b);

@@ -10,7 +10,7 @@ MERGE (n:City {key:'city_munich'}) SET n.entityName='Munich';
 MERGE (n:Encounter {key:'encounter_9795364_friend_1'}) SET n.sourcePostID=9795364, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9795364#p9795364', n.sourcePostAuthor='Soloma', n.sourcePostDateTime=localdatetime('2020-01-09T09:25:00');
 MERGE (n:Encounter {key:'encounter_9795364_author_1'}) SET n.sourcePostID=9795364, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9795364#p9795364', n.sourcePostAuthor='Soloma', n.sourcePostDateTime=localdatetime('2020-01-09T09:25:00');
 MERGE (n:Traveller {key:'traveller_9795364_friend'});
-MERGE (n:Traveller {key:'traveller_9795364_author'});
+MERGE (n:Traveller {key:'Soloma'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9795364_friend_1_foreign_passport'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_9795364_author_1_foreign_passport'});
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_9795364_friend_1_foreign_passport'}) SET n.documentType='foreign_passport';
@@ -23,7 +23,7 @@ MATCH (a:Encounter {key:'encounter_9795364_friend_1'}), (b:Country {key:'country
 MATCH (a:Encounter {key:'encounter_9795364_friend_1'}), (b:DocumentCheck {key:'doccheck_encounter_9795364_friend_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9795364_friend_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_9795364_friend_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_9795364_friend_1'}), (b:Questioning {key:'questioning_encounter_9795364_friend_1_previous_visits'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_9795364_author_1'}), (b:Traveller {key:'traveller_9795364_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_9795364_author_1'}), (b:Traveller {key:'Soloma'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_9795364_author_1'}), (b:City {key:'city_munich'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_9795364_author_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_9795364_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_9795364_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);

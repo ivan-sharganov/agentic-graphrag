@@ -21,7 +21,7 @@ MERGE (n:Encounter {key:'encounter_12105832_author_1'}) SET n.sourcePostID=12105
 MERGE (n:Questioning {key:'questioning_encounter_12105832_author_1_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_12105832_author_1_visit_duration'}) SET n.topicKey='visit_duration', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_12105832_author_1_itinerary_transport'}) SET n.topicKey='itinerary_transport', n.wasAsked=true;
-MERGE (n:Traveller {key:'traveller_12105832_author'});
+MERGE (n:Traveller {key:'tramp_chiara'});
 MATCH (a:Airport {key:'airport_marco_polo'}), (b:City {key:'city_venice'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_venice'}), (b:Country {key:'country_italy'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_12105832_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_12105832_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
@@ -38,4 +38,4 @@ MATCH (a:Encounter {key:'encounter_12105832_author_1'}), (b:DocumentCheck {key:'
 MATCH (a:Encounter {key:'encounter_12105832_author_1'}), (b:Questioning {key:'questioning_encounter_12105832_author_1_itinerary_transport'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_12105832_author_1'}), (b:Questioning {key:'questioning_encounter_12105832_author_1_visit_duration'}) MERGE (a)-[:hasQuestioning]->(b);
 MATCH (a:Encounter {key:'encounter_12105832_author_1'}), (b:Questioning {key:'questioning_encounter_12105832_author_1_visit_purpose'}) MERGE (a)-[:hasQuestioning]->(b);
-MATCH (a:Encounter {key:'encounter_12105832_author_1'}), (b:Traveller {key:'traveller_12105832_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_12105832_author_1'}), (b:Traveller {key:'tramp_chiara'}) MERGE (a)-[:hasTraveler]->(b);

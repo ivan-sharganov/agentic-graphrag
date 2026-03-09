@@ -9,7 +9,7 @@ MERGE (n:Country {key:'country_france'}) SET n.entityName='France';
 MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='Charles de Gaulle Airport';
 MERGE (n:Encounter {key:'encounter_11790790_author_1'}) SET n.sourcePostID=11790790, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11790790#p11790790', n.sourcePostAuthor='Georgii_spb_', n.sourcePostDateTime=localdatetime('2024-04-16T19:21:00');
 MERGE (n:Encounter {key:'encounter_11790790_friend_1'}) SET n.sourcePostID=11790790, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11790790#p11790790', n.sourcePostAuthor='Georgii_spb_', n.sourcePostDateTime=localdatetime('2024-04-16T19:21:00');
-MERGE (n:Traveller {key:'traveller_11790790_author'});
+MERGE (n:Traveller {key:'Georgii_spb_'});
 MERGE (n:Traveller {key:'traveller_11790790_friend'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11790790_author_1_hotel_booking'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11790790_author_1_return_ticket'});
@@ -25,7 +25,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11790790_friend_1_ret
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11790790_friend_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_11790790_author_1'});
 MERGE (n:Stamping {key:'stamping_encounter_11790790_friend_1'});
-MATCH (a:Encounter {key:'encounter_11790790_author_1'}), (b:Traveller {key:'traveller_11790790_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_11790790_author_1'}), (b:Traveller {key:'Georgii_spb_'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11790790_author_1'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);
 MATCH (a:Encounter {key:'encounter_11790790_author_1'}), (b:Country {key:'country_france'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11790790_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11790790_author_1_hotel_booking'}) MERGE (a)-[:hasDocumentCheck]->(b);

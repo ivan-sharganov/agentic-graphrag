@@ -11,7 +11,7 @@ MERGE (c_nice:City {key:'city_nice'}) SET c_nice.entityName='Nice';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
 MERGE (t_husband:Traveller {key:'traveller_9752768_husband'}) SET t_husband.entityName='husband';
-MERGE (t_author:Traveller {key:'traveller_9752768_author'}) SET t_author.entityName='Twiggi';
+MERGE (t_author:Traveller {key:'Twiggi'}) SET t_author.entityName='Twiggi';
 
 MERGE (e_husband:Encounter {key:'encounter_9752768_husband_1'})
   SET e_husband.sourcePostID=9752768,
@@ -45,7 +45,7 @@ MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-
 
 // Encounter core links
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (t:Traveller {key:'traveller_9752768_husband'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (t:Traveller {key:'traveller_9752768_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (t:Traveller {key:'Twiggi'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);

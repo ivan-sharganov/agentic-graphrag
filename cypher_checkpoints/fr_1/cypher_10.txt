@@ -14,7 +14,7 @@ MERGE (e:Encounter {key:'encounter_8694300_author_1'})
       e.sourcePostDateTime=localdatetime('2018-05-24T17:01:00'),
       e.controlStage='at_desk';
 
-MERGE (t:Traveller {key:'traveller_8694300_author'}) SET t.entityName='murz44';
+MERGE (t:Traveller {key:'murz44'}) SET t.entityName='murz44';
 MERGE (bo:BorderOfficer {key:'officer_8694300_officer1'}) SET bo.entityName='young officer';
 MERGE (c:City {key:'city_lyon'}) SET c.entityName='Lyon';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
@@ -23,7 +23,7 @@ MERGE (st:Stamping {key:'stamping_encounter_8694300_author_1'});
 MERGE (di_pass:DocumentInstance {key:'documentinstance_encounter_8694300_author_1_foreignpassport'}) SET di_pass.documentType='foreign_passport';
 MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_8694300_author_1_foreignpassport'}) SET dc_fp.presented=true;
 
-MATCH (e:Encounter {key:'encounter_8694300_author_1'}), (t:Traveller {key:'traveller_8694300_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_8694300_author_1'}), (t:Traveller {key:'murz44'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_8694300_author_1'}), (st:Stamping {key:'stamping_encounter_8694300_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (e:Encounter {key:'encounter_8694300_author_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_8694300_author_1'}), (bo:BorderOfficer {key:'officer_8694300_officer1'}) MERGE (e)-[:hasOfficer]->(bo);

@@ -8,7 +8,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 
-MERGE (t:Traveller {key:'traveller_11719467_author'}) SET t.entityName='Ninio';
+MERGE (t:Traveller {key:'Ninio'}) SET t.entityName='Ninio';
 MERGE (c_ist:City {key:'city_istanbul'}) SET c_ist.entityName='Istanbul';
 MERGE (c_paris:City {key:'city_paris'}) SET c_paris.entityName='Paris';
 MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='CDG';
@@ -55,8 +55,8 @@ MATCH (c:City {key:'city_istanbul'}), (co:Country {key:'country_turkey'}) MERGE 
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
 
-MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (t:Traveller {key:'traveller_11719467_author'}) MERGE (e)-[:hasTraveler]->(t);
-MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (t:Traveller {key:'traveller_11719467_author'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (t:Traveller {key:'Ninio'}) MERGE (e)-[:hasTraveler]->(t);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (t:Traveller {key:'Ninio'}) MERGE (e)-[:hasTraveler]->(t);
 
 MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (c:City {key:'city_istanbul'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (co:Country {key:'country_turkey'}) MERGE (e)-[:atCountry]->(co);

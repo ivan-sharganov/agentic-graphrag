@@ -9,10 +9,10 @@ MERGE (n:DocumentCheck {key:'doccheck_encounter_6891325_author_1_foreign_passpor
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_6891325_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Encounter {key:'encounter_6891325_author_1'}) SET n.sourcePostID=6891325, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=6891325#p6891325', n.sourcePostAuthor='Molly2110', n.sourcePostDateTime=localdatetime('2016-03-07T22:15:00'), n.transportMode='train';
 MERGE (n:Stamping {key:'stamping_encounter_6891325_author_1'});
-MERGE (n:Traveller {key:'traveller_6891325_author'});
+MERGE (n:Traveller {key:'Molly2110'});
 MATCH (a:DocumentCheck {key:'doccheck_encounter_6891325_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_6891325_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_6891325_author_1'}), (b:Country {key:'country_italy'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_6891325_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_6891325_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_6891325_author_1'}), (b:Stamping {key:'stamping_encounter_6891325_author_1'}) MERGE (a)-[:hasStamping]->(b);
-MATCH (a:Encounter {key:'encounter_6891325_author_1'}), (b:Traveller {key:'traveller_6891325_author'}) MERGE (a)-[:hasTraveler]->(b);
+MATCH (a:Encounter {key:'encounter_6891325_author_1'}), (b:Traveller {key:'Molly2110'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_6891325_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_6891325_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
