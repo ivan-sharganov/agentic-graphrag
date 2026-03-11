@@ -1,0 +1,25 @@
+{
+  "question": "Which documents do I need to bring to passport control in Paris?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_9684707_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9684707_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9684707_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9684707_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9684707_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    }
+  ]
+}
