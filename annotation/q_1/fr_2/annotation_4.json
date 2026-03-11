@@ -1,5 +1,30 @@
 {
   "question": "Which documents do I need to bring to passport control in Paris?",
   "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11665095_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_bva"}
+    },
+    {
+      "s": {"label": "Airport", "key": "airport_bva"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_beauvais"}
+    },
+    {
+      "s": {"label": "City", "key": "city_beauvais"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11665095_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11665095_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11665095_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11665095_author_1_foreign_passport"}
+    }
   ]
 }
