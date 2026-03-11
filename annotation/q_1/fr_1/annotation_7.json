@@ -3,6 +3,21 @@
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_7997540_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_7997540_author_1"},
       "p": "hasDocumentCheck",
       "o": {"label": "DocumentCheck", "key": "doccheck_encounter_7997540_author_1_accommodationproof"}
     },
@@ -30,21 +45,6 @@
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_7997540_author_1_returnticket"},
       "p": "requestedDocument",
       "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_7997540_author_1_returnticket"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_7997540_author_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
-    },
-    {
-      "s": {"label": "Airport", "key": "airport_cdg"},
-      "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
-    },
-    {
-      "s": {"label": "City", "key": "city_paris"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
     }
   ]
 }

@@ -3,6 +3,26 @@
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
       "p": "hasDocumentCheck",
       "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_cash"}
     },
@@ -62,21 +82,6 @@
       "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_travelinsurance"}
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
-    },
-    {
-      "s": {"label": "Airport", "key": "airport_cdg"},
-      "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
-    },
-    {
-      "s": {"label": "City", "key": "city_paris"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
       "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
       "p": "hasDocumentCheck",
       "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_friend1_1_foreignpassport"}
@@ -85,11 +90,6 @@
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_friend1_1_foreignpassport"},
       "p": "requestedDocument",
       "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_friend1_1_foreignpassport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
     }
   ]
 }
