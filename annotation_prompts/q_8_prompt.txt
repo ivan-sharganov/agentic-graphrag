@@ -4,10 +4,10 @@
 Сформировать датасет пар (question, triples), где triples — это:
 1) Триплеты, которые прямо отвечают на вопрос (evidence triples),
 2) Триплеты, которые связывают evidence с корневым узлом Encounter (connection triples),
-3) Триплеты, которые доказывают scope (Paris / France / CDG) — только если такие связи явно присутствуют в Cypher (scope triples).
+3) Триплеты, которые доказывают scope (Frankfurt / Germany) — только если такие связи явно присутствуют в Cypher (scope triples).
 
 ВОПРОС
-Which documents do I need to bring to passport control in Paris?
+Which documents do I need to bring to passport control in Frankfurt?
 
 ИСТОЧНИК ИСТИНЫ
 Единственный источник истины — текст Cypher-файла. Никаких догадок, знаний о мире, расширений. Если чего-то нет в Cypher — не добавляй.
@@ -22,11 +22,11 @@ Which documents do I need to bring to passport control in Paris?
 
 ВЫХОД (файлы аннотаций)
 Для каждого cypher_i.txt создай JSON:
-- .../neo4j_граф/annotation/q_1/germany/annotation_i.json
-- .../neo4j_граф/annotation/q_1/spain/annotation_i.json
-- .../neo4j_граф/annotation/q_1/italy/annotation_i.json
-- .../neo4j_граф/annotation/q_1/fr_1/annotation_i.json
-- .../neo4j_граф/annotation/q_1/fr_2/annotation_i.json
+- .../neo4j_граф/annotation/q_8/germany/annotation_i.json
+- .../neo4j_граф/annotation/q_8/spain/annotation_i.json
+- .../neo4j_граф/annotation/q_8/italy/annotation_i.json
+- .../neo4j_граф/annotation/q_8/fr_1/annotation_i.json
+- .../neo4j_граф/annotation/q_8/fr_2/annotation_i.json
 
 Если в конкретном cypher_i.txt нет подходящих триплетов — triples должен быть пустым массивом.
 
@@ -56,28 +56,22 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 Шаг 5. Построй triples минимально:
   A) evidence: DocumentCheck -> requestedDocType -> DocumentType
   B) connection: Encounter -> hasDocumentCheck -> DocumentCheck
-  C) scope: добавь минимальные триплеты, доказывающие Paris scope, только если они есть в этом Cypher:
+  C) scope: добавь минимальные триплеты, доказывающие Frankfurt scope, только если они есть в этом Cypher:
      - Encounter -> atCity -> City
      - Encounter -> atAirport -> Airport
      - Encounter -> atCountry -> Country
      - Airport -> locatedInCity -> City
      - City -> locatedInCountry -> Country
-  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Paris/France/CDG (например entityName='Paris' или key='city_paris' прямо встречается в Cypher). Не додумывай, что CDG это Paris, если нет locatedInCity.
+  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Frankfurt/Germany (например entityName="Frankfurt" или key="city_frankfurt" прямо встречается в Cypher). Не додумывай связи, если их нет.
 
 Шаг 6. Убери всё лишнее. Триплеты должны быть достаточными, но минимальными.
 
-КАК ОПРЕДЕЛЯТЬ “PARIS” В CYTHER
-Разрешено считать, что scope = Paris только если в файле есть один из явных маркеров:
-	•	City.key == “city_paris” ИЛИ City.entityName == “Paris”
-	•	Airport.key == “airport_cdg” ИЛИ Airport.entityName == “CDG”
-	•	Airport.key == “airport_ory” ИЛИ Airport.entityName == “ORY”
-	•	Airport.key == “airport_bva” ИЛИ Airport.entityName == “BVA”
-	•	City.key == “city_beauvais” ИЛИ City.entityName == “Beauvais” (Bove/Beauvais)
+КАК ОПРЕДЕЛЯТЬ “Frankfurt” В CYPHER
+Разрешено считать, что scope = Frankfurt только если в файле есть один из явных маркеров:
+	•	City.key == "city_frankfurt" ИЛИ City.entityName == "Frankfurt"
+	•	Airport.key == "airport_frankfurt" ИЛИ Airport.entityName == "Frankfurt Airport"
 
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
-
-Дополнительное правило (важно):
-	•	Узлы и триплеты, связанные с аэропортом BVA и/или городом Beauvais (Bove), считаются относящимися к Paris scope. То есть если Encounter привязан к airport_bva или к city_beauvais, его scope можно считать Paris даже если city_paris не встречается в файле.
 
 ФОРМАТ ВЫХОДА (строго)
 JSON объект с двумя полями: question и triples.
@@ -98,7 +92,7 @@ JSON объект с двумя полями: question и triples.
 
 ШАБЛОН (не меняй структуру)
 {
-  "question": "Which documents do I need to bring to passport control in Paris?",
+  "question": "Which documents do I need to bring to passport control in Frankfurt?",
   "triples": []
 }
 

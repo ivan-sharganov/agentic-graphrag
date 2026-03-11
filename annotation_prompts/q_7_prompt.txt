@@ -1,0 +1,102 @@
+Ты — генератор аннотаций триплетов (gold facts) для GraphRAG.
+
+ЦЕЛЬ
+Сформировать датасет пар (question, triples), где triples — это:
+1) Триплеты, которые прямо отвечают на вопрос (evidence triples),
+2) Триплеты, которые связывают evidence с корневым узлом Encounter (connection triples),
+3) Триплеты, которые доказывают scope (Munich / Germany) — только если такие связи явно присутствуют в Cypher (scope triples).
+
+ВОПРОС
+Which documents do I need to bring to passport control in Munich?
+
+ИСТОЧНИК ИСТИНЫ
+Единственный источник истины — текст Cypher-файла. Никаких догадок, знаний о мире, расширений. Если чего-то нет в Cypher — не добавляй.
+
+ВХОДНЫЕ ДАННЫЕ
+Используй ВСЕ Cypher-файлы cypher_i.txt из папок:
+- /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/germany
+- /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/spain
+- /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/italy
+- /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/fr_1
+- /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/fr_2
+
+ВЫХОД (файлы аннотаций)
+Для каждого cypher_i.txt создай JSON:
+- .../neo4j_граф/annotation/q_7/germany/annotation_i.json
+- .../neo4j_граф/annotation/q_7/spain/annotation_i.json
+- .../neo4j_граф/annotation/q_7/italy/annotation_i.json
+- .../neo4j_граф/annotation/q_7/fr_1/annotation_i.json
+- .../neo4j_граф/annotation/q_7/fr_2/annotation_i.json
+
+Если в конкретном cypher_i.txt нет подходящих триплетов — triples должен быть пустым массивом.
+
+ОГРАНИЧЕНИЕ НА СЕМАНТИКУ
+Документы “нужно взять с собой” интерпретируй строго как:
+— документ был затребован/проверен в событии паспортного контроля.
+То есть ищем цепочку:
+Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → DocumentType
+(точные названия предикатов/лейблов бери ИЗ КОНКРЕТНОГО Cypher!)
+
+НЕ ВКЛЮЧАТЬ
+- Questioning / questionTopic / wasAsked
+- Stamping / Outcome / resultCode
+- ScreeningStatus, BehaviorGuideline
+- Любые “советы”, “обычно”, “всегда” — если это не реализовано в графе как DocumentCheck.
+- Любые документы, которые не связаны через DocumentCheck.
+
+ВАЛИДНОСТЬ СТАДИИ КОНТРОЛЯ (важно)
+Если в Encounter есть свойство controlStage и оно НЕ относится к паспортному контролю у стойки (например AtGate / AtCheckin и аналоги), то DocumentCheck из этого Encounter НЕ включай.
+Если controlStage отсутствует — допускай, что это паспортный контроль, но только если в Cypher явно есть DocumentCheck у Encounter.
+
+ПРОЦЕДУРА ДЛЯ КАЖДОГО cypher_i.txt
+Шаг 1. Найди все Encounter-узлы, которые присутствуют в файле (обычно MERGE (n:Encounter {key:...})).
+Шаг 2. Для каждого Encounter проверь, что он относится к passport control (см. правило про controlStage).
+Шаг 3. Для валидных Encounter найди все DocumentCheck, связанные с ним (Encounter -> hasDocumentCheck -> DocumentCheck).
+Шаг 4. Для каждого DocumentCheck найди его document type (DocumentCheck -> requestedDocType -> DocumentType).
+Шаг 5. Построй triples минимально:
+  A) evidence: DocumentCheck -> requestedDocType -> DocumentType
+  B) connection: Encounter -> hasDocumentCheck -> DocumentCheck
+  C) scope: добавь минимальные триплеты, доказывающие Munich scope, только если они есть в этом Cypher:
+     - Encounter -> atCity -> City
+     - Encounter -> atAirport -> Airport
+     - Encounter -> atCountry -> Country
+     - Airport -> locatedInCity -> City
+     - City -> locatedInCountry -> Country
+  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Munich/Germany (например entityName="Munich" или key="city_munich" прямо встречается в Cypher). Не додумывай связи, если их нет.
+
+Шаг 6. Убери всё лишнее. Триплеты должны быть достаточными, но минимальными.
+
+КАК ОПРЕДЕЛЯТЬ “Munich” В CYPHER
+Разрешено считать, что scope = Munich только если в файле есть один из явных маркеров:
+	•	City.key == "city_munich" ИЛИ City.entityName == "Munich"
+	•	City.key == "city_memmingen" ИЛИ City.entityName == "Memmingen"
+	•	Airport.key == "airport_munich" ИЛИ Airport.entityName == "Munich Airport"
+	•	Airport.key == "airport_memmingen" ИЛИ Airport.entityName == "Memmingen Airport"
+
+И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
+
+ФОРМАТ ВЫХОДА (строго)
+JSON объект с двумя полями: question и triples.
+
+- question: строка ровно как в задании.
+- triples: массив объектов, каждый объект = один триплет.
+
+Каждый триплет:
+{
+  "s": {"label": "...", "key": "..."},
+  "p": "...",
+  "o": {"label": "...", "key": "..."}
+}
+
+Требование форматирования:
+- В каждом триплете поля "s", "p", "o" должны быть на отдельных строках (как в примере).
+- Значения внутри "label"/"key"/"p" — в одну строку.
+
+ШАБЛОН (не меняй структуру)
+{
+  "question": "Which documents do I need to bring to passport control in Munich?",
+  "triples": []
+}
+
+ПРИМЕЧАНИЕ
+Используй РОВНО те label/predicate/key, которые реально присутствуют в cypher_i.txt. Если в Cypher DocumentType реализован не отдельным узлом, а, например, строковым свойством — тогда запиши триплеты только в рамках того, как это представлено в Cypher (например DocumentCheck.requestedDocType='ReturnTicket' → тогда "o" будет узел DocumentCheck, а предикат будет "requestedDocType" и т.п.). Но если requestedDocType реализован связью — используй связь.
