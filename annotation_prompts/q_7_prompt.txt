@@ -70,9 +70,8 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 Разрешено считать, что scope = Munich только если в файле есть один из явных маркеров:
 	•	City.key == "city_munich" ИЛИ City.entityName == "Munich"
 	•	City.key == "city_memmingen" ИЛИ City.entityName == "Memmingen"
-	•	Airport.key == "airport_munich" ИЛИ Airport.entityName == "Munich Airport"
-	•	Airport.key == "airport_memmingen" ИЛИ Airport.entityName == "Memmingen Airport"
-
+	•	Airport.key == "airport_munich" ИЛИ Airport.entityName == "Munich Airport" (IATA: MUC)
+	•	Airport.key == "airport_memmingen" ИЛИ Airport.entityName == "Memmingen Airport" (IATA: FMM)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

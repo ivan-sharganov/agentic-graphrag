@@ -68,12 +68,11 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 
 КАК ОПРЕДЕЛЯТЬ “PARIS” В CYPHER
 Разрешено считать, что scope = Paris только если в файле есть один из явных маркеров:
-	•	City.key == “city_paris” ИЛИ City.entityName == “Paris”
-	•	Airport.key == “airport_cdg” ИЛИ Airport.entityName == “CDG”
-	•	Airport.key == “airport_ory” ИЛИ Airport.entityName == “ORY”
-	•	Airport.key == “airport_bva” ИЛИ Airport.entityName == “BVA”
-	•	City.key == “city_beauvais” ИЛИ City.entityName == “Beauvais” (Bove/Beauvais)
-
+	•	City.key == "city_paris" ИЛИ City.entityName == "Paris"
+	•	City.key == "city_beauvais" ИЛИ City.entityName == "Beauvais" (Bove/Beauvais)
+	•	Airport.key == "airport_cdg" ИЛИ Airport.entityName == "CDG" (IATA: CDG)
+	•	Airport.key == "airport_ory" ИЛИ Airport.entityName == "ORY" (IATA: ORY)
+	•	Airport.key == "airport_bva" ИЛИ Airport.entityName == "BVA" (IATA: BVA)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 Дополнительное правило (важно):

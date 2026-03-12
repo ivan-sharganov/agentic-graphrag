@@ -69,9 +69,8 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Berlin” В CYPHER
 Разрешено считать, что scope = Berlin только если в файле есть один из явных маркеров:
 	•	City.key == "city_berlin" ИЛИ City.entityName == "Berlin"
-	•	Airport.key == "airport_schonefeld" ИЛИ Airport.entityName == "Schonefeld Airport"
-	•	Airport.key == "airport_tegel" ИЛИ Airport.entityName == "Tegel Airport"
-
+	•	Airport.key == "airport_tegel" ИЛИ Airport.entityName == "Tegel Airport" (IATA: TXL)
+	•	Airport.key == "airport_schonefeld" ИЛИ Airport.entityName == "Schonefeld Airport" (IATA: SXF)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

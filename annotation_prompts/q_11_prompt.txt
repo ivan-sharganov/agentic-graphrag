@@ -69,8 +69,8 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Rome” В CYPHER
 Разрешено считать, что scope = Rome только если в файле есть один из явных маркеров:
 	•	City.key == "city_rome" ИЛИ City.entityName == "Rome"
-	•	Airport.key == "airport_fiumicino" ИЛИ Airport.entityName == "Fiumicino Airport"
-
+	•	Airport.key == "airport_fiumicino" ИЛИ Airport.entityName == "Fiumicino Airport" (IATA: FCO)
+	•	Airport.key == "airport_ciampino" ИЛИ Airport.entityName == "Ciampino Airport" (IATA: CIA)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

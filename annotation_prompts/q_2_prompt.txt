@@ -69,8 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Nice” В CYPHER
 Разрешено считать, что scope = Nice только если в файле есть один из явных маркеров:
 	•	City.key == "city_nice" ИЛИ City.entityName == "Nice"
-	•	Airport.key == "airport_nce" ИЛИ Airport.entityName == "Nice Cote d'Azur Airport"
-
+	•	Airport.key == "airport_nce" ИЛИ Airport.entityName == "Nice Cote d'Azur Airport" (IATA: NCE)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

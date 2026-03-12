@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Malaga” В CYPHER
 Разрешено считать, что scope = Malaga только если в файле есть один из явных маркеров:
 	•	City.key == "city_malaga" ИЛИ City.entityName == "Malaga"
-
+	•	Airport.key == "airport_malaga" ИЛИ Airport.entityName == "Malaga Airport" (IATA: AGP)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

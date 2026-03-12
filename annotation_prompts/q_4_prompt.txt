@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Marseille” В CYPHER
 Разрешено считать, что scope = Marseille только если в файле есть один из явных маркеров:
 	•	City.key == "city_marseille" ИЛИ City.entityName == "Marseille"
-
+	•	Airport.key == "airport_mrs" ИЛИ Airport.entityName == "Marseille Provence Airport" (IATA: MRS)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

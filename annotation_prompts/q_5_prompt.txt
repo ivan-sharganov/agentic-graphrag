@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Toulouse” В CYPHER
 Разрешено считать, что scope = Toulouse только если в файле есть один из явных маркеров:
 	•	City.key == "city_toulouse" ИЛИ City.entityName == "Toulouse"
-
+	•	Airport.key == "airport_tls" ИЛИ Airport.entityName == "Toulouse Blagnac Airport" (IATA: TLS)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

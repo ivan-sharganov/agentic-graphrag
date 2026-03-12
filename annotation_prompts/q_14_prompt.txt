@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Bologna” В CYPHER
 Разрешено считать, что scope = Bologna только если в файле есть один из явных маркеров:
 	•	City.key == "city_bologna" ИЛИ City.entityName == "Bologna"
-
+	•	Airport.key == "airport_bologna" ИЛИ Airport.entityName == "Bologna Airport" (IATA: BLQ)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

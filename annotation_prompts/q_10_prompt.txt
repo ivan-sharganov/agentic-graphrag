@@ -69,8 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Stuttgart” В CYPHER
 Разрешено считать, что scope = Stuttgart только если в файле есть один из явных маркеров:
 	•	City.key == "city_stuttgart" ИЛИ City.entityName == "Stuttgart"
-	•	Airport.key == "airport_stuttgart" ИЛИ Airport.entityName == "Stuttgart Airport"
-
+	•	Airport.key == "airport_stuttgart" ИЛИ Airport.entityName == "Stuttgart Airport" (IATA: STR)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

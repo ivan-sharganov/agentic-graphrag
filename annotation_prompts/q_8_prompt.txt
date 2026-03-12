@@ -69,8 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Frankfurt” В CYPHER
 Разрешено считать, что scope = Frankfurt только если в файле есть один из явных маркеров:
 	•	City.key == "city_frankfurt" ИЛИ City.entityName == "Frankfurt"
-	•	Airport.key == "airport_frankfurt" ИЛИ Airport.entityName == "Frankfurt Airport"
-
+	•	Airport.key == "airport_frankfurt" ИЛИ Airport.entityName == "Frankfurt Airport" (IATA: FRA)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

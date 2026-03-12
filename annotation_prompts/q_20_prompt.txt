@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Seville” В CYPHER
 Разрешено считать, что scope = Seville только если в файле есть один из явных маркеров:
 	•	City.key == "city_seville" ИЛИ City.entityName == "Seville"
-
+	•	Airport.key == "airport_seville" ИЛИ Airport.entityName == "Seville Airport" (IATA: SVQ)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

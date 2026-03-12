@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Lyon” В CYPHER
 Разрешено считать, что scope = Lyon только если в файле есть один из явных маркеров:
 	•	City.key == "city_lyon" ИЛИ City.entityName == "Lyon"
-
+	•	Airport.key == "airport_lys" ИЛИ Airport.entityName == "Lyon Saint-Exupery Airport" (IATA: LYS)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

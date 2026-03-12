@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Las Palmas” В CYPHER
 Разрешено считать, что scope = Las Palmas только если в файле есть один из явных маркеров:
 	•	City.key == "city_las_palmas" ИЛИ City.entityName == "Las Palmas"
-
+	•	Airport.key == "airport_gran_canaria" ИЛИ Airport.entityName == "Gran Canaria Airport" (IATA: LPA)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

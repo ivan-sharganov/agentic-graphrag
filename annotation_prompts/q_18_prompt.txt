@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Madrid” В CYPHER
 Разрешено считать, что scope = Madrid только если в файле есть один из явных маркеров:
 	•	City.key == "city_madrid" ИЛИ City.entityName == "Madrid"
-
+	•	Airport.key == "airport_madrid" ИЛИ Airport.entityName == "Madrid Airport" (IATA: MAD)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

@@ -70,8 +70,9 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 Разрешено считать, что scope = Milan только если в файле есть один из явных маркеров:
 	•	City.key == "city_milan" ИЛИ City.entityName == "Milan"
 	•	City.key == "city_bergamo" ИЛИ City.entityName == "Bergamo"
-	•	Airport.key == "airport_malpensa" ИЛИ Airport.entityName == "Malpensa Airport"
-
+	•	Airport.key == "airport_malpensa" ИЛИ Airport.entityName == "Malpensa Airport" (IATA: MXP)
+	•	Airport.key == "airport_linate" ИЛИ Airport.entityName == "Linate Airport" (IATA: LIN)
+	•	Airport.key == "airport_bergamo" ИЛИ Airport.entityName == "Bergamo Airport" (IATA: BGY)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

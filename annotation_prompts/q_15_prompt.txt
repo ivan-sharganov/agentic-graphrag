@@ -69,7 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Bari” В CYPHER
 Разрешено считать, что scope = Bari только если в файле есть один из явных маркеров:
 	•	City.key == "city_bari" ИЛИ City.entityName == "Bari"
-
+	•	Airport.key == "airport_bari" ИЛИ Airport.entityName == "Bari Airport" (IATA: BRI)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

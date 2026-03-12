@@ -69,8 +69,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 КАК ОПРЕДЕЛЯТЬ “Barcelona” В CYPHER
 Разрешено считать, что scope = Barcelona только если в файле есть один из явных маркеров:
 	•	City.key == "city_barcelona" ИЛИ City.entityName == "Barcelona"
-	•	Airport.key == "airport_barcelona" ИЛИ Airport.entityName == "Barcelona Airport"
-
+	•	Airport.key == "airport_barcelona" ИЛИ Airport.entityName == "Barcelona Airport" (IATA: BCN)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)

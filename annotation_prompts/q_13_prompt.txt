@@ -70,8 +70,8 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
 Разрешено считать, что scope = Venice только если в файле есть один из явных маркеров:
 	•	City.key == "city_venice" ИЛИ City.entityName == "Venice"
 	•	City.key == "city_treviso" ИЛИ City.entityName == "Treviso"
-	•	Airport.key == "airport_marco_polo" ИЛИ Airport.entityName == "Marco Polo Airport"
-
+	•	Airport.key == "airport_marco_polo" ИЛИ Airport.entityName == "Marco Polo Airport" (IATA: VCE)
+	•	Airport.key == "airport_treviso" ИЛИ Airport.entityName == "Treviso Airport" (IATA: TSF)
 И при этом Encounter связан через atCity/atAirport (и при необходимости locatedInCity) с этим узлом.
 
 ФОРМАТ ВЫХОДА (строго)
