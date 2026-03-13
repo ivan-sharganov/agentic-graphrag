@@ -99,4 +99,11 @@ JSON объект с двумя полями: question и triples.
 }
 
 ПРИМЕЧАНИЕ
-Используй РОВНО те label/predicate/key, которые реально присутствуют в cypher_i.txt. Если в Cypher DocumentType реализован не отдельным узлом, а, например, строковым свойством — тогда запиши триплеты только в рамках того, как это представлено в Cypher (например DocumentCheck.requestedDocType='ReturnTicket' → тогда "o" будет узел DocumentCheck, а предикат будет "requestedDocType" и т.п.). Но если requestedDocType реализован связью — используй связь.
+Используй РОВНО те label/predicate/key, которые реально присутствуют в cypher_i.txt.
+Документы представлены как:
+DocumentCheck -> requestedDocument -> DocumentInstance,
+а тип документа — строковое свойство DocumentInstance.documentType.
+Поэтому в аннотациях добавляй триплеты:
+- DocumentCheck -> requestedDocument -> DocumentInstance
+- DocumentInstance -> documentType -> "..."
+Строковое значение documentType обязательно включай.
