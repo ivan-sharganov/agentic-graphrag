@@ -4,7 +4,6 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
-CREATE CONSTRAINT IF NOT EXISTS FOR (n:Fingerprint) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Questioning) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
@@ -17,8 +16,7 @@ MERGE (n:DocumentInstance {key:'documentinstance_encounter_11231387_wife_1_forei
 MERGE (n:Questioning {key:'questioning_encounter_11231387_wife_1_visit_purpose'}) SET n.topicKey='visit_purpose', n.wasAsked=true;
 MERGE (n:Questioning {key:'questioning_encounter_11231387_wife_1_visit_duration'}) SET n.topicKey='visit_duration', n.wasAsked=true;
 MERGE (n:Stamping {key:'stamping_encounter_11231387_wife_1'});
-MERGE (n:Fingerprint {key:'fingerprint_encounter_11231387_wife_1'});
-MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11231387_wife_1_fingerprint'}) SET n.biometricWasTaken=true;
+MERGE (n:BiometricCheck {key:'biometriccheck_encounter_11231387_wife_1_fingerprint'}) SET n.biometricWasTaken=true, n.biometricModality='fingerprint';
 MATCH (a:Encounter {key:'encounter_11231387_wife_1'}), (b:Traveller {key:'traveller_11231387_wife'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11231387_wife_1'}), (b:City {key:'city_frankfurt'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_11231387_wife_1'}), (b:Country {key:'country_germany'}) MERGE (a)-[:atCountry]->(b);
@@ -29,5 +27,4 @@ MATCH (a:Encounter {key:'encounter_11231387_wife_1'}), (b:Questioning {key:'ques
 MATCH (a:Encounter {key:'encounter_11231387_wife_1'}), (b:Stamping {key:'stamping_encounter_11231387_wife_1'}) MERGE (a)-[:hasStamping]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_11231387_wife_1'}), (b:DocumentInstance {key:'documentinstance_encounter_11231387_wife_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11231387_wife_1'}), (b:BiometricCheck {key:'biometriccheck_encounter_11231387_wife_1_fingerprint'}) MERGE (a)-[:hasBiometricCheck]->(b);
-MATCH (a:BiometricCheck {key:'biometriccheck_encounter_11231387_wife_1_fingerprint'}), (b:Fingerprint {key:'fingerprint_encounter_11231387_wife_1'}) MERGE (a)-[:biometricModality]->(b);
 MATCH (a:City {key:'city_frankfurt'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);
