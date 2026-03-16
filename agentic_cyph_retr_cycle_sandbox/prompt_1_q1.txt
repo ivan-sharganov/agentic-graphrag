@@ -1,0 +1,140 @@
+You are a Neo4j Cypher generator for GraphRAG retrieval.
+
+You will receive:
+- Database schema text (labels, relationship types, sample properties).
+- A user question.
+
+GOAL
+Generate ONE read-only Cypher query that retrieves the facts needed to answer the question.
+
+GUIDELINES
+1) Use ONLY labels, relationship types, and properties that appear in the schema text. Do NOT invent anything.
+2) Read-only only: MATCH / OPTIONAL MATCH / WHERE / WITH / RETURN / ORDER BY / LIMIT.
+   Forbidden: CREATE, MERGE, SET, DELETE, CALL, APOC, LOAD CSV.
+3) Prefer returning relationship facts (s)-[p]->(o) when possible.
+4) If the question is scoped to a location (city/country/airport), include the relevant location paths if they exist in the schema:
+   atCountry OR atCity->locatedInCountry OR atAirport->locatedInCity->locatedInCountry.
+5) Add LIMIT 200 (or smaller) if the result could be large.
+
+OUTPUT FORMAT
+Return ONLY Cypher (no JSON, no markdown, no explanations).
+
+Database schema:
+NODE LABELS:
+- AdditionalChecks
+- Airport
+- AtDesk
+- BorderOfficer
+- Cash
+- CashAmount
+- City
+- Country
+- DocumentCheck
+- Employment
+- Encounter
+- HotelBookingDoc
+- HotelPaymentCard
+- HotelPaymentStatus
+- Outcome
+- PaymentCard
+- Questioning
+- ReturnTicket
+- Stamping
+- TravelInsurance
+- Traveller
+- VisitDuration
+- VisitPurpose
+
+RELATIONSHIPS:
+- (:Airport)-[:locatedInCity]->(:City)
+- (:City)-[:locatedInCountry]->(:Country)
+- (:DocumentCheck)-[:requestedDocType]->(:Cash)
+- (:DocumentCheck)-[:requestedDocType]->(:HotelBookingDoc)
+- (:DocumentCheck)-[:requestedDocType]->(:PaymentCard)
+- (:DocumentCheck)-[:requestedDocType]->(:ReturnTicket)
+- (:DocumentCheck)-[:requestedDocType]->(:TravelInsurance)
+- (:Encounter)-[:atAirport]->(:Airport)
+- (:Encounter)-[:atCity]->(:City)
+- (:Encounter)-[:controlStage]->(:AtDesk)
+- (:Encounter)-[:hasDocumentCheck]->(:DocumentCheck)
+- (:Encounter)-[:hasOfficer]->(:BorderOfficer)
+- (:Encounter)-[:hasOutcome]->(:Outcome)
+- (:Encounter)-[:hasQuestioning]->(:Questioning)
+- (:Encounter)-[:hasScreeningStatus]->(:AdditionalChecks)
+- (:Encounter)-[:hasStamping]->(:Stamping)
+- (:Encounter)-[:hasTraveler]->(:Traveller)
+- (:Questioning)-[:questionTopic]->(:CashAmount)
+- (:Questioning)-[:questionTopic]->(:Employment)
+- (:Questioning)-[:questionTopic]->(:HotelPaymentCard)
+- (:Questioning)-[:questionTopic]->(:HotelPaymentStatus)
+- (:Questioning)-[:questionTopic]->(:VisitDuration)
+- (:Questioning)-[:questionTopic]->(:VisitPurpose)
+
+User question:
+Which countries are mentioned in database?
+
+
+Generate only Cypher (no explanations).
+
+
+DATABASE SCHEMA
+NODE LABELS:
+- AdditionalChecks
+- Airport
+- AtDesk
+- BorderOfficer
+- Cash
+- CashAmount
+- City
+- Country
+- DocumentCheck
+- Employment
+- Encounter
+- HotelBookingDoc
+- HotelPaymentCard
+- HotelPaymentStatus
+- Outcome
+- PaymentCard
+- Questioning
+- ReturnTicket
+- Stamping
+- TravelInsurance
+- Traveller
+- VisitDuration
+- VisitPurpose
+
+RELATIONSHIPS:
+- (:Airport)-[:locatedInCity]->(:City)
+- (:City)-[:locatedInCountry]->(:Country)
+- (:DocumentCheck)-[:requestedDocType]->(:Cash)
+- (:DocumentCheck)-[:requestedDocType]->(:HotelBookingDoc)
+- (:DocumentCheck)-[:requestedDocType]->(:PaymentCard)
+- (:DocumentCheck)-[:requestedDocType]->(:ReturnTicket)
+- (:DocumentCheck)-[:requestedDocType]->(:TravelInsurance)
+- (:Encounter)-[:atAirport]->(:Airport)
+- (:Encounter)-[:atCity]->(:City)
+- (:Encounter)-[:controlStage]->(:AtDesk)
+- (:Encounter)-[:hasDocumentCheck]->(:DocumentCheck)
+- (:Encounter)-[:hasOfficer]->(:BorderOfficer)
+- (:Encounter)-[:hasOutcome]->(:Outcome)
+- (:Encounter)-[:hasQuestioning]->(:Questioning)
+- (:Encounter)-[:hasScreeningStatus]->(:AdditionalChecks)
+- (:Encounter)-[:hasStamping]->(:Stamping)
+- (:Encounter)-[:hasTraveler]->(:Traveller)
+- (:Questioning)-[:questionTopic]->(:CashAmount)
+- (:Questioning)-[:questionTopic]->(:Employment)
+- (:Questioning)-[:questionTopic]->(:HotelPaymentCard)
+- (:Questioning)-[:questionTopic]->(:HotelPaymentStatus)
+- (:Questioning)-[:questionTopic]->(:VisitDuration)
+- (:Questioning)-[:questionTopic]->(:VisitPurpose)
+
+QUESTION
+Which countries are mentioned in database?
+
+Generate only Cypher (no explanations).
+
+
+Additional requirements:
+
+- The query must return all distinct country names mentioned anywhere in the database, including countries referenced through relationships like (:City)-[:locatedInCountry]->(:Country) or (:Encounter)-[:atCity]->(:City)-[:locatedInCountry]->(:Country). Use DISTINCT to avoid duplicates and include a LIMIT if results could be large.
+- When returning Country nodes, do not assume any specific property exists unless specified in the schema. Use RETURN DISTINCT c to return the node itself, or verify property names from the schema first.
