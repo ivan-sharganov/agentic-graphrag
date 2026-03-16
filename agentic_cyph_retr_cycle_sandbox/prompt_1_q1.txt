@@ -16,125 +16,13 @@ GUIDELINES
    atCountry OR atCity->locatedInCountry OR atAirport->locatedInCity->locatedInCountry.
 5) Add LIMIT 200 (or smaller) if the result could be large.
 
-OUTPUT FORMAT
-Return ONLY Cypher (no JSON, no markdown, no explanations).
+OUTPUT FORMAT (STRICT)
+Return ONLY valid JSON:
+{"cypher":"<ONE Cypher query string>"}
+No markdown. No explanations.
 
 Database schema:
-NODE LABELS:
-- AdditionalChecks
-- Airport
-- AtDesk
-- BorderOfficer
-- Cash
-- CashAmount
-- City
-- Country
-- DocumentCheck
-- Employment
-- Encounter
-- HotelBookingDoc
-- HotelPaymentCard
-- HotelPaymentStatus
-- Outcome
-- PaymentCard
-- Questioning
-- ReturnTicket
-- Stamping
-- TravelInsurance
-- Traveller
-- VisitDuration
-- VisitPurpose
-
-RELATIONSHIPS:
-- (:Airport)-[:locatedInCity]->(:City)
-- (:City)-[:locatedInCountry]->(:Country)
-- (:DocumentCheck)-[:requestedDocType]->(:Cash)
-- (:DocumentCheck)-[:requestedDocType]->(:HotelBookingDoc)
-- (:DocumentCheck)-[:requestedDocType]->(:PaymentCard)
-- (:DocumentCheck)-[:requestedDocType]->(:ReturnTicket)
-- (:DocumentCheck)-[:requestedDocType]->(:TravelInsurance)
-- (:Encounter)-[:atAirport]->(:Airport)
-- (:Encounter)-[:atCity]->(:City)
-- (:Encounter)-[:controlStage]->(:AtDesk)
-- (:Encounter)-[:hasDocumentCheck]->(:DocumentCheck)
-- (:Encounter)-[:hasOfficer]->(:BorderOfficer)
-- (:Encounter)-[:hasOutcome]->(:Outcome)
-- (:Encounter)-[:hasQuestioning]->(:Questioning)
-- (:Encounter)-[:hasScreeningStatus]->(:AdditionalChecks)
-- (:Encounter)-[:hasStamping]->(:Stamping)
-- (:Encounter)-[:hasTraveler]->(:Traveller)
-- (:Questioning)-[:questionTopic]->(:CashAmount)
-- (:Questioning)-[:questionTopic]->(:Employment)
-- (:Questioning)-[:questionTopic]->(:HotelPaymentCard)
-- (:Questioning)-[:questionTopic]->(:HotelPaymentStatus)
-- (:Questioning)-[:questionTopic]->(:VisitDuration)
-- (:Questioning)-[:questionTopic]->(:VisitPurpose)
+{SCHEMA_TEXT}
 
 User question:
-Which countries are mentioned in database?
-
-
-Generate only Cypher (no explanations).
-
-
-DATABASE SCHEMA
-NODE LABELS:
-- AdditionalChecks
-- Airport
-- AtDesk
-- BorderOfficer
-- Cash
-- CashAmount
-- City
-- Country
-- DocumentCheck
-- Employment
-- Encounter
-- HotelBookingDoc
-- HotelPaymentCard
-- HotelPaymentStatus
-- Outcome
-- PaymentCard
-- Questioning
-- ReturnTicket
-- Stamping
-- TravelInsurance
-- Traveller
-- VisitDuration
-- VisitPurpose
-
-RELATIONSHIPS:
-- (:Airport)-[:locatedInCity]->(:City)
-- (:City)-[:locatedInCountry]->(:Country)
-- (:DocumentCheck)-[:requestedDocType]->(:Cash)
-- (:DocumentCheck)-[:requestedDocType]->(:HotelBookingDoc)
-- (:DocumentCheck)-[:requestedDocType]->(:PaymentCard)
-- (:DocumentCheck)-[:requestedDocType]->(:ReturnTicket)
-- (:DocumentCheck)-[:requestedDocType]->(:TravelInsurance)
-- (:Encounter)-[:atAirport]->(:Airport)
-- (:Encounter)-[:atCity]->(:City)
-- (:Encounter)-[:controlStage]->(:AtDesk)
-- (:Encounter)-[:hasDocumentCheck]->(:DocumentCheck)
-- (:Encounter)-[:hasOfficer]->(:BorderOfficer)
-- (:Encounter)-[:hasOutcome]->(:Outcome)
-- (:Encounter)-[:hasQuestioning]->(:Questioning)
-- (:Encounter)-[:hasScreeningStatus]->(:AdditionalChecks)
-- (:Encounter)-[:hasStamping]->(:Stamping)
-- (:Encounter)-[:hasTraveler]->(:Traveller)
-- (:Questioning)-[:questionTopic]->(:CashAmount)
-- (:Questioning)-[:questionTopic]->(:Employment)
-- (:Questioning)-[:questionTopic]->(:HotelPaymentCard)
-- (:Questioning)-[:questionTopic]->(:HotelPaymentStatus)
-- (:Questioning)-[:questionTopic]->(:VisitDuration)
-- (:Questioning)-[:questionTopic]->(:VisitPurpose)
-
-QUESTION
-Which countries are mentioned in database?
-
-Generate only Cypher (no explanations).
-
-
-Additional requirements:
-
-- The query must return all distinct country names mentioned anywhere in the database, including countries referenced through relationships like (:City)-[:locatedInCountry]->(:Country) or (:Encounter)-[:atCity]->(:City)-[:locatedInCountry]->(:Country). Use DISTINCT to avoid duplicates and include a LIMIT if results could be large.
-- When returning Country nodes, do not assume any specific property exists unless specified in the schema. Use RETURN DISTINCT c to return the node itself, or verify property names from the schema first.
+{USER_QUERY}
