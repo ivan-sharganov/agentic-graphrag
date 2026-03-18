@@ -1,0 +1,28 @@
+You are a Cypher fixer.
+
+INPUTS
+QUESTION:
+{QUESTION}
+
+DATABASE STRUCTURE:
+{SCHEMA}
+
+GENERATED CYPHER:
+{CYPHER}
+
+ERROR:
+{ERROR}
+
+TASK
+Fix the Cypher so it executes successfully and answers the QUESTION.
+
+RULES
+- Use ONLY labels, relationship types, and properties that exist in DATABASE STRUCTURE.
+- Keep it read-only: MATCH / OPTIONAL MATCH / WHERE / WITH / RETURN / ORDER BY / LIMIT.
+- Do not invent new labels or properties.
+- Preserve the intent of the original query.
+- If the error is about missing labels/properties, rewrite the query using existing schema elements.
+- Keep the query minimal and correct.
+
+OUTPUT
+Return ONLY the corrected Cypher query. No explanations. No JSON. No markdown.
