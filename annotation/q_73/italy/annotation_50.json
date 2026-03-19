@@ -1,5 +1,5 @@
 {
-  "question": "В какой аэропорт чаще всего влетают во Италии?",
+  "question": "Which airport do people most often fly into in Italy?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_domodossola"},

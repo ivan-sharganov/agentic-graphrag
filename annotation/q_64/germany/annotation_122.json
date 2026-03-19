@@ -1,5 +1,5 @@
 {
-  "question": "Как часто снимают отпечатки пальцев при вьезде в Германию?",
+  "question": "How often are fingerprints taken when entering Germany?",
   "triples": [
     {
       "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11341168_author_1_fingerprint"},

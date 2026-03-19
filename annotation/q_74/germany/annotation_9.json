@@ -1,5 +1,5 @@
 {
-  "question": "В какой аэропорт чаще всего влетают во Германии?",
+  "question": "Which airport do people most often fly into in Germany?",
   "triples": [
     {
       "s": {"label": "Airport", "key": "airport_munich"},

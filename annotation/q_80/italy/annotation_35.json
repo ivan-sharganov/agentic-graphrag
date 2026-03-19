@@ -1,5 +1,5 @@
 {
-  "question": "Где сейчас проще всего пройти паспортный контроль в ЕС?",
+  "question": "Where is it currently easiest to pass passport control in the EU?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_milan"},

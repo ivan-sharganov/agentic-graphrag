@@ -1,5 +1,5 @@
 {
-  "question": "В какой стране чаще всего просят обратный билет?",
+  "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_11601219_author_1"},

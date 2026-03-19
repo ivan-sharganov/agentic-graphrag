@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе италии чаще всего просят обратный билет?",
+  "question": "In which city in Italy is a return ticket requested most often?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_6870359_author_1"},

@@ -1,5 +1,5 @@
 {
-  "question": "Как часто снимают отпечатки пальцев при вьезде в Испанию?",
+  "question": "How often are fingerprints taken when entering Spain?",
   "triples": [
     {
       "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11485080_author_1_fingerprint"},

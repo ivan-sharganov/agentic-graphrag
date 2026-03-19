@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе франции чаще всего просят показать бронь жилья?",
+  "question": "In which city in France are people most often asked to show accommodation booking?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},

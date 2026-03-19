@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе германии чаще всего просят показать бронь жилья?",
+  "question": "In which city in Germany are people most often asked to show accommodation booking?",
   "triples": [
     {
       "s": {"label": "Airport", "key": "airport_schonefeld"},

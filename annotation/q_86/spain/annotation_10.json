@@ -1,5 +1,5 @@
 {
-  "question": "Что чаще в Испании: просьба показать наличные или карту?",
+  "question": "Which is more common in Spain: a request to show cash or a card?",
   "triples": [
     {
       "s": {"label": "Airport", "key": "airport_barcelona"},

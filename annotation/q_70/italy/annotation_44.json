@@ -1,5 +1,5 @@
 {
-  "question": "Как часто в Италии бывают дополнительные проверки?",
+  "question": "How often are there additional checks in Italy?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_11572518_author_1"},

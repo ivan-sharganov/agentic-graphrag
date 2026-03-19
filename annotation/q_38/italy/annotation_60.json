@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе италии чаще всего просят бронь жилья?",
+  "question": "In which city in Italy is accommodation booking requested most often?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_rome"},

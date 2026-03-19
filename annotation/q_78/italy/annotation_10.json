@@ -1,5 +1,5 @@
 {
-  "question": "Какой город самый популярный для въезда во Италию?",
+  "question": "Which city is the most popular entry point into Italy?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_bergamo"},

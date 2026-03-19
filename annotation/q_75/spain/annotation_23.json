@@ -1,5 +1,5 @@
 {
-  "question": "В какой аэропорт чаще всего влетают во Испании?",
+  "question": "Which airport do people most often fly into in Spain?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_12059868_author_1"},

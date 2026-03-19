@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе германии чаще всего просят бронь жилья?",
+  "question": "In which city in Germany is accommodation booking requested most often?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},

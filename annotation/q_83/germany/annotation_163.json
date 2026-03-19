@@ -1,5 +1,5 @@
 {
-  "question": "Что чаще в Германии: просьба показать наличные или карту?",
+  "question": "Which is more common in Germany: a request to show cash or a card?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_cologne"},

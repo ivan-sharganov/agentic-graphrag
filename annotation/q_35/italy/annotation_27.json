@@ -1,5 +1,5 @@
 {
-  "question": "В какой стране чаще всего просят бронь жилья?",
+  "question": "In which country is accommodation booking requested most often?",
   "triples": [
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9554519_author_1_hotel_booking"},

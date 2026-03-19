@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе франции чаще всего просят бронь жилья?",
+  "question": "In which city in France is accommodation booking requested most often?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_11159089_author_1"},

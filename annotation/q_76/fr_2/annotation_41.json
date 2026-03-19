@@ -1,5 +1,5 @@
 {
-  "question": "Какой город самый популярный для въезда во Францию?",
+  "question": "Which city is the most popular entry point into France?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_12108064_author_1"},

@@ -1,5 +1,5 @@
 {
-  "question": "В какой стране меньше всего спрашивают документы?",
+  "question": "In which country are the fewest documents requested?",
   "triples": [
     {
       "s": {"label": "Airport", "key": "airport_cologne_bonn"},

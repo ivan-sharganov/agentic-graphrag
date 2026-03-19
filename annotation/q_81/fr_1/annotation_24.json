@@ -1,5 +1,5 @@
 {
-  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
       "s": {"label": "Airport", "key": "airport_cdg"},

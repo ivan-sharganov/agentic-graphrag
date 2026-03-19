@@ -1,5 +1,5 @@
 {
-  "question": "Где чаще всего контроль ограничивается только паспортом?",
+  "question": "Where is passport control most often limited to just the passport?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_munich"},

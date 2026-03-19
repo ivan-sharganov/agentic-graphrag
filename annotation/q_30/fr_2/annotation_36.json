@@ -1,5 +1,5 @@
 {
-  "question": "В какой стране меньше всего спрашивают документы?",
+  "question": "In which country are the fewest documents requested?",
   "triples": [
     {
       "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12065028_author_1_foreign_passport"},

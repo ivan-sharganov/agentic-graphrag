@@ -1,5 +1,5 @@
 {
-  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "question": "Which question topics are most common at passport control in Germany?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},

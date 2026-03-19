@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе франции чаще всего просят обратный билет?",
+  "question": "In which city in France is a return ticket requested most often?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_paris"},

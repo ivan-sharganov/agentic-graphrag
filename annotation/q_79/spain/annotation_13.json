@@ -1,5 +1,5 @@
 {
-  "question": "Какой город самый популярный для въезда во Испанию?",
+  "question": "Which city is the most popular entry point into Spain?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_las_palmas"},

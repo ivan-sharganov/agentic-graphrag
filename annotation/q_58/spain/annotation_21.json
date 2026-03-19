@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе испании чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "question": "In which city in Spain are people most often asked about finances / proof of funds?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_barcelona"},

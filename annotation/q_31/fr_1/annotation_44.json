@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе франции меньше всего спрашивают документы?",
+  "question": "In which city in France are the fewest documents requested?",
   "triples": [
     {
       "s": {"label": "Airport", "key": "airport_cdg"},

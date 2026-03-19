@@ -1,5 +1,5 @@
 {
-  "question": "В каком городе франции спрашивают больше всего документов?",
+  "question": "In which city in France are the most documents requested?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_lyon"},

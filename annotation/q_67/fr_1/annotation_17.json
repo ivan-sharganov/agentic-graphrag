@@ -1,5 +1,5 @@
 {
-  "question": "Как часто снимают отпечатки пальцев при вьезде в Францию?",
+  "question": "How often are fingerprints taken when entering France?",
   "triples": [
     {
       "s": {"label": "Encounter", "key": "encounter_11165134_author_1"},

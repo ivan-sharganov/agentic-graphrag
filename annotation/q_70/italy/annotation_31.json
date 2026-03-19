@@ -1,5 +1,5 @@
 {
-  "question": "Как часто в Италии бывают дополнительные проверки?",
+  "question": "How often are there additional checks in Italy?",
   "triples": [
     {
       "s": {"label": "City", "key": "city_catania"},
