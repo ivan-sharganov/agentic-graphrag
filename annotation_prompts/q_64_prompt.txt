@@ -1,79 +1,79 @@
-Ты — генератор аннотаций триплетов (gold facts) для GraphRAG.
+You are a triple-annotation generator (gold facts) for GraphRAG.
 
-ЦЕЛЬ
-Сформировать датасет пар (question, triples), где triples — это:
-1) Триплеты, которые прямо отвечают на вопрос (evidence triples),
-2) Триплеты, которые связывают evidence с корневым узлом Encounter (connection triples),
-3) Триплеты, которые доказывают scope (паспортный контроль в Germany) — только если такие связи явно присутствуют в Cypher (scope triples).
+GOAL
+Build a dataset of (question, triples) pairs, where triples are:
+1) Triples that directly answer the question (evidence triples),
+2) Triples that connect evidence to the root Encounter node (connection triples),
+3) Triples that establish scope (passport control in Germany) — only if such relations are explicitly present in Cypher (scope triples).
 
-ВОПРОС
-Как часто снимают отпечатки пальцев при вьезде в Германию?
+QUESTION
+How often are fingerprints taken when entering Germany?
 
-ИСТОЧНИК ИСТИНЫ
-Единственный источник истины — текст Cypher-файла. Никаких догадок, знаний о мире, расширений. Если чего-то нет в Cypher — не добавляй.
+SOURCE OF TRUTH
+The only source of truth is the Cypher file text. No guesses, world knowledge, or extensions. If something is not in Cypher, do not add it.
 
-ВХОДНЫЕ ДАННЫЕ
-Используй ВСЕ Cypher-файлы cypher_i.txt из папок:
+INPUT DATA
+Use ALL Cypher files cypher_i.txt from folders:
 - /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/germany
 - /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/spain
 - /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/italy
 - /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/fr_1
 - /Users/i.sharganov/🟩🟩🟩/обучение/МАГА/мага_обучение/3_сем/Диплом/эксперимент/neo4j_граф/cypher_checkpoints/fr_2
 
-ВЫХОД (файлы аннотаций)
-Для каждого cypher_i.txt создай JSON:
+OUTPUT (annotation files)
+For each cypher_i.txt, create JSON:
 - .../neo4j_граф/annotation/q_64/germany/annotation_i.json
 - .../neo4j_граф/annotation/q_64/spain/annotation_i.json
 - .../neo4j_граф/annotation/q_64/italy/annotation_i.json
 - .../neo4j_граф/annotation/q_64/fr_1/annotation_i.json
 - .../neo4j_граф/annotation/q_64/fr_2/annotation_i.json
 
-Если в конкретном cypher_i.txt нет подходящих триплетов — triples должен быть пустым массивом.
+If a specific cypher_i.txt has no suitable triples, triples must be an empty array.
 
-ОГРАНИЧЕНИЕ НА СЕМАНТИКУ
-Ищем снятие отпечатков пальцев: BiometricCheck с biometricModality='fingerprint' или BiometricCheck.biometricModality == 'Fingerprint' (если такое есть). Включай Encounter->hasBiometricCheck->BiometricCheck и BiometricCheck->biometricModality->'fingerprint'.
+SEMANTIC CONSTRAINT
+Find fingerprint capture: BiometricCheck with biometricModality='fingerprint' or BiometricCheck.biometricModality == 'Fingerprint' (if present). Include Encounter->hasBiometricCheck->BiometricCheck and BiometricCheck->biometricModality->'fingerprint'.
 
-НЕ ВКЛЮЧАТЬ
-- Любые “советы”, “обычно”, “всегда” — если это не реализовано в графе соответствующими узлами/связями.
-- Любые факты, которые не связаны с Encounter.
+DO NOT INCLUDE
+- Any “advice”, “usually”, “always” — unless implemented in the graph via corresponding nodes/relationships.
+- Any facts not connected to Encounter.
 
-ВАЛИДНОСТЬ СТАДИИ КОНТРОЛЯ (важно)
-Если в Encounter есть свойство controlStage и оно НЕ относится к паспортному контролю у стойки (например AtGate / AtCheckin и аналоги), то DocumentCheck/Questioning/BiometricCheck из этого Encounter НЕ включай.
-Если controlStage отсутствует — допускай, что это паспортный контроль, но только если в Cypher явно есть нужные связи (DocumentCheck/Questioning/BiometricCheck).
+CONTROL STAGE VALIDITY (important)
+If an Encounter has controlStage and it does NOT refer to passport control at the desk (e.g., AtGate / AtCheckin and similar), then do NOT include DocumentCheck/Questioning/BiometricCheck from that Encounter.
+If controlStage is absent, assume passport control only if the necessary relationships are explicitly present in Cypher (DocumentCheck/Questioning/BiometricCheck).
 
-ПРОЦЕДУРА ДЛЯ КАЖДОГО cypher_i.txt
-Шаг 1. Найди все Encounter-узлы, которые присутствуют в файле (обычно MERGE (n:Encounter {key:...})).
-Шаг 2. Для каждого Encounter проверь, что он относится к passport control (см. правило про controlStage).
-Шаг 3. Оставь только Encounter, которые можно связать с Germany через atCountry или через atCity/atAirport + locatedInCountry.
-Шаг 4. Построй triples минимально:
-  A) evidence: те связи/узлы, которые прямо отвечают на вопрос
-  B) connection: Encounter -> ... (связывает evidence с Encounter)
-  C) scope: Encounter -> atCity/atCountry/atAirport и связанные locatedInCity/locatedInCountry, если есть.
+PROCEDURE FOR EACH cypher_i.txt
+Step 1. Find all Encounter nodes present in the file (usually MERGE (n:Encounter {key:...})).
+Step 2. For each Encounter, verify that it is passport control (see the controlStage rule).
+Step 3. Keep only Encounter nodes that can be linked to Germany via atCountry or via atCity/atAirport + locatedInCountry.
+Step 4. Build triples minimally:
+  A) evidence: the links/nodes that directly answer the question
+  B) connection: Encounter -> ... (connects evidence to Encounter)
+  C) scope: Encounter -> atCity/atCountry/atAirport and related locatedInCity/locatedInCountry, if present.
 
-Допускается смысловое сопоставление (например аэропорт ↔ город из списка), даже если нет явной связи locatedInCity/locatedInCountry.
+Semantic matching is allowed (e.g., airport ↔ city from the list), even if there is no explicit locatedInCity/locatedInCountry link.
 
-ФОРМАТ ВЫХОДА (строго)
-JSON объект с двумя полями: question и triples.
+OUTPUT FORMAT (strict)
+JSON object with two fields: question and triples.
 
-- question: строка ровно как в задании.
-- triples: массив объектов, каждый объект = один триплет.
+- question: string exactly as in the task.
+- triples: array of objects, each object is one triple.
 
-Каждый триплет:
+Each triple:
 {
   "s": {"label": "...", "key": "..."},
   "p": "...",
   "o": {"label": "...", "key": "..."}
 }
 
-Требование форматирования:
-- В каждом триплете поля "s", "p", "o" должны быть на отдельных строках (как в примере).
-- Значения внутри "label"/"key"/"p" — в одну строку.
+Formatting requirement:
+- In each triple, fields "s", "p", "o" must be on separate lines (as in the example).
+- Values inside "label"/"key"/"p" must be on one line.
 
-ШАБЛОН (не меняй структуру)
+TEMPLATE (do not change the structure)
 {
-  "question": "Как часто снимают отпечатки пальцев при вьезде в Германию?",
+"question": "How often are fingerprints taken when entering Germany?",
   "triples": []
 }
 
-ПРИМЕЧАНИЕ
-Используй РОВНО те label/predicate/key, которые реально присутствуют в cypher_i.txt.
+NOTE
+Use EXACTLY the label/predicate/key that actually appear in cypher_i.txt.
