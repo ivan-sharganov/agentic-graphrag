@@ -62,7 +62,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
      - Encounter -> atCountry -> Country
      - Airport -> locatedInCity -> City
      - City -> locatedInCountry -> Country
-  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Seville/Spain (например entityName="Seville" или key="city_seville" прямо встречается в Cypher). Не додумывай связи, если их нет.
+  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Seville/Spain (например entityName="Seville" или key="city_seville" прямо встречается в Cypher). Допускается смысловое сопоставление (например аэропорт ↔ город из списка), даже если нет явной связи locatedInCity/locatedInCountry.
 
 Шаг 6. Убери всё лишнее. Триплеты должны быть достаточными, но минимальными.
 

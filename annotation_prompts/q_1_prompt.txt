@@ -62,7 +62,7 @@ Encounter → hasDocumentCheck → DocumentCheck → requestedDocType → Docume
      - Encounter -> atCountry -> Country
      - Airport -> locatedInCity -> City
      - City -> locatedInCountry -> Country
-  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Paris/France/CDG (например entityName='Paris' или key='city_paris' прямо встречается в Cypher). Не додумывай, что CDG это Paris, если нет locatedInCity.
+  ВАЖНО: scope-триплеты добавляй только если из них можно связать Encounter с Paris/France/CDG (например entityName='Paris' или key='city_paris' прямо встречается в Cypher). Можно считать CDG это Paris даже если нет locatedInCity.
 
 Шаг 6. Убери всё лишнее. Триплеты должны быть достаточными, но минимальными.
 
