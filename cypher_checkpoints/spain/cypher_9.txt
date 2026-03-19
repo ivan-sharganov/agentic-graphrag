@@ -4,6 +4,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
 MERGE (n:City {key:'city_barcelona'}) SET n.entityName='Barcelona';
 MERGE (n:Country {key:'country_spain'}) SET n.entityName='Spain';
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11703644_author_1_foreign_passport'});
@@ -16,3 +17,6 @@ MATCH (a:Encounter {key:'encounter_11703644_author_1'}), (b:City {key:'city_barc
 MATCH (a:Encounter {key:'encounter_11703644_author_1'}), (b:Country {key:'country_spain'}) MERGE (a)-[:atCountry]->(b);
 MATCH (a:Encounter {key:'encounter_11703644_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_11703644_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:Encounter {key:'encounter_11703644_author_1'}), (b:Traveller {key:'Pacifica'}) MERGE (a)-[:hasTraveler]->(b);
+MERGE (n:Airport {key:'airport_barcelona'}) SET n.entityName='Barcelona Airport';
+MATCH (a:Airport {key:'airport_barcelona'}), (b:City {key:'city_barcelona'}) MERGE (a)-[:locatedInCity]->(b);
+MATCH (a:Encounter {key:'encounter_11703644_author_1'}), (b:Airport {key:'airport_barcelona'}) MERGE (a)-[:atAirport]->(b);

@@ -45,3 +45,6 @@ MATCH (a:Airport {key:'airport_schonefeld'}), (b:City {key:'city_berlin'}) MERGE
 MATCH (a:City {key:'city_berlin'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:City {key:'city_dresden'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);
 MATCH (a:City {key:'city_memmingen'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);
+MERGE (n:Airport {key:'airport_memmingen'}) SET n.entityName='Memmingen Airport';
+MATCH (a:Airport {key:'airport_memmingen'}), (b:City {key:'city_memmingen'}) MERGE (a)-[:locatedInCity]->(b);
+MATCH (a:Encounter {key:'encounter_9616923_author_3'}), (b:Airport {key:'airport_memmingen'}) MERGE (a)-[:atAirport]->(b);

@@ -4,6 +4,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
 MERGE (n:Country {key:'country_germany'}) SET n.entityName='Germany';
 MERGE (n:City {key:'city_munich'}) SET n.entityName='Munich';
 MERGE (n:Encounter {key:'encounter_9710424_author_1'}) SET n.sourcePostID=9710424, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=9710424#p9710424', n.sourcePostAuthor='Stacy_0510', n.sourcePostDateTime=localdatetime('2019-11-15T16:06:00');
@@ -20,3 +21,6 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_9710424_author_1_return_ticket'}
 MATCH (a:Encounter {key:'encounter_9710424_author_1'}), (b:DocumentCheck {key:'doccheck_encounter_9710424_author_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_9710424_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_9710424_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:City {key:'city_munich'}), (b:Country {key:'country_germany'}) MERGE (a)-[:locatedInCountry]->(b);
+MERGE (n:Airport {key:'airport_munich'}) SET n.entityName='Munich Airport';
+MATCH (a:Airport {key:'airport_munich'}), (b:City {key:'city_munich'}) MERGE (a)-[:locatedInCity]->(b);
+MATCH (a:Encounter {key:'encounter_9710424_author_1'}), (b:Airport {key:'airport_munich'}) MERGE (a)-[:atAirport]->(b);

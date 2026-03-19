@@ -5,6 +5,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
 
 MERGE (c:City {key:'city_nice'}) SET c.entityName='Nice';
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
@@ -28,3 +29,6 @@ MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (st:Stamping {key:'stamping_encounter_8093025_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MERGE (n:Airport {key:'airport_nce'}) SET n.entityName='Nice Cote d\';
+MATCH (a:Airport {key:'airport_nce'}), (b:City {key:'city_nice'}) MERGE (a)-[:locatedInCity]->(b);
+MATCH (a:Encounter {key:'encounter_8093025_author_1'}), (b:Airport {key:'airport_nce'}) MERGE (a)-[:atAirport]->(b);
