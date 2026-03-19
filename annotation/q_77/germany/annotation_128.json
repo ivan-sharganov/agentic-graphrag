@@ -1,0 +1,20 @@
+{
+  "question": "Какой город самый популярный для въезда в Германию?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_memmingen"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11379225_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_memmingen"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11379225_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "question": "Как часто в Италии бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_rome"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11910483_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11910483_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

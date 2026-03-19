@@ -1,0 +1,30 @@
+{
+  "question": "Как часто снимают отпечатки пальцев при вьезде в Италию?",
+  "triples": [
+    {
+      "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_9843071_author_1_fingerprint"},
+      "p": "biometricModality",
+      "o": {"label": "Literal", "key": "fingerprint"}
+    },
+    {
+      "s": {"label": "City", "key": "city_venice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9843071_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_venice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9843071_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9843071_author_1"},
+      "p": "hasBiometricCheck",
+      "o": {"label": "BiometricCheck", "key": "biometriccheck_encounter_9843071_author_1_fingerprint"}
+    }
+  ]
+}

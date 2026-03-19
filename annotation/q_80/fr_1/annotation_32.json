@@ -1,0 +1,45 @@
+{
+  "question": "Где сейчас проще всего пройти паспортный контроль в ЕС?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_nce"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_nice"}
+    },
+    {
+      "s": {"label": "City", "key": "city_nice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11591837_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11591837_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11591837_author_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11591837_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_nce"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11591837_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_nice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11591837_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11591837_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11591837_author_1_foreignpassport"}
+    }
+  ]
+}

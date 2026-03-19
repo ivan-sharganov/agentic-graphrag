@@ -1,0 +1,10 @@
+{
+  "question": "Как часто в Германии бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

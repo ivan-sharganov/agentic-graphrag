@@ -1,0 +1,25 @@
+{
+  "question": "В какой стране чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_2_foreignpassport"}
+    }
+  ]
+}

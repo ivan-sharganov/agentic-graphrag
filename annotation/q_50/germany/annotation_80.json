@@ -1,0 +1,45 @@
+{
+  "question": "В какой стране чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241353_author_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241353_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241353_author_1_invitation_letter"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241353_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241353_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241353_author_1_travel_insurance"}
+    }
+  ]
+}

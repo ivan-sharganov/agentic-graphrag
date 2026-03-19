@@ -1,0 +1,20 @@
+{
+  "question": "В какой аэропорт чаще всего влетают во Германии?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_cologne"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11613113_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_cologne"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11613113_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

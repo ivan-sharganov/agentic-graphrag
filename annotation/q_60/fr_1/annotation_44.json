@@ -1,0 +1,85 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Франции ?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11888385_author_2_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11888385_author_2_cash_amount"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11888385_author_2_exit_date_schengen"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11888385_author_2_payment_card"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11888385_author_2_visitpurpose"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_friend1_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_friend1_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11888385_friend1_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

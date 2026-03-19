@@ -1,0 +1,30 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11305133_author_1_visit_duration"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11305133_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11305133_author_1_visit_duration"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_duration"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11305133_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dusseldorf"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9667472_friend_1_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9667472_friend_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9667472_friend_1_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9667472_friend_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

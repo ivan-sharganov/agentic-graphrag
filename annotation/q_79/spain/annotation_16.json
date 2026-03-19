@@ -1,0 +1,15 @@
+{
+  "question": "Какой город самый популярный для въезда во Испанию?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11884163_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11884163_girl_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

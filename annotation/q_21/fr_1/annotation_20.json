@@ -1,0 +1,60 @@
+{
+  "question": "Which documents do I need to bring to passport control in France?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_lyon"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11248406_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11248406_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11248406_child_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11248406_child_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11248406_author_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11248406_child_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11248406_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11248406_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11248406_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11248406_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11248406_child_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11248406_child_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11248406_child_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11248406_child_1_foreignpassport"}
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "question": "Какой город самый популярный для въезда во Францию?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11644662_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11644662_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11644662_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11644662_passenger_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11644662_passenger_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11644662_passenger_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

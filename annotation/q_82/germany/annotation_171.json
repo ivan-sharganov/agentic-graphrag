@@ -1,0 +1,30 @@
+{
+  "question": "Где чаще всего контроль ограничивается только паспортом?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dortmund"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11685343_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dortmund"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11685343_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11685343_friend_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dortmund"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11685343_friend_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

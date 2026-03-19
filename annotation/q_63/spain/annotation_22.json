@@ -1,0 +1,10 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Испании ?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12049879_friend_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

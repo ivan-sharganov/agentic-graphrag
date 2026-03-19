@@ -1,0 +1,55 @@
+{
+  "question": "В каком городе италии чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_fiumicino"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "City", "key": "city_rome"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9086235_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9086235_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9086235_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9086235_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_fiumicino"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9086235_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9086235_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9086235_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9086235_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9086235_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9086235_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9086235_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9086235_author_1_return_ticket"}
+    }
+  ]
+}

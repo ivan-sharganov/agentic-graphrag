@@ -1,0 +1,30 @@
+{
+  "question": "В каком городе германии чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_frankfurt"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11300280_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_frankfurt"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11300280_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11300280_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11300280_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11300280_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11300280_author_1_return_ticket"}
+    }
+  ]
+}

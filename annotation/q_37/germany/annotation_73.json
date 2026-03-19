@@ -1,0 +1,20 @@
+{
+  "question": "В каком городе германии чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11229082_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11229082_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11229082_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11229082_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11229082_author_1_travel_insurance"}
+    }
+  ]
+}

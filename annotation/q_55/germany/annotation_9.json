@@ -1,0 +1,70 @@
+{
+  "question": "В какой стране чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_munich"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_munich"}
+    },
+    {
+      "s": {"label": "City", "key": "city_munich"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_child_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_munich"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_child_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_munich"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_child_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_child_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8700011_child_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_munich"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_munich"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8700011_wife_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8700011_wife_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8700011_wife_1_invitation_letter"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8700011_wife_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8700011_wife_1_return_ticket"}
+    }
+  ]
+}

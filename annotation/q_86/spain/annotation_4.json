@@ -1,0 +1,30 @@
+{
+  "question": "Что чаще в Испании: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_malaga"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11476860_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_malaga"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11476860_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11476860_husband_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_malaga"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11476860_husband_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

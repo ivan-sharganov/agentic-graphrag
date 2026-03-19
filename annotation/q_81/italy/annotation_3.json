@@ -1,0 +1,40 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_prague"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_czech_republic"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_wife_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_prague"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_czech_republic"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_4871351_wife_2_exit_date_from_schengen"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_4871351_wife_2_exit_date_from_schengen"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "exit_date_from_schengen"}
+    }
+  ]
+}

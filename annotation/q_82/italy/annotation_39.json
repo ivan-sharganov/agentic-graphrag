@@ -1,0 +1,10 @@
+{
+  "question": "Где чаще всего контроль ограничивается только паспортом?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11429829_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

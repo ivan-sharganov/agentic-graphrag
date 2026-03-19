@@ -1,0 +1,90 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11265638_author_1_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11265638_author_1_cash_amount"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11265638_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_husband_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_husband_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_husband_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11265638_husband_1_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_husband_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11265638_husband_1_cash_amount"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11265638_husband_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11265638_husband_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11265638_author_1_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11265638_author_1_cash_amount"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "cash_amount"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11265638_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11265638_husband_1_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11265638_husband_1_cash_amount"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "cash_amount"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11265638_husband_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

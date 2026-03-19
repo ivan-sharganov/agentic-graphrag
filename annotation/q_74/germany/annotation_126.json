@@ -1,0 +1,20 @@
+{
+  "question": "В какой аэропорт чаще всего влетают во Германии?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dusseldorf"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11374449_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11374449_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "question": "Как часто в Франции бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "p": "screeningStatus",
+      "o": {"label": "Literal", "key": "additional_checks"}
+    }
+  ]
+}

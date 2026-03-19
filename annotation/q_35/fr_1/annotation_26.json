@@ -1,0 +1,65 @@
+{
+  "question": "В какой стране чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_lyon"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_accommodationproof"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11461788_author_1_accommodationproof"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11461788_author_1_accommodationproof"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_accommodationproof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_paymentcard"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_returnticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_wife_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_wife_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11461788_wife_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_wife_1_foreignpassport"}
+    }
+  ]
+}

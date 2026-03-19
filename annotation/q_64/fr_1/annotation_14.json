@@ -1,0 +1,10 @@
+{
+  "question": "Как часто снимают отпечатки пальцев при вьезде в Германию?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

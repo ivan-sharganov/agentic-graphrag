@@ -1,0 +1,65 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Испании ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_barcelona"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "City", "key": "city_seville"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_barcelona"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11967545_author_1_travel_companions"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11967545_author_1_visit_duration"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11967545_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_seville"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11967545_author_1_travel_companions"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "travel_companions"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11967545_author_1_visit_duration"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_duration"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11967545_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

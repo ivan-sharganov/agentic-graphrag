@@ -1,0 +1,25 @@
+{
+  "question": "Что чаще в Франции: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_istanbul"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "City", "key": "city_nice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_nice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

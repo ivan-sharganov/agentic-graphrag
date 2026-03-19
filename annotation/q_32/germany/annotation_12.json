@@ -1,0 +1,35 @@
+{
+  "question": "В каком городе германии меньше всего спрашивают документы?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dresden"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_8863811_child_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_8863811_child_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_8863811_child_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8863811_child_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dresden"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8863811_child_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8863811_child_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8863811_child_1_foreign_passport"}
+    }
+  ]
+}

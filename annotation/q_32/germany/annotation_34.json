@@ -1,0 +1,75 @@
+{
+  "question": "В каком городе германии меньше всего спрашивают документы?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_schonefeld"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9352198_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9352198_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9352198_son_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9352198_son_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9352198_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9352198_son_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_schonefeld"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9352198_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_son_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_schonefeld"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_son_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_son_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9352198_son_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9352198_son_1_foreign_passport"}
+    }
+  ]
+}

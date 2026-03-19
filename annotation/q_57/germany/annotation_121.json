@@ -1,0 +1,35 @@
+{
+  "question": "В каком городе германии чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11334334_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11334334_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11334334_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11334334_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11334334_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11334334_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11334334_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11334334_author_1_return_ticket"}
+    }
+  ]
+}

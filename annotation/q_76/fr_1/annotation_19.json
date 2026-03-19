@@ -1,0 +1,10 @@
+{
+  "question": "Какой город самый популярный для въезда во Францию?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11217763_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

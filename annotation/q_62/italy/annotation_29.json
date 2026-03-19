@@ -1,0 +1,50 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Италии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_rome"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9611299_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9611299_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9611299_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9611299_author_1_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9611299_husband_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9611299_husband_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9611299_husband_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9611299_husband_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9611299_author_1_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9611299_husband_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

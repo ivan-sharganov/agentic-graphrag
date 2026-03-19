@@ -1,0 +1,55 @@
+{
+  "question": "В какой стране спрашивают больше всего документов?",
+  "triples": [
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11305133_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11305133_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11305133_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11305133_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11305133_author_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11305133_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11305133_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11305133_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11305133_author_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11305133_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11305133_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11305133_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11305133_author_1_return_ticket"}
+    }
+  ]
+}

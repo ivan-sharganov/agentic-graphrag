@@ -1,0 +1,50 @@
+{
+  "question": "В каком городе германии чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_cologne"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_accommodation_proof"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11241283_author_1_accommodation_proof"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11241283_author_1_accommodation_proof"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_cologne"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_return_ticket"}
+    }
+  ]
+}

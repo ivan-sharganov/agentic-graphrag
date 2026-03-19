@@ -1,0 +1,40 @@
+{
+  "question": "В каком городе италии чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9554519_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9554519_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9554519_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9554519_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9554519_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9554519_author_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9554519_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9554519_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9554519_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9554519_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9554519_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9554519_author_1_return_ticket"}
+    }
+  ]
+}

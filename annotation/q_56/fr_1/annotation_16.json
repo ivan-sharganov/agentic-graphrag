@@ -1,0 +1,20 @@
+{
+  "question": "В каком городе франции чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11159089_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11159089_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11159089_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11159089_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11159089_author_1_invitation"}
+    }
+  ]
+}

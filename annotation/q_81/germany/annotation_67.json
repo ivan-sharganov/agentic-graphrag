@@ -1,0 +1,90 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_frankfurt"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_frankfurt"}
+    },
+    {
+      "s": {"label": "Airport", "key": "airport_tegel"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "City", "key": "city_frankfurt"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_frankfurt"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_frankfurt"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_tegel"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9912299_author_2_visit_purpose"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_3"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_frankfurt"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_3"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_frankfurt"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_3"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9912299_author_3"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9912299_author_3_accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9912299_author_2_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9912299_author_3_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    }
+  ]
+}

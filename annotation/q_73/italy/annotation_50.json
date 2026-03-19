@@ -1,0 +1,20 @@
+{
+  "question": "В какой аэропорт чаще всего влетают во Италии?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_domodossola"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11626500_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_domodossola"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11626500_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

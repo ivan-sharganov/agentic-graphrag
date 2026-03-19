@@ -1,0 +1,40 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_domodossola"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11626500_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_domodossola"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11626500_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11626500_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11626500_author_1_travel_itinerary"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11626500_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11626500_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11626500_author_1_travel_itinerary"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "travel_itinerary"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11626500_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

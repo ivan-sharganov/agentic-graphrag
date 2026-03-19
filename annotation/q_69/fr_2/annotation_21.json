@@ -1,0 +1,25 @@
+{
+  "question": "Как часто в Франции бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_izmir"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_izmir"}
+    },
+    {
+      "s": {"label": "City", "key": "city_izmir"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11816166_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11816166_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

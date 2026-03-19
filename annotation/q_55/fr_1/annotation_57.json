@@ -1,0 +1,25 @@
+{
+  "question": "В какой стране чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328576_acquaintance1_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328576_acquaintance1_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328576_acquaintance1_1_return_ticket"}
+    }
+  ]
+}

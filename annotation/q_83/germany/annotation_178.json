@@ -1,0 +1,30 @@
+{
+  "question": "Что чаще в Германии: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dortmund"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11725922_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dortmund"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11725922_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11725922_girl_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dortmund"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11725922_girl_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

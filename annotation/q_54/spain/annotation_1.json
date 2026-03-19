@@ -1,0 +1,25 @@
+{
+  "question": "В каком городе испании чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_madrid"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11158428_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_madrid"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11158428_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11158428_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11158428_author_1_foreign_passport"}
+    }
+  ]
+}

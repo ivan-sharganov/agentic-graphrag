@@ -1,0 +1,210 @@
+{
+  "question": "В каком городе германии спрашивают больше всего документов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dusseldorf"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_cash"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_cash"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_id_card"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_id_card"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_invitation_letter"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_invitation_letter"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_travel_insurance"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_travel_insurance"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_cash"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_cash"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_id_card"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_id_card"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_invitation_letter"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_invitation_letter"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_travel_insurance"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_travel_insurance"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_cash"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "cash"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_id_card"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "id_card"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_invitation_letter"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "invitation_letter"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_author_1_travel_insurance"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "travel_insurance"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_cash"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "cash"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_id_card"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "id_card"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_invitation_letter"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "invitation_letter"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11259009_husband_1_travel_insurance"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "travel_insurance"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_id_card"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_invitation_letter"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_author_1_travel_insurance"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_id_card"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_invitation_letter"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11259009_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11259009_husband_1_travel_insurance"}
+    }
+  ]
+}

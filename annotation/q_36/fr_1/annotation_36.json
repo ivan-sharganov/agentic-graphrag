@@ -1,0 +1,55 @@
+{
+  "question": "В каком городе франции чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_istanbul"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11719467_author_2_accommodation_proof"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11719467_author_2_accommodation_proof"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11719467_author_2_accommodation_proof"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11719467_author_2_accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11719467_author_2_foreignpassport"}
+    }
+  ]
+}

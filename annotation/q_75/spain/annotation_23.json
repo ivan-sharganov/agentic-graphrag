@@ -1,0 +1,10 @@
+{
+  "question": "В какой аэропорт чаще всего влетают во Испании?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12059868_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

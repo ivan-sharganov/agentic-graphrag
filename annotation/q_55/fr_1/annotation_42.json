@@ -1,0 +1,35 @@
+{
+  "question": "В какой стране чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_menton"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_menton"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_id"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_visa"}
+    }
+  ]
+}

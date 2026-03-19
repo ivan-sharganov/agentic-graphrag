@@ -1,0 +1,40 @@
+{
+  "question": "В какой стране чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bologna"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12072798_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bologna"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12072798_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12072798_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12072798_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12072798_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bologna"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12072798_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12072798_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12072798_author_2_foreign_passport"}
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "question": "В каком городе италии чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bergamo"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11580111_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11580111_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11580111_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11580111_author_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11580111_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11580111_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11580111_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11580111_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11580111_author_1_travel_insurance"}
+    }
+  ]
+}

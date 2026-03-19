@@ -1,0 +1,50 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bergamo"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890062_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890062_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890062_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890062_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890062_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_6890062_author_2_visit_duration"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890062_author_2"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_6890062_author_2_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_6890062_author_2_visit_duration"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_duration"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_6890062_author_2_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

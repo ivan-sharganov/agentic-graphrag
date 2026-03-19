@@ -1,0 +1,50 @@
+{
+  "question": "В какой стране спрашивают больше всего документов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bergamo"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_6890389_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_6890389_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_6890389_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_6890389_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_hotel_booking"}
+    }
+  ]
+}

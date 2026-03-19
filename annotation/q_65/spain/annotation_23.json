@@ -1,0 +1,10 @@
+{
+  "question": "Как часто снимают отпечатки пальцев при вьезде в Испанию?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12059868_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

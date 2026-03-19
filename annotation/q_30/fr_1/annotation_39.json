@@ -1,0 +1,75 @@
+{
+  "question": "В какой стране меньше всего спрашивают документы?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11769523_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11769523_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11769523_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11769523_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11769523_author_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11769523_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11769523_author_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11769523_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11769523_author_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11769523_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11769523_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11769523_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11769523_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11769523_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11769523_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11769523_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11769523_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11769523_author_1_return_ticket"}
+    }
+  ]
+}

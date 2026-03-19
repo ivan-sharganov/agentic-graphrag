@@ -1,0 +1,30 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_malaga"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11695271_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_malaga"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11695271_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11695271_wife_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_malaga"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11695271_wife_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

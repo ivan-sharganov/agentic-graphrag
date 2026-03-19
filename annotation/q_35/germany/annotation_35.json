@@ -1,0 +1,95 @@
+{
+  "question": "В какой стране чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dusseldorf"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9358611_friend_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9358611_friend_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend2_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend2_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend2_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend2_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend3_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend3_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend3_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend3_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9358611_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9358611_friend_1_return_ticket"}
+    }
+  ]
+}

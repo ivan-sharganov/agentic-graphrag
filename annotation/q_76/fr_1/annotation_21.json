@@ -1,0 +1,15 @@
+{
+  "question": "Какой город самый популярный для въезда во Францию?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_lyon"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11249940_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    }
+  ]
+}

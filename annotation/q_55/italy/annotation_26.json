@@ -1,0 +1,45 @@
+{
+  "question": "В какой стране чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_pisa"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_pisa"}
+    },
+    {
+      "s": {"label": "City", "key": "city_pisa"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9551829_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_pisa"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9551829_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_pisa"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9551829_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9551829_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9551829_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9551829_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9551829_author_1_cash_amount"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9551829_author_1_cash_amount"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "cash_amount"}
+    }
+  ]
+}

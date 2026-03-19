@@ -1,0 +1,20 @@
+{
+  "question": "Как часто снимают отпечатки пальцев при вьезде в Испанию?",
+  "triples": [
+    {
+      "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11485080_author_1_fingerprint"},
+      "p": "biometricModality",
+      "o": {"label": "Literal", "key": "fingerprint"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11485080_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11485080_author_1"},
+      "p": "hasBiometricCheck",
+      "o": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11485080_author_1_fingerprint"}
+    }
+  ]
+}

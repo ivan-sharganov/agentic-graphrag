@@ -1,0 +1,50 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dusseldorf"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_husband_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_husband_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_niece_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_niece_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_sister_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9363361_sister_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

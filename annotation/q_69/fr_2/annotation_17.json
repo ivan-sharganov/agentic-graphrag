@@ -1,0 +1,15 @@
+{
+  "question": "Как часто в Франции бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11789637_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11789637_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

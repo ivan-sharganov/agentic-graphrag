@@ -1,0 +1,45 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Италии ?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_fiumicino"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "City", "key": "city_milan"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "City", "key": "city_rome"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11656754_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_milan"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11656754_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11656754_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_fiumicino"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11656754_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11656754_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

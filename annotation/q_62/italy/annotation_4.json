@@ -1,0 +1,10 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Италии ?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_5400436_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

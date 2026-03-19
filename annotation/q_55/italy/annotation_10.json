@@ -1,0 +1,30 @@
+{
+  "question": "В какой стране чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bergamo"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_hotel_booking"}
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Италии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bergamo"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_6890389_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_6890389_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

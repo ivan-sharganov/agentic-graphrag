@@ -1,0 +1,55 @@
+{
+  "question": "В каком городе франции чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_accommodation_proof"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12214016_woman_1_accommodation_proof"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12214016_woman_1_accommodation_proof"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_return_ticket"}
+    }
+  ]
+}

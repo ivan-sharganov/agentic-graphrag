@@ -1,0 +1,80 @@
+{
+  "question": "В каком городе франции чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_toulouse"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_author_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_6281811_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_companion1_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_6281811_companion1_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_6281811_author_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_6281811_companion1_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_toulouse"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_author_1_accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_toulouse"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_companion1_1_accommodation_proof"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_companion1_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6281811_companion1_1_return_ticket"}
+    }
+  ]
+}

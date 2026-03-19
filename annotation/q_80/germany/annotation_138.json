@@ -1,0 +1,55 @@
+{
+  "question": "Где сейчас проще всего пройти паспортный контроль в ЕС?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_stuttgart"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11466567_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11466567_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11466567_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11466567_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_stuttgart"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11466567_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11466567_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11466567_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11466567_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11466567_author_1_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11466567_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11466567_author_1_visit_duration"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11466567_author_1_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11466567_author_1_visit_duration"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_duration"}
+    }
+  ]
+}

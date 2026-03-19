@@ -1,0 +1,60 @@
+{
+  "question": "В каком городе франции чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_bva"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_beauvais"}
+    },
+    {
+      "s": {"label": "City", "key": "city_beauvais"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_bva"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_beauvais"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11898651_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11898651_author_1_visa"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_bva"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_beauvais"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11898651_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11898651_author_2_foreign_passport"}
+    }
+  ]
+}

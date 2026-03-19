@@ -1,0 +1,35 @@
+{
+  "question": "В каком городе германии чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_dusseldorf"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dusseldorf"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9667472_friend_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9667472_friend_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9667472_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9667472_friend_1_return_ticket"}
+    }
+  ]
+}

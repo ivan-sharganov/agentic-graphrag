@@ -1,0 +1,15 @@
+{
+  "question": "Где чаще всего контроль ограничивается только паспортом?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12173186_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12173186_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

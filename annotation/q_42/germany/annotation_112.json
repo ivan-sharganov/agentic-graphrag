@@ -1,0 +1,40 @@
+{
+  "question": "В каком городе германии чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11314866_author_1_return_ticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11314866_author_1_return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11314866_author_1_return_ticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11314866_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11314866_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11314866_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11314866_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11314866_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11314866_author_1_return_ticket"}
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Франции ?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_3902451_author_1_cashamount"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_3902451_author_1_employment"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_3902451_author_1_hotelpaymentcard"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_3902451_author_1_hotelpaymentstatus"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_3902451_author_1_visitduration"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_3902451_author_1_visitpurpose"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

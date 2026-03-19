@@ -1,0 +1,15 @@
+{
+  "question": "В какой стране чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12059868_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12059868_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12059868_author_1_foreign_passport"}
+    }
+  ]
+}

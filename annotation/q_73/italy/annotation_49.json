@@ -1,0 +1,10 @@
+{
+  "question": "В какой аэропорт чаще всего влетают во Италии?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11601219_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "question": "Какой город самый популярный для въезда во Италию?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_prague"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_czech_republic"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_4871351_wife_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

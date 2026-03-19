@@ -1,0 +1,25 @@
+{
+  "question": "Где чаще всего контроль ограничивается только паспортом?",
+  "triples": [
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3812199_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3812199_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3812199_author_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3812199_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3812199_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3812199_author_1_foreignpassport"}
+    }
+  ]
+}

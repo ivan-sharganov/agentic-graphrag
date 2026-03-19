@@ -1,0 +1,20 @@
+{
+  "question": "В какой стране чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11767877_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11767877_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11767877_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11767877_author_1_foreign_passport"}
+    }
+  ]
+}

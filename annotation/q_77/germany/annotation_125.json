@@ -1,0 +1,20 @@
+{
+  "question": "Какой город самый популярный для въезда в Германию?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_frankfurt"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11374439_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_frankfurt"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11374439_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    }
+  ]
+}

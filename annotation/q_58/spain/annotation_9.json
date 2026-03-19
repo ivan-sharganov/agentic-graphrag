@@ -1,0 +1,25 @@
+{
+  "question": "В каком городе испании чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_barcelona"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11703644_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_barcelona"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11703644_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11703644_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11703644_author_1_foreign_passport"}
+    }
+  ]
+}

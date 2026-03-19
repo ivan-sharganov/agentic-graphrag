@@ -1,0 +1,15 @@
+{
+  "question": "В каком городе франции чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12108064_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12108064_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12108064_author_1_foreign_passport"}
+    }
+  ]
+}

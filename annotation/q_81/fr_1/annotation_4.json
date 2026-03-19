@@ -1,0 +1,10 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_3812199_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    }
+  ]
+}

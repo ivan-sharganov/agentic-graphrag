@@ -1,0 +1,25 @@
+{
+  "question": "В какой стране чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_kazakhstan"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_bankstatement"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_paymentcard"}
+    }
+  ]
+}

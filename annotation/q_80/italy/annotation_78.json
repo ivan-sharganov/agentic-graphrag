@@ -1,0 +1,45 @@
+{
+  "question": "Где сейчас проще всего пройти паспортный контроль в ЕС?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_marco_polo"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_venice"}
+    },
+    {
+      "s": {"label": "City", "key": "city_venice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12102425_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12102425_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12102425_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12102425_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_marco_polo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12102425_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_venice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12102425_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12102425_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12102425_author_1_foreign_passport"}
+    }
+  ]
+}

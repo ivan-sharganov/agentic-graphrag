@@ -1,0 +1,45 @@
+{
+  "question": "В каком городе италии чаще всего просят показать бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_rome"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9281821_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9281821_author_2_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9281821_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9281821_author_2_return_ticket"}
+    }
+  ]
+}

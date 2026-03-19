@@ -1,0 +1,25 @@
+{
+  "question": "В какой стране спрашивают больше всего документов?",
+  "triples": [
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11718461_author_1_boardingpass"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11718461_author_1_boardingpass"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11718461_author_1_boardingpass"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "boarding_pass"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11718461_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11718461_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11718461_author_1_boardingpass"}
+    }
+  ]
+}

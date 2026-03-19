@@ -1,0 +1,50 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_hanover"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11378709_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_hanover"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11378709_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11378709_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11378709_author_1_accommodation_details"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11378709_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11378709_author_1_cash_amount"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11378709_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11378709_author_1_travel_companions"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11378709_author_1_accommodation_details"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "accommodation_details"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11378709_author_1_cash_amount"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "cash_amount"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11378709_author_1_travel_companions"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "travel_companions"}
+    }
+  ]
+}

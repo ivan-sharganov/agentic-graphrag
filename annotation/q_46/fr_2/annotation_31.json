@@ -1,0 +1,25 @@
+{
+  "question": "В каком городе франции чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_nice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11914543_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_nice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11914543_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11914543_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11914543_author_1_foreign_passport"}
+    }
+  ]
+}

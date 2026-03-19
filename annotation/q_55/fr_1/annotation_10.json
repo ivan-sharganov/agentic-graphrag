@@ -1,0 +1,20 @@
+{
+  "question": "В какой стране чаще всего спрашивают о финансах, спрашивают подтверждение финансов?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_lyon"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8694300_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_8694300_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8694300_author_1_foreignpassport"}
+    }
+  ]
+}

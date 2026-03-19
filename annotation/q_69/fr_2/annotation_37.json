@@ -1,0 +1,10 @@
+{
+  "question": "Как часто в Франции бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12084371_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

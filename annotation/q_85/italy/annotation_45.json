@@ -1,0 +1,35 @@
+{
+  "question": "Что чаще в Италии: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bergamo"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11579130_author_1_cash"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11579130_author_1_cash"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11579130_author_1_cash"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11579130_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bergamo"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11579130_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11579130_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11579130_author_1_cash"}
+    }
+  ]
+}

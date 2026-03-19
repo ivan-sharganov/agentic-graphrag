@@ -1,0 +1,25 @@
+{
+  "question": "Где сейчас проще всего пройти паспортный контроль в ЕС?",
+  "triples": [
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9778361_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9778361_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9778361_author_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9778361_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9778361_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9778361_author_1_foreignpassport"}
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Италии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_venice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_venice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11425636_author_1_itinerary_transport"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11425636_author_1_itinerary_transport"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "itinerary_transport"}
+    }
+  ]
+}

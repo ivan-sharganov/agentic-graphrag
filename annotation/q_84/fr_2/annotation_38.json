@@ -1,0 +1,30 @@
+{
+  "question": "Что чаще в Франции: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_ory"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12085432_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12085432_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12085432_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

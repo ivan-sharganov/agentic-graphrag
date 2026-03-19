@@ -1,0 +1,20 @@
+{
+  "question": "Как часто в Испании бывают дополнительные проверки?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_barcelona"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11865738_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_barcelona"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11865738_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

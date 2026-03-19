@@ -1,0 +1,20 @@
+{
+  "question": "Что чаще в Италии: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_venice"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11837415_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_venice"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11837415_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

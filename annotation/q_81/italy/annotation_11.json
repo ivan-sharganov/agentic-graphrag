@@ -1,0 +1,45 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_fiumicino"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "City", "key": "city_rome"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890943_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_fiumicino"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890943_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890943_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890943_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_fiumicino"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890943_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_rome"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_6890943_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_italy"}
+    }
+  ]
+}

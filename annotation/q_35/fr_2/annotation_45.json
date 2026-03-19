@@ -1,0 +1,105 @@
+{
+  "question": "В какой стране чаще всего просят бронь жилья?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_istanbul"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_istanbul"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_author_1_visa"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_author_2_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_couple_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_couple_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_couple_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_couple_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_couple_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_couple_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_istanbul"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_husband_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_husband_1_return_ticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_husband_1_visa"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12134610_husband_2_foreign_passport"}
+    }
+  ]
+}

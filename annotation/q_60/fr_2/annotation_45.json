@@ -1,0 +1,40 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Франции ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_istanbul"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_couple_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_couple_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_2"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12134610_husband_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

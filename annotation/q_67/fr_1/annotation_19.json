@@ -1,0 +1,20 @@
+{
+  "question": "Как часто снимают отпечатки пальцев при вьезде в Францию?",
+  "triples": [
+    {
+      "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11217763_author_1"},
+      "p": "biometricModality",
+      "o": {"label": "Literal", "key": "fingerprint"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11217763_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11217763_author_1"},
+      "p": "hasBiometricCheck",
+      "o": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11217763_author_1"}
+    }
+  ]
+}

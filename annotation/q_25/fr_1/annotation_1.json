@@ -1,0 +1,150 @@
+{
+  "question": "В какой стране спрашивают больше всего документов?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cdg"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "City", "key": "city_paris"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_cash"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_cash"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_hotelbookingdoc"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_hotelbookingdoc"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_paymentcard"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_paymentcard"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_returnticket"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_returnticket"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_travelinsurance"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_travelinsurance"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_friend1_1_foreignpassport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_friend1_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_cash"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "cash"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_hotelbookingdoc"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_paymentcard"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "payment_card"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_returnticket"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "return_ticket"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_travelinsurance"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "travel_insurance"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_friend1_1_foreignpassport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_cash"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_foreignpassport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_hotelbookingdoc"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_paymentcard"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_returnticket"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_travelinsurance"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cdg"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_paris"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_friend1_1_foreignpassport"}
+    }
+  ]
+}

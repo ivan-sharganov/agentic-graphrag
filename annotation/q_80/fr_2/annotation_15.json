@@ -1,0 +1,120 @@
+{
+  "question": "Где сейчас проще всего пройти паспортный контроль в ЕС?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_istanbul"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "City", "key": "city_marseille"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_1_hotel_booking"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_1_travel_insurance"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_1_travel_insurance"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_2_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_2_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_friend_1_foreign_passport"},
+      "p": "requestedDocument",
+      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_friend_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_1_hotel_booking"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "hotel_booking"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_1_travel_insurance"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "travel_insurance"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_author_2_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11783205_friend_1_foreign_passport"},
+      "p": "documentType",
+      "o": {"label": "Literal", "key": "foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_istanbul"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_turkey"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_1_hotel_booking"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_1_travel_insurance"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_marseille"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_author_2_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_friend_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_marseille"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_friend_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11783205_friend_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11783205_friend_1_foreign_passport"}
+    }
+  ]
+}

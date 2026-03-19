@@ -1,0 +1,75 @@
+{
+  "question": "В какой стране чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_schonefeld"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "City", "key": "city_berlin"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "City", "key": "city_dresden"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "City", "key": "city_memmingen"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_schonefeld"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_berlin"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9616923_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_2"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_dresden"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_2"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9616923_author_2_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_3"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_memmingen"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_3"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9616923_author_3"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9616923_author_3_foreign_passport"}
+    }
+  ]
+}

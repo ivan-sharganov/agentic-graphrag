@@ -1,0 +1,40 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "triples": [
+    {
+      "s": {"label": "Airport", "key": "airport_cologne_bonn"},
+      "p": "locatedInCity",
+      "o": {"label": "City", "key": "city_cologne"}
+    },
+    {
+      "s": {"label": "City", "key": "city_cologne"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9310498_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_cologne_bonn"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9310498_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_cologne"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9310498_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_9310498_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_9310498_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_9310498_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

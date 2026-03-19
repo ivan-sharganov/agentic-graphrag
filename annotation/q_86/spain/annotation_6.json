@@ -1,0 +1,10 @@
+{
+  "question": "Что чаще в Испании: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11485080_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_spain"}
+    }
+  ]
+}

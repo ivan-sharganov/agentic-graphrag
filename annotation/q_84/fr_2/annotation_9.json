@@ -1,0 +1,15 @@
+{
+  "question": "Что чаще в Франции: просьба показать наличные или карту?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11718830_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11718830_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}

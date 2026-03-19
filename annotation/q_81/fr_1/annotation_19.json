@@ -1,0 +1,30 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_11217763_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11217763_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11217763_author_1_visitduration"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11217763_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11217763_author_1_visitpurpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11217763_author_1_visitduration"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visitduration"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11217763_author_1_visitpurpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visitpurpose"}
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Германии ?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_bremen"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_bremen"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_12096737_author_1_itinerary_transport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_12096737_author_1_visit_duration"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12096737_author_2"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_12096737_author_1_itinerary_transport"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "itinerary_transport"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_12096737_author_1_visit_duration"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_duration"}
+    }
+  ]
+}

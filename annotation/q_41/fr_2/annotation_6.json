@@ -1,0 +1,30 @@
+{
+  "question": "В каком городе франции чаще всего просят обратный билет?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_lyon"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11692145_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_lyon"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11692145_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11692145_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11692145_author_1_foreign_passport"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11692145_author_1"},
+      "p": "hasDocumentCheck",
+      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11692145_author_1_hotel_booking"}
+    }
+  ]
+}

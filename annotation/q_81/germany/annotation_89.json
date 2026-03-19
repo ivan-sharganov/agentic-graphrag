@@ -1,0 +1,40 @@
+{
+  "question": "Через какую страну чаще всего проходят «без вопросов»?",
+  "triples": [
+    {
+      "s": {"label": "City", "key": "city_munich"},
+      "p": "locatedInCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11260223_author_1"},
+      "p": "atCity",
+      "o": {"label": "City", "key": "city_munich"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11260223_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_germany"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11260223_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11260223_author_1_exit_date_from_schengen"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_11260223_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_11260223_author_1_visit_purpose"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11260223_author_1_exit_date_from_schengen"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "exit_date_from_schengen"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_11260223_author_1_visit_purpose"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "visit_purpose"}
+    }
+  ]
+}

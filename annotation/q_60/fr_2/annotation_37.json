@@ -1,0 +1,20 @@
+{
+  "question": "Какие темы вопросов самые частые на паспортном контроле в Франции ?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12084371_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12084371_author_1"},
+      "p": "hasQuestioning",
+      "o": {"label": "Questioning", "key": "questioning_encounter_12084371_author_1_travel_companions"}
+    },
+    {
+      "s": {"label": "Questioning", "key": "questioning_encounter_12084371_author_1_travel_companions"},
+      "p": "topicKey",
+      "o": {"label": "Literal", "key": "travel_companions"}
+    }
+  ]
+}

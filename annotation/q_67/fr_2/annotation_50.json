@@ -1,0 +1,15 @@
+{
+  "question": "Как часто снимают отпечатки пальцев при вьезде в Францию?",
+  "triples": [
+    {
+      "s": {"label": "Encounter", "key": "encounter_12198612_author_1"},
+      "p": "atAirport",
+      "o": {"label": "Airport", "key": "airport_ory"}
+    },
+    {
+      "s": {"label": "Encounter", "key": "encounter_12198612_author_1"},
+      "p": "atCountry",
+      "o": {"label": "Country", "key": "country_france"}
+    }
+  ]
+}
