@@ -36,6 +36,6 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_12108527_author_1_foreign_passp
 
 MATCH (e:Encounter {key:'encounter_12108527_author_1'}), (st:Stamping {key:'stamping_encounter_12108527_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (st:Stamping {key:'stamping_encounter_12108527_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_12108527_author_1_foreign_passport'}) MERGE (st)-[:stampsDocument]->(di);
-MERGE (n:Airport {key:'airport_nce'}) SET n.entityName='Nice Cote d\';
+MERGE (n:Airport {key:'airport_nce'}) SET n.entityName='Nice Cote d\'Azur Airport';
 MATCH (a:Airport {key:'airport_nce'}), (b:City {key:'city_nice'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:Encounter {key:'encounter_12108527_author_1'}), (b:Airport {key:'airport_nce'}) MERGE (a)-[:atAirport]->(b);

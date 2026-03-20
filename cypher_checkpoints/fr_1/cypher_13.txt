@@ -60,6 +60,6 @@ MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (dc:DocumentCheck {key:'
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodation_proof'}), (di:DocumentInstance {key:'documentinstance_encounter_9752768_husband_1_accommodation_proof'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_9752768_husband_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_9752768_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_9752768_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
-MERGE (n:Airport {key:'airport_nce'}) SET n.entityName='Nice Cote d\';
+MERGE (n:Airport {key:'airport_nce'}) SET n.entityName='Nice Cote d\'Azur Airport';
 MATCH (a:Airport {key:'airport_nce'}), (b:City {key:'city_nice'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:Encounter {key:'encounter_9752768_author_1'}), (b:Airport {key:'airport_nce'}) MERGE (a)-[:atAirport]->(b);
