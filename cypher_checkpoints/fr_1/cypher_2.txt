@@ -29,12 +29,12 @@ MERGE (e2:Encounter {key:'encounter_10918979_author_2'})
 // Document checks
 MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_10918979_author_1_return_ticket'});
 MERGE (dc_hotel:DocumentCheck {key:'doccheck_encounter_10918979_author_2_hotel_booking_doc'});
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreign_passport'}) SET dc_fp.presented=true;
 
 // Document instances (unique per encounter)
 MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_10918979_author_1_return_ticket'}) SET di_rt.documentType='return_ticket';
 MERGE (di_hotel:DocumentInstance {key:'documentinstance_encounter_10918979_author_2_hotel_booking_doc'}) SET di_hotel.documentType='hotel_booking';
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_10918979_author_2_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_10918979_author_2_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 
 // Questioning
 MERGE (q_acc:Questioning {key:'questioning_encounter_10918979_author_2_accommodation_details'})
@@ -54,11 +54,11 @@ MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (co:Country {key:'count
 // Document check links
 MATCH (e:Encounter {key:'encounter_10918979_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_hotel_booking_doc'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_10918979_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_hotel_booking_doc'}), (di:DocumentInstance {key:'documentinstance_encounter_10918979_author_2_hotel_booking_doc'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_10918979_author_2_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_10918979_author_2_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
 // Questioning links
 MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (q:Questioning {key:'questioning_encounter_10918979_author_2_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);

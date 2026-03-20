@@ -16,11 +16,11 @@ MERGE (e:Encounter {key:'encounter_3898899_author_1'})
       e.sourcePostDateTime=localdatetime('2013-06-10T08:38:00'),
       e.controlStage='at_desk';
 
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_3898899_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_3898899_author_1_foreign_passport'}) SET dc_fp.presented=true;
 MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_3898899_author_1_return_ticket'})
   SET dc_rt.presented=true, dc_rt.presentedFormat='printout', dc_rt.checkMode='physical_document_requested';
 
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3898899_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3898899_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_3898899_author_1_return_ticket'}) SET di_rt.documentType='return_ticket';
 
 MATCH (c:City {key:'city_marseille'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
@@ -29,8 +29,8 @@ MATCH (e:Encounter {key:'encounter_3898899_author_1'}), (t:Traveller {key:'goa-2
 MATCH (e:Encounter {key:'encounter_3898899_author_1'}), (c:City {key:'city_marseille'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_3898899_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_3898899_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3898899_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3898899_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3898899_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_3898899_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3898899_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3898899_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_3898899_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3898899_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_3898899_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_3898899_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_3898899_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);

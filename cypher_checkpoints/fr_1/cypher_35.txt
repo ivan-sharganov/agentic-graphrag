@@ -15,16 +15,16 @@ MERGE (e:Encounter {key:'encounter_11718461_author_1'})
 
 MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
-MERGE (dc_bp:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}) SET dc_bp.presented=true;
-MERGE (di_bp:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boardingpass'}) SET di_bp.documentType='boarding_pass';
+MERGE (dc_bp:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boarding_pass'}) SET dc_bp.presented=true;
+MERGE (di_bp:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boarding_pass'}) SET di_bp.documentType='boarding_pass';
 
 MERGE (st:Stamping {key:'stamping_encounter_11718461_author_1'});
 
 MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (t:Traveller {key:'Sasha'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boardingpass'}), (di:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boardingpass'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boarding_pass'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11718461_author_1_boarding_pass'}), (di:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boarding_pass'}) MERGE (dc)-[:requestedDocument]->(di);
 
 MATCH (e:Encounter {key:'encounter_11718461_author_1'}), (st:Stamping {key:'stamping_encounter_11718461_author_1'}) MERGE (e)-[:hasStamping]->(st);
-MATCH (st:Stamping {key:'stamping_encounter_11718461_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boardingpass'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_11718461_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11718461_author_1_boarding_pass'}) MERGE (st)-[:stampsDocument]->(di);

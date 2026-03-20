@@ -24,8 +24,8 @@ MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 MERGE (q_visa:Questioning {key:'questioning_encounter_11484564_author_1_visa_schengen'})
   SET q_visa.wasAsked=true, q_visa.topicKey='visa_schengen';
 
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11484564_author_1_foreignpassport'}) SET dc_fp.presented=true;
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11484564_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11484564_author_1_foreign_passport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11484564_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 
 MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
 MATCH (c:City {key:'city_paris'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
@@ -37,5 +37,5 @@ MATCH (e:Encounter {key:'encounter_11484564_author_1'}), (co:Country {key:'count
 
 MATCH (e:Encounter {key:'encounter_11484564_author_1'}), (q:Questioning {key:'questioning_encounter_11484564_author_1_visa_schengen'}) MERGE (e)-[:hasQuestioning]->(q);
 
-MATCH (e:Encounter {key:'encounter_11484564_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11484564_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11484564_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11484564_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_11484564_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11484564_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11484564_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11484564_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);

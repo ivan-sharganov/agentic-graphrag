@@ -19,16 +19,16 @@ MERGE (e:Encounter {key:'encounter_8093025_author_1'})
       e.outcome='passport stamped';
 
 MERGE (st:Stamping {key:'stamping_encounter_8093025_author_1'});
-MERGE (di_passport:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreignpassport'}) SET di_passport.documentType='foreign_passport';
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (di_passport:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreign_passport'}) SET di_passport.documentType='foreign_passport';
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreign_passport'}) SET dc_fp.presented=true;
 
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (t:Traveller {key:'cvettlana'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (st:Stamping {key:'stamping_encounter_8093025_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
 MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
-MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (st:Stamping {key:'stamping_encounter_8093025_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_8093025_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreign_passport'}) MERGE (st)-[:stampsDocument]->(di);
 MERGE (n:Airport {key:'airport_nce'}) SET n.entityName='Nice Cote d\';
 MATCH (a:Airport {key:'airport_nce'}), (b:City {key:'city_nice'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:Encounter {key:'encounter_8093025_author_1'}), (b:Airport {key:'airport_nce'}) MERGE (a)-[:atAirport]->(b);

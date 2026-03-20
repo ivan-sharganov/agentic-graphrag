@@ -32,20 +32,20 @@ MERGE (bc:BiometricCheck {key:'biometriccheck_encounter_11461788_author_1'})
   SET bc.biometricWasTaken=true, bc.biometricModality='fingerprint';
 
 // Document checks (author)
-MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_accommodationproof'}) SET dc_acc.presented=true;
-MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_11461788_author_1_returnticket'}) SET dc_rt.presented=true;
-MERGE (dc_card:DocumentCheck {key:'doccheck_encounter_11461788_author_1_paymentcard'}) SET dc_card.presented=true;
-MERGE (dc_fp_author:DocumentCheck {key:'doccheck_encounter_11461788_author_1_foreignpassport'}) SET dc_fp_author.presented=true;
+MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_accommodation_proof'}) SET dc_acc.presented=true;
+MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_11461788_author_1_return_ticket'}) SET dc_rt.presented=true;
+MERGE (dc_card:DocumentCheck {key:'doccheck_encounter_11461788_author_1_payment_card'}) SET dc_card.presented=true;
+MERGE (dc_fp_author:DocumentCheck {key:'doccheck_encounter_11461788_author_1_foreign_passport'}) SET dc_fp_author.presented=true;
 
 // Document checks (wife)
-MERGE (dc_fp_wife:DocumentCheck {key:'doccheck_encounter_11461788_wife_1_foreignpassport'}) SET dc_fp_wife.presented=true;
+MERGE (dc_fp_wife:DocumentCheck {key:'doccheck_encounter_11461788_wife_1_foreign_passport'}) SET dc_fp_wife.presented=true;
 
 // Document instances
-MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_accommodationproof'}) SET di_acc.documentType='accommodation_proof';
-MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_returnticket'}) SET di_rt.documentType='return_ticket';
-MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_paymentcard'}) SET di_card.documentType='payment_card';
-MERGE (di_fp_author:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_foreignpassport'}) SET di_fp_author.documentType='foreign_passport';
-MERGE (di_fp_wife:DocumentInstance {key:'documentinstance_encounter_11461788_wife_1_foreignpassport'}) SET di_fp_wife.documentType='foreign_passport';
+MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_accommodation_proof'}) SET di_acc.documentType='accommodation_proof';
+MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_return_ticket'}) SET di_rt.documentType='return_ticket';
+MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_payment_card'}) SET di_card.documentType='payment_card';
+MERGE (di_fp_author:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_foreign_passport'}) SET di_fp_author.documentType='foreign_passport';
+MERGE (di_fp_wife:DocumentInstance {key:'documentinstance_encounter_11461788_wife_1_foreign_passport'}) SET di_fp_wife.documentType='foreign_passport';
 
 MATCH (c:City {key:'city_lyon'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
@@ -59,14 +59,14 @@ MATCH (e:Encounter {key:'encounter_11461788_wife_1'}), (co:Country {key:'country
 
 MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (bc:BiometricCheck {key:'biometriccheck_encounter_11461788_author_1'}) MERGE (e)-[:hasBiometricCheck]->(bc);
 
-MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_accommodationproof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_returnticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_paymentcard'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11461788_wife_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_wife_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_accommodation_proof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_payment_card'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11461788_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11461788_wife_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11461788_wife_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_accommodationproof'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_accommodationproof'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_returnticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_returnticket'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_paymentcard'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_paymentcard'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_wife_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_wife_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_accommodation_proof'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_accommodation_proof'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_payment_card'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_payment_card'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11461788_wife_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11461788_wife_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);

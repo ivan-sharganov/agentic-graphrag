@@ -36,24 +36,24 @@ MERGE (e_friend:Encounter {key:'encounter_3902451_friend1_1'})
       e_friend.outcome='entry permitted';
 
 // Document checks for author
-MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_3902451_author_1_returnticket'}) SET dc_rt.presented=true;
-MERGE (dc_ins:DocumentCheck {key:'doccheck_encounter_3902451_author_1_travelinsurance'}) SET dc_ins.presented=true;
-MERGE (dc_hotel:DocumentCheck {key:'doccheck_encounter_3902451_author_1_hotelbookingdoc'}) SET dc_hotel.presented=true;
-MERGE (dc_card:DocumentCheck {key:'doccheck_encounter_3902451_author_1_paymentcard'}) SET dc_card.presented=true;
+MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_3902451_author_1_return_ticket'}) SET dc_rt.presented=true;
+MERGE (dc_ins:DocumentCheck {key:'doccheck_encounter_3902451_author_1_travel_insurance'}) SET dc_ins.presented=true;
+MERGE (dc_hotel:DocumentCheck {key:'doccheck_encounter_3902451_author_1_hotel_booking'}) SET dc_hotel.presented=true;
+MERGE (dc_card:DocumentCheck {key:'doccheck_encounter_3902451_author_1_payment_card'}) SET dc_card.presented=true;
 MERGE (dc_cash:DocumentCheck {key:'doccheck_encounter_3902451_author_1_cash'}) SET dc_cash.presented=true;
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreign_passport'}) SET dc_fp.presented=true;
 
 // Document check for friend (passport only)
-MERGE (dc_fp_friend:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreignpassport'}) SET dc_fp_friend.presented=true;
+MERGE (dc_fp_friend:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreign_passport'}) SET dc_fp_friend.presented=true;
 
 // Document instances (unique per encounter)
-MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_returnticket'}) SET di_rt.documentType='return_ticket';
-MERGE (di_ins:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_travelinsurance'}) SET di_ins.documentType='travel_insurance';
-MERGE (di_hotel:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_hotelbookingdoc'}) SET di_hotel.documentType='hotel_booking';
-MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_paymentcard'}) SET di_card.documentType='payment_card';
+MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_return_ticket'}) SET di_rt.documentType='return_ticket';
+MERGE (di_ins:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_travel_insurance'}) SET di_ins.documentType='travel_insurance';
+MERGE (di_hotel:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_hotel_booking'}) SET di_hotel.documentType='hotel_booking';
+MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_payment_card'}) SET di_card.documentType='payment_card';
 MERGE (di_cash:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_cash'}) SET di_cash.documentType='cash';
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
-MERGE (di_fp_friend:DocumentInstance {key:'documentinstance_encounter_3902451_friend1_1_foreignpassport'}) SET di_fp_friend.documentType='foreign_passport';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_fp_friend:DocumentInstance {key:'documentinstance_encounter_3902451_friend1_1_foreign_passport'}) SET di_fp_friend.documentType='foreign_passport';
 
 // Questioning for author (topicKey stores the controlled topic)
 MERGE (q_hotelpay:Questioning {key:'questioning_encounter_3902451_author_1_hotelpaymentstatus'}) SET q_hotelpay.wasAsked=true, q_hotelpay.topicKey='hotelpaymentstatus';
@@ -81,21 +81,21 @@ MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (co:Country {key:'countr
 MATCH (e:Encounter {key:'encounter_3902451_friend1_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
 // Document checks and requested documents
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_returnticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_travelinsurance'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_hotelbookingdoc'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_paymentcard'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_travel_insurance'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_hotel_booking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_payment_card'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_cash'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_3902451_friend1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_3902451_friend1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_returnticket'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_returnticket'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_travelinsurance'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_travelinsurance'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_hotelbookingdoc'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_hotelbookingdoc'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_paymentcard'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_paymentcard'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_travel_insurance'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_travel_insurance'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_payment_card'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_payment_card'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_cash'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_cash'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_friend1_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_friend1_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
 // Questioning links
 MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_hotelpaymentstatus'}) MERGE (e)-[:hasQuestioning]->(q);
@@ -107,4 +107,4 @@ MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'que
 
 // Stamping and outcomes
 MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (s:Stamping {key:'stamping_encounter_3902451_author_1'}) MERGE (e)-[:hasStamping]->(s);
-MATCH (s:Stamping {key:'stamping_encounter_3902451_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreignpassport'}) MERGE (s)-[:stampsDocument]->(di);
+MATCH (s:Stamping {key:'stamping_encounter_3902451_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_foreign_passport'}) MERGE (s)-[:stampsDocument]->(di);

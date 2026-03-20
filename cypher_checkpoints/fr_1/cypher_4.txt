@@ -20,8 +20,8 @@ MERGE (bo:BorderOfficer {key:'borderofficer_3812199_officer1'}) SET bo.entityNam
 MERGE (st:Stamping {key:'stamping_encounter_3812199_author_1'});
 
 // Document check and instance (passport)
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreignpassport'}) SET dc_fp.presented=true;
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreign_passport'}) SET dc_fp.presented=true;
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 
 // Encounter core links
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (t:Traveller {key:'litovka'}) MERGE (e)-[:hasTraveler]->(t);
@@ -29,10 +29,10 @@ MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (bo:BorderOfficer {key:'
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
 
 // Document check links
-MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
 // Stamping links
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (st:Stamping {key:'stamping_encounter_3812199_author_1'}) MERGE (e)-[:hasStamping]->(st);
-MATCH (st:Stamping {key:'stamping_encounter_3812199_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_3812199_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_foreign_passport'}) MERGE (st)-[:stampsDocument]->(di);
 MATCH (st:Stamping {key:'stamping_encounter_3812199_author_1'}), (bo:BorderOfficer {key:'borderofficer_3812199_officer1'}) MERGE (st)-[:issuedBy]->(bo);

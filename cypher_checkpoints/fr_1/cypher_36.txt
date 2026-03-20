@@ -41,13 +41,13 @@ MERGE (q_acc:Questioning {key:'questioning_encounter_11719467_author_2_accommoda
 // Document checks
 MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'})
   SET dc_acc.presented=false, dc_acc.checkMode='verbal_inquiry_only';
-MERGE (dc_fp_1:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreignpassport'}) SET dc_fp_1.presented=true;
-MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreignpassport'}) SET dc_fp_2.presented=true;
+MERGE (dc_fp_1:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreign_passport'}) SET dc_fp_1.presented=true;
+MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreign_passport'}) SET dc_fp_2.presented=true;
 
 // Document instances
 MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_accommodation_proof'}) SET di_acc.documentType='accommodation_proof';
-MERGE (di_fp_1:DocumentInstance {key:'documentinstance_encounter_11719467_author_1_foreignpassport'}) SET di_fp_1.documentType='foreign_passport';
-MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreignpassport'}) SET di_fp_2.documentType='foreign_passport';
+MERGE (di_fp_1:DocumentInstance {key:'documentinstance_encounter_11719467_author_1_foreign_passport'}) SET di_fp_1.documentType='foreign_passport';
+MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreign_passport'}) SET di_fp_2.documentType='foreign_passport';
 
 MERGE (st2:Stamping {key:'stamping_encounter_11719467_author_2'});
 
@@ -65,16 +65,16 @@ MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (c:City {key:'city_pari
 MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
 
-MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11719467_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11719467_author_2_accommodation_proof'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_accommodation_proof'}) MERGE (dc)-[:requestedDocument]->(di);
 
 MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (q:Questioning {key:'questioning_encounter_11719467_author_2_exit_date_schengen'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (q:Questioning {key:'questioning_encounter_11719467_author_2_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_11719467_author_2'}), (st:Stamping {key:'stamping_encounter_11719467_author_2'}) MERGE (e)-[:hasStamping]->(st);
-MATCH (st:Stamping {key:'stamping_encounter_11719467_author_2'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_11719467_author_2'}), (di:DocumentInstance {key:'documentinstance_encounter_11719467_author_2_foreign_passport'}) MERGE (st)-[:stampsDocument]->(di);

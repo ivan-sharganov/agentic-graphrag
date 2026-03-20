@@ -14,21 +14,21 @@ MERGE (e:Encounter {key:'encounter_11328576_acquaintance1_1'})
       e.sourcePostDateTime=localdatetime('2023-01-19T01:39:00'),
       e.controlStage='at_desk';
 
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreignpassport'}) SET dc_fp.presented=true;
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreign_passport'}) SET dc_fp.presented=true;
 MERGE (dc_hotel:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}) SET dc_hotel.presented=true;
 MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}) SET dc_rt.presented=true;
 
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 MERGE (di_hotel:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_hotel_booking'}) SET di_hotel.documentType='hotel_booking';
 MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_return_ticket'}) SET di_rt.documentType='return_ticket';
 
 MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (t:Traveller {key:'traveller_11328576_acquaintance1'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11328576_acquaintance1_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328576_acquaintance1_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11328576_acquaintance1_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);

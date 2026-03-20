@@ -24,13 +24,13 @@ MERGE (bo2:BorderOfficer {key:'borderofficer_11814545_2'}) SET bo2.entityName='O
 
 MERGE (dc_id:DocumentCheck {key:'doccheck_encounter_11814545_author_1_id'})
   SET dc_id.presented=true, dc_id.presentedFormat='digital', dc_id.acceptedFormat='digital', dc_id.checkMode='physical_document_requested';
-MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11814545_author_1_foreignpassport'})
+MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11814545_author_1_foreign_passport'})
   SET dc_fp.presented=true, dc_fp.presentedFormat='digital', dc_fp.acceptedFormat='digital', dc_fp.checkMode='physical_document_requested';
 MERGE (dc_visa:DocumentCheck {key:'doccheck_encounter_11814545_author_1_visa'})
   SET dc_visa.presented=true, dc_visa.presentedFormat='digital', dc_visa.acceptedFormat='digital', dc_visa.checkMode='physical_document_requested';
 
 MERGE (di_id:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_id'}) SET di_id.documentType='id_card';
-MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_foreignpassport'}) SET di_fp.documentType='foreign_passport';
+MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 MERGE (di_visa:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_visa'}) SET di_visa.documentType='visa';
 
 MATCH (s:Station {key:'station_menton_garavan'}), (c:City {key:'city_menton'}) MERGE (s)-[:locatedInCity]->(c);
@@ -44,9 +44,9 @@ MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (c:City {key:'city_ment
 MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
 MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_id'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11814545_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_id'}), (di:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_id'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11814545_author_1_visa'}), (di:DocumentInstance {key:'documentinstance_encounter_11814545_author_1_visa'}) MERGE (dc)-[:requestedDocument]->(di);

@@ -27,12 +27,12 @@ MERGE (e2:Encounter {key:'encounter_11328463_girl_1'})
       e2.encounterDateTime='2022-12-17T00:00:00',
       e2.controlStage='at_desk';
 
-MERGE (dc_fp_1:DocumentCheck {key:'doccheck_encounter_11328463_author_1_foreignpassport'}) SET dc_fp_1.presented=true;
-MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_foreignpassport'}) SET dc_fp_2.presented=true;
+MERGE (dc_fp_1:DocumentCheck {key:'doccheck_encounter_11328463_author_1_foreign_passport'}) SET dc_fp_1.presented=true;
+MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_foreign_passport'}) SET dc_fp_2.presented=true;
 MERGE (dc_cash:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_cash'}) SET dc_cash.presented=true;
 
-MERGE (di_fp_1:DocumentInstance {key:'documentinstance_encounter_11328463_author_1_foreignpassport'}) SET di_fp_1.documentType='foreign_passport';
-MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11328463_girl_1_foreignpassport'}) SET di_fp_2.documentType='foreign_passport';
+MERGE (di_fp_1:DocumentInstance {key:'documentinstance_encounter_11328463_author_1_foreign_passport'}) SET di_fp_1.documentType='foreign_passport';
+MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11328463_girl_1_foreign_passport'}) SET di_fp_2.documentType='foreign_passport';
 MERGE (di_cash:DocumentInstance {key:'documentinstance_encounter_11328463_girl_1_cash'}) SET di_cash.documentType='cash';
 
 MERGE (q_cash:Questioning {key:'questioning_encounter_11328463_girl_1_cashamount'})
@@ -46,15 +46,15 @@ MATCH (e:Encounter {key:'encounter_11328463_girl_1'}), (t:Traveller {key:'travel
 MATCH (e:Encounter {key:'encounter_11328463_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 MATCH (e:Encounter {key:'encounter_11328463_girl_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_11328463_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328463_author_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
-MATCH (e:Encounter {key:'encounter_11328463_girl_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_foreignpassport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11328463_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328463_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11328463_girl_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11328463_girl_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_cash'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328463_author_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_author_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
-MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_foreignpassport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_girl_1_foreignpassport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328463_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_girl_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11328463_girl_1_cash'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_girl_1_cash'}) MERGE (dc)-[:requestedDocument]->(di);
 
 MATCH (e:Encounter {key:'encounter_11328463_girl_1'}), (q:Questioning {key:'questioning_encounter_11328463_girl_1_cashamount'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_11328463_author_1'}), (st:Stamping {key:'stamping_encounter_11328463_author_1'}) MERGE (e)-[:hasStamping]->(st);
-MATCH (st:Stamping {key:'stamping_encounter_11328463_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_author_1_foreignpassport'}) MERGE (st)-[:stampsDocument]->(di);
+MATCH (st:Stamping {key:'stamping_encounter_11328463_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11328463_author_1_foreign_passport'}) MERGE (st)-[:stampsDocument]->(di);
