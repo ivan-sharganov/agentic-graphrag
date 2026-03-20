@@ -77,6 +77,28 @@
         "label": "DocumentInstance",
         "key": "documentinstance_encounter_11719504_author_1_return_ticket"
       }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11719504_author_1_return_ticket"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11719504_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     }
   ]
 }

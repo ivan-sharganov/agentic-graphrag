@@ -55,6 +55,17 @@
         "label": "DocumentInstance",
         "key": "documentinstance_encounter_11326744_author_1_foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11326744_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     }
   ]
 }

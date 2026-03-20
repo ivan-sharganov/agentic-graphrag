@@ -132,6 +132,50 @@
         "label": "DocumentInstance",
         "key": "documentinstance_encounter_12270454_companion1_1_visa"
       }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12270454_companion1_1_visa"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12270454_author_1_visa"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12270454_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12270454_companion1_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     }
   ]
 }
