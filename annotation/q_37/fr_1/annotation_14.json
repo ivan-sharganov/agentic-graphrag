@@ -2,14 +2,26 @@
   "question": "In which city in Germany is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_2_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9761709_author_2_foreign_passport"
+      }
     }
   ]
 }

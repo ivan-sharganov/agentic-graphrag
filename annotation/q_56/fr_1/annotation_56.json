@@ -2,39 +2,81 @@
   "question": "In which city in France are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11328463_girl_1_cash"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328463_girl_1_cash"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11328463_girl_1_cash"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11328463_girl_1_cash"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11328463_girl_1_cash"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11328463_girl_1_cash"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "cash"}
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328463_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328463_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328463_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328463_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328463_girl_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_girl_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328463_girl_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_girl_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328463_girl_1_cash"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328463_girl_1_cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328463_girl_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_girl_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328463_girl_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328463_girl_1_foreign_passport"
+      }
     }
   ]
 }

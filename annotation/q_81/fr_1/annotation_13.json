@@ -2,34 +2,70 @@
   "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_lyon"},
+      "s": {
+        "label": "City",
+        "key": "city_lyon"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9752768_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9752768_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_husband_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_lyon"}
+      "o": {
+        "label": "City",
+        "key": "city_lyon"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9752768_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_husband_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_9752768_husband_1_accommodationdetails"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9752768_husband_1_accommodation_details"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_9752768_husband_1_accommodationdetails"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9752768_husband_1_accommodation_details"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "accommodation_details"}
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
     }
   ]
 }

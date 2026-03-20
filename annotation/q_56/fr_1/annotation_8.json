@@ -2,19 +2,37 @@
   "question": "In which city in France are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8093025_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8093025_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8093025_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8093025_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8093025_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8093025_author_1_foreign_passport"
+      }
     }
   ]
 }

@@ -44,9 +44,9 @@ MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_12083906_friend1_
 MERGE (di_card:DocumentInstance {key:'documentinstance_encounter_12083906_friend1_1_payment_card'}) SET di_card.documentType='payment_card';
 MERGE (di_cash:DocumentInstance {key:'documentinstance_encounter_12083906_friend1_1_cash'}) SET di_cash.documentType='cash';
 
-MERGE (q_comp:Questioning {key:'questioning_encounter_12083906_author_1_travelcompanions'})
+MERGE (q_comp:Questioning {key:'questioning_encounter_12083906_author_1_travel_companions'})
   SET q_comp.wasAsked=true, q_comp.topicKey='travel_companions';
-MERGE (q_prev:Questioning {key:'questioning_encounter_12083906_friend1_1_previousvisits'})
+MERGE (q_prev:Questioning {key:'questioning_encounter_12083906_friend1_1_previous_visits'})
   SET q_prev.wasAsked=true, q_prev.topicKey='previous_visits';
 
 MERGE (st1:Stamping {key:'stamping_encounter_12083906_author_1'});
@@ -80,8 +80,8 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_12083906_friend1_1_return_ticke
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12083906_friend1_1_payment_card'}), (di:DocumentInstance {key:'documentinstance_encounter_12083906_friend1_1_payment_card'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12083906_friend1_1_cash'}), (di:DocumentInstance {key:'documentinstance_encounter_12083906_friend1_1_cash'}) MERGE (dc)-[:requestedDocument]->(di);
 
-MATCH (e:Encounter {key:'encounter_12083906_author_1'}), (q:Questioning {key:'questioning_encounter_12083906_author_1_travelcompanions'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_12083906_friend1_1'}), (q:Questioning {key:'questioning_encounter_12083906_friend1_1_previousvisits'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_12083906_author_1'}), (q:Questioning {key:'questioning_encounter_12083906_author_1_travel_companions'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_12083906_friend1_1'}), (q:Questioning {key:'questioning_encounter_12083906_friend1_1_previous_visits'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_12083906_author_1'}), (st:Stamping {key:'stamping_encounter_12083906_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (e:Encounter {key:'encounter_12083906_friend1_1'}), (st:Stamping {key:'stamping_encounter_12083906_friend1_1'}) MERGE (e)-[:hasStamping]->(st);

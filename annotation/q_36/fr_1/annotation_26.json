@@ -2,64 +2,136 @@
   "question": "In which city in France is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_lyon"},
+      "s": {
+        "label": "City",
+        "key": "city_lyon"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_accommodationproof"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11461788_author_1_accommodation_proof"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11461788_author_1_accommodationproof"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11461788_author_1_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11461788_author_1_accommodationproof"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11461788_author_1_accommodation_proof"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "accommodation_proof"}
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_lyon"}
+      "o": {
+        "label": "City",
+        "key": "city_lyon"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_accommodationproof"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11461788_author_1_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11461788_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_paymentcard"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11461788_author_1_payment_card"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_author_1_returnticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11461788_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_wife_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_lyon"}
+      "o": {
+        "label": "City",
+        "key": "city_lyon"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_wife_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11461788_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11461788_wife_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11461788_wife_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11461788_wife_1_foreign_passport"
+      }
     }
   ]
 }

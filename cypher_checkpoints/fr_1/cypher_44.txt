@@ -49,7 +49,7 @@ MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11888385_author
 MERGE (di_fp_3:DocumentInstance {key:'documentinstance_encounter_11888385_friend1_1_foreign_passport'}) SET di_fp_3.documentType='foreign_passport';
 MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_11888385_author_2_accommodation_proof'}) SET di_acc.documentType='accommodation_proof';
 
-MERGE (q_purpose:Questioning {key:'questioning_encounter_11888385_author_2_visitpurpose'})
+MERGE (q_purpose:Questioning {key:'questioning_encounter_11888385_author_2_visit_purpose'})
   SET q_purpose.wasAsked=true, q_purpose.topicKey='visit_purpose';
 MERGE (q_exit:Questioning {key:'questioning_encounter_11888385_author_2_exit_date_schengen'})
   SET q_exit.wasAsked=true, q_exit.topicKey='exit_date_schengen';
@@ -93,7 +93,7 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_11888385_author_2_foreign_passp
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11888385_friend1_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11888385_friend1_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11888385_author_2_accommodation_proof'}), (di:DocumentInstance {key:'documentinstance_encounter_11888385_author_2_accommodation_proof'}) MERGE (dc)-[:requestedDocument]->(di);
 
-MATCH (e:Encounter {key:'encounter_11888385_author_2'}), (q:Questioning {key:'questioning_encounter_11888385_author_2_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11888385_author_2'}), (q:Questioning {key:'questioning_encounter_11888385_author_2_visit_purpose'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11888385_author_2'}), (q:Questioning {key:'questioning_encounter_11888385_author_2_exit_date_schengen'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11888385_author_2'}), (q:Questioning {key:'questioning_encounter_11888385_author_2_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11888385_author_2'}), (q:Questioning {key:'questioning_encounter_11888385_author_2_cash_amount'}) MERGE (e)-[:hasQuestioning]->(q);

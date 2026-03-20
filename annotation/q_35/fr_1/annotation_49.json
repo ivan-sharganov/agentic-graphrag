@@ -2,34 +2,70 @@
   "question": "In which country is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_cdg"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12097486_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12097486_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12097486_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12097486_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12097486_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12097486_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12097486_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12097486_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12097486_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12097486_author_1_foreign_passport"
+      }
     }
   ]
 }

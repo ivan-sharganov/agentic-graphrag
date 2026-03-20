@@ -2,24 +2,48 @@
   "question": "In which country are the fewest documents requested?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11718461_author_1_boardingpass"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11718461_author_1_boarding_pass"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11718461_author_1_boardingpass"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11718461_author_1_boarding_pass"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11718461_author_1_boardingpass"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11718461_author_1_boarding_pass"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "boarding_pass"}
+      "o": {
+        "label": "Literal",
+        "key": "boarding_pass"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11718461_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11718461_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11718461_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11718461_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11718461_author_1_boardingpass"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11718461_author_1_boarding_pass"
+      }
     }
   ]
 }

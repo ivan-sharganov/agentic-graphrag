@@ -2,24 +2,48 @@
   "question": "In which country are people most often asked to show accommodation booking?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_marseille"},
+      "s": {
+        "label": "City",
+        "key": "city_marseille"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11550543_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11550543_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_marseille"}
+      "o": {
+        "label": "City",
+        "key": "city_marseille"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11550543_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11550543_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11550543_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11550543_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11550543_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11550543_author_1_foreign_passport"
+      }
     }
   ]
 }

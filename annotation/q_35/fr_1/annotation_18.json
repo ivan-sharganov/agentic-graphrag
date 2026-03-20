@@ -2,29 +2,59 @@
   "question": "In which country is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11217576_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11217576_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11217576_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11217576_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11217576_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11217576_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11217576_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11217576_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11217576_author_1_oldpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11217576_author_1_oldpassport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11217576_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11217576_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11217576_author_1_returnticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11217576_author_1_return_ticket"
+      }
     }
   ]
 }

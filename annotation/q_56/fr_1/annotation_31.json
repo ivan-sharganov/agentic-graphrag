@@ -2,29 +2,59 @@
   "question": "In which city in France are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_istanbul"},
+      "s": {
+        "label": "City",
+        "key": "city_istanbul"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11553587_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11553587_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11553587_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11553587_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11553587_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11553587_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11553587_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11553587_author_1_foreign_passport"
+      }
     }
   ]
 }

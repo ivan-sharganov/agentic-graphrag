@@ -2,54 +2,114 @@
   "question": "Where is it currently easiest to pass passport control in the EU?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9761709_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9761709_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9761709_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_2_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9761709_author_2_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9761709_author_2_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9761709_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9761709_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9761709_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9761709_author_2_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9761709_author_2_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9761709_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_9761709_author_1_visitpurpose"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9761709_author_1_visit_purpose"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9761709_author_2_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9761709_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_9761709_author_1_visitpurpose"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9761709_author_1_visit_purpose"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "visitpurpose"}
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
     }
   ]
 }

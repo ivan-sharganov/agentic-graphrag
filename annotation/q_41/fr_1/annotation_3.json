@@ -2,59 +2,125 @@
   "question": "In which city in France is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_cdg"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_returnticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12265196_author_1_returnticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12265196_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12265196_author_1_returnticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12265196_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_cash"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_hotelbooking"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_paymentcard"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_payment_card"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_returnticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12265196_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12265196_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12265196_author_1_travelinsurance"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12265196_author_1_travel_insurance"
+      }
     }
   ]
 }

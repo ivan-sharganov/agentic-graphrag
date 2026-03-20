@@ -2,64 +2,136 @@
   "question": "Where is it currently easiest to pass passport control in the EU?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_menton"},
+      "s": {
+        "label": "City",
+        "key": "city_menton"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11814545_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_id"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_id"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11814545_author_1_id"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_id"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_visa"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_visa"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11814545_author_1_visa"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_visa"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11814545_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11814545_author_1_id"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_id"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "id_card"}
+      "o": {
+        "label": "Literal",
+        "key": "id_card"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11814545_author_1_visa"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_visa"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "visa"}
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_menton"}
+      "o": {
+        "label": "City",
+        "key": "city_menton"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_id"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_id"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11814545_author_1_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_visa"
+      }
     }
   ]
 }

@@ -2,29 +2,59 @@
   "question": "Where is passport control most often limited to just the passport?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_hel"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_hel"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_helsinki"}
+      "o": {
+        "label": "City",
+        "key": "city_helsinki"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_6679114_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_6679114_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_6679114_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_6679114_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_6679114_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_6679114_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6679114_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6679114_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_hel"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_hel"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6679114_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6679114_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6679114_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_6679114_author_1_foreign_passport"
+      }
     }
   ]
 }

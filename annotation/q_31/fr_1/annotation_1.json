@@ -2,149 +2,323 @@
   "question": "In which city in France are the fewest documents requested?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_cdg"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_cash"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_cash"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_cash"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_cash"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_hotelbookingdoc"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_hotel_booking"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_hotelbookingdoc"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_paymentcard"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_payment_card"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_paymentcard"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_payment_card"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_returnticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_returnticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_travelinsurance"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_travel_insurance"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_travelinsurance"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_travel_insurance"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_friend1_1_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_friend1_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_friend1_1_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_friend1_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_cash"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_cash"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "cash"}
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_hotelbookingdoc"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_hotel_booking"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "hotel_booking"}
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_paymentcard"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_payment_card"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "payment_card"}
+      "o": {
+        "label": "Literal",
+        "key": "payment_card"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_returnticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_author_1_travelinsurance"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_author_1_travel_insurance"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "travel_insurance"}
+      "o": {
+        "label": "Literal",
+        "key": "travel_insurance"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_3902451_friend1_1_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_3902451_friend1_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_cash"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_hotelbookingdoc"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_paymentcard"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_payment_card"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_returnticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_author_1_travelinsurance"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_author_1_travel_insurance"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_friend1_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_friend1_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_friend1_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_3902451_friend1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_3902451_friend1_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_3902451_friend1_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_3902451_friend1_1_foreign_passport"
+      }
     }
   ]
 }

@@ -22,8 +22,8 @@ MERGE (e2:Encounter {key:'encounter_9761709_author_2'})
       e2.sourcePostAuthor='Anyonka',
       e2.sourcePostDateTime=localdatetime('2019-12-15T20:28:00');
 
-MERGE (q_purpose:Questioning {key:'questioning_encounter_9761709_author_1_visitpurpose'})
-  SET q_purpose.wasAsked=true, q_purpose.topicKey='visitpurpose';
+MERGE (q_purpose:Questioning {key:'questioning_encounter_9761709_author_1_visit_purpose'})
+  SET q_purpose.wasAsked=true, q_purpose.topicKey='visit_purpose';
 
 MERGE (st:Stamping {key:'stamping_encounter_9761709_author_2'});
 
@@ -39,7 +39,7 @@ MATCH (e:Encounter {key:'encounter_9761709_author_2'}), (t:Traveller {key:'Anyon
 MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 MATCH (e:Encounter {key:'encounter_9761709_author_2'}), (co:Country {key:'country_germany'}) MERGE (e)-[:atCountry]->(co);
 
-MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (q:Questioning {key:'questioning_encounter_9761709_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (q:Questioning {key:'questioning_encounter_9761709_author_1_visit_purpose'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_9761709_author_2'}), (st:Stamping {key:'stamping_encounter_9761709_author_2'}) MERGE (e)-[:hasStamping]->(st);
 
 MATCH (e:Encounter {key:'encounter_9761709_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9761709_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);

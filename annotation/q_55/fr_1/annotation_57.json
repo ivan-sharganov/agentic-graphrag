@@ -2,24 +2,48 @@
   "question": "In which country are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328576_acquaintance1_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328576_acquaintance1_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328576_acquaintance1_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328576_acquaintance1_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328576_acquaintance1_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328576_acquaintance1_1_hotel_booking"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328576_acquaintance1_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11328576_acquaintance1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328576_acquaintance1_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11328576_acquaintance1_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11328576_acquaintance1_1_return_ticket"
+      }
     }
   ]
 }

@@ -27,7 +27,7 @@ MERGE (e_author:Encounter {key:'encounter_9752768_author_1'})
       e_author.sourcePostDateTime=localdatetime('2019-12-10T06:40:00');
 
 // Questioning
-MERGE (q_acc:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'})
+MERGE (q_acc:Questioning {key:'questioning_encounter_9752768_husband_1_accommodation_details'})
   SET q_acc.wasAsked=true, q_acc.topicKey='accommodation_details';
 
 // Document checks
@@ -51,7 +51,7 @@ MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (t:Traveller {key:'Twigg
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
 
-MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (q:Questioning {key:'questioning_encounter_9752768_husband_1_accommodationdetails'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (q:Questioning {key:'questioning_encounter_9752768_husband_1_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_accommodation_proof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (dc:DocumentCheck {key:'doccheck_encounter_9752768_husband_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);

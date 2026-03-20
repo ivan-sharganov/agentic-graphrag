@@ -2,29 +2,59 @@
   "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11165134_author_1_returnticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11165134_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11165134_author_1_returnticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11165134_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11165134_author_1_returnticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11165134_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11165134_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11165134_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11165134_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11165134_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11165134_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11165134_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11165134_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11165134_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11165134_author_1_returnticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11165134_author_1_return_ticket"
+      }
     }
   ]
 }

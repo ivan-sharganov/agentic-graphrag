@@ -2,59 +2,125 @@
   "question": "In which country are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_cdg"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_istanbul"},
+      "s": {
+        "label": "City",
+        "key": "city_istanbul"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_istanbul"}
+      "o": {
+        "label": "City",
+        "key": "city_istanbul"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11719467_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11719467_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_2"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11719467_author_2_accommodation_proof"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11719467_author_2_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11719467_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11719467_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11719467_author_2_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11719467_author_2_foreign_passport"
+      }
     }
   ]
 }

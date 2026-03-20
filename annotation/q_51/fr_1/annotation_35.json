@@ -2,14 +2,26 @@
   "question": "In which city in France are people most often asked to show accommodation booking?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_11718461_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11718461_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11718461_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11718461_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11718461_author_1_boardingpass"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11718461_author_1_boarding_pass"
+      }
     }
   ]
 }

@@ -27,9 +27,9 @@ MERGE (di_old:DocumentInstance {key:'documentinstance_encounter_11217576_author_
 MERGE (di_rt:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_return_ticket'}) SET di_rt.documentType='return_ticket';
 MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 
-MERGE (q_prev:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}) SET q_prev.wasAsked=true, q_prev.topicKey='previousvisits';
-MERGE (q_dur:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}) SET q_dur.wasAsked=true, q_dur.topicKey='visitduration';
-MERGE (q_it:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}) SET q_it.wasAsked=true, q_it.topicKey='itinerarytransport';
+MERGE (q_prev:Questioning {key:'questioning_encounter_11217576_author_1_previous_visits'}) SET q_prev.wasAsked=true, q_prev.topicKey='previous_visits';
+MERGE (q_dur:Questioning {key:'questioning_encounter_11217576_author_1_visit_duration'}) SET q_dur.wasAsked=true, q_dur.topicKey='visit_duration';
+MERGE (q_it:Questioning {key:'questioning_encounter_11217576_author_1_itinerary_transport'}) SET q_it.wasAsked=true, q_it.topicKey='itinerary_transport';
 
 MERGE (st:Stamping {key:'stamping_encounter_11217576_author_1'});
 
@@ -46,9 +46,9 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_oldpassport'}
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_return_ticket'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_return_ticket'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11217576_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
-MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_previousvisits'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_itinerarytransport'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_previous_visits'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (q:Questioning {key:'questioning_encounter_11217576_author_1_itinerary_transport'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_11217576_author_1'}), (st:Stamping {key:'stamping_encounter_11217576_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (st:Stamping {key:'stamping_encounter_11217576_author_1'}), (di:DocumentInstance {key:'documentinstance_encounter_11217576_author_1_foreign_passport'}) MERGE (st)-[:stampsDocument]->(di);

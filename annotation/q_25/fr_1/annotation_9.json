@@ -2,54 +2,114 @@
   "question": "In which country are the most documents requested?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_bankstatement"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_bank_statement"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_8549857_author_1_bankstatement"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_bank_statement"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_8549857_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_paymentcard"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_payment_card"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_8549857_author_1_paymentcard"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_payment_card"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_8549857_author_1_bankstatement"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_bank_statement"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "bank_statement"}
+      "o": {
+        "label": "Literal",
+        "key": "bank_statement"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_8549857_author_1_foreignpassport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_8549857_author_1_paymentcard"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_payment_card"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "payment_card"}
+      "o": {
+        "label": "Literal",
+        "key": "payment_card"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_kazakhstan"}
+      "o": {
+        "label": "Country",
+        "key": "country_kazakhstan"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_bankstatement"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_bank_statement"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_foreignpassport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8549857_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_8549857_author_1_paymentcard"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_payment_card"
+      }
     }
   ]
 }

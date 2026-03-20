@@ -24,8 +24,8 @@ MERGE (e:Encounter {key:'encounter_11217763_author_1'})
 MERGE (bc:BiometricCheck {key:'biometriccheck_encounter_11217763_author_1'})
   SET bc.biometricWasTaken=true, bc.biometricModality='fingerprint';
 
-MERGE (q_purpose:Questioning {key:'questioning_encounter_11217763_author_1_visitpurpose'}) SET q_purpose.wasAsked=true, q_purpose.topicKey='visitpurpose';
-MERGE (q_duration:Questioning {key:'questioning_encounter_11217763_author_1_visitduration'}) SET q_duration.wasAsked=true, q_duration.topicKey='visitduration';
+MERGE (q_purpose:Questioning {key:'questioning_encounter_11217763_author_1_visit_purpose'}) SET q_purpose.wasAsked=true, q_purpose.topicKey='visit_purpose';
+MERGE (q_duration:Questioning {key:'questioning_encounter_11217763_author_1_visit_duration'}) SET q_duration.wasAsked=true, q_duration.topicKey='visit_duration';
 
 MERGE (dc_rt:DocumentCheck {key:'doccheck_encounter_11217763_author_1_return_ticket'}) SET dc_rt.presented=false;
 MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11217763_author_1_foreign_passport'}) SET dc_fp.presented=true;
@@ -37,8 +37,8 @@ MERGE (st:Stamping {key:'stamping_encounter_11217763_author_1'});
 
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (t:Traveller {key:'zolotinka'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (bc:BiometricCheck {key:'biometriccheck_encounter_11217763_author_1'}) MERGE (e)-[:hasBiometricCheck]->(bc);
-MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (q:Questioning {key:'questioning_encounter_11217763_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (q:Questioning {key:'questioning_encounter_11217763_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (q:Questioning {key:'questioning_encounter_11217763_author_1_visit_purpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (q:Questioning {key:'questioning_encounter_11217763_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11217763_author_1_return_ticket'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11217763_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11217763_author_1'}), (st:Stamping {key:'stamping_encounter_11217763_author_1'}) MERGE (e)-[:hasStamping]->(st);

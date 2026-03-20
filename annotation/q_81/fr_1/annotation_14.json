@@ -2,24 +2,48 @@
   "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_9761709_author_1_visitpurpose"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9761709_author_1_visit_purpose"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9761709_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9761709_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_9761709_author_1_visitpurpose"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9761709_author_1_visit_purpose"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "visitpurpose"}
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
     }
   ]
 }

@@ -56,11 +56,11 @@ MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3902451_author_1_
 MERGE (di_fp_friend:DocumentInstance {key:'documentinstance_encounter_3902451_friend1_1_foreign_passport'}) SET di_fp_friend.documentType='foreign_passport';
 
 // Questioning for author (topicKey stores the controlled topic)
-MERGE (q_hotelpay:Questioning {key:'questioning_encounter_3902451_author_1_hotelpaymentstatus'}) SET q_hotelpay.wasAsked=true, q_hotelpay.topicKey='hotelpaymentstatus';
-MERGE (q_cashamount:Questioning {key:'questioning_encounter_3902451_author_1_cashamount'}) SET q_cashamount.wasAsked=true, q_cashamount.topicKey='cashamount';
-MERGE (q_hotelcard:Questioning {key:'questioning_encounter_3902451_author_1_hotelpaymentcard'}) SET q_hotelcard.wasAsked=true, q_hotelcard.topicKey='hotelpaymentcard';
-MERGE (q_purpose:Questioning {key:'questioning_encounter_3902451_author_1_visitpurpose'}) SET q_purpose.wasAsked=true, q_purpose.topicKey='visitpurpose';
-MERGE (q_duration:Questioning {key:'questioning_encounter_3902451_author_1_visitduration'}) SET q_duration.wasAsked=true, q_duration.topicKey='visitduration';
+MERGE (q_hotelpay:Questioning {key:'questioning_encounter_3902451_author_1_hotel_payment_status'}) SET q_hotelpay.wasAsked=true, q_hotelpay.topicKey='hotel_payment_status';
+MERGE (q_cashamount:Questioning {key:'questioning_encounter_3902451_author_1_cash_amount'}) SET q_cashamount.wasAsked=true, q_cashamount.topicKey='cash_amount';
+MERGE (q_hotelcard:Questioning {key:'questioning_encounter_3902451_author_1_hotel_payment_card'}) SET q_hotelcard.wasAsked=true, q_hotelcard.topicKey='hotel_payment_card';
+MERGE (q_purpose:Questioning {key:'questioning_encounter_3902451_author_1_visit_purpose'}) SET q_purpose.wasAsked=true, q_purpose.topicKey='visit_purpose';
+MERGE (q_duration:Questioning {key:'questioning_encounter_3902451_author_1_visit_duration'}) SET q_duration.wasAsked=true, q_duration.topicKey='visit_duration';
 MERGE (q_employment:Questioning {key:'questioning_encounter_3902451_author_1_employment'}) SET q_employment.wasAsked=true, q_employment.topicKey='employment';
 
 MERGE (st_author:Stamping {key:'stamping_encounter_3902451_author_1'});
@@ -98,11 +98,11 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_author_1_foreign_passpo
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_3902451_friend1_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_3902451_friend1_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
 // Questioning links
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_hotelpaymentstatus'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_cashamount'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_hotelpaymentcard'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
-MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_hotel_payment_status'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_cash_amount'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_hotel_payment_card'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_visit_purpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_3902451_author_1'}), (q:Questioning {key:'questioning_encounter_3902451_author_1_employment'}) MERGE (e)-[:hasQuestioning]->(q);
 
 // Stamping and outcomes

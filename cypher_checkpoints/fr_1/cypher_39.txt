@@ -34,7 +34,7 @@ MERGE (di_hotel:DocumentInstance {key:'documentinstance_encounter_11769523_autho
 MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11769523_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 
 // Questioning
-MERGE (q_dur:Questioning {key:'questioning_encounter_11769523_author_1_visit_duration'}) SET q_dur.wasAsked=true, q_dur.topicKey='visitduration';
+MERGE (q_dur:Questioning {key:'questioning_encounter_11769523_author_1_visit_duration'}) SET q_dur.wasAsked=true, q_dur.topicKey='visit_duration';
 MERGE (q_acc:Questioning {key:'questioning_encounter_11769523_author_1_accommodation_details'}) SET q_acc.wasAsked=true, q_acc.topicKey='accommodation_details';
 
 MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);

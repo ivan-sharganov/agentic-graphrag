@@ -20,8 +20,8 @@ MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_11159089_author_1_foreign_pa
 MERGE (di_inv:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_invitation'}) SET di_inv.documentType='invitation_letter';
 MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 
-MERGE (q_purpose:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'})
-  SET q_purpose.wasAsked=true, q_purpose.topicKey='visitpurpose';
+MERGE (q_purpose:Questioning {key:'questioning_encounter_11159089_author_1_visit_purpose'})
+  SET q_purpose.wasAsked=true, q_purpose.topicKey='visit_purpose';
 MERGE (q_acc:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'})
   SET q_acc.wasAsked=true, q_acc.topicKey='accommodation_details';
 
@@ -34,7 +34,7 @@ MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (dc:DocumentCheck {key:
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11159089_author_1_invitation'}), (di:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_invitation'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_11159089_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11159089_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
-MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (q:Questioning {key:'questioning_encounter_11159089_author_1_visitpurpose'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (q:Questioning {key:'questioning_encounter_11159089_author_1_visit_purpose'}) MERGE (e)-[:hasQuestioning]->(q);
 MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (q:Questioning {key:'questioning_encounter_11159089_author_1_accommodation'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_11159089_author_1'}), (st:Stamping {key:'stamping_encounter_11159089_author_1'}) MERGE (e)-[:hasStamping]->(st);

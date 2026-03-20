@@ -25,7 +25,7 @@ MERGE (dc_acc:DocumentCheck {key:'doccheck_encounter_12085324_author_1_accommoda
 MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_12085324_author_1_foreign_passport'}) SET di_fp.documentType='foreign_passport';
 MERGE (di_acc:DocumentInstance {key:'documentinstance_encounter_12085324_author_1_accommodation_proof'}) SET di_acc.documentType='accommodation_proof';
 
-MERGE (q_dur:Questioning {key:'questioning_encounter_12085324_author_1_visitduration'})
+MERGE (q_dur:Questioning {key:'questioning_encounter_12085324_author_1_visit_duration'})
   SET q_dur.wasAsked=true, q_dur.topicKey='visit_duration';
 
 MATCH (a:Airport {key:'airport_cdg'}), (c:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(c);
@@ -42,4 +42,4 @@ MATCH (e:Encounter {key:'encounter_12085324_author_1'}), (dc:DocumentCheck {key:
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12085324_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12085324_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12085324_author_1_accommodation_proof'}), (di:DocumentInstance {key:'documentinstance_encounter_12085324_author_1_accommodation_proof'}) MERGE (dc)-[:requestedDocument]->(di);
 
-MATCH (e:Encounter {key:'encounter_12085324_author_1'}), (q:Questioning {key:'questioning_encounter_12085324_author_1_visitduration'}) MERGE (e)-[:hasQuestioning]->(q);
+MATCH (e:Encounter {key:'encounter_12085324_author_1'}), (q:Questioning {key:'questioning_encounter_12085324_author_1_visit_duration'}) MERGE (e)-[:hasQuestioning]->(q);

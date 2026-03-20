@@ -2,39 +2,81 @@
   "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_ory"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11803703_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11803703_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11803703_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11803703_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11803703_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11803703_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11803703_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11803703_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_11803703_author_1_previousvisits"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11803703_author_1_previous_visits"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_11803703_author_1_previousvisits"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11803703_author_1_previous_visits"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "previous_visits"}
+      "o": {
+        "label": "Literal",
+        "key": "previous_visits"
+      }
     }
   ]
 }
