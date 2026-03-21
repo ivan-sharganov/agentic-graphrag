@@ -60,3 +60,5 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_return_ticket
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_hotel_booking'}), (di:DocumentInstance {key:'documentinstance_encounter_12265196_author_1_hotel_booking'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_travel_insurance'}), (di:DocumentInstance {key:'documentinstance_encounter_12265196_author_1_travel_insurance'}) MERGE (dc)-[:requestedDocument]->(di);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12265196_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);

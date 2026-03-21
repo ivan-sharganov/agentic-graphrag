@@ -24,3 +24,5 @@ MATCH (e:Encounter {key:'encounter_6679114_author_1'}), (a:Airport {key:'airport
 MATCH (a:Airport {key:'airport_hel'}), (c:City {key:'city_helsinki'}) MERGE (a)-[:locatedInCity]->(c);
 MATCH (e:Encounter {key:'encounter_6679114_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_6679114_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_6679114_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_6679114_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+
+MATCH (e:Encounter {key:'encounter_6679114_author_1'}), (c:City {key:'city_helsinki'}) MERGE (e)-[:atCity]->(c);
