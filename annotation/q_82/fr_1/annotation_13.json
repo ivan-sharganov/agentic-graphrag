@@ -77,6 +77,17 @@
         "label": "City",
         "key": "city_lyon"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

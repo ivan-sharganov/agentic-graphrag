@@ -2,29 +2,81 @@
   "question": "Where is passport control most often limited to just the passport?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_munich"},
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11320784_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11320784_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11320784_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11320784_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11320784_daughter_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11320784_daughter_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11320784_daughter_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11320784_daughter_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11320784_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11320784_daughter_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
     }
   ]
 }

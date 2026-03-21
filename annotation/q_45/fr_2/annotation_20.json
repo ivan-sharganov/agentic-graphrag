@@ -2,69 +2,158 @@
   "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_istanbul"},
+      "s": {
+        "label": "City",
+        "key": "city_istanbul"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11801292_author_2_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11801292_author_2_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11801292_author_2_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11801292_author_2_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11801292_author_2_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11801292_author_2_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_istanbul"}
+      "o": {
+        "label": "City",
+        "key": "city_istanbul"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11801292_author_1_accommodation_proof"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11801292_author_1_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11801292_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11801292_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11801292_author_2_accommodation_proof"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11801292_author_2_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11801292_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11801292_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11801292_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11801292_author_2_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11801292_author_2_return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

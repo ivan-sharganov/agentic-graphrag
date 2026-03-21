@@ -2,24 +2,59 @@
   "question": "In which country are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_frankfurt"},
+      "s": {
+        "label": "City",
+        "key": "city_frankfurt"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12060103_mother_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12060103_mother_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_frankfurt"}
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12060103_mother_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12060103_mother_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12060103_mother_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12060103_mother_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12060103_mother_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12060103_mother_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12060103_mother_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      }
     }
   ]
 }

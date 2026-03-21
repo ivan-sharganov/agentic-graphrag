@@ -2,29 +2,70 @@
   "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_stuttgart"},
+      "s": {
+        "label": "City",
+        "key": "city_stuttgart"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11277035_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11277035_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_stuttgart"}
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11277035_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11277035_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11277035_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11277035_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_11277035_author_1_visit_duration"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11277035_author_1_visit_duration"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_11277035_author_1_visit_duration"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11277035_author_1_visit_duration"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "visit_duration"}
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11277035_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      }
     }
   ]
 }

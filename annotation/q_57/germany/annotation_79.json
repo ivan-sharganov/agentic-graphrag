@@ -2,59 +2,136 @@
   "question": "In which city in Germany are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_cologne"},
+      "s": {
+        "label": "City",
+        "key": "city_cologne"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_cash"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241283_author_1_cash"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11241283_author_1_cash"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11241283_author_1_cash"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11241283_author_1_cash"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11241283_author_1_cash"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "cash"}
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_cologne"}
+      "o": {
+        "label": "City",
+        "key": "city_cologne"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_accommodation_proof"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241283_author_1_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_cash"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241283_author_1_cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241283_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11241283_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241283_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11241283_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_11241283_author_1_cash_amount"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11241283_author_1_cash_amount"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_11241283_author_1_cash_amount"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11241283_author_1_cash_amount"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "cash_amount"}
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241283_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cologne_bonn"
+      }
     }
   ]
 }

@@ -2,34 +2,92 @@
   "question": "How often are there additional checks in France?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_istanbul"},
+      "s": {
+        "label": "City",
+        "key": "city_istanbul"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12164064_daughter_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12164064_daughter_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12164064_daughter_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12164064_daughter_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12164064_friend_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12164064_friend_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12164064_friend_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12164064_friend_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12164064_friend_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12164064_daughter_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

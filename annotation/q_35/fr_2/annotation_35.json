@@ -2,49 +2,125 @@
   "question": "In which country is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_author_1_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_author_1_visa"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_husband_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_husband_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_husband_1_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_husband_1_visa"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

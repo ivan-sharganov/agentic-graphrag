@@ -2,109 +2,257 @@
   "question": "Where is it currently easiest to pass passport control in the EU?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_nice"},
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_author_1_visa"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_author_1_visa"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_author_1_visa"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_author_1_visa"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_husband_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_husband_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_husband_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_husband_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_husband_1_visa"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_husband_1_visa"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_husband_1_visa"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_husband_1_visa"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_author_1_visa"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_author_1_visa"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "visa"}
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_husband_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_husband_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12040805_husband_1_visa"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12040805_husband_1_visa"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "visa"}
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_author_1_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_author_1_visa"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_12040805_author_1_accommodation_details"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_accommodation_details"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_12040805_author_1_visit_purpose"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_visit_purpose"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_nice"}
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_husband_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_husband_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12040805_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12040805_husband_1_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12040805_husband_1_visa"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_12040805_author_1_accommodation_details"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_accommodation_details"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "accommodation_details"}
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_12040805_author_1_visit_purpose"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_visit_purpose"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "visit_purpose"}
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

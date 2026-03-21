@@ -2,19 +2,48 @@
   "question": "Which airport do people most often fly into in Germany?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_stuttgart"},
+      "s": {
+        "label": "City",
+        "key": "city_stuttgart"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12287763_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12287763_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_stuttgart"}
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12287763_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12287763_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12287763_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      }
     }
   ]
 }

@@ -2,49 +2,125 @@
   "question": "How often are fingerprints taken when entering Germany?",
   "triples": [
     {
-      "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11738414_author_1_fingerprint"},
+      "s": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_11738414_author_1_fingerprint"
+      },
       "p": "biometricModality",
-      "o": {"label": "Literal", "key": "fingerprint"}
+      "o": {
+        "label": "Literal",
+        "key": "fingerprint"
+      }
     },
     {
-      "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11738414_husband_1_fingerprint"},
+      "s": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_11738414_husband_1_fingerprint"
+      },
       "p": "biometricModality",
-      "o": {"label": "Literal", "key": "fingerprint"}
+      "o": {
+        "label": "Literal",
+        "key": "fingerprint"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_munich"},
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "hasBiometricCheck",
-      "o": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11738414_author_1_fingerprint"}
+      "o": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_11738414_author_1_fingerprint"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "hasBiometricCheck",
-      "o": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11738414_husband_1_fingerprint"}
+      "o": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_11738414_husband_1_fingerprint"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
     }
   ]
 }

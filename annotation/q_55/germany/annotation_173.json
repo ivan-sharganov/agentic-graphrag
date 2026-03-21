@@ -2,59 +2,147 @@
   "question": "In which country are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_stuttgart"},
+      "s": {
+        "label": "City",
+        "key": "city_stuttgart"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_stuttgart"}
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11690809_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11690809_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11690809_author_1_hotel_booking"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11690809_author_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11690809_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11690809_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_wife_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_stuttgart"}
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_wife_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_wife_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11690809_wife_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11690809_wife_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_wife_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11690809_wife_1_hotel_booking"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11690809_wife_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11690809_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_wife_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11690809_wife_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11690809_wife_1_return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11690809_wife_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      }
     }
   ]
 }

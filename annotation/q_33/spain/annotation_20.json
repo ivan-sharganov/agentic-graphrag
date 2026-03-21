@@ -2,64 +2,147 @@
   "question": "In which city in Spain are the fewest documents requested?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_barcelona"},
+      "s": {
+        "label": "City",
+        "key": "city_barcelona"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_seville"},
+      "s": {
+        "label": "City",
+        "key": "city_seville"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11967545_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11967545_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11967545_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11967545_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11967545_author_2_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11967545_author_2_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11967545_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11967545_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11967545_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11967545_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11967545_author_2_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11967545_author_2_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_barcelona"}
+      "o": {
+        "label": "City",
+        "key": "city_barcelona"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11967545_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11967545_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_seville"}
+      "o": {
+        "label": "City",
+        "key": "city_seville"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11967545_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11967545_author_2_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_barcelona"
+      }
     }
   ]
 }

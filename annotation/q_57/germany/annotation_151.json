@@ -2,64 +2,158 @@
   "question": "In which city in Germany are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_munich"},
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11510419_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11510419_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11510419_author_1_invitation_letter"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11510419_author_1_invitation_letter"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11510419_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11510419_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11510419_author_1_travel_insurance"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11510419_author_1_travel_insurance"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_11510419_author_1_cash_amount"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11510419_author_1_cash_amount"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_child_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_child_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_child_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_child_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11510419_child_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_child_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11510419_child_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11510419_child_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_11510419_author_1_cash_amount"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11510419_author_1_cash_amount"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "cash_amount"}
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11510419_child_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
     }
   ]
 }

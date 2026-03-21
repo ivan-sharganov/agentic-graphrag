@@ -38,3 +38,4 @@ MATCH (a:Encounter {key:'encounter_12198612_author_1'}), (b:Questioning {key:'qu
 MATCH (a:Encounter {key:'encounter_12198612_author_1'}), (b:Questioning {key:'questioning_encounter_12198612_author_1_cash_amount'}) MERGE (a)-[:hasQuestioning]->(b);
 MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
 MATCH (a:Encounter {key:'encounter_12198612_author_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);

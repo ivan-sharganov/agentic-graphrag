@@ -2,19 +2,48 @@
   "question": "Which is more common in Italy: a request to show cash or a card?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_pisa"},
+      "s": {
+        "label": "City",
+        "key": "city_pisa"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9370657_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9370657_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_pisa"}
+      "o": {
+        "label": "City",
+        "key": "city_pisa"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9370657_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9370657_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9370657_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_pisa"
+      }
     }
   ]
 }

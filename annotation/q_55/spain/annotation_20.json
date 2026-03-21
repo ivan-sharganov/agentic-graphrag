@@ -2,44 +2,103 @@
   "question": "In which country are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_barcelona"},
+      "s": {
+        "label": "City",
+        "key": "city_barcelona"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_seville"},
+      "s": {
+        "label": "City",
+        "key": "city_seville"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_barcelona"}
+      "o": {
+        "label": "City",
+        "key": "city_barcelona"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11967545_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11967545_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_seville"}
+      "o": {
+        "label": "City",
+        "key": "city_seville"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11967545_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11967545_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11967545_author_2_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11967545_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_barcelona"
+      }
     }
   ]
 }

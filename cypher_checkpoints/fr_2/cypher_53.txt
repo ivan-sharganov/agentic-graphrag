@@ -38,3 +38,4 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_12214016_author_1_foreign_passpo
 MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
 MATCH (a:Encounter {key:'encounter_12214016_woman_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_12214016_author_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);

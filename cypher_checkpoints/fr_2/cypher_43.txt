@@ -54,3 +54,4 @@ MATCH (a:City {key:'city_basel'}), (b:Country {key:'country_switzerland'}) MERGE
 MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
 MATCH (a:Encounter {key:'encounter_12116943_family_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
 MATCH (a:Encounter {key:'encounter_12116943_author_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);

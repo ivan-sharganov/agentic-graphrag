@@ -2,49 +2,114 @@
   "question": "Which is more common in Germany: a request to show cash or a card?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_dusseldorf"},
+      "s": {
+        "label": "City",
+        "key": "city_dusseldorf"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_frankfurt"},
+      "s": {
+        "label": "City",
+        "key": "city_frankfurt"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9760965_author_1_cash"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9760965_author_1_cash"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9760965_author_1_cash"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9760965_author_1_cash"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9760965_author_1_cash"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9760965_author_1_cash"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "cash"}
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9760965_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9760965_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_dusseldorf"}
+      "o": {
+        "label": "City",
+        "key": "city_dusseldorf"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9760965_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9760965_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9760965_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9760965_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9760965_author_1_cash"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9760965_author_1_cash"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9760965_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9760965_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_frankfurt"}
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9760965_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9760965_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9760965_author_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      }
     }
   ]
 }

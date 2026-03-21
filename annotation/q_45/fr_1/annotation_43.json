@@ -55,6 +55,17 @@
         "label": "DocumentCheck",
         "key": "doccheck_encounter_11885903_author_1_visa"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11885903_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

@@ -2,59 +2,136 @@
   "question": "Which is more common in Germany: a request to show cash or a card?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_schonefeld"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_schonefeld"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_berlin"}
+      "o": {
+        "label": "City",
+        "key": "city_berlin"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_berlin"},
+      "s": {
+        "label": "City",
+        "key": "city_berlin"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_dresden"},
+      "s": {
+        "label": "City",
+        "key": "city_dresden"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_memmingen"},
+      "s": {
+        "label": "City",
+        "key": "city_memmingen"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_schonefeld"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_schonefeld"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_berlin"}
+      "o": {
+        "label": "City",
+        "key": "city_berlin"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_dresden"}
+      "o": {
+        "label": "City",
+        "key": "city_dresden"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_3"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_3"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_memmingen"}
+      "o": {
+        "label": "City",
+        "key": "city_memmingen"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9616923_author_3"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_3"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9616923_author_3"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_memmingen"
+      }
     }
   ]
 }

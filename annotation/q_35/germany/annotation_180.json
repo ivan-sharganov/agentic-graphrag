@@ -2,79 +2,191 @@
   "question": "In which country is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_munich"},
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_author_1_hotel_booking"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_author_1_hotel_booking"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11738414_author_1_hotel_booking"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11738414_author_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_husband_1_hotel_booking"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_husband_1_hotel_booking"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11738414_husband_1_hotel_booking"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11738414_husband_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11738414_author_1_hotel_booking"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11738414_author_1_hotel_booking"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "hotel_booking"}
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11738414_husband_1_hotel_booking"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11738414_husband_1_hotel_booking"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "hotel_booking"}
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_author_1_hotel_booking"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_author_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_husband_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_husband_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_husband_1_hotel_booking"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_husband_1_hotel_booking"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11738414_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11738414_husband_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11738414_husband_1_return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11738414_husband_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
     }
   ]
 }

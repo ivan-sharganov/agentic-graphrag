@@ -2,29 +2,81 @@
   "question": "Which is more common in Spain: a request to show cash or a card?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_barcelona"},
+      "s": {
+        "label": "City",
+        "key": "city_barcelona"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11992601_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11992601_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_barcelona"}
+      "o": {
+        "label": "City",
+        "key": "city_barcelona"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11992601_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11992601_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11992601_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11992601_friend_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_barcelona"}
+      "o": {
+        "label": "City",
+        "key": "city_barcelona"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11992601_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11992601_friend_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_spain"}
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11992601_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_barcelona"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11992601_friend_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_barcelona"
+      }
     }
   ]
 }

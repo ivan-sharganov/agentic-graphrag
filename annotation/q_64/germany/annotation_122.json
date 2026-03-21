@@ -2,29 +2,70 @@
   "question": "How often are fingerprints taken when entering Germany?",
   "triples": [
     {
-      "s": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11341168_author_1_fingerprint"},
+      "s": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_11341168_author_1_fingerprint"
+      },
       "p": "biometricModality",
-      "o": {"label": "Literal", "key": "fingerprint"}
+      "o": {
+        "label": "Literal",
+        "key": "fingerprint"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_frankfurt"},
+      "s": {
+        "label": "City",
+        "key": "city_frankfurt"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11341168_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11341168_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_frankfurt"}
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11341168_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11341168_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11341168_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11341168_author_1"
+      },
       "p": "hasBiometricCheck",
-      "o": {"label": "BiometricCheck", "key": "biometriccheck_encounter_11341168_author_1_fingerprint"}
+      "o": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_11341168_author_1_fingerprint"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11341168_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      }
     }
   ]
 }

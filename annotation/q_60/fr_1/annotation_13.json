@@ -55,6 +55,17 @@
         "label": "Questioning",
         "key": "questioning_encounter_9752768_husband_1_accommodation_details"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }

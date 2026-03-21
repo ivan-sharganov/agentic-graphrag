@@ -2,49 +2,125 @@
   "question": "Which question topics are most common at passport control in Germany?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_munich"},
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9795364_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9795364_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9795364_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_9795364_author_1_accommodation_details"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9795364_author_1_accommodation_details"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9795364_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_friend_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9795364_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_friend_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9795364_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_friend_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_9795364_friend_1_previous_visits"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9795364_friend_1_previous_visits"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_9795364_author_1_accommodation_details"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9795364_author_1_accommodation_details"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "accommodation_details"}
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_9795364_friend_1_previous_visits"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_9795364_friend_1_previous_visits"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "previous_visits"}
+      "o": {
+        "label": "Literal",
+        "key": "previous_visits"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9795364_friend_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
     }
   ]
 }

@@ -2,34 +2,81 @@
   "question": "In which city in Germany are people most often asked to show accommodation booking?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_munich"},
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11275941_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11275941_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_munich"}
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11275941_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11275941_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11275941_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11275941_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11275941_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11275941_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11275941_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11275941_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11275941_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11275941_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11275941_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11275941_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11275941_author_1_travel_insurance"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11275941_author_1_travel_insurance"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11275941_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
     }
   ]
 }

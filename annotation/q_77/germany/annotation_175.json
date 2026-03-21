@@ -2,19 +2,48 @@
   "question": "Which city is the most popular entry point into Germany?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_cologne"},
+      "s": {
+        "label": "City",
+        "key": "city_cologne"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11700908_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11700908_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_cologne"}
+      "o": {
+        "label": "City",
+        "key": "city_cologne"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11700908_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11700908_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11700908_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cologne_bonn"
+      }
     }
   ]
 }

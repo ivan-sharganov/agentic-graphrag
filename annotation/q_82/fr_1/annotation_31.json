@@ -77,6 +77,17 @@
         "label": "DocumentCheck",
         "key": "doccheck_encounter_11553587_author_1_foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11553587_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
     }
   ]
 }
