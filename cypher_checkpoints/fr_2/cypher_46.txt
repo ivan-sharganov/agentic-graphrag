@@ -43,3 +43,6 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_12147700_husband_1_foreign_passp
 MATCH (a:Encounter {key:'encounter_12147700_husband_1'}), (b:Stamping {key:'stamping_encounter_12147700_husband_1'}) MERGE (a)-[:hasStamping]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_12147700_husband_1'}), (b:DocumentInstance {key:'documentinstance_encounter_12147700_husband_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
 MATCH (a:City {key:'city_istanbul'}), (b:Country {key:'country_turkey'}) MERGE (a)-[:locatedInCountry]->(b);
+MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
+MATCH (a:Encounter {key:'encounter_12147700_author_2'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:Encounter {key:'encounter_12147700_husband_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);

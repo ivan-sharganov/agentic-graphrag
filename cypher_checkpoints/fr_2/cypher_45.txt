@@ -76,3 +76,7 @@ MATCH (a:DocumentCheck {key:'doccheck_encounter_12134610_couple_1_return_ticket'
 MATCH (a:Encounter {key:'encounter_12134610_couple_1'}), (b:DocumentCheck {key:'doccheck_encounter_12134610_couple_1_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
 MATCH (a:DocumentCheck {key:'doccheck_encounter_12134610_couple_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_12134610_couple_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:City {key:'city_istanbul'}), (b:Country {key:'country_turkey'}) MERGE (a)-[:locatedInCountry]->(b);
+MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
+MATCH (a:Encounter {key:'encounter_12134610_author_2'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:Encounter {key:'encounter_12134610_husband_2'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
+MATCH (a:Encounter {key:'encounter_12134610_couple_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);

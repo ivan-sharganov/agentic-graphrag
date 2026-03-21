@@ -41,3 +41,5 @@ MATCH (a:Encounter {key:'encounter_11816166_author_2'}), (b:DocumentCheck {key:'
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11816166_author_2_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11816166_author_2_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Airport {key:'airport_izmir'}), (b:City {key:'city_izmir'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_izmir'}), (b:Country {key:'country_turkey'}) MERGE (a)-[:locatedInCountry]->(b);
+MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
+MATCH (a:Encounter {key:'encounter_11816166_author_1'}), (b:City {key:'city_paris'}) MERGE (a)-[:atCity]->(b);
