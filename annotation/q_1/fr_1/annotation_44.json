@@ -187,6 +187,72 @@
         "label": "Literal",
         "key": "foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11888385_friend1_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11888385_friend1_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11888385_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11888385_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11888385_author_2"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11888385_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

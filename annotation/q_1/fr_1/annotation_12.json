@@ -55,6 +55,17 @@
         "label": "Literal",
         "key": "foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9684707_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     }
   ]
 }

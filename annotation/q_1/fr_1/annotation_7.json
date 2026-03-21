@@ -132,6 +132,17 @@
         "label": "Literal",
         "key": "accommodation_proof"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_7997540_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     }
   ]
 }

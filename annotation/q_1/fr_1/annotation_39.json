@@ -132,6 +132,28 @@
         "label": "Literal",
         "key": "return_ticket"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11769523_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11769523_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

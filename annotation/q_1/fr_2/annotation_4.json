@@ -66,6 +66,28 @@
         "label": "Literal",
         "key": "foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11665095_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_beauvais"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11665095_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

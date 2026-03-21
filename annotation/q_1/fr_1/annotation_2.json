@@ -99,6 +99,17 @@
         "label": "Literal",
         "key": "hotel_booking"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_10918979_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

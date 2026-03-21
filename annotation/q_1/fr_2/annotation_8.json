@@ -88,6 +88,17 @@
         "label": "Literal",
         "key": "visa"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11709466_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }
