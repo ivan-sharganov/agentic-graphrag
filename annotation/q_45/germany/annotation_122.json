@@ -64,28 +64,6 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11341168_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11341168_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11341168_author_1_invitation_letter"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11341168_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11341168_author_1_return_ticket"
       }
     },

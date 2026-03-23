@@ -64,40 +64,7 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11306515_friends_1_cash"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11306515_friends_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11306515_friends_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11306515_friends_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11306515_friends_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11306515_friends_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11306515_friends_1_travel_insurance"
       }
     },
     {

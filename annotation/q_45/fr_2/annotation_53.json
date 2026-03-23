@@ -2,54 +2,59 @@
   "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12214016_woman_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12214016_woman_1_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12214016_woman_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12214016_woman_1_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12214016_woman_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12214016_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12214016_woman_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12214016_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12214016_woman_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12214016_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12214016_woman_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_author_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_accommodation_proof"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12214016_woman_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12214016_woman_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12214016_woman_1_return_ticket"
+      }
     }
   ]
 }

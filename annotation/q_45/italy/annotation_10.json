@@ -1,30 +1,4 @@
 {
   "question": "In which country is a return ticket requested most often?",
-  "triples": [
-    {
-      "s": {"label": "City", "key": "city_bergamo"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_italy"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_bergamo"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_6890389_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_6890389_author_1_hotel_booking"}
-    }
-  ]
+  "triples": []
 }

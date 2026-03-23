@@ -2,94 +2,158 @@
   "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_marco_polo"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_venice"}
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_venice"},
+      "s": {
+        "label": "City",
+        "key": "city_venice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12163481_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12163481_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12163481_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_2_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12163481_author_2_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12163481_author_2_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12163481_author_2_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12163481_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12163481_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12163481_author_2_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12163481_author_2_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_marco_polo"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_venice"}
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12163481_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_1_return_ticket"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_marco_polo"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_venice"}
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_2_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_2_hotel_booking"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_2_return_ticket"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12163481_author_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12163481_author_2_travel_insurance"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12163481_author_2_return_ticket"
+      }
     }
   ]
 }

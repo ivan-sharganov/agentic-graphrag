@@ -14,17 +14,6 @@
     },
     {
       "s": {
-        "label": "City",
-        "key": "city_paris"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_france"
-      }
-    },
-    {
-      "s": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_12265196_author_1_return_ticket"
       },
@@ -64,62 +53,7 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_cash"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12265196_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12265196_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_hotel_booking"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12265196_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_payment_card"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12265196_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_12265196_author_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12265196_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12265196_author_1_travel_insurance"
       }
     }
   ]

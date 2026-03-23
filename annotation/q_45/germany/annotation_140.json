@@ -64,17 +64,6 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11473534_mother_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11473534_mother_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11473534_mother_1_return_ticket"
       }
     },

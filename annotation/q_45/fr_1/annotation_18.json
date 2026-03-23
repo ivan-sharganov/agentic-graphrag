@@ -53,28 +53,6 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11217576_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11217576_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11217576_author_1_oldpassport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11217576_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11217576_author_1_return_ticket"
       }
     }

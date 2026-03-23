@@ -2,54 +2,92 @@
   "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_tegel"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_tegel"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_berlin"}
+      "o": {
+        "label": "City",
+        "key": "city_berlin"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_berlin"},
+      "s": {
+        "label": "City",
+        "key": "city_berlin"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_9123972_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9123972_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_9123972_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9123972_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_9123972_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9123972_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9123972_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9123972_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_tegel"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_tegel"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9123972_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9123972_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_berlin"}
+      "o": {
+        "label": "City",
+        "key": "city_berlin"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9123972_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9123972_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9123972_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9123972_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9123972_author_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_9123972_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9123972_author_1_return_ticket"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_9123972_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_9123972_author_1_transport_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9123972_author_1_return_ticket"
+      }
     }
   ]
 }

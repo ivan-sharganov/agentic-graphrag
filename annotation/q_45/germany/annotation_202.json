@@ -1,35 +1,4 @@
 {
   "question": "In which country is a return ticket requested most often?",
-  "triples": [
-    {
-      "s": {"label": "City", "key": "city_bremen"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_bremen"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12096737_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12096737_author_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12096737_author_2"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12096737_author_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12096737_author_2_foreign_passport"}
-    }
-  ]
+  "triples": []
 }

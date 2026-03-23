@@ -2,49 +2,70 @@
   "question": "In which country is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_venice"},
+      "s": {
+        "label": "City",
+        "key": "city_venice"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11425636_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11425636_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11425636_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11425636_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11425636_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11425636_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11425636_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_venice"}
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11425636_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11425636_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11425636_author_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11425636_author_1_hotel_booking"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11425636_author_1_return_ticket"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11425636_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11425636_author_1_travel_itinerary"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11425636_author_1_return_ticket"
+      }
     }
   ]
 }

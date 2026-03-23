@@ -86,17 +86,6 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11320784_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11320784_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11320784_author_1_return_ticket"
       }
     },
@@ -120,17 +109,6 @@
       "o": {
         "label": "Country",
         "key": "country_germany"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11320784_daughter_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11320784_daughter_1_foreign_passport"
       }
     },
     {

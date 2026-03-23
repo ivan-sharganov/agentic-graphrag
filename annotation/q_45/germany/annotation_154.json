@@ -64,39 +64,6 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11520965_mother_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11520965_mother_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11520965_mother_1_id_card"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11520965_mother_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11520965_mother_1_invitation_letter"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11520965_mother_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11520965_mother_1_return_ticket"
       }
     },

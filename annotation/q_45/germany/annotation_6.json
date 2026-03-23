@@ -64,39 +64,6 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_8649137_author_1_accommodation_proof"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_8649137_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_8649137_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_8649137_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_8649137_author_1_payment_card"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_8649137_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_8649137_author_1_return_ticket"
       }
     },

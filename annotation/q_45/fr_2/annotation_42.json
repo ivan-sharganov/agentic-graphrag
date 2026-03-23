@@ -1,15 +1,4 @@
 {
   "question": "In which country is a return ticket requested most often?",
-  "triples": [
-    {
-      "s": {"label": "Encounter", "key": "encounter_12115837_author_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12115837_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12115837_author_1_foreign_passport"}
-    }
-  ]
+  "triples": []
 }

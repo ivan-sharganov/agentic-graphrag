@@ -64,51 +64,7 @@
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
-        "key": "doccheck_encounter_11285849_author_1_cash"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11285849_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11285849_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11285849_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11285849_author_1_hotel_booking"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11285849_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
         "key": "doccheck_encounter_11285849_author_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11285849_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11285849_author_1_travel_insurance"
       }
     },
     {
