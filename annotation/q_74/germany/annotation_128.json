@@ -44,6 +44,17 @@
         "label": "Airport",
         "key": "airport_memmingen"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_memmingen"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_memmingen"
+      }
     }
   ]
 }

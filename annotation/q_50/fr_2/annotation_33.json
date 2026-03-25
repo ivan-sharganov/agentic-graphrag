@@ -2,59 +2,147 @@
   "question": "In which country are people most often asked to show accommodation booking?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11927193_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11927193_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11927193_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11927193_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_husband_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_husband_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11927193_husband_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11927193_husband_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11927193_husband_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11927193_husband_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_woman_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_woman_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_woman_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_woman_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11927193_woman_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_woman_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11927193_woman_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11927193_woman_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

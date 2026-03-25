@@ -2,34 +2,59 @@
   "question": "How often are there additional checks in France?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_istanbul"},
+      "s": {
+        "label": "City",
+        "key": "city_marseille"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_marseille"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11783205_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11783205_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_marseille"}
+      "o": {
+        "label": "City",
+        "key": "city_marseille"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11783205_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11783205_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11783205_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11783205_friend_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_marseille"}
+      "o": {
+        "label": "City",
+        "key": "city_marseille"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11783205_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11783205_friend_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

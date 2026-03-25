@@ -4,17 +4,6 @@
     {
       "s": {
         "label": "City",
-        "key": "city_istanbul"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "City",
         "key": "city_nice"
       },
       "p": "locatedInCountry",
@@ -65,6 +54,17 @@
       "o": {
         "label": "Airport",
         "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_nce"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
       }
     }
   ]

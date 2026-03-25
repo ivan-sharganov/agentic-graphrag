@@ -2,29 +2,81 @@
   "question": "Which documents do I need to bring to passport control in France?",
   "triples": [
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11789637_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11789637_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11789637_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11789637_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11789637_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11789637_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11789637_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11789637_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11789637_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11789637_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11789637_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11789637_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11789637_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11789637_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

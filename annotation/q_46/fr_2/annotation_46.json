@@ -2,39 +2,92 @@
   "question": "In which city in France is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_istanbul"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_author_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_author_2"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12147700_author_2_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_husband_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_husband_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_husband_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12147700_husband_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12147700_author_2"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12147700_author_2"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12147700_author_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12147700_author_2_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12147700_husband_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12147700_husband_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12147700_husband_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12147700_husband_1_foreign_passport"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }
