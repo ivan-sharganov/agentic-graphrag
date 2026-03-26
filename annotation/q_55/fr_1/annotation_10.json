@@ -33,6 +33,17 @@
         "label": "DocumentCheck",
         "key": "doccheck_encounter_8694300_author_1_foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8694300_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

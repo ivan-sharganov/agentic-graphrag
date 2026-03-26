@@ -77,6 +77,17 @@
         "label": "City",
         "key": "city_nice"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }
