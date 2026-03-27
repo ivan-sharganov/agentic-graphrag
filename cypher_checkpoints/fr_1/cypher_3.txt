@@ -62,3 +62,4 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_travel_insura
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_12265196_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_12265196_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
 
 MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_12265196_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);

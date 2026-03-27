@@ -5,6 +5,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentCheck) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:DocumentInstance) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
+MERGE (co:Country {key:'country_france'}) SET co.entityName='France';
 
 MERGE (t:Traveller {key:'litovka'}) SET t.entityName='litovka';
 MERGE (e:Encounter {key:'encounter_3812199_author_1'})
@@ -27,6 +28,7 @@ MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_3812199_author_1_
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (t:Traveller {key:'litovka'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (bo:BorderOfficer {key:'borderofficer_3812199_officer1'}) MERGE (e)-[:hasOfficer]->(bo);
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
 // Document check links
 MATCH (e:Encounter {key:'encounter_3812199_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_3812199_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);

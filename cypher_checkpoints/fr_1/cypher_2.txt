@@ -64,3 +64,4 @@ MATCH (dc:DocumentCheck {key:'doccheck_encounter_10918979_author_2_foreign_passp
 MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (q:Questioning {key:'questioning_encounter_10918979_author_2_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);
 
 MATCH (e:Encounter {key:'encounter_10918979_author_2'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_10918979_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);

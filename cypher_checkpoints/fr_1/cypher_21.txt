@@ -30,6 +30,7 @@ MATCH (c:City {key:'city_lyon'}), (co:Country {key:'country_france'}) MERGE (c)-
 
 MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (t:Traveller {key:'acxol'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
 MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11249940_author_1_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (e:Encounter {key:'encounter_11249940_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_11249940_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);

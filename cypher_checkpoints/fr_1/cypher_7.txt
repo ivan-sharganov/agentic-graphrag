@@ -51,6 +51,7 @@ MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (t:Traveller {key:'chado
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (bo:BorderOfficer {key:'officer_7997540_1'}) MERGE (e)-[:hasOfficer]->(bo);
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (a:Airport {key:'airport_cdg'}) MERGE (e)-[:atAirport]->(a);
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (c:City {key:'city_paris'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
 // Document check links
 MATCH (e:Encounter {key:'encounter_7997540_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_7997540_author_1_accommodation_proof'}) MERGE (e)-[:hasDocumentCheck]->(dc);
