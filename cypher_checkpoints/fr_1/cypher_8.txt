@@ -25,6 +25,7 @@ MERGE (dc_fp:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreign_pas
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (t:Traveller {key:'cvettlana'}) MERGE (e)-[:hasTraveler]->(t);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (st:Stamping {key:'stamping_encounter_8093025_author_1'}) MERGE (e)-[:hasStamping]->(st);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 MATCH (e:Encounter {key:'encounter_8093025_author_1'}), (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
 MATCH (dc:DocumentCheck {key:'doccheck_encounter_8093025_author_1_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_8093025_author_1_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);

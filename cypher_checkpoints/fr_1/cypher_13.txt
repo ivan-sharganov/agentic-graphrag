@@ -50,6 +50,7 @@ MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (t:Traveller {key:'Twigg
 
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (c:City {key:'city_lyon'}) MERGE (e)-[:atCity]->(c);
 MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (c:City {key:'city_nice'}) MERGE (e)-[:atCity]->(c);
+MATCH (e:Encounter {key:'encounter_9752768_author_1'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
 
 MATCH (e:Encounter {key:'encounter_9752768_husband_1'}), (q:Questioning {key:'questioning_encounter_9752768_husband_1_accommodation_details'}) MERGE (e)-[:hasQuestioning]->(q);
 
