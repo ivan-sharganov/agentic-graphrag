@@ -2,34 +2,92 @@
   "question": "Which question topics are most common at passport control in France?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_12198612_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12198612_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12198612_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_12198612_author_1_cash_amount"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_cash_amount"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12198612_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_12198612_author_1_employment"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_employment"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_12198612_author_1_cash_amount"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_cash_amount"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "cash_amount"}
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_12198612_author_1_employment"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_employment"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "employment"}
+      "o": {
+        "label": "Literal",
+        "key": "employment"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

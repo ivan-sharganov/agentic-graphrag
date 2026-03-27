@@ -2,19 +2,48 @@
   "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_cdg"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9684707_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9684707_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9684707_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9684707_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9684707_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

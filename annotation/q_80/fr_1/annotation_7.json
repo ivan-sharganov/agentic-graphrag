@@ -187,6 +187,17 @@
         "label": "Literal",
         "key": "visit_purpose"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_7997540_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

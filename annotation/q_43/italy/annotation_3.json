@@ -2,29 +2,48 @@
   "question": "In which city in Italy is a return ticket requested most often?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_prague"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_czech_republic"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_4871351_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_4871351_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_4871351_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_wife_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_wife_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_4871351_wife_1_foreign_passport"
+      }
     }
   ]
 }

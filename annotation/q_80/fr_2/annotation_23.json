@@ -2,99 +2,235 @@
   "question": "Where is it currently easiest to pass passport control in the EU?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_vienna"},
+      "s": {
+        "label": "City",
+        "key": "city_vienna"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_austria"}
+      "o": {
+        "label": "Country",
+        "key": "country_austria"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_1_return_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_1_transport_ticket"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_1_transport_ticket"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_1_transport_ticket"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_1_transport_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_2_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_2_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_1_return_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_1_return_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "return_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_1_transport_ticket"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_1_transport_ticket"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "transport_ticket"}
+      "o": {
+        "label": "Literal",
+        "key": "transport_ticket"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_11854608_author_2_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11854608_author_2_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_1_transport_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_1_transport_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_vienna"}
+      "o": {
+        "label": "City",
+        "key": "city_vienna"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_austria"}
+      "o": {
+        "label": "Country",
+        "key": "country_austria"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11854608_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11854608_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_2"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_11854608_author_2_previous_visits"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11854608_author_2_previous_visits"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_11854608_author_2_previous_visits"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11854608_author_2_previous_visits"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "previous_visits"}
+      "o": {
+        "label": "Literal",
+        "key": "previous_visits"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

@@ -88,6 +88,17 @@
         "label": "DocumentCheck",
         "key": "doccheck_encounter_11249940_author_1_visa"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11249940_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

@@ -66,6 +66,17 @@
         "label": "DocumentCheck",
         "key": "doccheck_encounter_9684707_author_1_foreign_passport"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9684707_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

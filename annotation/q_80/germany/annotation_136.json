@@ -253,6 +253,17 @@
         "label": "Airport",
         "key": "airport_munich"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_munich"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
     }
   ]
 }

@@ -132,6 +132,17 @@
         "label": "Airport",
         "key": "airport_nce"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_nce"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
     }
   ]
 }

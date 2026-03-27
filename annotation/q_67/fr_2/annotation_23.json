@@ -2,19 +2,59 @@
   "question": "How often are fingerprints taken when entering France?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_vienna"},
+      "s": {
+        "label": "City",
+        "key": "city_vienna"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_austria"}
+      "o": {
+        "label": "Country",
+        "key": "country_austria"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_ory"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11854608_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11854608_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

@@ -143,6 +143,17 @@
         "label": "City",
         "key": "city_paris"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_7997540_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

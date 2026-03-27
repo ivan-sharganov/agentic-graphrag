@@ -55,6 +55,17 @@
         "label": "Airport",
         "key": "airport_pisa"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_pisa"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_pisa"
+      }
     }
   ]
 }

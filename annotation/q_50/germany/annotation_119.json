@@ -55,6 +55,17 @@
         "label": "Airport",
         "key": "airport_stuttgart"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     }
   ]
 }

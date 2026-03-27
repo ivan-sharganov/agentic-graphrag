@@ -231,6 +231,17 @@
         "label": "Airport",
         "key": "airport_cologne_bonn"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cologne_bonn"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_cologne"
+      }
     }
   ]
 }

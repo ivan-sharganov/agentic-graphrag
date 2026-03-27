@@ -2,14 +2,37 @@
   "question": "Which airport do people most often fly into in France?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_lyon"},
+      "s": {
+        "label": "City",
+        "key": "city_lyon"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_8694300_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8694300_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_lyon"}
+      "o": {
+        "label": "City",
+        "key": "city_lyon"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8694300_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

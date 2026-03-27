@@ -154,6 +154,17 @@
         "label": "Airport",
         "key": "airport_frankfurt"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
     }
   ]
 }

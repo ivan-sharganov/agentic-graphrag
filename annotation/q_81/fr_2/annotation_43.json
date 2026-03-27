@@ -2,49 +2,125 @@
   "question": "Through which country do travelers most often pass with 'no questions'?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_basel"},
+      "s": {
+        "label": "City",
+        "key": "city_basel"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_switzerland"}
+      "o": {
+        "label": "Country",
+        "key": "country_switzerland"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_basel"}
+      "o": {
+        "label": "City",
+        "key": "city_basel"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_switzerland"}
+      "o": {
+        "label": "Country",
+        "key": "country_switzerland"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_12116943_family_1_visit_purpose"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12116943_family_1_visit_purpose"
+      }
     },
     {
-      "s": {"label": "Questioning", "key": "questioning_encounter_12116943_family_1_visit_purpose"},
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12116943_family_1_visit_purpose"
+      },
       "p": "topicKey",
-      "o": {"label": "Literal", "key": "visit_purpose"}
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

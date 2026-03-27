@@ -2,54 +2,125 @@
   "question": "In which city in France are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_basel"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12116943_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12116943_family_1_accommodation_proof"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12116943_family_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12116943_family_1_return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12116943_family_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12116943_family_1_travel_insurance"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_switzerland"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_author_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12116943_author_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12116943_family_1_accommodation_proof"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12116943_family_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12116943_family_1_return_ticket"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_12116943_family_1"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12116943_family_1_travel_insurance"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

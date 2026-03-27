@@ -2,89 +2,180 @@
   "question": "In which city in France are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_bva"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_bva"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_beauvais"}
+      "o": {
+        "label": "City",
+        "key": "city_beauvais"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_beauvais"},
+      "s": {
+        "label": "City",
+        "key": "city_beauvais"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_lyon"},
+      "s": {
+        "label": "City",
+        "key": "city_lyon"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_yerevan"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_armenia"}
-    },
-    {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_friend_1_payment_card"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_friend_1_payment_card"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_12233555_friend_1_payment_card"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12233555_friend_1_payment_card"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_12233555_friend_1_payment_card"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12233555_friend_1_payment_card"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "payment_card"}
+      "o": {
+        "label": "Literal",
+        "key": "payment_card"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_author_2"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_bva"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_bva"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_beauvais"}
+      "o": {
+        "label": "City",
+        "key": "city_beauvais"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_lyon"}
+      "o": {
+        "label": "City",
+        "key": "city_lyon"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_friend_1_accommodation_proof"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_friend_1_accommodation_proof"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_friend_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_friend_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_friend_1_payment_card"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_friend_1_payment_card"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_friend_1_return_ticket"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_friend_1_return_ticket"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_12233555_friend_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12233555_friend_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_12233555_friend_1_travel_insurance"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12233555_friend_1_travel_insurance"
+      }
     }
   ]
 }

@@ -15,17 +15,6 @@
     {
       "s": {
         "label": "City",
-        "key": "city_istanbul"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "City",
         "key": "city_paris"
       },
       "p": "locatedInCountry",

@@ -2,49 +2,125 @@
   "question": "In which city in France are people most often asked about finances / proof of funds?",
   "triples": [
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11883695_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11883695_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_husband_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_husband_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_husband_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_husband_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11883695_husband_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11883695_husband_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_son_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_son_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_son_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_son_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11883695_son_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11883695_son_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11883695_son_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11883695_son_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

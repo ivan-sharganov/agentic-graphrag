@@ -2,34 +2,59 @@
   "question": "Which is more common in Germany: a request to show cash or a card?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_stuttgart"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_stuttgart"}
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_london"},
+      "s": {
+        "label": "City",
+        "key": "city_stuttgart"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_united_kingdom"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_stuttgart"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_germany"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11906008_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11906008_author_2"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_stuttgart"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_stuttgart"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11906008_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11906008_author_2"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_stuttgart"}
+      "o": {
+        "label": "City",
+        "key": "city_stuttgart"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11906008_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11906008_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_germany"}
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
     }
   ]
 }
