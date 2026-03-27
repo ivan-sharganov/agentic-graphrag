@@ -1,30 +1,4 @@
 {
   "question": "Which question topics are most common at passport control in Italy?",
-  "triples": [
-    {
-      "s": {"label": "Airport", "key": "airport_fiumicino"},
-      "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_rome"}
-    },
-    {
-      "s": {"label": "City", "key": "city_rome"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_italy"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11703734_author_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_fiumicino"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11703734_author_1"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_rome"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11703734_author_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
-    }
-  ]
+  "triples": []
 }

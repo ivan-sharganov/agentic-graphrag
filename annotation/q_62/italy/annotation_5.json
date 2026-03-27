@@ -22,16 +22,6 @@
       "o": {"label": "Questioning", "key": "questioning_encounter_5434453_author_1_cash_amount"}
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_5434453_relative_1"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_bari"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_5434453_relative_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
-    },
-    {
       "s": {"label": "Questioning", "key": "questioning_encounter_5434453_author_1_cash_amount"},
       "p": "topicKey",
       "o": {"label": "Literal", "key": "cash_amount"}

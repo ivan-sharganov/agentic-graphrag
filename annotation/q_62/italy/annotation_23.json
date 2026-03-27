@@ -22,16 +22,6 @@
       "o": {"label": "Questioning", "key": "questioning_encounter_9281821_author_1_itinerary_transport"}
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_9281821_author_2"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_rome"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_9281821_author_2"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
-    },
-    {
       "s": {"label": "Questioning", "key": "questioning_encounter_9281821_author_1_itinerary_transport"},
       "p": "topicKey",
       "o": {"label": "Literal", "key": "itinerary_transport"}
