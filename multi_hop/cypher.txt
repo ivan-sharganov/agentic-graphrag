@@ -1,0 +1,23 @@
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Person) REQUIRE n.name IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Company) REQUIRE n.name IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Country) REQUIRE n.name IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Year) REQUIRE n.value IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (n:Email) REQUIRE n.address IS UNIQUE;
+
+MERGE (elon:Person {name:'Elon Musk'});
+MERGE (spacex:Company {name:'SpaceX'});
+MERGE (southafrica:Country {name:'South Africa'});
+MERGE (y2002:Year {value:2002});
+MERGE (email:Email {address:'elon@spacex.com'});
+
+MATCH (elon:Person {name:'Elon Musk'}), (spacex:Company {name:'SpaceX'})
+MERGE (elon)-[:IS_CEO_OF]->(spacex);
+
+MATCH (spacex:Company {name:'SpaceX'}), (y2002:Year {value:2002})
+MERGE (spacex)-[:FOUNDED_IN]->(y2002);
+
+MATCH (elon:Person {name:'Elon Musk'}), (southafrica:Country {name:'South Africa'})
+MERGE (elon)-[:BORN_IN]->(southafrica);
+
+MATCH (elon:Person {name:'Elon Musk'}), (email:Email {address:'elon@spacex.com'})
+MERGE (elon)-[:HAS_EMAIL]->(email);
