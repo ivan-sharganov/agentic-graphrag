@@ -1,15 +1,4 @@
 {
   "question": "Through which country do travelers most often pass with 'no questions'?",
-  "triples": [
-    {
-      "s": {"label": "Airport", "key": "airport_hel"},
-      "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_helsinki"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_6679114_author_1"},
-      "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_hel"}
-    }
-  ]
+  "triples": []
 }
