@@ -253,6 +253,39 @@
         "label": "Country",
         "key": "country_france"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_husband_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11927193_woman_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     }
   ]
 }

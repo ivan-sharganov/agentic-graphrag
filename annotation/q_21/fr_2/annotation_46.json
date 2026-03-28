@@ -132,6 +132,28 @@
         "label": "Country",
         "key": "country_france"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_husband_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12147700_author_2"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     }
   ]
 }
