@@ -14,17 +14,6 @@
     },
     {
       "s": {
-        "label": "City",
-        "key": "city_seville"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_spain"
-      }
-    },
-    {
-      "s": {
         "label": "Encounter",
         "key": "encounter_11967545_author_1"
       },
@@ -76,28 +65,6 @@
       "o": {
         "label": "Questioning",
         "key": "questioning_encounter_11967545_author_1_visit_purpose"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11967545_author_2"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_seville"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11967545_author_2"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_spain"
       }
     },
     {
