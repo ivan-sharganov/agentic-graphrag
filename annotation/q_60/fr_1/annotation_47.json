@@ -66,6 +66,17 @@
         "label": "Questioning",
         "key": "questioning_encounter_12085324_author_1_visit_duration"
       }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12085324_author_1_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
     }
   ]
 }

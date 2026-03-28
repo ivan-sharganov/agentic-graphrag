@@ -124,35 +124,68 @@
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_3902451_friend1_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_3902451_author_1_cash_amount"
       },
-      "p": "atAirport",
+      "p": "topicKey",
       "o": {
-        "label": "Airport",
-        "key": "airport_cdg"
+        "label": "Literal",
+        "key": "cash_amount"
       }
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_3902451_friend1_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_3902451_author_1_employment"
       },
-      "p": "atCity",
+      "p": "topicKey",
       "o": {
-        "label": "City",
-        "key": "city_paris"
+        "label": "Literal",
+        "key": "employment"
       }
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_3902451_friend1_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_3902451_author_1_hotel_payment_card"
       },
-      "p": "atCountry",
+      "p": "topicKey",
       "o": {
-        "label": "Country",
-        "key": "country_france"
+        "label": "Literal",
+        "key": "hotel_payment_card"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_3902451_author_1_hotel_payment_status"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "hotel_payment_status"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_3902451_author_1_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_3902451_author_1_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
       }
     }
   ]

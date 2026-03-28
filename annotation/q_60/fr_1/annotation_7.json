@@ -77,6 +77,28 @@
         "label": "Country",
         "key": "country_france"
       }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_7997540_author_1_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_7997540_author_1_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
     }
   ]
 }

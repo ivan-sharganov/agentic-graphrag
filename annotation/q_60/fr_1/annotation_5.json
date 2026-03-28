@@ -2,39 +2,103 @@
   "question": "Which question topics are most common at passport control in France?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_toulouse"},
+      "s": {
+        "label": "City",
+        "key": "city_toulouse"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6281811_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_toulouse"}
+      "o": {
+        "label": "City",
+        "key": "city_toulouse"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6281811_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6281811_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6281811_author_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_6281811_author_1_itinerary_transport"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6281811_author_1_itinerary_transport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6281811_companion1_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_toulouse"}
+      "o": {
+        "label": "City",
+        "key": "city_toulouse"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6281811_companion1_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_6281811_companion1_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6281811_companion1_1"
+      },
       "p": "hasQuestioning",
-      "o": {"label": "Questioning", "key": "questioning_encounter_6281811_companion1_1_itinerary_transport"}
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6281811_companion1_1_itinerary_transport"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6281811_author_1_itinerary_transport"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "itinerary_transport"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6281811_companion1_1_itinerary_transport"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "itinerary_transport"
+      }
     }
   ]
 }

@@ -77,6 +77,28 @@
         "label": "Questioning",
         "key": "questioning_encounter_11719467_author_2_exit_date_schengen"
       }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11719467_author_2_accommodation_details"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11719467_author_2_exit_date_schengen"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "exit_date_schengen"
+      }
     }
   ]
 }

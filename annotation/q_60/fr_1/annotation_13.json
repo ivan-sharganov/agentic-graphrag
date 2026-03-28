@@ -26,17 +26,6 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_9752768_author_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_nice"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
         "key": "encounter_9752768_husband_1"
       },
       "p": "atCity",
@@ -58,17 +47,6 @@
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_9752768_author_1"
-      },
-      "p": "atAirport",
-      "o": {
-        "label": "Airport",
-        "key": "airport_nce"
-      }
-    },
-    {
-      "s": {
         "label": "Airport",
         "key": "airport_nce"
       },
@@ -81,7 +59,7 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_9752768_author_1"
+        "key": "encounter_9752768_husband_1"
       },
       "p": "atCountry",
       "o": {
@@ -91,13 +69,13 @@
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_9752768_husband_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_9752768_husband_1_accommodation_details"
       },
-      "p": "atCountry",
+      "p": "topicKey",
       "o": {
-        "label": "Country",
-        "key": "country_france"
+        "label": "Literal",
+        "key": "accommodation_details"
       }
     }
   ]

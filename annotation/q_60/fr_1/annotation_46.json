@@ -110,6 +110,28 @@
         "label": "Questioning",
         "key": "questioning_encounter_12083906_friend1_1_previous_visits"
       }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12083906_author_1_travel_companions"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "travel_companions"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12083906_friend1_1_previous_visits"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "previous_visits"
+      }
     }
   ]
 }

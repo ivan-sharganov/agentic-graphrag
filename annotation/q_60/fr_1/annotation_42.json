@@ -1,20 +1,4 @@
 {
   "question": "Which question topics are most common at passport control in France?",
-  "triples": [
-    {
-      "s": {"label": "City", "key": "city_menton"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_menton"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_11814545_author_1"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
-    }
-  ]
+  "triples": []
 }

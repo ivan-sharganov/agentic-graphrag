@@ -4,17 +4,6 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_11328463_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_france"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
         "key": "encounter_11328463_girl_1"
       },
       "p": "atCountry",
@@ -32,6 +21,17 @@
       "o": {
         "label": "Questioning",
         "key": "questioning_encounter_11328463_girl_1_cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11328463_girl_1_cash_amount"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
       }
     }
   ]

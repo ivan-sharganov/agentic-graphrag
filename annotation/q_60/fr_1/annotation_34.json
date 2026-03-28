@@ -66,6 +66,17 @@
         "label": "Questioning",
         "key": "questioning_encounter_11700064_author_1_visit_purpose"
       }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11700064_author_1_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
     }
   ]
 }

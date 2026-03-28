@@ -33,6 +33,28 @@
         "label": "Questioning",
         "key": "questioning_encounter_11159089_author_1_visit_purpose"
       }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11159089_author_1_accommodation"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11159089_author_1_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
     }
   ]
 }

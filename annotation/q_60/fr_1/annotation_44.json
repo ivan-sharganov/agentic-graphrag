@@ -26,39 +26,6 @@
     {
       "s": {
         "label": "Encounter",
-        "key": "encounter_11888385_author_1"
-      },
-      "p": "atAirport",
-      "o": {
-        "label": "Airport",
-        "key": "airport_cdg"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11888385_author_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_paris"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11888385_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_france"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
         "key": "encounter_11888385_author_2"
       },
       "p": "atAirport",
@@ -146,35 +113,57 @@
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_11888385_friend1_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_11888385_author_2_accommodation_details"
       },
-      "p": "atAirport",
+      "p": "topicKey",
       "o": {
-        "label": "Airport",
-        "key": "airport_cdg"
+        "label": "Literal",
+        "key": "accommodation_details"
       }
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_11888385_friend1_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_11888385_author_2_cash_amount"
       },
-      "p": "atCity",
+      "p": "topicKey",
       "o": {
-        "label": "City",
-        "key": "city_paris"
+        "label": "Literal",
+        "key": "cash_amount"
       }
     },
     {
       "s": {
-        "label": "Encounter",
-        "key": "encounter_11888385_friend1_1"
+        "label": "Questioning",
+        "key": "questioning_encounter_11888385_author_2_exit_date_schengen"
       },
-      "p": "atCountry",
+      "p": "topicKey",
       "o": {
-        "label": "Country",
-        "key": "country_france"
+        "label": "Literal",
+        "key": "exit_date_schengen"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11888385_author_2_payment_card"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "payment_card"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11888385_author_2_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
       }
     }
   ]
