@@ -1,5 +1,115 @@
 {
   "question": "In which city in France are the most documents requested?",
   "triples": [
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_payment_card"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_payment_card"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_payment_card"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_bank_statement"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "bank_statement"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_bank_statement"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_bank_statement"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_payment_card"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "payment_card"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_8549857_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_8549857_author_1_bank_statement"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    }
   ]
 }

@@ -1,5 +1,137 @@
 {
   "question": "In which city in France are the most documents requested?",
   "triples": [
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11841445_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11841445_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11841445_author_1_hotel_booking"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11841445_author_1_hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11841445_author_1_cash"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11841445_author_1_cash"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11841445_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11841445_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11841445_author_1_hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11841445_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11841445_author_1_cash"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11841445_author_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11841445_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11841445_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11841445_author_1_cash"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11841445_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11841445_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11841445_author_1_hotel_booking"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
+    }
   ]
 }
