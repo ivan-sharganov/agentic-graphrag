@@ -77,6 +77,17 @@
         "label": "Country",
         "key": "country_france"
       }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11789637_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     }
   ]
 }
