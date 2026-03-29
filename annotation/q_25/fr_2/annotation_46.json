@@ -3,28 +3,6 @@
   "triples": [
     {
       "s": {
-        "label": "City",
-        "key": "city_istanbul"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12147700_author_1_foreign_passport"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12147700_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_12147700_author_2_foreign_passport"
       },
@@ -48,17 +26,6 @@
     {
       "s": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12147700_author_1_foreign_passport"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
         "key": "documentinstance_encounter_12147700_author_2_foreign_passport"
       },
       "p": "documentType",
@@ -76,39 +43,6 @@
       "o": {
         "label": "Literal",
         "key": "foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12147700_author_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_istanbul"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12147700_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12147700_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12147700_author_1_foreign_passport"
       }
     },
     {

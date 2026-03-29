@@ -3,28 +3,6 @@
   "triples": [
     {
       "s": {
-        "label": "Airport",
-        "key": "airport_izmir"
-      },
-      "p": "locatedInCity",
-      "o": {
-        "label": "City",
-        "key": "city_izmir"
-      }
-    },
-    {
-      "s": {
-        "label": "City",
-        "key": "city_izmir"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_11816166_author_1_foreign_passport"
       },
@@ -47,17 +25,6 @@
     },
     {
       "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11816166_author_2_foreign_passport"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_11816166_author_2_foreign_passport"
-      }
-    },
-    {
-      "s": {
         "label": "DocumentInstance",
         "key": "documentinstance_encounter_11816166_author_1_foreign_passport"
       },
@@ -76,17 +43,6 @@
       "o": {
         "label": "Literal",
         "key": "return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_11816166_author_2_foreign_passport"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "foreign_passport"
       }
     },
     {
@@ -131,50 +87,6 @@
       "o": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_11816166_author_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11816166_author_2"
-      },
-      "p": "atAirport",
-      "o": {
-        "label": "Airport",
-        "key": "airport_izmir"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11816166_author_2"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_izmir"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11816166_author_2"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11816166_author_2"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_11816166_author_2_foreign_passport"
       }
     },
     {

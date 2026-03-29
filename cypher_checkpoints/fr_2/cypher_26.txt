@@ -7,22 +7,16 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Encounter) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 MERGE (n:Country {key:'country_france'}) SET n.entityName='France';
-MERGE (n:Country {key:'country_turkey'}) SET n.entityName='Turkey';
 MERGE (n:City {key:'city_paris'}) SET n.entityName='Paris';
 MERGE (n:Airport {key:'airport_cdg'}) SET n.entityName='Charles de Gaulle Airport';
 MERGE (n:Encounter {key:'encounter_11870493_author_1'}) SET n.sourcePostID=11870493, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11870493#p11870493', n.sourcePostAuthor='babuleha', n.sourcePostDateTime=localdatetime('2024-07-16T22:10:00');
-MERGE (n:Encounter {key:'encounter_11870493_author_2'}) SET n.sourcePostID=11870493, n.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11870493#p11870493', n.sourcePostAuthor='babuleha', n.sourcePostDateTime=localdatetime('2024-07-16T22:10:00');
 MERGE (n:Traveller {key:'babuleha'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11870493_author_1_boarding_pass'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11870493_author_1_visa'});
 MERGE (n:DocumentCheck {key:'doccheck_encounter_11870493_author_1_foreign_passport'});
-MERGE (n:DocumentCheck {key:'doccheck_encounter_11870493_author_2_visa'});
-MERGE (n:DocumentCheck {key:'doccheck_encounter_11870493_author_2_foreign_passport'});
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11870493_author_1_boarding_pass'}) SET n.documentType='boarding_pass';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11870493_author_1_visa'}) SET n.documentType='visa';
 MERGE (n:DocumentInstance {key:'documentinstance_encounter_11870493_author_1_foreign_passport'}) SET n.documentType='foreign_passport';
-MERGE (n:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_visa'}) SET n.documentType='visa';
-MERGE (n:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_foreign_passport'}) SET n.documentType='foreign_passport';
 MERGE (n:Stamping {key:'stamping_encounter_11870493_author_1'});
 MATCH (a:Encounter {key:'encounter_11870493_author_1'}), (b:Traveller {key:'babuleha'}) MERGE (a)-[:hasTraveler]->(b);
 MATCH (a:Encounter {key:'encounter_11870493_author_1'}), (b:Airport {key:'airport_cdg'}) MERGE (a)-[:atAirport]->(b);
@@ -36,11 +30,24 @@ MATCH (a:Encounter {key:'encounter_11870493_author_1'}), (b:DocumentCheck {key:'
 MATCH (a:DocumentCheck {key:'doccheck_encounter_11870493_author_1_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11870493_author_1_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Encounter {key:'encounter_11870493_author_1'}), (b:Stamping {key:'stamping_encounter_11870493_author_1'}) MERGE (a)-[:hasStamping]->(b);
 MATCH (a:Stamping {key:'stamping_encounter_11870493_author_1'}), (b:DocumentInstance {key:'documentinstance_encounter_11870493_author_1_foreign_passport'}) MERGE (a)-[:stampsDocument]->(b);
-MATCH (a:Encounter {key:'encounter_11870493_author_2'}), (b:Traveller {key:'babuleha'}) MERGE (a)-[:hasTraveler]->(b);
-MATCH (a:Encounter {key:'encounter_11870493_author_2'}), (b:Country {key:'country_turkey'}) MERGE (a)-[:atCountry]->(b);
-MATCH (a:Encounter {key:'encounter_11870493_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_11870493_author_2_visa'}) MERGE (a)-[:hasDocumentCheck]->(b);
-MATCH (a:DocumentCheck {key:'doccheck_encounter_11870493_author_2_visa'}), (b:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_visa'}) MERGE (a)-[:requestedDocument]->(b);
-MATCH (a:Encounter {key:'encounter_11870493_author_2'}), (b:DocumentCheck {key:'doccheck_encounter_11870493_author_2_foreign_passport'}) MERGE (a)-[:hasDocumentCheck]->(b);
-MATCH (a:DocumentCheck {key:'doccheck_encounter_11870493_author_2_foreign_passport'}), (b:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_foreign_passport'}) MERGE (a)-[:requestedDocument]->(b);
 MATCH (a:Airport {key:'airport_cdg'}), (b:City {key:'city_paris'}) MERGE (a)-[:locatedInCity]->(b);
 MATCH (a:City {key:'city_paris'}), (b:Country {key:'country_france'}) MERGE (a)-[:locatedInCountry]->(b);
+
+MERGE (e2:Encounter {key:'encounter_11870493_author_2'})
+  SET e2.sourcePostID=11870493,
+      e2.sourcePostURL='https://forum.awd.ru/viewtopic.php?p=11870493#p11870493',
+      e2.sourcePostAuthor='babuleha',
+      e2.sourcePostDateTime=localdatetime('2024-07-16T22:10:00');
+
+MERGE (dc_fp_2:DocumentCheck {key:'doccheck_encounter_11870493_author_2_foreign_passport'});
+MERGE (dc_visa_2:DocumentCheck {key:'doccheck_encounter_11870493_author_2_visa'});
+
+MERGE (di_fp_2:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_foreign_passport'}) SET di_fp_2.documentType='foreign_passport';
+MERGE (di_visa_2:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_visa'}) SET di_visa_2.documentType='visa';
+
+MATCH (e:Encounter {key:'encounter_11870493_author_2'}), (co:Country {key:'country_france'}) MERGE (e)-[:atCountry]->(co);
+MATCH (e:Encounter {key:'encounter_11870493_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11870493_author_2_foreign_passport'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+MATCH (e:Encounter {key:'encounter_11870493_author_2'}), (dc:DocumentCheck {key:'doccheck_encounter_11870493_author_2_visa'}) MERGE (e)-[:hasDocumentCheck]->(dc);
+
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11870493_author_2_foreign_passport'}), (di:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_foreign_passport'}) MERGE (dc)-[:requestedDocument]->(di);
+MATCH (dc:DocumentCheck {key:'doccheck_encounter_11870493_author_2_visa'}), (di:DocumentInstance {key:'documentinstance_encounter_11870493_author_2_visa'}) MERGE (dc)-[:requestedDocument]->(di);

@@ -18,8 +18,6 @@ MERGE (e:Encounter {key:'encounter_7997540_author_1'})
       e.controlStage='at_desk';
 
 MERGE (t_author:Traveller {key:'chados'}) SET t_author.entityName='chados';
-MERGE (t_comp1:Traveller {key:'traveller_7997540_companion1'}) SET t_comp1.entityName='companion1';
-MERGE (t_comp2:Traveller {key:'traveller_7997540_companion2'}) SET t_comp2.entityName='companion2';
 
 MERGE (bo:BorderOfficer {key:'officer_7997540_1'}) SET bo.entityName='inspector';
 MERGE (a:Airport {key:'airport_cdg'}) SET a.entityName='Charles de Gaulle Airport';

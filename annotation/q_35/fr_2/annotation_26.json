@@ -2,59 +2,136 @@
   "question": "In which country is accommodation booking requested most often?",
   "triples": [
     {
-      "s": {"label": "Airport", "key": "airport_cdg"},
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
       "p": "locatedInCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "City", "key": "city_paris"},
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
       "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_1"
+      },
       "p": "atAirport",
-      "o": {"label": "Airport", "key": "airport_cdg"}
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_1"
+      },
       "p": "atCity",
-      "o": {"label": "City", "key": "city_paris"}
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_france"}
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11870493_author_1_boarding_pass"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11870493_author_1_boarding_pass"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11870493_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11870493_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11870493_author_1_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11870493_author_1_visa"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_2"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_turkey"}
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11870493_author_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11870493_author_2_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_11870493_author_2"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_2"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_11870493_author_2_visa"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11870493_author_2_visa"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11870493_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
     }
   ]
 }

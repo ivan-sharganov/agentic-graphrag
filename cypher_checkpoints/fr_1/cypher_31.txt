@@ -7,9 +7,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (n:Stamping) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Traveller) REQUIRE n.key IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (n:Airport) REQUIRE n.key IS UNIQUE;
 
-MERGE (c_ist:City {key:'city_istanbul'}) SET c_ist.entityName='Istanbul';
 MERGE (c_nice:City {key:'city_nice'}) SET c_nice.entityName='Nice';
-MERGE (co_tr:Country {key:'country_turkey'}) SET co_tr.entityName='Turkey';
 MERGE (co_fr:Country {key:'country_france'}) SET co_fr.entityName='France';
 
 MERGE (t:Traveller {key:'Sasha'}) SET t.entityName='Sasha';
@@ -26,7 +24,6 @@ MERGE (di_fp:DocumentInstance {key:'documentinstance_encounter_11553587_author_1
 
 MERGE (st:Stamping {key:'stamping_encounter_11553587_author_1'});
 
-MATCH (c:City {key:'city_istanbul'}), (co:Country {key:'country_turkey'}) MERGE (c)-[:locatedInCountry]->(co);
 MATCH (c:City {key:'city_nice'}), (co:Country {key:'country_france'}) MERGE (c)-[:locatedInCountry]->(co);
 
 MATCH (e:Encounter {key:'encounter_11553587_author_1'}), (t:Traveller {key:'Sasha'}) MERGE (e)-[:hasTraveler]->(t);

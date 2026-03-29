@@ -3,39 +3,6 @@
   "triples": [
     {
       "s": {
-        "label": "City",
-        "key": "city_istanbul"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_author_1_foreign_passport"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_author_1_visa"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_author_1_visa"
-      }
-    },
-    {
-      "s": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_12134610_author_2_foreign_passport"
       },
@@ -65,39 +32,6 @@
       "o": {
         "label": "DocumentInstance",
         "key": "documentinstance_encounter_12134610_couple_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_husband_1_foreign_passport"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_husband_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_husband_1_return_ticket"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_husband_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_husband_1_visa"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_husband_1_visa"
       }
     },
     {
@@ -114,28 +48,6 @@
     {
       "s": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_author_1_foreign_passport"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_author_1_visa"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "visa"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
         "key": "documentinstance_encounter_12134610_author_2_foreign_passport"
       },
       "p": "documentType",
@@ -169,89 +81,12 @@
     {
       "s": {
         "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_husband_1_foreign_passport"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_husband_1_return_ticket"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_12134610_husband_1_visa"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "visa"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
         "key": "documentinstance_encounter_12134610_husband_2_foreign_passport"
       },
       "p": "documentType",
       "o": {
         "label": "Literal",
         "key": "foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_author_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_istanbul"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_author_1_visa"
       }
     },
     {
@@ -329,61 +164,6 @@
       "o": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_12134610_couple_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_husband_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_istanbul"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_husband_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_turkey"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_husband_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_husband_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_husband_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_husband_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_12134610_husband_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_12134610_husband_1_visa"
       }
     },
     {

@@ -72,17 +72,6 @@
         "label": "Encounter",
         "key": "encounter_8549857_author_1"
       },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_kazakhstan"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_8549857_author_1"
-      },
       "p": "hasDocumentCheck",
       "o": {
         "label": "DocumentCheck",
@@ -109,6 +98,17 @@
       "o": {
         "label": "DocumentCheck",
         "key": "doccheck_encounter_8549857_author_1_payment_card"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_8549857_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
       }
     }
   ]

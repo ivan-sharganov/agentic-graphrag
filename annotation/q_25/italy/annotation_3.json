@@ -2,89 +2,92 @@
   "question": "In which country are the most documents requested?",
   "triples": [
     {
-      "s": {"label": "City", "key": "city_prague"},
-      "p": "locatedInCountry",
-      "o": {"label": "Country", "key": "country_czech_republic"}
-    },
-    {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_4871351_author_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_4871351_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_1_foreign_passport"},
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_4871351_wife_1_foreign_passport"
+      },
       "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_wife_1_foreign_passport"}
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_4871351_wife_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_2_boarding_pass"},
-      "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_wife_2_boarding_pass"}
-    },
-    {
-      "s": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_2_foreign_passport"},
-      "p": "requestedDocument",
-      "o": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_wife_2_foreign_passport"}
-    },
-    {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_author_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_4871351_author_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_wife_1_foreign_passport"},
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_4871351_wife_1_foreign_passport"
+      },
       "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
     },
     {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_wife_2_boarding_pass"},
-      "p": "documentType",
-      "o": {"label": "Literal", "key": "boarding_pass"}
-    },
-    {
-      "s": {"label": "DocumentInstance", "key": "documentinstance_encounter_4871351_wife_2_foreign_passport"},
-      "p": "documentType",
-      "o": {"label": "Literal", "key": "foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_4871351_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_author_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_4871351_author_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_author_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_author_1_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_4871351_author_1_foreign_passport"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_wife_1"
+      },
       "p": "atCountry",
-      "o": {"label": "Country", "key": "country_italy"}
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
     },
     {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_1"},
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_4871351_wife_1"
+      },
       "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_1_foreign_passport"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
-      "p": "atCity",
-      "o": {"label": "City", "key": "city_prague"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
-      "p": "atCountry",
-      "o": {"label": "Country", "key": "country_czech_republic"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_2_boarding_pass"}
-    },
-    {
-      "s": {"label": "Encounter", "key": "encounter_4871351_wife_2"},
-      "p": "hasDocumentCheck",
-      "o": {"label": "DocumentCheck", "key": "doccheck_encounter_4871351_wife_2_foreign_passport"}
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_4871351_wife_1_foreign_passport"
+      }
     }
   ]
 }
