@@ -1,0 +1,64 @@
+{
+  "question": "Which question topics are most common at passport control in France?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_france"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "topic",
+    "metric": "questions",
+    "order": "desc",
+    "top_k": 10
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_girl_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11328463_girl_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11328463_girl_1_cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11328463_girl_1_cash_amount"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
+      }
+    }
+  ]
+}
