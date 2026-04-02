@@ -1,0 +1,95 @@
+{
+  "question": "Which question topics are asked of travelers whose documents include a visa in France?",
+  "intents": [
+    "documentCheck",
+    "questioning"
+  ],
+  "mode": "conditional",
+  "conditional": "topic_given_doc",
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_france"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "visa"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": null,
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_menton"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_visa"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_visa"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11814545_author_1_visa"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_menton"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11814545_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11814545_author_1_visa"
+      }
+    }
+  ]
+}

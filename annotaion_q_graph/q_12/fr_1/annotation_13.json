@@ -1,0 +1,214 @@
+{
+  "question": "Which documents are checked and which biometric modalities are used in France?",
+  "intents": [
+    "documentCheck",
+    "biometric"
+  ],
+  "mode": "union",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_france"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": null,
+  "triples": [
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_nce"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_lyon"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9752768_author_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9752768_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9752768_husband_1_accommodation_proof"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9752768_husband_1_accommodation_proof"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9752768_husband_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9752768_husband_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9752768_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9752768_husband_1_accommodation_proof"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_proof"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9752768_husband_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9752768_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_husband_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_lyon"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_husband_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_husband_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9752768_husband_1_accommodation_proof"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9752768_husband_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9752768_husband_1_foreign_passport"
+      }
+    }
+  ]
+}
