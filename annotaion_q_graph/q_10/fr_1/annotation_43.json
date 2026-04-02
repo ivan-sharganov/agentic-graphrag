@@ -1,5 +1,5 @@
 {
-  "question": "Which question topics are asked of travelers whose documents include a visa in France?",
+  "question": "Which question topics are asked of travelers whose visa was checked in France?",
   "intents": [
     "documentCheck",
     "questioning"

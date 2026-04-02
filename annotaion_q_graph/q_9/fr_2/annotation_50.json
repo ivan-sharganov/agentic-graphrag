@@ -255,6 +255,17 @@
         "label": "Literal",
         "key": "cash_amount"
       }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
     }
   ]
 }
