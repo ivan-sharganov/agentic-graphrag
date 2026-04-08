@@ -13,3 +13,16 @@
 13	Which question topics and biometric modalities are used in France?
 14	Which biometric modalities are used at passport control in France?
 15	Which question topics are asked at passport control in France?
+16	Which documents do I need to bring to passport control in Nice?
+17	Which documents do I need to bring to passport control in Germany?
+18	In which city in France are the most documents requested?
+19	In which country are the fewest documents requested?
+20	In which country is accommodation booking requested most often?
+21	In which country is a return ticket requested most often?
+22	In which country are people most often asked about money?
+23	Which question topics are most common at passport control in Germany?
+24	How often are fingerprints taken when entering Germany?
+25	Which airport do people most often fly into in France?
+26	Which city is the most popular entry point into France?
+27	In which country do travellers most often pass through passport control with no questions asked?
+28	Where is passport control usually just a passport check?
