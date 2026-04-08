@@ -1,0 +1,15 @@
+1	Which documents do I need to bring to passport control in Paris?
+2	Which documents do I need to bring to passport control in France?
+3	Which question topics are most common at passport control in France?
+4	In which country are the most documents requested?
+5	In which city in France is a return ticket requested most often?
+6	How often are fingerprints taken when entering France?
+7	What documents are checked at passport control and what questions are asked in Paris?
+8	Which documents are checked in Paris, but not in Nice?
+9	Which documents are checked for travelers who were asked about cash amount in France?
+10	Which question topics are asked of travelers whose visa was checked in France?
+11	Show document checks and question topics for the same encounters in Paris.
+12	Which documents are checked and which biometric modalities are used in France?
+13	Which question topics and biometric modalities are used in France?
+14	Which biometric modalities are used at passport control in France?
+15	Which question topics are asked at passport control in France?
