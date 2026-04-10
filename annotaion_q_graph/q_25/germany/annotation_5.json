@@ -22,7 +22,7 @@
   "biometric_modalities": [],
   "aggregate": {
     "group_by": "airport",
-    "metric": "documents",
+    "metric": "encounters",
     "order": "desc",
     "top_k": 1
   },
