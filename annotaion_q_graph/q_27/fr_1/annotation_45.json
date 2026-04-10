@@ -20,8 +20,8 @@
   "biometric_modalities": [],
   "aggregate": {
     "group_by": "country",
-    "metric": "questions",
-    "order": "asc",
+    "metric": "no_questions",
+    "order": "desc",
     "top_k": 1
   },
   "triples": []
