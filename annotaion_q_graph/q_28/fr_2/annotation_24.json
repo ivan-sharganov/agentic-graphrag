@@ -1,0 +1,31 @@
+{
+  "question": "Where is passport control usually just a passport check?",
+  "intents": [
+    "documentCheck",
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "foreign_passport"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": []
+}

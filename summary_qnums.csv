@@ -1,2 +1,2 @@
-qnum,status,score
-18,🟩,OK
+qnum,status,score,mismatches,meta_mismatch
+25,🟥,НЕ ОК,aggregate_output,aggregate

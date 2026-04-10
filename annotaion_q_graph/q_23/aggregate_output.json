@@ -1,0 +1,38 @@
+[
+  {
+    "topic": "visit_purpose",
+    "metric": 61
+  },
+  {
+    "topic": "visit_duration",
+    "metric": 31
+  },
+  {
+    "topic": "accommodation_details",
+    "metric": 28
+  },
+  {
+    "topic": "cash_amount",
+    "metric": 11
+  },
+  {
+    "topic": "exit_date_from_schengen",
+    "metric": 10
+  },
+  {
+    "topic": "previous_visits",
+    "metric": 5
+  },
+  {
+    "topic": "itinerary_transport",
+    "metric": 3
+  },
+  {
+    "topic": "employment",
+    "metric": 1
+  },
+  {
+    "topic": "travel_companions",
+    "metric": 1
+  }
+]
