@@ -23,7 +23,7 @@
   "biometric_modalities": [],
   "aggregate": {
     "group_by": "country",
-    "metric": "documents",
+    "metric": "passport_only",
     "order": "desc",
     "top_k": 1
   },

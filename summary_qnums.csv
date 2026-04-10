@@ -1,2 +1,2 @@
-qnum,status,score,mismatches,meta_mismatch
-28,🟥,НЕ ОК,aggregate_output,"intents, aggregate"
+qnum,status,score
+28,🟩,OK
