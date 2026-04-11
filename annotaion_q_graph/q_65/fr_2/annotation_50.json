@@ -1,0 +1,117 @@
+{
+  "question": "Through which country do travelers most often pass with 'no questions'?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "no_questions",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_ory"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12198612_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_employment"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_cash_amount"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12198612_author_1_employment"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "employment"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_ory"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    }
+  ]
+}

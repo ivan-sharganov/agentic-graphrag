@@ -1,0 +1,86 @@
+{
+  "question": "Which airport do people most often fly into in Germany?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_germany"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "airport",
+    "metric": "encounters",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_frankfurt"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11222850_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11222850_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11222850_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
+    }
+  ]
+}

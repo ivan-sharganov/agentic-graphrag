@@ -1,0 +1,86 @@
+{
+  "question": "Which city is the most popular entry point into Spain?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_spain"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "encounters",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_barcelona"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11900116_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_barcelona"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11900116_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11900116_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_barcelona"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_barcelona"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_barcelona"
+      }
+    }
+  ]
+}

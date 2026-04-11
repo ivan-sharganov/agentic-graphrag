@@ -1,0 +1,44 @@
+2	Which documents do I need to bring to passport control in Nice?
+3	Which documents do I need to bring to passport control in Lyon?
+4	Which documents do I need to bring to passport control in Marseille?
+5	Which documents do I need to bring to passport control in Toulouse?
+6	Which documents do I need to bring to passport control in Berlin?
+7	Which documents do I need to bring to passport control in Munich?
+8	Which documents do I need to bring to passport control in Frankfurt?
+9	Which documents do I need to bring to passport control in Dusseldorf?
+10	Which documents do I need to bring to passport control in Stuttgart?
+11	Which documents do I need to bring to passport control in Rome?
+12	Which documents do I need to bring to passport control in Milan?
+13	Which documents do I need to bring to passport control in Venice?
+14	Which documents do I need to bring to passport control in Bologna?
+15	Which documents do I need to bring to passport control in Bari?
+16	Which documents do I need to bring to passport control in Barcelona?
+17	Which documents do I need to bring to passport control in Malaga?
+18	Which documents do I need to bring to passport control in Madrid?
+19	Which documents do I need to bring to passport control in Las Palmas?
+20	Which documents do I need to bring to passport control in Seville?
+22	Which documents do I need to bring to passport control in Germany?
+23	Which documents do I need to bring to passport control in Italy?
+24	Which documents do I need to bring to passport control in Spain?
+25	In which country are the most documents requested?
+27	In which city in Germany are the most documents requested?
+30	In which country are the fewest documents requested?
+32	In which city in Germany are the fewest documents requested?
+61	Which question topics are most common at passport control in Germany?
+62	Which question topics are most common at passport control in Italy?
+63	Which question topics are most common at passport control in Spain?
+65	How often are fingerprints taken when entering Spain?
+66	How often are fingerprints taken when entering Italy?
+68	How often are there additional checks in Germany?
+70	How often are there additional checks in Italy?
+71	How often are there additional checks in Spain?
+73	Which airport do people most often fly into in Italy?
+74	Which airport do people most often fly into in Germany?
+75	Which airport do people most often fly into in Spain?
+77	Which city is the most popular entry point into Germany?
+78	Which city is the most popular entry point into Italy?
+79	Which city is the most popular entry point into Spain?
+81	Through which country do travelers most often pass with 'no questions'?
+83	Which is more common in Germany: a request to show cash or a card?
+85	Which is more common in Italy: a request to show cash or a card?
+86	Which is more common in Spain: a request to show cash or a card?

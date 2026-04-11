@@ -1,0 +1,128 @@
+{
+  "question": "Through which country do travelers most often pass with 'no questions'?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "no_questions",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_munich"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11451035_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11451035_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11451035_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11451035_author_1_accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11451035_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11451035_author_1_visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11451035_author_1_accommodation_details"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11451035_author_1_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11451035_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_munich"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_munich"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_munich"
+      }
+    }
+  ]
+}
