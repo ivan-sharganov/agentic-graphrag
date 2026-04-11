@@ -1,16 +1,14 @@
 {
-  "question": "Which airport do people most often fly into in Spain?",
+  "question": "Through which country do travelers most often pass with 'no questions'?",
   "intents": [
-    "documentCheck"
+    "questioning"
   ],
   "mode": "aggregate",
   "conditional": null,
   "scope": {
     "cities": [],
     "airports": [],
-    "countries": [
-      "country_spain"
-    ]
+    "countries": []
   },
   "exclude_scope": {
     "cities": [],
@@ -21,10 +19,66 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "airport",
-    "metric": "encounters",
+    "group_by": "country",
+    "metric": "no_questions",
     "order": "desc",
     "top_k": 1
   },
-  "triples": []
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_berlin"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11315671_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_berlin"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11315671_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11315671_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11315671_author_1_accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11315671_author_1_accommodation_details"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
+    }
+  ]
 }

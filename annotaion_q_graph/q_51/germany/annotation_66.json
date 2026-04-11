@@ -1,7 +1,7 @@
 {
-  "question": "In which city in Germany are the fewest documents requested?",
+  "question": "Which question topics are most common at passport control in Italy?",
   "intents": [
-    "documentCheck"
+    "questioning"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_germany"
+      "country_italy"
     ]
   },
   "exclude_scope": {
@@ -21,132 +21,10 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "city",
-    "metric": "documents",
-    "order": "asc",
-    "top_k": 1
+    "group_by": "topic",
+    "metric": "questions",
+    "order": "desc",
+    "top_k": 10
   },
-  "triples": [
-    {
-      "s": {
-        "label": "Airport",
-        "key": "airport_schonefeld"
-      },
-      "p": "locatedInCity",
-      "o": {
-        "label": "City",
-        "key": "city_berlin"
-      }
-    },
-    {
-      "s": {
-        "label": "City",
-        "key": "city_berlin"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_germany"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_9900529_author_1_foreign_passport"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_9900529_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_9900529_author_1_return_ticket"
-      },
-      "p": "requestedDocument",
-      "o": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_9900529_author_1_return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_9900529_author_1_foreign_passport"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "DocumentInstance",
-        "key": "documentinstance_encounter_9900529_author_1_return_ticket"
-      },
-      "p": "documentType",
-      "o": {
-        "label": "Literal",
-        "key": "return_ticket"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_9900529_author_1"
-      },
-      "p": "atAirport",
-      "o": {
-        "label": "Airport",
-        "key": "airport_schonefeld"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_9900529_author_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_berlin"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_9900529_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_germany"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_9900529_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_9900529_author_1_foreign_passport"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_9900529_author_1"
-      },
-      "p": "hasDocumentCheck",
-      "o": {
-        "label": "DocumentCheck",
-        "key": "doccheck_encounter_9900529_author_1_return_ticket"
-      }
-    }
-  ]
+  "triples": []
 }

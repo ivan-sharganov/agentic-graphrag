@@ -1,7 +1,7 @@
 {
-  "question": "Which city is the most popular entry point into Germany?",
+  "question": "Which is more common in Germany: a request to show cash or a card?",
   "intents": [
-    "documentCheck"
+    "questioning"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -18,11 +18,14 @@
     "countries": []
   },
   "doc_types": [],
-  "topic_keys": [],
+  "topic_keys": [
+    "cash_amount",
+    "payment_card"
+  ],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "city",
-    "metric": "encounters",
+    "group_by": "topic",
+    "metric": "questions",
     "order": "desc",
     "top_k": 1
   },
@@ -40,6 +43,50 @@
     },
     {
       "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11265638_author_1_cash"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11265638_author_1_cash"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11265638_husband_1_cash"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11265638_husband_1_cash"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11265638_author_1_cash"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11265638_husband_1_cash"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "cash"
+      }
+    },
+    {
+      "s": {
         "label": "Encounter",
         "key": "encounter_11265638_author_1"
       },
@@ -63,6 +110,17 @@
     {
       "s": {
         "label": "Encounter",
+        "key": "encounter_11265638_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11265638_author_1_cash"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
         "key": "encounter_11265638_husband_1"
       },
       "p": "atCity",
@@ -80,6 +138,17 @@
       "o": {
         "label": "Country",
         "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11265638_husband_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11265638_husband_1_cash"
       }
     }
   ]

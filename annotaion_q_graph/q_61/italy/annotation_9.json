@@ -1,16 +1,14 @@
 {
-  "question": "Which airport do people most often fly into in Spain?",
+  "question": "Through which country do travelers most often pass with 'no questions'?",
   "intents": [
-    "documentCheck"
+    "questioning"
   ],
   "mode": "aggregate",
   "conditional": null,
   "scope": {
     "cities": [],
     "airports": [],
-    "countries": [
-      "country_spain"
-    ]
+    "countries": []
   },
   "exclude_scope": {
     "cities": [],
@@ -21,10 +19,110 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "airport",
-    "metric": "encounters",
+    "group_by": "country",
+    "metric": "no_questions",
     "order": "desc",
     "top_k": 1
   },
-  "triples": []
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_bergamo"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890062_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_bergamo"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890062_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890062_author_2"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_bergamo"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890062_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890062_author_2"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6890062_author_2_visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890062_author_2"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6890062_author_2_visit_purpose"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6890062_author_2_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_6890062_author_2_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
+    }
+  ]
 }

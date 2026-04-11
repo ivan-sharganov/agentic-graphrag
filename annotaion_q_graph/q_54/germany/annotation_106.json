@@ -1,5 +1,5 @@
 {
-  "question": "How often are fingerprints taken when entering Spain?",
+  "question": "How often are fingerprints taken when entering Italy?",
   "intents": [
     "biometric"
   ],
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_spain"
+      "country_italy"
     ]
   },
   "exclude_scope": {

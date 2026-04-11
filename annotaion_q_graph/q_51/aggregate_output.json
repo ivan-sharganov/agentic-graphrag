@@ -1,0 +1,26 @@
+[
+  {
+    "topic": "cash_amount",
+    "metric": 6
+  },
+  {
+    "topic": "visit_purpose",
+    "metric": 5
+  },
+  {
+    "topic": "itinerary_transport",
+    "metric": 3
+  },
+  {
+    "topic": "visit_duration",
+    "metric": 3
+  },
+  {
+    "topic": "accommodation_details",
+    "metric": 2
+  },
+  {
+    "topic": "travel_itinerary",
+    "metric": 1
+  }
+]

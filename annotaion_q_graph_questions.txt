@@ -48,21 +48,16 @@
 48	Which documents do I need to bring to passport control in Italy?
 49	Which documents do I need to bring to passport control in Spain?
 50	In which city in Germany are the most documents requested?
-51	In which city in Germany are the fewest documents requested?
-52	Which question topics are most common at passport control in Italy?
-53	Which question topics are most common at passport control in Spain?
-54	How often are fingerprints taken when entering Spain?
-55	How often are fingerprints taken when entering Italy?
-56	How often are there additional checks in Germany?
-57	How often are there additional checks in Italy?
-58	How often are there additional checks in Spain?
-59	Which airport do people most often fly into in Italy?
-60	Which airport do people most often fly into in Germany?
-61	Which airport do people most often fly into in Spain?
-62	Which city is the most popular entry point into Germany?
-63	Which city is the most popular entry point into Italy?
-64	Which city is the most popular entry point into Spain?
-65	Through which country do travelers most often pass with 'no questions'?
-66	Which is more common in Germany: a request to show cash or a card?
-67	Which is more common in Italy: a request to show cash or a card?
-68	Which is more common in Spain: a request to show cash or a card?
+51	Which question topics are most common at passport control in Italy?
+52	Which question topics are most common at passport control in Spain?
+53	How often are fingerprints taken when entering Spain?
+54	How often are fingerprints taken when entering Italy?
+55	Which airport do people most often fly into in Italy?
+56	Which airport do people most often fly into in Germany?
+57	Which airport do people most often fly into in Spain?
+58	Which city is the most popular entry point into Germany?
+59	Which city is the most popular entry point into Italy?
+60	Which city is the most popular entry point into Spain?
+61	Through which country do travelers most often pass with 'no questions'?
+62	Which is more common in Germany: a request to show cash or a card?
+63	Which is more common in Italy: a request to show cash or a card?

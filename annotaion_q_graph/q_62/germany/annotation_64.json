@@ -1,7 +1,7 @@
 {
-  "question": "Which city is the most popular entry point into Germany?",
+  "question": "Which is more common in Germany: a request to show cash or a card?",
   "intents": [
-    "documentCheck"
+    "questioning"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -18,11 +18,14 @@
     "countries": []
   },
   "doc_types": [],
-  "topic_keys": [],
+  "topic_keys": [
+    "cash_amount",
+    "payment_card"
+  ],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "city",
-    "metric": "encounters",
+    "group_by": "topic",
+    "metric": "questions",
     "order": "desc",
     "top_k": 1
   },
@@ -36,6 +39,28 @@
       "o": {
         "label": "Country",
         "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9865160_author_1_cash"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9865160_author_1_cash"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9865160_author_1_cash"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "cash"
       }
     },
     {
@@ -58,6 +83,17 @@
       "o": {
         "label": "Country",
         "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9865160_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9865160_author_1_cash"
       }
     }
   ]

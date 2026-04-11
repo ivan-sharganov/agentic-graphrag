@@ -1,5 +1,5 @@
 {
-  "question": "How often are fingerprints taken when entering Spain?",
+  "question": "How often are fingerprints taken when entering Italy?",
   "intents": [
     "biometric"
   ],
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_spain"
+      "country_italy"
     ]
   },
   "exclude_scope": {
@@ -28,5 +28,39 @@
     "order": "desc",
     "top_k": 1
   },
-  "triples": []
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_rome"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11826594_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_rome"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11826594_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    }
+  ]
 }

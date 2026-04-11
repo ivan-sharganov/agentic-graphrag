@@ -1,5 +1,5 @@
 {
-  "question": "Which airport do people most often fly into in Italy?",
+  "question": "Which city is the most popular entry point into Italy?",
   "intents": [
     "documentCheck"
   ],
@@ -21,7 +21,7 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "airport",
+    "group_by": "city",
     "metric": "encounters",
     "order": "desc",
     "top_k": 1

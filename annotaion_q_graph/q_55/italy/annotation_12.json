@@ -1,7 +1,7 @@
 {
-  "question": "How often are fingerprints taken when entering Italy?",
+  "question": "Which airport do people most often fly into in Italy?",
   "intents": [
-    "biometric"
+    "documentCheck"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -19,12 +19,10 @@
   },
   "doc_types": [],
   "topic_keys": [],
-  "biometric_modalities": [
-    "fingerprint"
-  ],
+  "biometric_modalities": [],
   "aggregate": {
-    "group_by": "country",
-    "metric": "biometric",
+    "group_by": "airport",
+    "metric": "encounters",
     "order": "desc",
     "top_k": 1
   },

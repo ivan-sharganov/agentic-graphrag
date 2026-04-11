@@ -1,5 +1,5 @@
 {
-  "question": "Which airport do people most often fly into in Germany?",
+  "question": "Which city is the most popular entry point into Spain?",
   "intents": [
     "documentCheck"
   ],
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_germany"
+      "country_spain"
     ]
   },
   "exclude_scope": {
@@ -21,44 +21,10 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "airport",
+    "group_by": "city",
     "metric": "encounters",
     "order": "desc",
     "top_k": 1
   },
-  "triples": [
-    {
-      "s": {
-        "label": "City",
-        "key": "city_nuremberg"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_germany"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11989451_author_1"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_nuremberg"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11989451_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_germany"
-      }
-    }
-  ]
+  "triples": []
 }

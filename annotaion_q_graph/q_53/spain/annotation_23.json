@@ -1,7 +1,7 @@
 {
-  "question": "Which question topics are most common at passport control in Spain?",
+  "question": "How often are fingerprints taken when entering Spain?",
   "intents": [
-    "questioning"
+    "biometric"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -19,12 +19,26 @@
   },
   "doc_types": [],
   "topic_keys": [],
-  "biometric_modalities": [],
+  "biometric_modalities": [
+    "fingerprint"
+  ],
   "aggregate": {
-    "group_by": "topic",
-    "metric": "questions",
+    "group_by": "country",
+    "metric": "biometric",
     "order": "desc",
-    "top_k": 10
+    "top_k": 1
   },
-  "triples": []
+  "triples": [
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12059868_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_spain"
+      }
+    }
+  ]
 }

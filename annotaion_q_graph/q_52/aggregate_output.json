@@ -1,0 +1,18 @@
+[
+  {
+    "topic": "visit_duration",
+    "metric": 3
+  },
+  {
+    "topic": "itinerary_transport",
+    "metric": 1
+  },
+  {
+    "topic": "travel_companions",
+    "metric": 1
+  },
+  {
+    "topic": "visit_purpose",
+    "metric": 1
+  }
+]

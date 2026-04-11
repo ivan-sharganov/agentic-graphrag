@@ -1,7 +1,7 @@
 {
-  "question": "How often are fingerprints taken when entering Italy?",
+  "question": "Which airport do people most often fly into in Italy?",
   "intents": [
-    "biometric"
+    "documentCheck"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -19,27 +19,14 @@
   },
   "doc_types": [],
   "topic_keys": [],
-  "biometric_modalities": [
-    "fingerprint"
-  ],
+  "biometric_modalities": [],
   "aggregate": {
-    "group_by": "country",
-    "metric": "biometric",
+    "group_by": "airport",
+    "metric": "encounters",
     "order": "desc",
     "top_k": 1
   },
   "triples": [
-    {
-      "s": {
-        "label": "BiometricCheck",
-        "key": "biometriccheck_encounter_11916662_wife_1_fingerprint"
-      },
-      "p": "biometricModality",
-      "o": {
-        "label": "Literal",
-        "key": "fingerprint"
-      }
-    },
     {
       "s": {
         "label": "City",
@@ -93,17 +80,6 @@
       "o": {
         "label": "Country",
         "key": "country_italy"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11916662_wife_1"
-      },
-      "p": "hasBiometricCheck",
-      "o": {
-        "label": "BiometricCheck",
-        "key": "biometriccheck_encounter_11916662_wife_1_fingerprint"
       }
     }
   ]

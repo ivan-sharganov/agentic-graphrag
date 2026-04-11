@@ -1,5 +1,5 @@
 {
-  "question": "Which question topics are most common at passport control in Italy?",
+  "question": "Which question topics are most common at passport control in Spain?",
   "intents": [
     "questioning"
   ],
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_italy"
+      "country_spain"
     ]
   },
   "exclude_scope": {
@@ -26,61 +26,5 @@
     "order": "desc",
     "top_k": 10
   },
-  "triples": [
-    {
-      "s": {
-        "label": "City",
-        "key": "city_venice"
-      },
-      "p": "locatedInCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_italy"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11776619_author_2"
-      },
-      "p": "atCity",
-      "o": {
-        "label": "City",
-        "key": "city_venice"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11776619_author_2"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_italy"
-      }
-    },
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_11776619_author_2"
-      },
-      "p": "hasQuestioning",
-      "o": {
-        "label": "Questioning",
-        "key": "questioning_encounter_11776619_author_2_cash_amount"
-      }
-    },
-    {
-      "s": {
-        "label": "Questioning",
-        "key": "questioning_encounter_11776619_author_2_cash_amount"
-      },
-      "p": "topicKey",
-      "o": {
-        "label": "Literal",
-        "key": "cash_amount"
-      }
-    }
-  ]
+  "triples": []
 }

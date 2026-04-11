@@ -1,7 +1,7 @@
 {
-  "question": "In which city in Germany are the fewest documents requested?",
+  "question": "Which question topics are most common at passport control in Italy?",
   "intents": [
-    "documentCheck"
+    "questioning"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_germany"
+      "country_italy"
     ]
   },
   "exclude_scope": {
@@ -21,10 +21,66 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "city",
-    "metric": "documents",
-    "order": "asc",
-    "top_k": 1
+    "group_by": "topic",
+    "metric": "questions",
+    "order": "desc",
+    "top_k": 10
   },
-  "triples": []
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_bari"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_5434453_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_bari"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_5434453_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_5434453_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_5434453_author_1_cash_amount"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_5434453_author_1_cash_amount"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "cash_amount"
+      }
+    }
+  ]
 }

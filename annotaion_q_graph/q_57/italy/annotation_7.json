@@ -1,7 +1,7 @@
 {
-  "question": "How often are there additional checks in Italy?",
+  "question": "Which airport do people most often fly into in Spain?",
   "intents": [
-    "biometric"
+    "documentCheck"
   ],
   "mode": "aggregate",
   "conditional": null,
@@ -9,7 +9,7 @@
     "cities": [],
     "airports": [],
     "countries": [
-      "country_italy"
+      "country_spain"
     ]
   },
   "exclude_scope": {
@@ -21,22 +21,10 @@
   "topic_keys": [],
   "biometric_modalities": [],
   "aggregate": {
-    "group_by": "country",
-    "metric": "biometric",
+    "group_by": "airport",
+    "metric": "encounters",
     "order": "desc",
     "top_k": 1
   },
-  "triples": [
-    {
-      "s": {
-        "label": "Encounter",
-        "key": "encounter_6870359_author_1"
-      },
-      "p": "atCountry",
-      "o": {
-        "label": "Country",
-        "key": "country_italy"
-      }
-    }
-  ]
+  "triples": []
 }
