@@ -70,11 +70,11 @@
 70	In which city in Germany is a return ticket requested most often?
 71	In which city in Italy is a return ticket requested most often?
 72	In which city in Spain is a return ticket requested most often?
-73	In which country are people most often requested to show accommodation booking?
-74	In which city in France are people most often requested to show accommodation booking?
+73	In which country are people most often requested to show hotel booking?
+74	In which city in France are people most often requested to show hotel booking?
 75	In which city in Germany are people most often requested to show accommodation booking?
-76	In which city in Italy are people most often requested to show accommodation booking?
-77	In which city in Spain are people most often requested to show accommodation booking?
+76	In which city in Italy are people most often requested to show hotel booking?
+77	In which city in Spain are people most often requested to show hotel booking?
 78	In which country are people most often asked about money?
 79	In which city in France are people most often asked about money?
 80	In which city in Germany are people most often asked about money?
