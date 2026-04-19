@@ -9,9 +9,7 @@
     "cities": [
       "city_rome"
     ],
-    "airports": [
-      "airport_fiumicino"
-    ],
+    "airports": [],
     "countries": []
   },
   "exclude_scope": {

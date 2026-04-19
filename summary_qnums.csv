@@ -91,12 +91,12 @@ qnum,status,score,mismatches,meta_mismatch
 90,🟥,НЕ ОК,aggregate_output,
 91,🟥,НЕ ОК,aggregate_output,
 92,🟩,OK,,topic_keys
-93,🟥,НЕ ОК,aggregate_output,"intents, aggregate"
+93,🟩,OK,,
 94,🟥,НЕ ОК,aggregate_output,aggregate
-95,🟥,НЕ ОК,aggregate_output,aggregate
-96,🟥,НЕ ОК,aggregate_output,aggregate
+95,🟩,OK,,
+96,🟩,OK,,
 97,🟩,1.0,,
-98,🟥,0.8986175115207373,,scope
-99,🟥,0.7692307692307693,,
-100,🟥,0.9897610921501706,,conditional
-101,🟥,НЕ ОК,aggregate_output(no_gold),mode
+98,🟥,0.8986175115207373,,
+99,🟩,1.0,,
+100,🟥,0.9897610921501706,,
+101,🟩,1.0,,
