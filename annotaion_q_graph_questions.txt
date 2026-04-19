@@ -63,10 +63,10 @@
 63	Which is more common in Italy: a request to show cash or a card?
 64	In which city in Italy are the most documents requested?
 65	In which city in Spain are the most documents requested?
-66	In which city in France is accommodation booking requested most often?
-67	In which city in Germany is accommodation booking requested most often?
-68	In which city in Italy is accommodation booking requested most often?
-69	In which city in Spain is accommodation booking requested most often?
+66	In which city in France is hotel booking requested most often?
+67	In which city in Germany is hotel booking requested most often?
+68	In which city in Italy is hotel booking requested most often?
+69	In which city in Spain is hotel booking requested most often?
 70	In which city in Germany is a return ticket requested most often?
 71	In which city in Italy is a return ticket requested most often?
 72	In which city in Spain is a return ticket requested most often?

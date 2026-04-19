@@ -1,5 +1,5 @@
 {
-  "question": "In which city in Spain is accommodation booking requested most often?",
+  "question": "In which city in Spain is hotel booking requested most often?",
   "intents": [
     "documentCheck"
   ],

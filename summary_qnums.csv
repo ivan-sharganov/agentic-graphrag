@@ -64,11 +64,11 @@ qnum,status,score,mismatches,meta_mismatch
 63,🟩,OK,,
 64,🟩,OK,,
 65,🟩,OK,,
-66,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
-67,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
-68,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
-69,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
-70,🟥,НЕ ОК,aggregate_output,"intents, aggregate"
+66,🟩,OK,,
+67,🟩,OK,,
+68,🟩,OK,,
+69,🟩,OK,,
+70,🟥,НЕ ОК,aggregate_output,"intents, doc_types, aggregate"
 71,🟩,OK,,intents
 72,🟥,НЕ ОК,aggregate_output,
 73,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
