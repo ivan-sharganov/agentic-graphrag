@@ -61,3 +61,41 @@
 61	Through which country do travelers most often pass with 'no questions'?
 62	Which is more common in Germany: a request to show cash or a card?
 63	Which is more common in Italy: a request to show cash or a card?
+64	In which city in Italy are the most documents requested?
+65	In which city in Spain are the most documents requested?
+66	In which city in France is accommodation booking requested most often?
+67	In which city in Germany is accommodation booking requested most often?
+68	In which city in Italy is accommodation booking requested most often?
+69	In which city in Spain is accommodation booking requested most often?
+70	In which city in Germany is a return ticket requested most often?
+71	In which city in Italy is a return ticket requested most often?
+72	In which city in Spain is a return ticket requested most often?
+73	In which country are people most often requested to show accommodation booking?
+74	In which city in France are people most often requested to show accommodation booking?
+75	In which city in Germany are people most often requested to show accommodation booking?
+76	In which city in Italy are people most often requested to show accommodation booking?
+77	In which city in Spain are people most often requested to show accommodation booking?
+78	In which country are people most often asked about money?
+79	In which city in France are people most often asked about money?
+80	In which city in Germany are people most often asked about money?
+81	In which city in Spain are people most often asked about money?
+82	In which city in Italy are people most often asked about money?
+83	Where is passport control most often limited to only the passport?
+84	Which is more common in France: a request to show cash or a card?
+85	Which is more common in Spain: a request to show cash or a card?
+86	In which country are visas requested most often at passport control?
+87	In which city in Germany are hotel bookings requested most often?
+88	In which airport in France are return tickets requested most often?
+89	In which country are travelers most often asked about visit duration?
+90	In which country are fingerprints checked most often at passport control?
+91	In which city in Italy is face photo capture used most often?
+92	Which country has the highest number of encounters with no questions asked?
+93	In which country is passport-only control (no questions, only foreign passport) most common?
+94	Which country has the highest number of document checks per encounter?
+95	Which city in Italy has the highest number of question topics per encounter?
+96	Which city in Germany has more encounters with visa checks than with return ticket checks?
+97	What documents are checked and what question topics are asked in Madrid?
+98	Which documents are checked in Rome but not in Barcelona?
+99	Which documents are checked for travelers who were asked about visit_purpose in Spain?
+100	Which question topics are asked for travelers whose documents include return_ticket in France?
+101	Show document checks and biometric modalities for the same encounters in Germany.
