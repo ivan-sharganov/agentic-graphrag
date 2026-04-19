@@ -1,0 +1,34 @@
+{
+  "question": "In which city in Spain are people most often asked about money?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_spain"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [
+    "cash_amount",
+    "income",
+    "payment_card"
+  ],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "questions",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": []
+}

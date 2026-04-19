@@ -1,0 +1,64 @@
+{
+  "question": "In which country are fingerprints checked most often at passport control?",
+  "intents": [
+    "biometric"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [
+    "fingerprint"
+  ],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "biometric",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_9778361_author_1"
+      },
+      "p": "biometricModality",
+      "o": {
+        "label": "Literal",
+        "key": "fingerprint"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9778361_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9778361_author_1"
+      },
+      "p": "hasBiometricCheck",
+      "o": {
+        "label": "BiometricCheck",
+        "key": "biometriccheck_encounter_9778361_author_1"
+      }
+    }
+  ]
+}

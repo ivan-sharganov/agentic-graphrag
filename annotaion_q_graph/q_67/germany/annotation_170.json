@@ -1,0 +1,99 @@
+{
+  "question": "In which city in Germany is accommodation booking requested most often?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_germany"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "hotel_booking"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_nuremberg"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11666749_author_1_hotel_booking"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11666749_author_1_hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11666749_author_1_hotel_booking"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11666749_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_nuremberg"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11666749_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11666749_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11666749_author_1_hotel_booking"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "question": "In which country are visas requested most often at passport control?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "visa"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_frankfurt"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_frankfurt"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_frankfurt"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "question": "Which country has the highest number of document checks per encounter?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "documents_per_encounter",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11550543_author_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11550543_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11550543_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11550543_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_marseille"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11550543_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_marseille"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11550543_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11550543_author_1_foreign_passport"
+      }
+    }
+  ]
+}

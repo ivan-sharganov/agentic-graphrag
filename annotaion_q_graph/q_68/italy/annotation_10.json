@@ -1,0 +1,99 @@
+{
+  "question": "In which city in Italy is accommodation booking requested most often?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_italy"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "hotel_booking"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_bergamo"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_6890389_author_1_hotel_booking"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_6890389_author_1_hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_6890389_author_1_hotel_booking"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890389_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_bergamo"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890389_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_6890389_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_6890389_author_1_hotel_booking"
+      }
+    }
+  ]
+}

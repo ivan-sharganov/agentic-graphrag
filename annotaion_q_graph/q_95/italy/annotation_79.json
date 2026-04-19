@@ -1,0 +1,152 @@
+{
+  "question": "Which city in Italy has the highest number of question topics per encounter?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_italy"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "questions_per_encounter",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_venice"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12105832_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12105832_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12105832_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12105832_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12105832_author_1_itinerary_transport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12105832_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12105832_author_1_visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12105832_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12105832_author_1_visit_purpose"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12105832_author_1_itinerary_transport"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "itinerary_transport"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12105832_author_1_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12105832_author_1_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "question": "In which country are visas requested most often at passport control?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "visa"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11709466_author_1_visa"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11709466_author_1_visa"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11709466_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11709466_author_1_visa"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11709466_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11709466_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11709466_author_1_visa"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "visa"
+      }
+    }
+  ]
+}

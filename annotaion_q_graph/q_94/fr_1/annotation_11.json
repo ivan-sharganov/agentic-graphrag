@@ -1,0 +1,117 @@
+{
+  "question": "Which country has the highest number of document checks per encounter?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "documents_per_encounter",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9343311_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9343311_author_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9343311_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9343311_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9343311_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9343311_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9343311_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9343311_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    }
+  ]
+}

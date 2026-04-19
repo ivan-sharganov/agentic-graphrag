@@ -1,0 +1,108 @@
+{
+  "question": "In which country are travelers most often asked about visit duration?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [
+    "visit_duration"
+  ],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "questions",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_paris"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11769523_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_cdg"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11769523_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_paris"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11769523_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11769523_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11769523_author_1_visit_duration"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_11769523_author_1_visit_duration"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_duration"
+      }
+    }
+  ]
+}

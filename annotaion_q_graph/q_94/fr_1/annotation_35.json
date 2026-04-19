@@ -1,0 +1,73 @@
+{
+  "question": "Which country has the highest number of document checks per encounter?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "documents_per_encounter",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11718461_author_1_boarding_pass"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11718461_author_1_boarding_pass"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11718461_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11718461_author_1_boarding_pass"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11718461_author_1_boarding_pass"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "boarding_pass"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11718461_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    }
+  ]
+}

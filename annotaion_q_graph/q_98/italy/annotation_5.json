@@ -1,0 +1,175 @@
+{
+  "question": "Which documents are checked in Rome but not in Barcelona?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "difference",
+  "conditional": null,
+  "scope": {
+    "cities": [
+      "city_rome"
+    ],
+    "airports": [
+      "airport_fiumicino"
+    ],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [
+      "city_barcelona"
+    ],
+    "airports": [
+      "airport_barcelona"
+    ],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": null,
+  "triples": [
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9281821_author_1_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9281821_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9281821_author_2_foreign_passport"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9281821_author_2_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9281821_author_2_return_ticket"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9281821_author_2_return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9281821_author_1_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9281821_author_2_foreign_passport"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_9281821_author_2_return_ticket"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_rome"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9281821_author_1_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_2"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_rome"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_2"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9281821_author_2_foreign_passport"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_9281821_author_2"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_9281821_author_2_return_ticket"
+      }
+    }
+  ]
+}

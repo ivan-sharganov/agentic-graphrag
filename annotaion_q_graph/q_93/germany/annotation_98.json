@@ -1,0 +1,31 @@
+{
+  "question": "In which country is passport-only control (no questions, only foreign passport) most common?",
+  "intents": [
+    "documentCheck",
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "foreign_passport"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "passport_only",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": []
+}

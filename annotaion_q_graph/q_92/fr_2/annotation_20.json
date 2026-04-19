@@ -1,0 +1,117 @@
+{
+  "question": "Which country has the highest number of encounters with no questions asked?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "no_questions",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_istanbul"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_istanbul"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_turkey"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11801292_author_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_nce"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    }
+  ]
+}

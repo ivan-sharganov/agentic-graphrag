@@ -1,0 +1,161 @@
+{
+  "question": "Which country has the highest number of encounters with no questions asked?",
+  "intents": [
+    "questioning"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "country",
+    "metric": "no_questions",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_nice"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "hasQuestioning",
+      "o": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_visit_purpose"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_france"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_accommodation_details"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "accommodation_details"
+      }
+    },
+    {
+      "s": {
+        "label": "Questioning",
+        "key": "questioning_encounter_12040805_author_1_visit_purpose"
+      },
+      "p": "topicKey",
+      "o": {
+        "label": "Literal",
+        "key": "visit_purpose"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_husband_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12040805_author_1"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_nce"
+      }
+    },
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_nce"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_nice"
+      }
+    }
+  ]
+}

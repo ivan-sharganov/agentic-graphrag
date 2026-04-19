@@ -62,3 +62,41 @@ qnum,status,score,mismatches,meta_mismatch
 61,🟩,OK,,
 62,🟩,OK,,
 63,🟩,OK,,
+64,🟩,OK,,
+65,🟩,OK,,
+66,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+67,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+68,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+69,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+70,🟥,НЕ ОК,aggregate_output,"intents, aggregate"
+71,🟩,OK,,intents
+72,🟥,НЕ ОК,aggregate_output,
+73,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+74,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+75,🟩,OK,,doc_types
+76,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+77,🟥,НЕ ОК,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+78,🟩,OK,,topic_keys
+79,🟥,НЕ ОК,aggregate_output,topic_keys
+80,🟩,OK,,topic_keys
+81,🟩,OK,,topic_keys
+82,🟩,OK,,topic_keys
+83,🟥,НЕ ОК,aggregate_output,"intents, doc_types, aggregate"
+84,🟩,OK,,
+85,🟩,OK,,
+86,🟩,OK,,intents
+87,🟩,OK,,intents
+88,🟥,НЕ ОК,aggregate_output,"intents, scope, aggregate"
+89,🟩,OK,,
+90,🟥,НЕ ОК,aggregate_output,
+91,🟥,НЕ ОК,aggregate_output,
+92,🟩,OK,,topic_keys
+93,🟥,НЕ ОК,aggregate_output,"intents, aggregate"
+94,🟥,НЕ ОК,aggregate_output,aggregate
+95,🟥,НЕ ОК,aggregate_output,aggregate
+96,🟥,НЕ ОК,aggregate_output,aggregate
+97,🟩,1.0,,
+98,🟥,0.8986175115207373,,scope
+99,🟥,0.7692307692307693,,
+100,🟥,0.9897610921501706,,conditional
+101,🟥,НЕ ОК,aggregate_output(no_gold),mode

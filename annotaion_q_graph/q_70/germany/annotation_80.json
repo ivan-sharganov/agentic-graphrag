@@ -1,0 +1,99 @@
+{
+  "question": "In which city in Germany is a return ticket requested most often?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_germany"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "return_ticket"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "City",
+        "key": "city_berlin"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241353_author_1_return_ticket"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11241353_author_1_return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_11241353_author_1_return_ticket"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "return_ticket"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241353_author_1"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_berlin"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241353_author_1"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_germany"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_11241353_author_1"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_11241353_author_1_return_ticket"
+      }
+    }
+  ]
+}

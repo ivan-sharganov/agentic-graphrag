@@ -1,0 +1,121 @@
+{
+  "question": "In which city in Italy are people most often requested to show accommodation booking?",
+  "intents": [
+    "documentCheck"
+  ],
+  "mode": "aggregate",
+  "conditional": null,
+  "scope": {
+    "cities": [],
+    "airports": [],
+    "countries": [
+      "country_italy"
+    ]
+  },
+  "exclude_scope": {
+    "cities": [],
+    "airports": [],
+    "countries": []
+  },
+  "doc_types": [
+    "hotel_booking"
+  ],
+  "topic_keys": [],
+  "biometric_modalities": [],
+  "aggregate": {
+    "group_by": "city",
+    "metric": "documents",
+    "order": "desc",
+    "top_k": 1
+  },
+  "triples": [
+    {
+      "s": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      },
+      "p": "locatedInCity",
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
+    },
+    {
+      "s": {
+        "label": "City",
+        "key": "city_venice"
+      },
+      "p": "locatedInCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12163481_author_2_hotel_booking"
+      },
+      "p": "requestedDocument",
+      "o": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12163481_author_2_hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "DocumentInstance",
+        "key": "documentinstance_encounter_12163481_author_2_hotel_booking"
+      },
+      "p": "documentType",
+      "o": {
+        "label": "Literal",
+        "key": "hotel_booking"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
+      "p": "atAirport",
+      "o": {
+        "label": "Airport",
+        "key": "airport_marco_polo"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
+      "p": "atCity",
+      "o": {
+        "label": "City",
+        "key": "city_venice"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
+      "p": "atCountry",
+      "o": {
+        "label": "Country",
+        "key": "country_italy"
+      }
+    },
+    {
+      "s": {
+        "label": "Encounter",
+        "key": "encounter_12163481_author_2"
+      },
+      "p": "hasDocumentCheck",
+      "o": {
+        "label": "DocumentCheck",
+        "key": "doccheck_encounter_12163481_author_2_hotel_booking"
+      }
+    }
+  ]
+}
