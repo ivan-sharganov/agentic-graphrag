@@ -1,0 +1,102 @@
+qnum,question,mode,semantic_score,graph_score,delta,semantic_status,graph_status,graph_available,graph_mismatches,graph_meta_mismatch
+1,Which documents do I need to bring to passport control in Paris?,single,0.1497005988023952,1.0,-0.8502994011976048,🟥,🟩,True,,
+2,Which documents do I need to bring to passport control in France?,single,0.06976744186046512,1.0,-0.9302325581395349,🟥,🟩,True,,
+3,Which question topics are most common at passport control in France?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+4,In which country are the most documents requested?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,scope
+5,In which city in France is a return ticket requested most often?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,"intents, aggregate"
+6,How often are fingerprints taken when entering France?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+7,What documents are checked at passport control and what questions are asked in Paris?,union,0.16847826086956522,1.0,-0.8315217391304348,🟥,🟩,True,,
+8,"Which documents are checked in Paris, but not in Nice?",difference,0.06626506024096386,1.0,-0.9337349397590361,🟥,🟩,True,,
+9,Which documents are checked for travelers who were asked about cash amount in France?,conditional,0.44067796610169496,1.0,-0.559322033898305,🟥,🟩,True,,
+10,Which question topics are asked of travelers whose visa was checked in France?,conditional,0.12345679012345678,1.0,-0.8765432098765432,🟥,🟩,True,,
+11,Show document checks and question topics for the same encounters in Paris.,intersect,0.1893491124260355,1.0,-0.8106508875739645,🟥,🟩,True,,
+12,Which documents are checked and which biometric modalities are used in France?,union,0.09142857142857141,1.0,-0.9085714285714286,🟥,🟩,True,,
+13,Which question topics and biometric modalities are used in France?,union,0.12154696132596686,1.0,-0.8784530386740331,🟥,🟩,True,,"topic_keys, biometric_modalities"
+14,Which biometric modalities are used at passport control in France?,single,0.12499999999999997,1.0,-0.875,🟥,🟩,True,,biometric_modalities
+15,Which question topics are asked at passport control in France?,single,0.05063291139240506,НЕ ОК,,🟥,🟥,True,aggregate_output(no_gold),"mode, topic_keys, aggregate"
+16,Which documents do I need to bring to passport control in Nice?,single,0.17721518987341772,1.0,-0.8227848101265822,🟥,🟩,True,,
+17,Which documents do I need to bring to passport control in Germany?,single,0.04004711425206125,1.0,-0.9599528857479388,🟥,🟩,True,,
+18,In which city in France are the most documents requested?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+19,In which country are the fewest documents requested?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+20,In which country is hotel booking requested most often?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,"intents, scope, doc_types, aggregate"
+21,In which country is a return ticket requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+22,In which country are people most often asked about money?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+23,Which question topics are most common at passport control in Germany?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+24,How often are fingerprints taken when entering Germany?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+25,Which airport do people most often fly into in France?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+26,Which city is the most popular entry point into France?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+27,In which country do travellers most often pass through passport control with no questions asked?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+28,Where is passport control usually just a passport check?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+29,Which documents do I need to bring to passport control in Nice?,single,0.175,1.0,-0.825,🟥,🟩,True,,
+30,Which documents do I need to bring to passport control in Lyon?,single,0.3428571428571428,1.0,-0.6571428571428573,🟥,🟩,True,,
+31,Which documents do I need to bring to passport control in Marseille?,single,0.42105263157894735,1.0,-0.5789473684210527,🟥,🟩,True,,
+32,Which documents do I need to bring to passport control in Toulouse?,single,0.0,1.0,-1.0,🟥,🟩,True,,
+33,Which documents do I need to bring to passport control in Berlin?,single,0.15668202764976957,1.0,-0.8433179723502304,🟥,🟩,True,,
+34,Which documents do I need to bring to passport control in Munich?,single,0.11891891891891893,1.0,-0.8810810810810811,🟥,🟩,True,,
+35,Which documents do I need to bring to passport control in Frankfurt?,single,0.1837837837837838,1.0,-0.8162162162162162,🟥,🟩,True,,
+36,Which documents do I need to bring to passport control in Dusseldorf?,single,0.1574803149606299,1.0,-0.8425196850393701,🟥,🟩,True,,
+37,Which documents do I need to bring to passport control in Stuttgart?,single,0.1935483870967742,1.0,-0.8064516129032258,🟥,🟩,True,,
+38,Which documents do I need to bring to passport control in Rome?,single,0.18965517241379312,1.0,-0.8103448275862069,🟥,🟩,True,,
+39,Which documents do I need to bring to passport control in Milan?,single,0.25925925925925924,1.0,-0.7407407407407407,🟥,🟩,True,,
+40,Which documents do I need to bring to passport control in Venice?,single,0.425,1.0,-0.575,🟥,🟩,True,,
+41,Which documents do I need to bring to passport control in Bologna?,single,0.2926829268292683,1.0,-0.7073170731707317,🟥,🟩,True,,
+42,Which documents do I need to bring to passport control in Bari?,single,0.4,1.0,-0.6,🟥,🟩,True,,
+43,Which documents do I need to bring to passport control in Barcelona?,single,0.35714285714285715,1.0,-0.6428571428571428,🟥,🟩,True,,
+44,Which documents do I need to bring to passport control in Malaga?,single,0.5454545454545454,1.0,-0.4545454545454546,🟥,🟩,True,,
+45,Which documents do I need to bring to passport control in Madrid?,single,0.5128205128205129,1.0,-0.4871794871794871,🟥,🟩,True,,
+46,Which documents do I need to bring to passport control in Las Palmas?,single,0.1212121212121212,1.0,-0.8787878787878788,🟥,🟩,True,,
+47,Which documents do I need to bring to passport control in Seville?,single,0.10810810810810811,1.0,-0.8918918918918919,🟥,🟩,True,,
+48,Which documents do I need to bring to passport control in Italy?,single,0.10344827586206896,1.0,-0.896551724137931,🟥,🟩,True,,
+49,Which documents do I need to bring to passport control in Spain?,single,0.29885057471264365,1.0,-0.7011494252873564,🟥,🟩,True,,
+50,In which city in Germany are the most documents requested?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+51,Which question topics are most common at passport control in Italy?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+52,Which question topics are most common at passport control in Spain?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+53,How often are fingerprints taken when entering Spain?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+54,How often are fingerprints taken when entering Italy?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+55,Which airport do people most often fly into in Italy?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+56,Which airport do people most often fly into in Germany?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+57,Which airport do people most often fly into in Spain?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+58,Which city is the most popular entry point into Germany?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+59,Which city is the most popular entry point into Italy?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+60,Which city is the most popular entry point into Spain?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+61,Through which country do travelers most often pass with 'no questions'?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+62,Which is more common in Germany: a request to show cash or a card?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+63,Which is more common in Italy: a request to show cash or a card?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+64,In which city in Italy are the most documents requested?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+65,In which city in Spain are the most documents requested?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+66,In which city in France is hotel booking requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+67,In which city in Germany is hotel booking requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+68,In which city in Italy is hotel booking requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+69,In which city in Spain is hotel booking requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+70,In which city in Germany is a return ticket requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+71,In which city in Italy is a return ticket requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,intents
+72,In which city in Spain is a return ticket requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+73,In which country are people most often requested to show hotel booking?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+74,In which city in France are people most often requested to show hotel booking?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+75,In which city in Germany are people most often requested to show accommodation booking?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+76,In which city in Italy are people most often requested to show hotel booking?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+77,In which city in Spain are people most often requested to show hotel booking?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,"intents, doc_types, topic_keys, aggregate"
+78,In which country are people most often asked about money?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+79,In which city in France are people most often asked about money?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,topic_keys
+80,In which city in Germany are people most often asked about money?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+81,In which city in Spain are people most often asked about money?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+82,In which city in Italy are people most often asked about money?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+83,Where is passport control most often limited to only the passport?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,"intents, doc_types, aggregate"
+84,Which is more common in France: a request to show cash or a card?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+85,Which is more common in Spain: a request to show cash or a card?,aggregate,OK,OK,,🟩,🟩,True,,
+86,In which country are visas requested most often at passport control?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,intents
+87,In which city in Germany are hotel bookings requested most often?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,intents
+88,In which airport in France are return tickets requested most often?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,"intents, scope, aggregate"
+89,In which country are travelers most often asked about visit duration?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+90,In which country are fingerprints checked most often at passport control?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,
+91,In which city in Italy is face photo capture used most often?,aggregate,OK,НЕ ОК,,🟩,🟥,True,aggregate_output,
+92,Which country has the highest number of encounters with no questions asked?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,topic_keys
+93,"In which country is passport-only control (no questions, only foreign passport) most common?",aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+94,Which country has the highest number of document checks per encounter?,aggregate,НЕ ОК,НЕ ОК,,🟥,🟥,True,aggregate_output,aggregate
+95,Which city in Italy has the highest number of question topics per encounter?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+96,Which city in Germany has more encounters with visa checks than with return ticket checks?,aggregate,НЕ ОК,OK,,🟥,🟩,True,,
+97,What documents are checked and what question topics are asked in Madrid?,union,0.7368421052631579,1.0,-0.26315789473684215,🟥,🟩,True,,
+98,Which documents are checked in Rome but not in Barcelona?,difference,0.06201550387596899,0.8986175115207373,-0.8366020076447683,🟥,🟥,True,,
+99,Which documents are checked for travelers who were asked about visit_purpose in Spain?,conditional,0.0,1.0,-1.0,🟥,🟩,True,,
+100,Which question topics are asked for travelers whose documents include return_ticket in France?,conditional,0.0,0.9897610921501706,-0.9897610921501706,🟥,🟥,True,,
+101,Show document checks and biometric modalities for the same encounters in Germany.,intersect,0.0,1.0,-1.0,🟥,🟩,True,,
